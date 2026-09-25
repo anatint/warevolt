@@ -183,18 +183,6 @@ export default function PlatformPage() {
         <div style={{ position: 'absolute', top: '-160px', right: '-120px', width: '480px', height: '480px', background: 'radial-gradient(circle,rgba(123,91,251,.28) 0%,transparent 70%)', pointerEvents: 'none' }}></div>
         <div style={{ position: 'absolute', bottom: '-180px', left: '-100px', width: '420px', height: '420px', background: 'radial-gradient(circle,rgba(77,13,217,.24) 0%,transparent 70%)', pointerEvents: 'none' }}></div>
 
-        {/* Top utility bar */}
-        <div style={{ position: 'relative', zIndex: 30, height: '44px', background: 'rgba(0,0,0,.28)', display: 'flex', alignItems: 'center', padding: '0 clamp(20px,5%,80px)' }}>
-          <div style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '28px' }}>
-            <button
-              onClick={() => setPricingOpen(true)}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '12.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', transition: 'color .2s', padding: 0 }}
-            >
-              Login
-            </button>
-          </div>
-        </div>
-
         {/* Main Nav */}
         <div style={{ position: 'relative', zIndex: 30, padding: '0 clamp(20px,5%,80px)' }}>
           <nav style={{ height: '110px', maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '40px' }}>
@@ -227,6 +215,25 @@ export default function PlatformPage() {
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0, marginLeft: 'auto' }}>
+              <button
+                onClick={() => setPricingOpen(true)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '15px',
+                  fontWeight: 500,
+                  color: 'rgba(255,255,255,.9)',
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  padding: '8px 0',
+                  transition: 'color .2s',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
+              >
+                Login
+              </button>
               <button
                 onClick={() => setPricingOpen(true)}
                 style={{

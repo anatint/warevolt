@@ -489,29 +489,6 @@ export default function HomePage() {
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,6,4,.35)', zIndex: 1, pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.15) 45%,rgba(0,0,0,.35) 100%)', zIndex: 2, pointerEvents: 'none' }} />
 
-        {/* Top utility bar */}
-        <div
-          style={{
-            position: 'relative',
-            zIndex: 30,
-            height: '44px',
-            background: 'rgba(0,0,0,.28)',
-            display: 'flex',
-            alignItems: 'center',
-            padding: '0 clamp(20px,5%,80px)',
-          }}
-        >
-          <div style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '28px' }}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style={{ opacity: 0.85, cursor: 'pointer' }}>
-              <circle cx="11" cy="11" r="7" stroke="#fff" strokeWidth="1.6" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
-            </svg>
-            <a href="#contact" style={{ fontSize: '12.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', transition: 'color .2s' }}>
-              Login
-            </a>
-          </div>
-        </div>
-
         {/* Hero Nav */}
         <div style={{ position: 'relative', zIndex: 30, padding: '0 clamp(20px,5%,80px)' }}>
           <nav
@@ -660,6 +637,25 @@ export default function HomePage() {
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0, marginLeft: 'auto' }}>
+              <button
+                onClick={() => setPricingOpen(true)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '15px',
+                  fontWeight: 500,
+                  color: 'rgba(255,255,255,.9)',
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  padding: '8px 0',
+                  transition: 'color .2s',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
+              >
+                Login
+              </button>
               <button
                 onClick={() => setPricingOpen(true)}
                 style={{
