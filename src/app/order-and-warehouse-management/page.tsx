@@ -163,54 +163,92 @@ export default function OrderAndWarehouseManagementPage() {
 
             <div
               id="tech-menu-wrap"
-              style={{ position: 'relative' }}
+              style={{ position: 'relative', padding: '8px 0' }}
               onMouseEnter={() => setTechMenuOpen(true)}
               onMouseLeave={() => setTechMenuOpen(false)}
             >
-              <Link href="/#technology" style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .3s' }}>
-                Technology{' '}
-                <svg width="14" height="9" viewBox="0 0 10 6" fill="none" style={{ opacity: 0.75 }}>
-                  <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-              <div
-                id="tech-mega-menu"
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setTechMenuOpen(!techMenuOpen);
+                }}
                 style={{
-                  display: techMenuOpen ? 'flex' : 'none',
-                  position: 'absolute',
-                  top: '100%',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  marginTop: '18px',
-                  background: '#fff',
-                  borderRadius: '16px',
-                  boxShadow: '0 24px 60px rgba(20,10,40,.25)',
-                  padding: '24px 28px',
-                  zIndex: 200,
-                  flexDirection: 'column',
-                  gap: '4px',
-                  minWidth: '340px',
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  fontSize: '14.5px',
+                  fontWeight: 500,
+                  color: techMenuOpen ? '#fff' : 'rgba(255,255,255,.85)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  transition: 'color .3s',
                 }}
               >
-                {techMegaMenu.map((item, idx) => (
-                  <Link
-                    key={idx}
-                    href={item.href}
+                Technology{' '}
+                <svg
+                  width="14"
+                  height="9"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  style={{
+                    opacity: 0.75,
+                    transform: techMenuOpen ? 'rotate(180deg)' : 'none',
+                    transition: 'transform .2s ease',
+                  }}
+                >
+                  <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              {techMenuOpen && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '100%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    paddingTop: '8px',
+                    zIndex: 200,
+                  }}
+                >
+                  <div
+                    id="tech-mega-menu"
                     style={{
-                      display: 'block',
-                      textDecoration: 'none',
-                      padding: '10px 14px',
-                      borderRadius: '8px',
-                      borderLeft: '3px solid transparent',
-                      transition: 'background .2s, border-color .2s, transform .2s',
+                      background: '#fff',
+                      borderRadius: '16px',
+                      boxShadow: '0 24px 60px rgba(20,10,40,.25)',
+                      padding: '24px 28px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '4px',
+                      minWidth: '340px',
                     }}
-                    className="hover:bg-[#F5F3FC] hover:border-l-[#4D0DD9] hover:translate-x-1"
                   >
-                    <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', whiteSpace: 'nowrap', marginBottom: '3px' }}>{item.label}</div>
-                    <div style={{ fontSize: '12px', color: '#6B6480', lineHeight: 1.4 }}>{item.desc}</div>
-                  </Link>
-                ))}
-              </div>
+                    {techMegaMenu.map((item, idx) => (
+                      <Link
+                        key={idx}
+                        href={item.href}
+                        onClick={() => setTechMenuOpen(false)}
+                        style={{
+                          display: 'block',
+                          textDecoration: 'none',
+                          padding: '10px 14px',
+                          borderRadius: '8px',
+                          borderLeft: '3px solid transparent',
+                          transition: 'background .2s, border-color .2s, transform .2s',
+                        }}
+                        className="hover:bg-[#F5F3FC] hover:border-l-[#4D0DD9] hover:translate-x-1"
+                      >
+                        <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', whiteSpace: 'nowrap', marginBottom: '3px' }}>{item.label}</div>
+                        <div style={{ fontSize: '12px', color: '#6B6480', lineHeight: 1.4 }}>{item.desc}</div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             <Link href="/#industries" style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .3s' }}>
@@ -335,54 +373,93 @@ export default function OrderAndWarehouseManagementPage() {
 
               <div
                 id="hero-tech-menu-wrap"
-                style={{ position: 'relative' }}
+                style={{ position: 'relative', padding: '8px 0' }}
                 onMouseEnter={() => setHeroTechMenuOpen(true)}
                 onMouseLeave={() => setHeroTechMenuOpen(false)}
               >
-                <Link href="/#technology" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .2s', whiteSpace: 'nowrap' }}>
-                  Technology{' '}
-                  <svg width="14" height="9" viewBox="0 0 10 6" fill="none" style={{ opacity: 0.75 }}>
-                    <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
-                <div
-                  id="hero-tech-mega-menu"
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setHeroTechMenuOpen(!heroTechMenuOpen);
+                  }}
                   style={{
-                    display: heroTechMenuOpen ? 'flex' : 'none',
-                    position: 'absolute',
-                    top: '100%',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    marginTop: '18px',
-                    background: '#fff',
-                    borderRadius: '16px',
-                    boxShadow: '0 24px 60px rgba(20,10,40,.25)',
-                    padding: '24px 28px',
-                    zIndex: 200,
-                    flexDirection: 'column',
-                    gap: '4px',
-                    minWidth: '340px',
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    fontSize: '16px',
+                    fontWeight: 400,
+                    color: heroTechMenuOpen ? '#fff' : 'rgba(255,255,255,.92)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    transition: 'color .2s',
+                    whiteSpace: 'nowrap',
                   }}
                 >
-                  {techMegaMenu.map((item, idx) => (
-                    <Link
-                      key={idx}
-                      href={item.href}
+                  Technology{' '}
+                  <svg
+                    width="14"
+                    height="9"
+                    viewBox="0 0 10 6"
+                    fill="none"
+                    style={{
+                      opacity: 0.75,
+                      transform: heroTechMenuOpen ? 'rotate(180deg)' : 'none',
+                      transition: 'transform .2s ease',
+                    }}
+                  >
+                    <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {heroTechMenuOpen && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '100%',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      paddingTop: '8px',
+                      zIndex: 200,
+                    }}
+                  >
+                    <div
+                      id="hero-tech-mega-menu"
                       style={{
-                        display: 'block',
-                        textDecoration: 'none',
-                        padding: '10px 14px',
-                        borderRadius: '8px',
-                        borderLeft: '3px solid transparent',
-                        transition: 'background .2s, border-color .2s, transform .2s',
+                        background: '#fff',
+                        borderRadius: '16px',
+                        boxShadow: '0 24px 60px rgba(20,10,40,.25)',
+                        padding: '24px 28px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '4px',
+                        minWidth: '340px',
                       }}
-                      className="hover:bg-[#F5F3FC] hover:border-l-[#4D0DD9] hover:translate-x-1"
                     >
-                      <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', whiteSpace: 'nowrap', marginBottom: '3px' }}>{item.label}</div>
-                      <div style={{ fontSize: '12px', color: '#6B6480', lineHeight: 1.4 }}>{item.desc}</div>
-                    </Link>
-                  ))}
-                </div>
+                      {techMegaMenu.map((item, idx) => (
+                        <Link
+                          key={idx}
+                          href={item.href}
+                          onClick={() => setHeroTechMenuOpen(false)}
+                          style={{
+                            display: 'block',
+                            textDecoration: 'none',
+                            padding: '10px 14px',
+                            borderRadius: '8px',
+                            borderLeft: '3px solid transparent',
+                            transition: 'background .2s, border-color .2s, transform .2s',
+                          }}
+                          className="hover:bg-[#F5F3FC] hover:border-l-[#4D0DD9] hover:translate-x-1"
+                        >
+                          <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', whiteSpace: 'nowrap', marginBottom: '3px' }}>{item.label}</div>
+                          <div style={{ fontSize: '12px', color: '#6B6480', lineHeight: 1.4 }}>{item.desc}</div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               <Link href="/#industries" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .2s', whiteSpace: 'nowrap' }}>

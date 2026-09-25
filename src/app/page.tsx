@@ -233,17 +233,25 @@ export default function HomePage() {
 
             <div
               id="tech-menu-wrap"
-              style={{ position: 'relative' }}
+              style={{ position: 'relative', padding: '8px 0' }}
               onMouseEnter={() => setTechMenuOpen(true)}
               onMouseLeave={() => setTechMenuOpen(false)}
             >
-              <a
-                href="#technology"
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setTechMenuOpen(!techMenuOpen);
+                }}
                 style={{
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
                   fontSize: '14.5px',
                   fontWeight: 500,
-                  color: 'rgba(255,255,255,.85)',
-                  textDecoration: 'none',
+                  color: techMenuOpen ? '#fff' : 'rgba(255,255,255,.85)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px',
@@ -251,60 +259,76 @@ export default function HomePage() {
                 }}
               >
                 Technology{' '}
-                <svg width="14" height="9" viewBox="0 0 10 6" fill="none" style={{ opacity: 0.75 }}>
+                <svg
+                  width="14"
+                  height="9"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  style={{
+                    opacity: 0.75,
+                    transform: techMenuOpen ? 'rotate(180deg)' : 'none',
+                    transition: 'transform .2s ease',
+                  }}
+                >
                   <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
+              </button>
 
               {techMenuOpen && (
                 <div
-                  id="tech-mega-menu"
                   style={{
                     position: 'absolute',
                     top: '100%',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    marginTop: '18px',
-                    background: '#fff',
-                    borderRadius: '16px',
-                    boxShadow: '0 24px 60px rgba(20,10,40,.25)',
-                    padding: '24px 28px',
+                    paddingTop: '8px',
                     zIndex: 200,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '4px',
-                    minWidth: '340px',
                   }}
                 >
-                  {techMegaMenu.map((item, idx) => (
-                    <a
-                      key={idx}
-                      href={item.href}
-                      style={{
-                        display: 'block',
-                        textDecoration: 'none',
-                        padding: '10px 14px',
-                        borderRadius: '8px',
-                        borderLeft: '3px solid transparent',
-                        transition: 'background .2s, border-color .2s, transform .2s',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = '#F5F3FC';
-                        e.currentTarget.style.borderLeftColor = '#4D0DD9';
-                        e.currentTarget.style.transform = 'translateX(4px)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'transparent';
-                        e.currentTarget.style.borderLeftColor = 'transparent';
-                        e.currentTarget.style.transform = 'none';
-                      }}
-                    >
-                      <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', whiteSpace: 'nowrap', marginBottom: '3px' }}>
-                        {item.label}
-                      </div>
-                      <div style={{ fontSize: '12px', color: '#6B6480', lineHeight: 1.4 }}>{item.desc}</div>
-                    </a>
-                  ))}
+                  <div
+                    id="tech-mega-menu"
+                    style={{
+                      background: '#fff',
+                      borderRadius: '16px',
+                      boxShadow: '0 24px 60px rgba(20,10,40,.25)',
+                      padding: '24px 28px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '4px',
+                      minWidth: '340px',
+                    }}
+                  >
+                    {techMegaMenu.map((item, idx) => (
+                      <a
+                        key={idx}
+                        href={item.href}
+                        onClick={() => setTechMenuOpen(false)}
+                        style={{
+                          display: 'block',
+                          textDecoration: 'none',
+                          padding: '10px 14px',
+                          borderRadius: '8px',
+                          borderLeft: '3px solid transparent',
+                          transition: 'background .2s, border-color .2s, transform .2s',
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = '#F5F3FC';
+                          e.currentTarget.style.borderLeftColor = '#4D0DD9';
+                          e.currentTarget.style.transform = 'translateX(4px)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'transparent';
+                          e.currentTarget.style.borderLeftColor = 'transparent';
+                          e.currentTarget.style.transform = 'none';
+                        }}
+                      >
+                        <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', whiteSpace: 'nowrap', marginBottom: '3px' }}>
+                          {item.label}
+                        </div>
+                        <div style={{ fontSize: '12px', color: '#6B6480', lineHeight: 1.4 }}>{item.desc}</div>
+                      </a>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -518,17 +542,25 @@ export default function HomePage() {
 
               <div
                 id="hero-tech-menu-wrap"
-                style={{ position: 'relative' }}
+                style={{ position: 'relative', padding: '8px 0' }}
                 onMouseEnter={() => setHeroTechMenuOpen(true)}
                 onMouseLeave={() => setHeroTechMenuOpen(false)}
               >
-                <a
-                  href="#technology"
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setHeroTechMenuOpen(!heroTechMenuOpen);
+                  }}
                   style={{
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
                     fontSize: '16px',
                     fontWeight: 400,
-                    color: 'rgba(255,255,255,.92)',
-                    textDecoration: 'none',
+                    color: heroTechMenuOpen ? '#fff' : 'rgba(255,255,255,.92)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '6px',
@@ -537,60 +569,76 @@ export default function HomePage() {
                   }}
                 >
                   Technology{' '}
-                  <svg width="14" height="9" viewBox="0 0 10 6" fill="none" style={{ opacity: 0.75 }}>
+                  <svg
+                    width="14"
+                    height="9"
+                    viewBox="0 0 10 6"
+                    fill="none"
+                    style={{
+                      opacity: 0.75,
+                      transform: heroTechMenuOpen ? 'rotate(180deg)' : 'none',
+                      transition: 'transform .2s ease',
+                    }}
+                  >
                     <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </button>
 
                 {heroTechMenuOpen && (
                   <div
-                    id="hero-tech-mega-menu"
                     style={{
                       position: 'absolute',
                       top: '100%',
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      marginTop: '18px',
-                      background: '#fff',
-                      borderRadius: '16px',
-                      boxShadow: '0 24px 60px rgba(20,10,40,.25)',
-                      padding: '24px 28px',
+                      paddingTop: '8px',
                       zIndex: 200,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '4px',
-                      minWidth: '340px',
                     }}
                   >
-                    {techMegaMenu.map((item, idx) => (
-                      <a
-                        key={idx}
-                        href={item.href}
-                        style={{
-                          display: 'block',
-                          textDecoration: 'none',
-                          padding: '10px 14px',
-                          borderRadius: '8px',
-                          borderLeft: '3px solid transparent',
-                          transition: 'background .2s, border-color .2s, transform .2s',
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.background = '#F5F3FC';
-                          e.currentTarget.style.borderLeftColor = '#4D0DD9';
-                          e.currentTarget.style.transform = 'translateX(4px)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.background = 'transparent';
-                          e.currentTarget.style.borderLeftColor = 'transparent';
-                          e.currentTarget.style.transform = 'none';
-                        }}
-                      >
-                        <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', whiteSpace: 'nowrap', marginBottom: '3px' }}>
-                          {item.label}
-                        </div>
-                        <div style={{ fontSize: '12px', color: '#6B6480', lineHeight: 1.4 }}>{item.desc}</div>
-                      </a>
-                    ))}
+                    <div
+                      id="hero-tech-mega-menu"
+                      style={{
+                        background: '#fff',
+                        borderRadius: '16px',
+                        boxShadow: '0 24px 60px rgba(20,10,40,.25)',
+                        padding: '24px 28px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '4px',
+                        minWidth: '340px',
+                      }}
+                    >
+                      {techMegaMenu.map((item, idx) => (
+                        <a
+                          key={idx}
+                          href={item.href}
+                          onClick={() => setHeroTechMenuOpen(false)}
+                          style={{
+                            display: 'block',
+                            textDecoration: 'none',
+                            padding: '10px 14px',
+                            borderRadius: '8px',
+                            borderLeft: '3px solid transparent',
+                            transition: 'background .2s, border-color .2s, transform .2s',
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = '#F5F3FC';
+                            e.currentTarget.style.borderLeftColor = '#4D0DD9';
+                            e.currentTarget.style.transform = 'translateX(4px)';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = 'transparent';
+                            e.currentTarget.style.borderLeftColor = 'transparent';
+                            e.currentTarget.style.transform = 'none';
+                          }}
+                        >
+                          <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', whiteSpace: 'nowrap', marginBottom: '3px' }}>
+                            {item.label}
+                          </div>
+                          <div style={{ fontSize: '12px', color: '#6B6480', lineHeight: 1.4 }}>{item.desc}</div>
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
