@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+body { margin:0; background:#F7F6FB; font-family:'Plus Jakarta Sans',system-ui,sans-serif; }
+a { color:#4D0DD9; } a:hover { color:#7B5BFB; }
+
+@keyframes wh-center   { 0%,100%{ transform:translate3d(0,0,0);} 50%{ transform:translate3d(0,-4px,0);} }
+@keyframes wh-platform { 0%,100%{ transform:translate3d(0,0,0);} 50%{ transform:translate3d(0,-3px,0);} }
+@keyframes wh-shelf    { 0%,100%{ transform:translate3d(0,0,0);} 50%{ transform:translate3d(0,-1.5px,0);} }
+@keyframes wh-box      { 0%,100%{ transform:translate3d(0,0,0);} 50%{ transform:translate3d(0,-1px,0);} }
+@keyframes wh-logo     { 0%,100%{ transform:translate3d(0,0,0);} 50%{ transform:translate3d(0,-2px,0);} }
+@keyframes wh-shadow   { 0%,100%{ opacity:.60; transform:scale(1);} 50%{ opacity:.54; transform:scale(1.015);} }
+@keyframes wh-zone     { 0%,100%{ opacity:.5;} 50%{ opacity:1;} }
+@keyframes wh-screen   { 0%,100%{ opacity:.88;} 50%{ opacity:1;} }
+@keyframes wh-scan     { 0%{ transform:translate3d(0,-12px,0); opacity:0;} 14%{ opacity:.6;} 86%{ opacity:.6;} 100%{ transform:translate3d(0,22px,0); opacity:0;} }
+@keyframes wh-blink    { 0%,42%{ opacity:1;} 50%,92%{ opacity:.3;} 100%{ opacity:1;} }
+@keyframes wh-dust     { 0%{ transform:translate3d(0,14px,0); opacity:0;} 15%{ opacity:.45;} 85%{ opacity:.45;} 100%{ transform:translate3d(-18px,-70px,0); opacity:0;} }
+@keyframes wh-roller   { 0%,100%{ opacity:.45;} 25%{ opacity:1;} 60%{ opacity:.7;} }
+@keyframes wh-forklift { 0%,6%{ transform:translate3d(0,0,0);} 34%,50%{ transform:translate3d(-44px,25px,0);} 80%,100%{ transform:translate3d(0,0,0);} }
+@keyframes wh-parcel   { 0%{ transform:translate3d(0,0,0); opacity:0;} 6%{ opacity:1;} 88%{ opacity:1;} 100%{ transform:translate3d(126px,72px,0); opacity:0;} }
+#wh-stage .wh-a-roller   { animation:wh-roller 2.2s linear infinite; }
+#wh-stage .wh-a-forklift { animation:wh-forklift 10s cubic-bezier(.45,0,.55,1) infinite; }
+#wh-stage .wh-a-parcel   { animation:wh-parcel 6s linear infinite; }
+@keyframes wh-jack { 0%,10%{ transform:translate3d(0,0,0);} 45%,60%{ transform:translate3d(26px,-15px,0);} 92%,100%{ transform:translate3d(0,0,0);} }
+#wh-stage .wh-a-jack { animation:wh-jack 9s cubic-bezier(.45,0,.55,1) infinite; }
+
+#wh-stage svg { width:100%; height:auto; display:block; overflow:visible; shape-rendering:geometricPrecision; }
+#wh-stage [class*="wh-a-"] { will-change:transform; }
+#wh-stage .wh-a-center   { animation:wh-center 8s cubic-bezier(.45,0,.55,1) infinite; }
+#wh-stage .wh-a-platform { animation:wh-platform 8s cubic-bezier(.45,0,.55,1) infinite; }
+#wh-stage .wh-a-shelf    { animation:wh-shelf 7s cubic-bezier(.45,0,.55,1) infinite; }
+#wh-stage .wh-a-box      { animation:wh-box 6s cubic-bezier(.45,0,.55,1) infinite; }
+#wh-stage .wh-a-logo     { animation:wh-logo 7.5s cubic-bezier(.45,0,.55,1) infinite; }
+#wh-stage .wh-a-ground   { animation:wh-shadow 8s cubic-bezier(.45,0,.55,1) infinite; transform-box:fill-box; transform-origin:50% 100%; }
+#wh-stage .pulse_path    { animation:wh-zone 5.5s cubic-bezier(.45,0,.55,1) infinite; }
+#wh-stage .scr           { animation:wh-screen 4.5s cubic-bezier(.45,0,.55,1) infinite; }
+#wh-stage .wh-scanline   { animation:wh-scan 4.5s cubic-bezier(.45,0,.55,1) infinite; }
+#wh-stage .wh-a-blink    { animation:wh-blink 3.2s cubic-bezier(.45,0,.55,1) infinite; }
+#wh-stage .wh-dust       { animation:wh-dust linear infinite; transform-box:fill-box; }
+#wh-stage .wh-tracer     { animation-timing-function:cubic-bezier(.45,0,.55,1); animation-iteration-count:infinite; }
+
+@media (prefers-reduced-motion: reduce) { #wh-stage * { animation:none !important; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F7F6FB;padding:80px clamp(20px,5vw,80px);display:flex;flex-direction:column;align-items:center;gap:44px;">
+  <div style="max-width:620px;text-align:center;">
+    <h1 style="font-size:clamp(30px,3vw,44px);font-weight:800;line-height:1.15;letter-spacing:-.03em;color:#0B0619;margin:0 0 16px;text-wrap:pretty;">Every shelf, every SKU, one live map</h1>
+    <p style="font-size:16px;color:#6B6480;line-height:1.8;margin:0;">A digital twin of your operation — the same illustration, now alive.</p>
+  </div>
+
+  <div id="wh-stage" style="width:100%;max-width:920px;position:relative;"></div>
+
+  <div id="wh-status" style="font-size:12px;color:#9891AB;text-align:center;max-width:560px;line-height:1.7;"></div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1100,&quot;height&quot;:860},&quot;source&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Repaired SVG (animated)&quot;,&quot;Reference image (exact)&quot;],&quot;default&quot;:&quot;Repaired SVG (animated)&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Illustration&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { this.mountSvg(); }
+
+  async mountSvg() {
+    const stage = document.getElementById('wh-stage');
+    if (!stage) { requestAnimationFrame(() => this.mountSvg()); return; }
+    if ((this.props.source ?? 'Repaired SVG (animated)') === 'Reference image (exact)') {
+      stage.innerHTML = '<img src="./uploads/pasted-1785125625537-0.png" alt="Isometric warehouse" ' +
+        'style="width:100%;height:auto;display:block;animation:wh-center 8s cubic-bezier(.45,0,.55,1) infinite;">';
+      return;
+    }
+    try {
+      const res = await fetch('./assets/warehouse.svg');
+      stage.innerHTML = await res.text();
+      this.decorate(stage);
+    } catch (e) {
+      const s = document.getElementById('wh-status');
+      if (s) s.textContent = 'Could not load the illustration.';
+    }
+  }
+
+  // Every element sharing a group name gets identical timing, so parts that
+  // overlap in the artwork keep their exact relative positions while moving.
+  apply(root, selector, cls, delay) {
+    root.querySelectorAll(selector).forEach(el => {
+      el.classList.add(cls);
+      el.style.transformBox = 'fill-box';
+      el.style.transformOrigin = '50% 100%';
+      if (delay != null) el.style.animationDelay = delay + 's';
+    });
+  }
+
+  decorate(stage) {
+    const svg = stage.querySelector('svg');
+    if (!svg) return;
+
+    // Ground platform glows breathe under the float.
+    Array.from(svg.children).forEach(g => {
+      if (g.tagName === 'g' && g.getAttribute('opacity') === '.6') g.classList.add('wh-a-ground');
+    });
+
+    // Center warehouse — one shared 8s cycle across all its layers.
+    this.apply(svg, '.feat_one', 'wh-a-center', 0);
+
+    // Four side platforms — independent, never in step with each other.
+    [['.feat_two', 0.9], ['.feat_three', 2.3], ['.feat_four', 3.6], ['.feat_five', 1.7]]
+      .forEach(([sel, d]) => this.apply(svg, sel, 'wh-a-platform', d));
+
+    // Shelves and box stacks drift on their own offsets.
+    ['sub_one','sub_two','sub_three','sub_four','sub_five','sub_six']
+      .forEach((n, i) => this.apply(svg, '.' + n, 'wh-a-shelf', +(i * 1.13).toFixed(2)));
+    ['box_one','box_two','box_three','box_four','box_five','box_six']
+      .forEach((n, i) => this.apply(svg, '.' + n, 'wh-a-box', +(i * 0.87 + 0.4).toFixed(2)));
+
+    // Marketplace logos: translation only, no scaling.
+    ['icon_one','icon_two','icon_three']
+      .forEach((n, i) => this.apply(svg, '.' + n, 'wh-a-logo', +(i * 1.6).toFixed(2)));
+
+    // Conveyor: the rollers are a numbered sequence along the belt, so a
+    // delay proportional to position reads as the belt scrolling.
+    const rollers = [];
+    for (let i = 86; i <= 165; i++) {
+      if (i >= 123 && i <= 128) continue;
+      svg.querySelectorAll('.st' + i).forEach(el => rollers.push(el));
+    }
+    rollers.forEach((el, i) => {
+      el.classList.add('wh-a-roller');
+      el.style.animationDelay = (-(i % 12) * 0.18).toFixed(2) + 's';
+    });
+
+    // Forklift: selected by footprint, not by colour class, and moved as one
+    // rigid group so no facet can slide off its own body.
+    const fork = [];
+    svg.querySelectorAll('polygon, path').forEach(el => {
+      let b; try { b = el.getBBox(); } catch (e) { return; }
+      if (!b || !b.width) return;
+      const cx = b.x + b.width / 2, cy = b.y + b.height / 2;
+      if (cx > 425 && cx < 470 && cy > 275 && cy < 312) fork.push(el);
+    });
+    if (fork.length > 8) {
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.classList.add('wh-a-forklift');
+      fork[0].parentNode.insertBefore(g, fork[0]);
+      fork.forEach(el => g.appendChild(el));
+    }
+
+    // Pallet jack — same rigid-group treatment, shorter travel.
+    const jack = [];
+    svg.querySelectorAll('polygon, path').forEach(el => {
+      if (el.closest('.wh-a-forklift')) return;
+      let b; try { b = el.getBBox(); } catch (e) { return; }
+      if (!b || !b.width) return;
+      const cx = b.x + b.width / 2, cy = b.y + b.height / 2;
+      if (cx > 245 && cx < 292 && cy > 315 && cy < 346) jack.push(el);
+    });
+    if (jack.length > 6) {
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.classList.add('wh-a-jack');
+      jack[0].parentNode.insertBefore(g, jack[0]);
+      jack.forEach(el => g.appendChild(el));
+    }
+
+    // Status lights blink on separate delays.
+    ['b_one','b_two','b_three','b_four'].forEach((n, i) => {
+      svg.querySelectorAll('.' + n).forEach(el => {
+        el.classList.add('wh-a-blink');
+        el.style.animationDelay = (i * 0.65) + 's';
+      });
+    });
+
+    // Monitor: soft glow plus a slow dashboard scan clipped to the screen box.
+    svg.querySelectorAll('.scr').forEach((el, i) => {
+      el.style.animationDelay = (i * 0.7) + 's';
+      let bb; try { bb = el.getBBox(); } catch (e) { return; }
+      for (let k = 0; k < 2; k++) {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        line.setAttribute('x', bb.x);
+        line.setAttribute('y', bb.y + bb.height * 0.3);
+        line.setAttribute('width', bb.width);
+        line.setAttribute('height', Math.max(1.2, bb.height * 0.07));
+        line.setAttribute('fill', '#7ED8FF');
+        line.setAttribute('opacity', '0');
+        line.setAttribute('pointer-events', 'none');
+        line.classList.add('wh-scanline');
+        line.style.animationDelay = (k * 2.25) + 's';
+        el.appendChild(line);
+      }
+    });
+
+    // Light pulses travelling out along each dashed connector.
+    const dashed = Array.from(svg.querySelectorAll('line')).filter(l => {
+      const st = l.getAttribute('style') || '';
+      return st.indexOf('dasharray') > -1 || l.hasAttribute('stroke-dasharray');
+    });
+    if (dashed.length) {
+      const css = [];
+      const layer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      layer.setAttribute('pointer-events', 'none');
+      dashed.forEach((l, i) => {
+        const x1 = +l.getAttribute('x1'), y1 = +l.getAttribute('y1');
+        const x2 = +l.getAttribute('x2'), y2 = +l.getAttribute('y2');
+        css.push('@keyframes wh-tracer-' + i + '{0%{transform:translate3d(0,0,0);opacity:0}' +
+          '12%{opacity:1}80%{opacity:1}100%{transform:translate3d(' + (x2 - x1).toFixed(1) + 'px,' +
+          (y2 - y1).toFixed(1) + 'px,0);opacity:0}}');
+        const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        dot.setAttribute('cx', x1);
+        dot.setAttribute('cy', y1);
+        dot.setAttribute('r', '3');
+        dot.setAttribute('fill', '#7B5BFB');
+        dot.setAttribute('opacity', '0');
+        dot.classList.add('wh-tracer');
+        dot.style.animationName = 'wh-tracer-' + i;
+        dot.style.animationDuration = '2.6s';
+        dot.style.animationDelay = (i * 0.55) + 's';
+        layer.appendChild(dot);
+      });
+      const style = document.createElementNS('http://www.w3.org/2000/svg', 'style');
+      style.textContent = css.join('');
+      svg.appendChild(style);
+      svg.appendChild(layer);
+    }
+
+    // Ambient dust.
+    const vb = (svg.getAttribute('viewBox') || '0 0 698 519').split(/\s+/).map(Number);
+    const dust = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    dust.setAttribute('pointer-events', 'none');
+    for (let i = 0; i < 14; i++) {
+      const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      c.setAttribute('cx', vb[0] + 110 + Math.random() * (vb[2] - 220));
+      c.setAttribute('cy', vb[1] + 170 + Math.random() * (vb[3] - 260));
+      c.setAttribute('r', (0.7 + Math.random() * 1).toFixed(2));
+      c.setAttribute('fill', '#8FA3D8');
+      c.setAttribute('opacity', '0');
+      c.classList.add('wh-dust');
+      c.style.animationDuration = (10 + Math.random() * 7).toFixed(1) + 's';
+      c.style.animationDelay = (-Math.random() * 12).toFixed(1) + 's';
+      dust.appendChild(c);
+    }
+    svg.appendChild(dust);
+
+    // The uploaded export is missing its colour definitions; say so permanently.
+    const status = document.getElementById('wh-status');
+    if (status) {
+      status.textContent = '';
+    }
+  }
+}
+
+</script>
+</body>
+</html>

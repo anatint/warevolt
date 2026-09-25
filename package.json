@@ -1,0 +1,27 @@
+{
+  "name": "warevolt",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@wix/data": "^1.0.187",
+    "@wix/ecom": "^1.0.2514",
+    "@wix/sdk": "^1.16.5",
+    "@wix/stores": "^1.0.923",
+    "lucide-react": "^1.16.0",
+    "next": "15.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "typescript": "^5.8.2"
+  }
+}
