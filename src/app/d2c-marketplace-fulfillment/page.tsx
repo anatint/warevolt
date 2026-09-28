@@ -313,35 +313,35 @@ export default function D2CMarketplaceFulfillmentPage() {
         </div>
 
         {/* Hero Body */}
-        <div style={{ position: 'relative', zIndex: 10, padding: '48px clamp(20px,5%,80px) 44px' }}>
+        <div style={{ position: 'relative', zIndex: 10, padding: '32px clamp(20px,5%,80px) 36px' }}>
           <div id="d2c-hero-grid" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '48px', alignItems: 'center' }}>
             <div>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', marginBottom: '16px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', marginBottom: '14px' }}>
                 Solutions / D2C &amp; Marketplace Fulfillment
               </div>
-              <h1 style={{ fontSize: 'clamp(32px,3.8vw,52px)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '20px' }}>
+              <h1 style={{ fontSize: 'clamp(30px,3.5vw,48px)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '18px' }}>
                 One fulfillment solution for your online store and every major marketplace.
               </h1>
-              <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.82)', lineHeight: 1.7, maxWidth: '720px', marginBottom: '28px' }}>
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,.82)', lineHeight: 1.65, maxWidth: '720px', marginBottom: '24px' }}>
                 Manage inventory, automate order fulfillment, and ship nationwide through a single platform built for modern e-commerce.
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
                   onClick={() => setPricingOpen(true)}
-                  style={{ background: '#4D0DD9', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '15px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
+                  style={{ background: '#4D0DD9', color: '#fff', padding: '13px 28px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
                   Get a Quote
                 </button>
                 <button
                   onClick={() => setPricingOpen(true)}
-                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '17px 34px', borderRadius: '12px', fontSize: '15.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
+                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '13px 28px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
                   Speak to an expert
                 </button>
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src="/uploads/D2C_MarketPlace_v4.png" alt="D2C and marketplace platforms illustration" style={{ width: '100%', maxWidth: '530px', height: 'auto', objectFit: 'contain' }} />
+              <img src="/uploads/D2C_MarketPlace_v4.png" alt="D2C and marketplace platforms illustration" style={{ width: '100%', maxWidth: '460px', height: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
         </div>
