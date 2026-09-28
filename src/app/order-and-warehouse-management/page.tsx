@@ -125,6 +125,9 @@ export default function OrderAndWarehouseManagementPage() {
             </Link>
 
             <div id="hero-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
+              <Link href="/" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
+                Home
+              </Link>
               <Link href="/#solutions" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .2s', whiteSpace: 'nowrap' }}>
                 Solutions
               </Link>
@@ -304,6 +307,9 @@ export default function OrderAndWarehouseManagementPage() {
                   zIndex: 40,
                 }}
               >
+                <Link href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
+                  Home
+                </Link>
                 <Link href="/#solutions" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
                   Solutions
                 </Link>

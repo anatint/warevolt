@@ -223,6 +223,14 @@ export default function HomePage() {
 
           <div id="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>
             <a
+              href="/"
+              style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', transition: 'color .3s' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.85)')}
+            >
+              Home
+            </a>
+            <a
               href="#solutions"
               style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', transition: 'color .3s' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
@@ -474,6 +482,9 @@ export default function HomePage() {
                 boxShadow: '0 12px 30px rgba(0,0,0,.3)',
               }}
             >
+              <a href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
+                Home
+              </a>
               <a href="#solutions" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
                 Solutions
               </a>
@@ -536,6 +547,9 @@ export default function HomePage() {
             </a>
 
             <div id="hero-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
+              <a href="/" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
+                Home
+              </a>
               <a href="#solutions" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
                 Solutions
               </a>
@@ -771,6 +785,9 @@ export default function HomePage() {
                   zIndex: 40,
                 }}
               >
+                <a href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
+                  Home
+                </a>
                 <a href="#solutions" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
                   Solutions
                 </a>

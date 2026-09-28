@@ -151,6 +151,9 @@ export default function D2CMarketplaceFulfillmentPage() {
             </Link>
 
             <div id="hero-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
+              <Link href="/" style={{ fontSize: '15px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
+                Home
+              </Link>
               <Link href="/#solutions" style={{ fontSize: '15px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .2s', whiteSpace: 'nowrap' }}>
                 Solutions
               </Link>

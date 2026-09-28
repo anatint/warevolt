@@ -129,6 +129,9 @@ export default function PlatformPage() {
           </Link>
 
           <div id="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>
+            <Link href="/" style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', transition: 'color .3s' }}>
+              Home
+            </Link>
             <Link href="/#solutions" style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .3s' }}>
               Solutions
             </Link>
@@ -191,6 +194,9 @@ export default function PlatformPage() {
             </Link>
 
             <div id="ph-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
+              <Link href="/" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
+                Home
+              </Link>
               <Link href="/#solutions" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .2s', whiteSpace: 'nowrap' }}>
                 Solutions
               </Link>
