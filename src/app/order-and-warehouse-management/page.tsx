@@ -106,15 +106,15 @@ export default function OrderAndWarehouseManagementPage() {
   return (
     <div style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif", color: '#1C1030', background: '#fff', overflowX: 'hidden' }}>
       {/* ══ HERO SECTION ══ */}
-      <section id="hero-section" style={{ position: 'relative', overflowX: 'hidden', background: 'linear-gradient(160deg,#0B0619 0%,#1E1240 60%,#0B0619 100%)' }}>
+      <section id="hero-section" style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg,#0B0619 0%,#1E1240 60%,#0B0619 100%)' }}>
         <div style={{ position: 'absolute', top: '-160px', right: '-120px', width: '480px', height: '480px', background: 'radial-gradient(circle,rgba(123,91,251,.28) 0%,transparent 70%)', pointerEvents: 'none' }}></div>
         <div style={{ position: 'absolute', bottom: '-180px', left: '-100px', width: '420px', height: '420px', background: 'radial-gradient(circle,rgba(77,13,217,.24) 0%,transparent 70%)', pointerEvents: 'none' }}></div>
 
         {/* Hero Nav */}
         <div style={{ position: 'relative', zIndex: 30, padding: '0 clamp(20px,5%,80px)' }}>
-          <nav style={{ height: '110px', maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '40px' }}>
+          <nav style={{ height: '80px', maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '40px' }}>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-              <img src="/assets/warevolt-logo-white.png" alt="Warevolt" style={{ height: '140px', width: 'auto', objectFit: 'contain', display: 'block' }} />
+              <img src="/assets/warevolt-logo-white.png" alt="Warevolt" style={{ height: '48px', width: 'auto', objectFit: 'contain', display: 'block' }} />
             </Link>
 
             <div id="hero-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
