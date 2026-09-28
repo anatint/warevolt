@@ -137,13 +137,11 @@ export default function D2CMarketplaceFulfillmentPage() {
         style={{
           position: 'relative',
           overflow: 'hidden',
-          background: 'linear-gradient(120deg,#0B0619 0%,#251157 30%,#0B0619 55%,#3A1A8F 80%,#0B0619 100%)',
-          backgroundSize: '300% 300%',
-          animation: 'cta-gradient 10s ease-in-out infinite',
+          background: 'linear-gradient(120deg,#0B0619 0%,#251157 40%,#160A38 70%,#0B0619 100%)',
         }}
       >
-        <div style={{ position: 'absolute', top: '-100px', left: '-6%', width: '420px', height: '420px', background: 'radial-gradient(circle,rgba(77,13,217,.32) 0%,transparent 65%)', pointerEvents: 'none', animation: 'glow-drift-a 8s ease-in-out infinite' }}></div>
-        <div style={{ position: 'absolute', bottom: '-140px', right: '-6%', width: '460px', height: '460px', background: 'radial-gradient(circle,rgba(124,91,251,.28) 0%,transparent 65%)', pointerEvents: 'none', animation: 'glow-drift-b 9s ease-in-out infinite' }}></div>
+        <div style={{ position: 'absolute', top: '-100px', left: '-6%', width: '420px', height: '420px', background: 'radial-gradient(circle,rgba(77,13,217,.32) 0%,transparent 65%)', pointerEvents: 'none' }}></div>
+        <div style={{ position: 'absolute', bottom: '-140px', right: '-6%', width: '460px', height: '460px', background: 'radial-gradient(circle,rgba(124,91,251,.28) 0%,transparent 65%)', pointerEvents: 'none' }}></div>
 
         {/* Main hero nav */}
         <div style={{ position: 'relative', zIndex: 30, padding: '0 clamp(20px,5%,80px)' }}>
@@ -318,16 +316,16 @@ export default function D2CMarketplaceFulfillmentPage() {
         <div style={{ position: 'relative', zIndex: 10, padding: '48px clamp(20px,5%,80px) 44px' }}>
           <div id="d2c-hero-grid" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '48px', alignItems: 'center' }}>
             <div>
-              <div data-animate style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', marginBottom: '16px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', marginBottom: '16px' }}>
                 Solutions / D2C &amp; Marketplace Fulfillment
               </div>
-              <h1 data-animate data-delay="60" style={{ fontSize: 'clamp(32px,3.8vw,52px)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '20px' }}>
+              <h1 style={{ fontSize: 'clamp(32px,3.8vw,52px)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '20px' }}>
                 One fulfillment solution for your online store and every major marketplace.
               </h1>
-              <p data-animate data-delay="120" style={{ fontSize: '17px', color: 'rgba(255,255,255,.82)', lineHeight: 1.7, maxWidth: '720px', marginBottom: '28px' }}>
+              <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.82)', lineHeight: 1.7, maxWidth: '720px', marginBottom: '28px' }}>
                 Manage inventory, automate order fulfillment, and ship nationwide through a single platform built for modern e-commerce.
               </p>
-              <div data-animate data-delay="180" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
                   onClick={() => setPricingOpen(true)}
                   style={{ background: '#4D0DD9', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '15px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
@@ -342,7 +340,7 @@ export default function D2CMarketplaceFulfillmentPage() {
                 </button>
               </div>
             </div>
-            <div data-animate data-delay="80" style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
               <img src="/uploads/D2C_MarketPlace_v4.png" alt="D2C and marketplace platforms illustration" style={{ width: '100%', maxWidth: '530px', height: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
