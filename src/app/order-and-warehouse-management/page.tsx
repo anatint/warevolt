@@ -111,6 +111,10 @@ export default function OrderAndWarehouseManagementPage() {
         style={{
           position: 'relative',
           overflow: 'hidden',
+          minHeight: '560px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
           background: 'linear-gradient(120deg,#0B0619 0%,#251157 40%,#160A38 70%,#0B0619 100%)',
         }}
       >
@@ -369,13 +373,13 @@ export default function OrderAndWarehouseManagementPage() {
                 </button>
               </div>
             </div>
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '260px' }}>
-              <div style={{ position: 'absolute', width: '80%', height: '80%', background: 'radial-gradient(circle,rgba(139,107,255,.28) 0%,transparent 70%)', filter: 'blur(10px)' }}></div>
-              <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{ width: '110px', height: '40px', background: 'linear-gradient(135deg,#A78BFA,#7B5BFB)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 35px rgba(167,139,250,.55)', marginBottom: '-13px' }}></div>
-                <div style={{ width: '165px', height: '40px', background: 'linear-gradient(135deg,#8B5CF6,#4D0DD9)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 45px rgba(139,92,246,.5)', marginBottom: '-13px' }}></div>
-                <div style={{ width: '215px', height: '40px', background: 'linear-gradient(135deg,#7B5BFB,#3A0FD9)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 50px rgba(123,91,251,.45)', marginBottom: '-13px' }}></div>
-                <div style={{ width: '255px', height: '40px', background: 'linear-gradient(135deg,#6D28D9,#2E0B8F)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 50px rgba(109,40,217,.4)' }}></div>
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '360px' }}>
+              <div style={{ position: 'absolute', width: '90%', height: '90%', background: 'radial-gradient(circle,rgba(139,107,255,.32) 0%,transparent 70%)', filter: 'blur(16px)' }}></div>
+              <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'scale(1.2)' }}>
+                <div style={{ width: '130px', height: '46px', background: 'linear-gradient(135deg,#A78BFA,#7B5BFB)', borderRadius: '10px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 35px rgba(167,139,250,.55)', marginBottom: '-15px' }}></div>
+                <div style={{ width: '190px', height: '46px', background: 'linear-gradient(135deg,#8B5CF6,#4D0DD9)', borderRadius: '10px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 45px rgba(139,92,246,.5)', marginBottom: '-15px' }}></div>
+                <div style={{ width: '250px', height: '46px', background: 'linear-gradient(135deg,#7B5BFB,#3A0FD9)', borderRadius: '10px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 50px rgba(123,91,251,.45)', marginBottom: '-15px' }}></div>
+                <div style={{ width: '295px', height: '46px', background: 'linear-gradient(135deg,#6D28D9,#2E0B8F)', borderRadius: '10px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 50px rgba(109,40,217,.4)' }}></div>
               </div>
             </div>
           </div>
