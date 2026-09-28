@@ -315,35 +315,35 @@ export default function D2CMarketplaceFulfillmentPage() {
         </div>
 
         {/* Hero Body */}
-        <div style={{ position: 'relative', zIndex: 10, padding: '28px clamp(20px,5%,80px) 40px' }}>
-          <div id="d2c-hero-grid" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '36px', alignItems: 'center' }}>
+        <div style={{ position: 'relative', zIndex: 10, padding: '8px clamp(20px,5%,80px) 20px' }}>
+          <div id="d2c-hero-grid" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '32px', alignItems: 'center' }}>
             <div>
-              <div data-animate style={{ fontSize: '12.5px', fontWeight: 600, color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', marginBottom: '10px' }}>
+              <div data-animate style={{ fontSize: '12.5px', fontWeight: 600, color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', marginBottom: '6px' }}>
                 Solutions / D2C &amp; Marketplace Fulfillment
               </div>
-              <h1 data-animate data-delay="60" style={{ fontSize: 'clamp(28px,3.4vw,44px)', fontWeight: 800, lineHeight: 1.14, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '14px' }}>
+              <h1 data-animate data-delay="60" style={{ fontSize: 'clamp(26px,3.2vw,40px)', fontWeight: 800, lineHeight: 1.14, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '10px' }}>
                 One fulfillment solution for your online store and every major marketplace.
               </h1>
-              <p data-animate data-delay="120" style={{ fontSize: '16px', color: 'rgba(255,255,255,.82)', lineHeight: 1.6, maxWidth: '720px', marginBottom: '22px' }}>
+              <p data-animate data-delay="120" style={{ fontSize: '15.5px', color: 'rgba(255,255,255,.82)', lineHeight: 1.55, maxWidth: '720px', marginBottom: '18px' }}>
                 Manage inventory, automate order fulfillment, and ship nationwide through a single platform built for modern e-commerce.
               </p>
-              <div data-animate data-delay="180" style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+              <div data-animate data-delay="180" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                 <button
                   onClick={() => setPricingOpen(true)}
-                  style={{ background: '#4D0DD9', color: '#fff', padding: '13px 28px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
+                  style={{ background: '#4D0DD9', color: '#fff', padding: '11px 24px', borderRadius: '12px', fontSize: '14px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
                   Get a Quote
                 </button>
                 <button
                   onClick={() => setPricingOpen(true)}
-                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '13px 28px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
+                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '11px 24px', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
                   Speak to an expert
                 </button>
               </div>
             </div>
             <div data-animate data-delay="80" style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src="/uploads/D2C_MarketPlace_v4.png" alt="D2C and marketplace platforms illustration" style={{ width: '100%', maxWidth: '420px', height: 'auto', objectFit: 'contain' }} />
+              <img src="/uploads/D2C_MarketPlace_v4.png" alt="D2C and marketplace platforms illustration" style={{ width: '100%', maxWidth: '380px', height: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
         </div>
