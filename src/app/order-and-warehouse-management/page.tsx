@@ -40,33 +40,6 @@ export default function OrderAndWarehouseManagementPage() {
   ];
 
   useEffect(() => {
-    // ── Floating Navbar scroll handling ──
-    const nav = document.getElementById('wv-nav');
-    const heroSection = document.getElementById('hero-section');
-    let lastScrollY = window.scrollY;
-
-    const onScroll = () => {
-      if (!nav) return;
-      const y = window.scrollY;
-      const pastHero = heroSection ? heroSection.getBoundingClientRect().bottom < 0 : y > 80;
-      const scrollingUp = y < lastScrollY;
-      lastScrollY = y;
-
-      if (pastHero && scrollingUp) {
-        nav.style.transform = 'translateY(0)';
-        nav.style.opacity = '1';
-        nav.style.background = 'rgba(11,6,25,0.95)';
-        nav.style.backdropFilter = 'blur(20px)';
-        (nav.style as any).webkitBackdropFilter = 'blur(20px)';
-        nav.style.boxShadow = '0 1px 0 rgba(255,255,255,0.08)';
-      } else {
-        nav.style.transform = 'translateY(-100%)';
-        nav.style.opacity = '0';
-      }
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-
     // ── Fade-up on scroll ──
     const fadeObserver = new IntersectionObserver(
       (entries) => {
@@ -121,7 +94,6 @@ export default function OrderAndWarehouseManagementPage() {
     const t2 = setTimeout(fitMcRow, 500);
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', fitMcRow);
       clearTimeout(t1);
       clearTimeout(t2);
@@ -597,13 +569,13 @@ export default function OrderAndWarehouseManagementPage() {
                 Today&apos;s commerce landscape moves faster and operates across more channels than ever before.
               </p>
             </div>
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '220px' }}>
-              <div style={{ position: 'absolute', width: '80%', height: '80%', background: 'radial-gradient(circle,rgba(139,107,255,.35) 0%,transparent 70%)', filter: 'blur(10px)' }}></div>
-              <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', animation: 'float-a 6s ease-in-out infinite' }}>
-                <div style={{ width: '100px', height: '38px', background: 'linear-gradient(135deg,#A78BFA,#7B5BFB)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 35px rgba(167,139,250,.6)', marginBottom: '-12px' }}></div>
-                <div style={{ width: '150px', height: '38px', background: 'linear-gradient(135deg,#8B5CF6,#4D0DD9)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 45px rgba(139,92,246,.55)', marginBottom: '-12px' }}></div>
-                <div style={{ width: '195px', height: '38px', background: 'linear-gradient(135deg,#7B5BFB,#3A0FD9)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 50px rgba(123,91,251,.5)', marginBottom: '-12px' }}></div>
-                <div style={{ width: '235px', height: '38px', background: 'linear-gradient(135deg,#6D28D9,#2E0B8F)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 50px rgba(109,40,217,.45)' }}></div>
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '200px' }}>
+              <div style={{ position: 'absolute', width: '80%', height: '80%', background: 'radial-gradient(circle,rgba(139,107,255,.25) 0%,transparent 70%)', filter: 'blur(10px)' }}></div>
+              <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ width: '100px', height: '36px', background: 'linear-gradient(135deg,#A78BFA,#7B5BFB)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 30px rgba(167,139,250,.5)', marginBottom: '-12px' }}></div>
+                <div style={{ width: '150px', height: '36px', background: 'linear-gradient(135deg,#8B5CF6,#4D0DD9)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 40px rgba(139,92,246,.45)', marginBottom: '-12px' }}></div>
+                <div style={{ width: '195px', height: '36px', background: 'linear-gradient(135deg,#7B5BFB,#3A0FD9)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 45px rgba(123,91,251,.4)', marginBottom: '-12px' }}></div>
+                <div style={{ width: '235px', height: '36px', background: 'linear-gradient(135deg,#6D28D9,#2E0B8F)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 45px rgba(109,40,217,.35)' }}></div>
               </div>
             </div>
           </div>
