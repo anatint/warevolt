@@ -335,26 +335,26 @@ export default function OrderAndWarehouseManagementPage() {
         </div>
 
         {/* Hero Body */}
-        <div id="hero-body" style={{ position: 'relative', zIndex: 10, padding: '12px clamp(20px,5%,80px) 20px' }}>
-          <div id="hero-grid" style={{ maxWidth: '1440px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '32px', alignItems: 'center' }}>
+        <div id="hero-body" style={{ position: 'relative', zIndex: 10, padding: '54px clamp(20px,5%,80px) 72px' }}>
+          <div id="hero-grid" style={{ maxWidth: '1440px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '36px', alignItems: 'center' }}>
             <div>
-              <span style={{ display: 'inline-block', fontSize: '12.5px', fontWeight: 800, letterSpacing: '.08em', color: '#A78BFA', marginBottom: '8px', textTransform: 'uppercase' }}>
+              <span style={{ display: 'inline-block', fontSize: '13px', fontWeight: 800, letterSpacing: '.08em', color: '#A78BFA', marginBottom: '14px', textTransform: 'uppercase' }}>
                 The Warevolt Platform
               </span>
-              <h1 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-.03em', color: '#fff', marginBottom: '10px', maxWidth: '820px' }}>
+              <h1 style={{ fontSize: 'clamp(34px, 4.2vw, 58px)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-.03em', color: '#fff', marginBottom: '18px', maxWidth: '820px' }}>
                 Order Management
               </h1>
-              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,.75)', lineHeight: 1.55, maxWidth: '680px' }}>
+              <p style={{ fontSize: '17.5px', color: 'rgba(255,255,255,.75)', lineHeight: 1.7, maxWidth: '680px' }}>
                 Today&apos;s commerce landscape moves faster and operates across more channels than ever before.
               </p>
             </div>
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '160px' }}>
-              <div style={{ position: 'absolute', width: '80%', height: '80%', background: 'radial-gradient(circle,rgba(139,107,255,.25) 0%,transparent 70%)', filter: 'blur(10px)' }}></div>
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '260px' }}>
+              <div style={{ position: 'absolute', width: '80%', height: '80%', background: 'radial-gradient(circle,rgba(139,107,255,.28) 0%,transparent 70%)', filter: 'blur(10px)' }}></div>
               <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{ width: '100px', height: '34px', background: 'linear-gradient(135deg,#A78BFA,#7B5BFB)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 30px rgba(167,139,250,.5)', marginBottom: '-12px' }}></div>
-                <div style={{ width: '150px', height: '34px', background: 'linear-gradient(135deg,#8B5CF6,#4D0DD9)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 40px rgba(139,92,246,.45)', marginBottom: '-12px' }}></div>
-                <div style={{ width: '195px', height: '34px', background: 'linear-gradient(135deg,#7B5BFB,#3A0FD9)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 45px rgba(123,91,251,.4)', marginBottom: '-12px' }}></div>
-                <div style={{ width: '235px', height: '34px', background: 'linear-gradient(135deg,#6D28D9,#2E0B8F)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 45px rgba(109,40,217,.35)' }}></div>
+                <div style={{ width: '110px', height: '40px', background: 'linear-gradient(135deg,#A78BFA,#7B5BFB)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 35px rgba(167,139,250,.55)', marginBottom: '-13px' }}></div>
+                <div style={{ width: '165px', height: '40px', background: 'linear-gradient(135deg,#8B5CF6,#4D0DD9)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 45px rgba(139,92,246,.5)', marginBottom: '-13px' }}></div>
+                <div style={{ width: '215px', height: '40px', background: 'linear-gradient(135deg,#7B5BFB,#3A0FD9)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 50px rgba(123,91,251,.45)', marginBottom: '-13px' }}></div>
+                <div style={{ width: '255px', height: '40px', background: 'linear-gradient(135deg,#6D28D9,#2E0B8F)', borderRadius: '8px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 50px rgba(109,40,217,.4)' }}></div>
               </div>
             </div>
           </div>
