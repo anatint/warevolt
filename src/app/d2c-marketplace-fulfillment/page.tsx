@@ -6,7 +6,9 @@ import PricingModal, { PricingFormData } from '@/components/PricingModal';
 
 export default function D2CMarketplaceFulfillmentPage() {
   const [pricingOpen, setPricingOpen] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [heroMobileOpen, setHeroMobileOpen] = useState(false);
+  const [techMenuOpen, setTechMenuOpen] = useState(false);
   const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
 
   const techMegaMenu = [
@@ -87,6 +89,32 @@ export default function D2CMarketplaceFulfillmentPage() {
   ];
 
   useEffect(() => {
+    const nav = document.getElementById('wv-nav');
+    const heroSection = document.getElementById('hero-section');
+    let lastScrollY = window.scrollY;
+
+    const onScroll = () => {
+      if (!nav) return;
+      const y = window.scrollY;
+      const pastHero = heroSection ? heroSection.getBoundingClientRect().bottom < 0 : y > 80;
+      const scrollingUp = y < lastScrollY;
+      lastScrollY = y;
+
+      if (pastHero && scrollingUp) {
+        nav.style.transform = 'translateY(0)';
+        nav.style.opacity = '1';
+        nav.style.background = 'rgba(11,6,25,0.95)';
+        nav.style.backdropFilter = 'blur(20px)';
+        (nav.style as any).webkitBackdropFilter = 'blur(20px)';
+        nav.style.boxShadow = '0 1px 0 rgba(255,255,255,0.08)';
+      } else {
+        nav.style.transform = 'translateY(-100%)';
+        nav.style.opacity = '0';
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
     const fadeObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -121,6 +149,7 @@ export default function D2CMarketplaceFulfillmentPage() {
     });
 
     return () => {
+      window.removeEventListener('scroll', onScroll);
       fadeObserver.disconnect();
     };
   }, []);
@@ -131,12 +160,189 @@ export default function D2CMarketplaceFulfillmentPage() {
 
   return (
     <div style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif", color: '#1C1030', background: '#fff', overflowX: 'hidden' }}>
+      {/* ══ FIXED SCROLL NAV ══ */}
+      <nav
+        id="wv-nav"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1000,
+          height: '104px',
+          transition: 'background .35s, box-shadow .35s, transform .4s, opacity .4s',
+          transform: 'translateY(-100%)',
+          opacity: 0,
+          padding: '0 clamp(20px, 5%, 80px)',
+        }}
+      >
+        <div style={{ maxWidth: '1440px', margin: '0 auto', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
+            <img src="/assets/warevolt-logo-transparent.png" alt="Warevolt" style={{ height: '120px', width: 'auto', objectFit: 'contain', display: 'block' }} />
+          </Link>
+
+          <div id="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>
+            <Link href="/#solutions" style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .3s' }}>
+              Solutions
+            </Link>
+
+            <div
+              id="tech-menu-wrap"
+              style={{ position: 'relative', padding: '8px 0' }}
+              onMouseEnter={() => setTechMenuOpen(true)}
+              onMouseLeave={() => setTechMenuOpen(false)}
+            >
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setTechMenuOpen(!techMenuOpen);
+                }}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                  fontSize: '14.5px',
+                  fontWeight: 500,
+                  color: techMenuOpen ? '#fff' : 'rgba(255,255,255,.85)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  transition: 'color .3s',
+                }}
+              >
+                Technology{' '}
+                <svg
+                  width="14"
+                  height="9"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  style={{
+                    opacity: 0.75,
+                    transform: techMenuOpen ? 'rotate(180deg)' : 'none',
+                    transition: 'transform .2s ease',
+                  }}
+                >
+                  <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              {techMenuOpen && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '100%',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    paddingTop: '8px',
+                    zIndex: 200,
+                  }}
+                >
+                  <div
+                    id="tech-mega-menu"
+                    style={{
+                      background: '#fff',
+                      borderRadius: '16px',
+                      boxShadow: '0 24px 60px rgba(20,10,40,.25)',
+                      padding: '24px 28px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '4px',
+                      minWidth: '340px',
+                    }}
+                  >
+                    {techMegaMenu.map((item, idx) => (
+                      <Link
+                        key={idx}
+                        href={item.href}
+                        onClick={() => setTechMenuOpen(false)}
+                        style={{
+                          display: 'block',
+                          textDecoration: 'none',
+                          padding: '10px 14px',
+                          borderRadius: '8px',
+                          borderLeft: '3px solid transparent',
+                          transition: 'background .2s, border-color .2s, transform .2s',
+                        }}
+                        className="hover:bg-[#F5F3FC] hover:border-l-[#4D0DD9] hover:translate-x-1"
+                      >
+                        <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', whiteSpace: 'nowrap', marginBottom: '3px' }}>{item.label}</div>
+                        <div style={{ fontSize: '12px', color: '#6B6480', lineHeight: 1.4 }}>{item.desc}</div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <Link href="/#industries" style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .3s' }}>
+              Sectors{' '}
+              <svg width="14" height="9" viewBox="0 0 10 6" fill="none" style={{ opacity: 0.75 }}>
+                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+            <button
+              onClick={() => setPricingOpen(true)}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', transition: 'color .3s', padding: 0 }}
+            >
+              Pricing
+            </button>
+            <Link href="/#projects" style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', transition: 'color .3s' }}>
+              Track
+            </Link>
+          </div>
+
+          <div id="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
+            <a href="tel:+919876543210" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(255,255,255,.85)', textDecoration: 'none', fontSize: '14px', fontWeight: 400, whiteSpace: 'nowrap', transition: 'color .2s' }}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.16 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.19 6.19l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z" stroke="currentColor" strokeWidth="1.6" />
+              </svg>
+              +91 98765 43210
+            </a>
+            <button
+              onClick={() => setPricingOpen(true)}
+              style={{
+                background: '#4D0DD9',
+                color: '#fff',
+                padding: '11px 24px',
+                borderRadius: '12px',
+                fontSize: '14px',
+                fontWeight: 600,
+                border: 'none',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'background .2s, transform .2s',
+              }}
+            >
+              Get a Quote{' '}
+              <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
+                <path d="M1 1l5 5-5 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <button
+            onClick={() => setMobileNavOpen(!mobileNavOpen)}
+            id="nav-hamburger"
+            style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', width: '40px', height: '40px', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
       {/* ══ HERO SECTION ══ */}
       <section
         id="hero-section"
         style={{
           position: 'relative',
-          overflow: 'hidden',
+          overflowX: 'hidden',
           background: 'linear-gradient(120deg,#0B0619 0%,#251157 30%,#0B0619 55%,#3A1A8F 80%,#0B0619 100%)',
           backgroundSize: '300% 300%',
           animation: 'cta-gradient 10s ease-in-out infinite',
@@ -149,7 +355,7 @@ export default function D2CMarketplaceFulfillmentPage() {
         <div style={{ position: 'relative', zIndex: 30, padding: '0 clamp(20px,5%,80px)' }}>
           <nav style={{ height: '110px', maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '40px' }}>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-              <img id="hero-logo" src="/assets/warevolt-logo-white.png" alt="Warevolt" style={{ height: '140px', width: 'auto', objectFit: 'contain', display: 'block' }} />
+              <img src="/assets/warevolt-logo-white.png" alt="Warevolt" style={{ height: '140px', width: 'auto', objectFit: 'contain', display: 'block' }} />
             </Link>
 
             <div id="hero-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
@@ -315,35 +521,35 @@ export default function D2CMarketplaceFulfillmentPage() {
         </div>
 
         {/* Hero Body */}
-        <div style={{ position: 'relative', zIndex: 10, padding: '8px clamp(20px,5%,80px) 20px' }}>
-          <div id="d2c-hero-grid" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '32px', alignItems: 'center' }}>
+        <div style={{ position: 'relative', zIndex: 10, padding: '60px clamp(20px,5%,80px) 90px' }}>
+          <div id="d2c-hero-grid" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '48px', alignItems: 'center' }}>
             <div>
-              <div data-animate style={{ fontSize: '12.5px', fontWeight: 600, color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', marginBottom: '6px' }}>
+              <div data-animate style={{ fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', marginBottom: '20px' }}>
                 Solutions / D2C &amp; Marketplace Fulfillment
               </div>
-              <h1 data-animate data-delay="60" style={{ fontSize: 'clamp(26px,3.2vw,40px)', fontWeight: 800, lineHeight: 1.14, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '10px' }}>
+              <h1 data-animate data-delay="60" style={{ fontSize: 'clamp(32px,4vw,54px)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '24px' }}>
                 One fulfillment solution for your online store and every major marketplace.
               </h1>
-              <p data-animate data-delay="120" style={{ fontSize: '15.5px', color: 'rgba(255,255,255,.82)', lineHeight: 1.55, maxWidth: '720px', marginBottom: '18px' }}>
+              <p data-animate data-delay="120" style={{ fontSize: '17.5px', color: 'rgba(255,255,255,.82)', lineHeight: 1.75, maxWidth: '720px', marginBottom: '36px' }}>
                 Manage inventory, automate order fulfillment, and ship nationwide through a single platform built for modern e-commerce.
               </p>
-              <div data-animate data-delay="180" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <div data-animate data-delay="180" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
                   onClick={() => setPricingOpen(true)}
-                  style={{ background: '#4D0DD9', color: '#fff', padding: '11px 24px', borderRadius: '12px', fontSize: '14px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
+                  style={{ background: '#4D0DD9', color: '#fff', padding: '16px 32px', borderRadius: '12px', fontSize: '15px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
                   Get a Quote
                 </button>
                 <button
                   onClick={() => setPricingOpen(true)}
-                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '11px 24px', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
+                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '16px 32px', borderRadius: '12px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
                   Speak to an expert
                 </button>
               </div>
             </div>
             <div data-animate data-delay="80" style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src="/uploads/D2C_MarketPlace_v4.png" alt="D2C and marketplace platforms illustration" style={{ width: '100%', maxWidth: '380px', height: 'auto', objectFit: 'contain' }} />
+              <img src="/uploads/D2C_MarketPlace_v4.png" alt="D2C and marketplace platforms illustration" style={{ width: '100%', maxWidth: '480px', height: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
         </div>
