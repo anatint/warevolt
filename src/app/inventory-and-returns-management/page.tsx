@@ -421,10 +421,10 @@ export default function InventoryAndReturnsManagementPage() {
               </h2>
               <div style={{ width: '44px', height: '3px', background: '#4D0DD9', marginBottom: '22px' }}></div>
               <p data-animate data-delay="60" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '16px' }}>
-                Managing inventory across multiple warehouses, retail storefronts, and marketplace nodes shouldn&apos;t mean blind spots or manual reconciliations. WareVolt Scale™ tracks every SKU in real time from factory receipt to final delivery.
+                Inventory is the foundation of efficient fulfilment. WareVolt Scale™ provides a single, real-time view of every SKU across your entire warehouse network, ensuring accurate stock levels, faster fulfilment, and complete inventory confidence.
               </p>
               <p data-animate data-delay="100" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: 0 }}>
-                With automated safety stock calculations, low-inventory alerts, and dynamic available-to-promise allocation, you can confidently scale order volume across multiple channels without risking stockouts or overselling.
+                From receiving and put-away to picking, dispatch, and returns, every inventory movement is automatically synchronised in real time. Keep inventory aligned across every connected sales channel, eliminate overselling, optimize replenishment, and make faster, data-driven inventory decisions.
               </p>
             </div>
 
