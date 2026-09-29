@@ -381,7 +381,7 @@ export default function InventoryAndReturnsManagementPage() {
                 Inventory &amp; Returns Management
               </h1>
               <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.86)', lineHeight: 1.68, maxWidth: '740px', marginBottom: '32px' }}>
-                Total control over stock levels, multi-node movements, and end-to-end reverse logistics. Eliminate stockouts, accelerate return turnaround, and preserve gross margins with WareVolt Scale™.
+                WareVolt Scale™ brings order, inventory, warehouse, shipping, and returns data into a single operational view — giving leadership the metrics to run the business proactively, not reactively.
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
