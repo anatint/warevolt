@@ -23,8 +23,8 @@ export default function HomePage() {
 
   const techMegaMenu = [
     { label: 'Order & Warehouse Management', desc: 'From order to dispatch, every fulfillment workflow connected.', href: '/order-and-warehouse-management' },
-    { label: 'Inventory & Returns Management', desc: 'Complete control of stock, movements, and returns across your network.', href: '/order-and-warehouse-management' },
-    { label: 'Analytics & Reporting', desc: 'Turn fulfillment data into clear, actionable insights.', href: '/platform' },
+    { label: 'Inventory & Returns Management', desc: 'Complete control of stock, movements, and returns across your network.', href: '/inventory-and-returns-management' },
+    { label: 'Analytics & Reporting', desc: 'Turn fulfillment data into clear, actionable insights.', href: '/analytics-and-reporting' },
   ];
 
   const testimonialsData = [
@@ -1730,9 +1730,9 @@ export default function HomePage() {
               <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>Solutions</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <a href="/order-and-warehouse-management" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Order &amp; Warehouse Management</a>
-                <a href="/order-and-warehouse-management" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Inventory &amp; Returns Management</a>
                 <a href="/d2c-marketplace-fulfillment" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>D2C &amp; Marketplace Fulfillment</a>
-                <a href="/platform" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Analytics &amp; Reporting</a>
+                <a href="/inventory-and-returns-management" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Inventory &amp; Returns Management</a>
+                <a href="/analytics-and-reporting" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Analytics &amp; Reporting</a>
               </div>
             </div>
 

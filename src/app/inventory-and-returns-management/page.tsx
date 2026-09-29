@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
 
-export default function OrderAndWarehouseManagementPage() {
+export default function InventoryAndReturnsManagementPage() {
   const [pricingOpen, setPricingOpen] = useState(false);
   const [heroMobileOpen, setHeroMobileOpen] = useState(false);
   const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
@@ -15,26 +15,26 @@ export default function OrderAndWarehouseManagementPage() {
     { label: 'Analytics & Reporting', desc: 'Turn fulfillment data into clear, actionable insights.', href: '/analytics-and-reporting' },
   ];
 
-  const orderCapabilities = [
-    { title: 'Unified Order Dashboard', desc: 'Manage orders from every sales channel through a single operational view.' },
-    { title: 'Multi-Channel Synchronization', desc: 'Automatically synchronize orders across your entire commerce ecosystem in real time.' },
-    { title: 'Live Order Tracking', desc: 'Monitor every stage from order confirmation to picking, packing, shipping, and delivery.' },
-    { title: 'Intelligent Order Prioritization', desc: 'Automatically prioritise orders using configurable business rules and SLA targets.' },
-    { title: 'Bulk Processing & Automation', desc: 'Process thousands of orders with batch actions and automated workflows.' },
-    { title: 'Split & Partial Fulfilment', desc: 'Support split shipments, partial fulfilments, and multi-location order routing.' },
-    { title: 'B2B & Wholesale Workflows', desc: 'Configure dedicated fulfilment rules for wholesale, retail, and enterprise customers.' },
-    { title: 'Order Search & Audit History', desc: 'Quickly locate orders, access complete audit trails, and generate packing slips and shipping documents instantly.' },
+  const inventoryCapabilities = [
+    { title: 'Real-Time Multi-Node Sync', desc: 'Synchronize available-to-promise inventory instantly across Shopify, marketplaces, and physical warehouse nodes.' },
+    { title: 'Intelligent Stock Allocation', desc: 'Dynamically route orders to the closest fulfillment facility with available stock to cut shipping zones and transit times.' },
+    { title: 'Batch, Lot & Serial Tracking', desc: 'Maintain complete traceability for serialized goods, production batches, manufacturing dates, and strict expiry windows.' },
+    { title: 'Predictive Reorder Alerts', desc: 'Automated replenishment recommendations based on SKU velocity forecasts, historical trends, and supplier lead times.' },
+    { title: 'Rolling Cycle Counting', desc: 'Perform scheduled and continuous cycle counts across aisles and bins without interrupting active dispatch operations.' },
+    { title: 'Safety Stock & Buffer Rules', desc: 'Guard against sudden volume spikes and stockouts with configurable buffer margins and channel-specific reservation rules.' },
+    { title: 'Kitting, Bundling & Assemblies', desc: 'Easily assemble and disassemble multi-item kits, gift packs, and promos with automatic child-SKU inventory deduction.' },
+    { title: 'Comprehensive Audit Trails', desc: 'Granular movement history tracking every inbound receiving, bin transfer, pick, write-off, and cycle adjustment.' },
   ];
 
-  const warehouseCapabilities = [
-    { num: '01', title: 'Structured Goods Receiving', desc: 'Streamline inbound verification, discrepancy logging, and dock-to-stock processing.' },
-    { num: '02', title: 'Put-Away Optimisation', desc: 'Guide inventory to the most efficient storage locations using configurable put-away rules.' },
-    { num: '03', title: 'Bin & Location Management', desc: 'Manage inventory across warehouses, zones, aisles, racks, shelves, and bins with complete visibility.' },
-    { num: '04', title: 'Optimised Picking Workflows', desc: 'Accelerate fulfilment with single, batch, wave, cluster, and zone picking strategies.' },
-    { num: '05', title: 'Barcode-Verified Packing', desc: 'Validate every item before dispatch to improve fulfilment accuracy.' },
-    { num: '06', title: 'Dispatch Management', desc: 'Coordinate staging, loading, and carrier handovers with complete operational visibility.' },
-    { num: '07', title: 'Cycle Counting & Stock Adjustments', desc: 'Maintain inventory accuracy through continuous stock verification and reconciliation.' },
-    { num: '08', title: 'Mobile Warehouse Operations', desc: 'Execute warehouse tasks seamlessly using handheld barcode scanners and mobile devices.' },
+  const returnsCapabilities = [
+    { num: '01', title: 'Omnichannel Return Ingestion', desc: 'Centralize customer returns originating from brand webstores, Amazon, Flipkart, Myntra, and retail channels.' },
+    { num: '02', title: 'Dockside Barcode Verification', desc: 'Rapid scan verification upon receiving to validate RMA numbers, item validity, and customer return reasons.' },
+    { num: '03', title: 'Standardized Quality Grading', desc: 'SOP-guided inspection workflows that categorize items into Grade-A (restock), Grade-B (discount/liquidation), or RTV.' },
+    { num: '04', title: 'Rapid Return-to-Shelf Cycles', desc: 'Verified Grade-A merchandise is immediately restocked and relisted across all channels to preserve revenue.' },
+    { num: '05', title: 'Repackaging & Refurbishment', desc: 'Value-added services including re-tagging, polybag replacement, barcode re-labeling, and accessory checks.' },
+    { num: '06', title: 'Automated Refund & Exchange Triggers', desc: 'Instant API webhooks to your commerce platform upon QC approval for rapid customer refund settlement.' },
+    { num: '07', title: 'NDR & RTO Mitigation Workflows', desc: 'Real-time non-delivery tracking and proactive address validation to prevent return-to-origin incidents before they occur.' },
+    { num: '08', title: 'Claims & Damage Documentation', desc: 'High-definition photo capture and digital dispute records for carrier transit damage and marketplace reimbursement claims.' },
   ];
 
   useEffect(() => {
@@ -100,7 +100,7 @@ export default function OrderAndWarehouseManagementPage() {
   }, []);
 
   const handlePricingSubmit = (data: PricingFormData) => {
-    console.log('Pricing lead received from Order & Warehouse Management:', data);
+    console.log('Pricing lead received from Inventory & Returns Management:', data);
   };
 
   return (
@@ -378,13 +378,13 @@ export default function OrderAndWarehouseManagementPage() {
           <div id="hero-grid" style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '52px', alignItems: 'center' }}>
             <div>
               <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'rgba(255,255,255,.68)', letterSpacing: '.04em', marginBottom: '14px' }}>
-                Solutions / Order &amp; Warehouse Management
+                Solutions / Inventory &amp; Returns Management
               </div>
               <h1 style={{ fontSize: 'clamp(34px,3.8vw,52px)', fontWeight: 800, lineHeight: 1.14, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '20px' }}>
-                Order &amp; Warehouse Management
+                Inventory &amp; Returns Management
               </h1>
               <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.86)', lineHeight: 1.68, maxWidth: '740px', marginBottom: '32px' }}>
-                Today&apos;s commerce landscape moves faster and operates across more channels than ever before. Centralise orders, streamline warehouse operations, and scale fulfillment with WareVolt Scale™.
+                Total control over stock levels, multi-node movements, and end-to-end reverse logistics. Eliminate stockouts, accelerate return turnaround, and preserve gross margins with WareVolt Scale™.
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
@@ -414,25 +414,25 @@ export default function OrderAndWarehouseManagementPage() {
         </div>
       </section>
 
-      {/* ══ ORDER MANAGEMENT ══ */}
+      {/* ══ INVENTORY MANAGEMENT ══ */}
       <section style={{ padding: '72px clamp(20px,5%,80px)', background: '#F7F6FB', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <div id="order-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: '56px', alignItems: 'center' }}>
             <div>
               <h2 data-animate style={{ fontSize: 'clamp(30px,3.2vw,46px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '12px' }}>
-                Every Order. One Intelligent Workflow.
+                Real-Time Visibility. Zero Discrepancies.
               </h2>
               <div style={{ width: '44px', height: '3px', background: '#4D0DD9', marginBottom: '22px' }}></div>
               <p data-animate data-delay="60" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '16px' }}>
-                Managing orders across multiple sales channels shouldn&apos;t mean managing multiple systems. WareVolt Scale™ centralizes every order into a single intelligent workspace, giving your operations team complete visibility from order creation to final dispatch.
+                Managing inventory across multiple warehouses, retail storefronts, and marketplace nodes shouldn&apos;t mean blind spots or manual reconciliations. WareVolt Scale™ tracks every SKU in real time from factory receipt to final delivery.
               </p>
               <p data-animate data-delay="100" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: 0 }}>
-                Whether orders originate from your online store, marketplaces, retail partners, or B2B channels, WareVolt Scale™ automates workflows, reduces manual intervention, and ensures every order moves through fulfillment quickly, accurately, and on time.
+                With automated safety stock calculations, low-inventory alerts, and dynamic available-to-promise allocation, you can confidently scale order volume across multiple channels without risking stockouts or overselling.
               </p>
             </div>
 
             <div id="order-diagram" data-animate data-delay="120" style={{ width: '100%' }}>
-              <img src="/uploads/warevolt-scale-diagram-flat.png" alt="Warevolt Scale ecosystem diagram" style={{ width: '100%', height: 'auto', borderRadius: '26px', display: 'block' }} />
+              <img src="/uploads/warevolt-scale-diagram-flat.png" alt="Warevolt Inventory ecosystem diagram" style={{ width: '100%', height: 'auto', borderRadius: '26px', display: 'block' }} />
             </div>
           </div>
         </div>
@@ -445,10 +445,10 @@ export default function OrderAndWarehouseManagementPage() {
             Key Capabilities
           </h2>
           <p data-animate data-delay="40" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.6, marginBottom: '36px' }}>
-            With WareVolt Scale™ you have eyes on every order, everywhere.
+            Precision control across every stock movement and storage location.
           </p>
           <div id="order-cap-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px', textAlign: 'left' }}>
-            {orderCapabilities.map((c, idx) => (
+            {inventoryCapabilities.map((c, idx) => (
               <div key={idx} data-animate style={{ background: '#F5F3FC', borderRadius: '16px', padding: '26px 24px' }}>
                 <h3 style={{ fontSize: '17px', fontWeight: 800, color: '#0B0619', lineHeight: 1.3, marginBottom: '12px' }}>{c.title}</h3>
                 <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.6 }}>{c.desc}</p>
@@ -458,34 +458,34 @@ export default function OrderAndWarehouseManagementPage() {
         </div>
       </section>
 
-      {/* ══ WAREHOUSE MANAGEMENT ══ */}
+      {/* ══ RETURNS MANAGEMENT ══ */}
       <section style={{ padding: '72px clamp(20px,5%,80px)', background: '#F5F3FC', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '36px' }}>
             <div data-animate style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '.08em', color: '#4D0DD9', textTransform: 'uppercase', marginBottom: '14px' }}>
-              Warehouse Management
+              Reverse Logistics &amp; QC
             </div>
             <h2 data-animate data-delay="30" style={{ fontSize: 'clamp(28px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '20px', maxWidth: '760px', marginLeft: 'auto', marginRight: 'auto' }}>
-              Built for Elite Warehouse Productivity.
+              Turn Returns into Recovered Revenue.
             </h2>
             <p data-animate data-delay="60" style={{ fontSize: '16px', color: '#3A3550', lineHeight: 1.75, maxWidth: '820px', margin: '0 auto' }}>
-              Warehouse efficiency drives fulfillment performance. WareVolt Scale™ transforms warehouse operations with structured, repeatable, and intelligent workflows that reduce travel time, minimise picking errors, and maximise daily throughput. From inbound receiving and put-away to picking, packing, and dispatch, every warehouse movement is orchestrated through a single intelligent platform—keeping your operations organised, efficient, and ready to scale.
+              Customer returns shouldn&apos;t drain your bottom line. WareVolt Scale™ accelerates reverse logistics with standardized dockside verification, SOP-driven quality grading, and automated restock pipelines. Whether re-bagging saleable units or handling vendor returns, our structured reverse workflow ensures minimal value loss and rapid return-to-shelf turnaround.
             </p>
           </div>
           <div data-animate data-delay="100" style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 24px 60px rgba(20,10,40,.16)', maxWidth: '427px', margin: '0 auto' }}>
-            <img src="/uploads/pasted-1787544112877-0.png" alt="Warevolt Control Tower dashboard" style={{ display: 'block', width: '100%', height: 'auto' }} />
+            <img src="/uploads/pasted-1787544112877-0.png" alt="Warevolt Returns Control dashboard" style={{ display: 'block', width: '100%', height: 'auto' }} />
           </div>
         </div>
       </section>
 
-      {/* ══ WAREHOUSE KEY CAPABILITIES ══ */}
+      {/* ══ RETURNS KEY CAPABILITIES ══ */}
       <section style={{ padding: '72px clamp(20px,5%,80px)', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 data-animate style={{ fontSize: 'clamp(28px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '36px', textAlign: 'center' }}>
             Key Capabilities
           </h2>
           <div id="warehouse-cap-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 72px' }}>
-            {warehouseCapabilities.map((c, idx) => (
+            {returnsCapabilities.map((c, idx) => (
               <div key={idx} data-animate style={{ display: 'grid', gridTemplateColumns: '38px 1fr', gap: '18px', padding: '26px 0', borderTop: '1px solid #E6E2F2' }}>
                 <div style={{ fontSize: '13px', fontWeight: 800, color: '#4D0DD9', letterSpacing: '.06em', paddingTop: '3px' }}>{c.num}</div>
                 <div>
@@ -522,7 +522,7 @@ export default function OrderAndWarehouseManagementPage() {
                 {/* Sales Channels Column */}
                 <div style={{ flex: '0 0 87px' }}>
                   <div style={{ fontSize: '13px', fontWeight: 800, letterSpacing: '.1em', color: '#fff', marginBottom: '22px', display: 'inline-block', whiteSpace: 'nowrap' }}>
-                    SALES CHANNELS
+                    CHANNELS &amp; HUBS
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {[
@@ -546,7 +546,7 @@ export default function OrderAndWarehouseManagementPage() {
                 <div style={{ flex: '0 0 130px', position: 'relative' }}>
                   <svg width="100%" height="100%" viewBox="0 0 130 496" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', overflow: 'visible' }}>
                     <defs>
-                      <filter id="wvGlow" x="-200%" y="-200%" width="500%" height="500%">
+                      <filter id="wvGlowInv" x="-200%" y="-200%" width="500%" height="500%">
                         <feGaussianBlur stdDeviation="3.5" result="b" />
                         <feMerge>
                           <feMergeNode in="b" />
@@ -557,34 +557,34 @@ export default function OrderAndWarehouseManagementPage() {
                     <circle cx="65" cy="248" r="48" stroke="rgba(255,255,255,.07)" strokeWidth="1" fill="none" />
                     <circle cx="65" cy="248" r="76" stroke="rgba(255,255,255,.06)" strokeWidth="1" fill="none" />
                     <circle cx="65" cy="248" r="104" stroke="rgba(255,255,255,.05)" strokeWidth="1" fill="none" />
-                    <path id="wvline1" d="M-70 73.5 C 45 73.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path id="wvlineInv1" d="M-70 73.5 C 45 73.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
                     <path d="M-70 73.5 C 45 73.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
-                    <path id="wvline2" d="M-70 146.5 C 45 146.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path id="wvlineInv2" d="M-70 146.5 C 45 146.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
                     <path d="M-70 146.5 C 45 146.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
-                    <path id="wvline3" d="M-70 219.5 C 45 219.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path id="wvlineInv3" d="M-70 219.5 C 45 219.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
                     <path d="M-70 219.5 C 45 219.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
-                    <path id="wvline4" d="M-70 292.5 C 45 292.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path id="wvlineInv4" d="M-70 292.5 C 45 292.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
                     <path d="M-70 292.5 C 45 292.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
-                    <path id="wvline5" d="M-70 365.5 C 45 365.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path id="wvlineInv5" d="M-70 365.5 C 45 365.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
                     <path d="M-70 365.5 C 45 365.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
-                    <path id="wvline6" d="M-70 438.5 C 45 438.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path id="wvlineInv6" d="M-70 438.5 C 45 438.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
                     <path d="M-70 438.5 C 45 438.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
-                    <g filter="url(#wvGlow)">
+                    <g filter="url(#wvGlowInv)">
                       <rect x="126" y="244" width="8" height="8" fill="#fff" transform="rotate(45 130 248)" />
                     </g>
-                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0s"><mpath href="#wvline1" /></animateMotion></circle>
-                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin=".4s"><mpath href="#wvline2" /></animateMotion></circle>
-                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin=".8s"><mpath href="#wvline3" /></animateMotion></circle>
-                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="1.2s"><mpath href="#wvline4" /></animateMotion></circle>
-                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="1.6s"><mpath href="#wvline5" /></animateMotion></circle>
-                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="2s"><mpath href="#wvline6" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0s"><mpath href="#wvlineInv1" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin=".4s"><mpath href="#wvlineInv2" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin=".8s"><mpath href="#wvlineInv3" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="1.2s"><mpath href="#wvlineInv4" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="1.6s"><mpath href="#wvlineInv5" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="2s"><mpath href="#wvlineInv6" /></animateMotion></circle>
                   </svg>
                 </div>
 
-                {/* Unified Order Feed Card */}
+                {/* Unified Inventory Feed Card */}
                 <div style={{ flex: '0 0 360px', alignSelf: 'center', height: '420px', boxSizing: 'border-box', background: 'linear-gradient(160deg,rgba(205,185,235,.45),rgba(255,255,255,.92))', borderRadius: '20px', padding: '22px', boxShadow: '0 24px 60px rgba(0,0,0,.35),0 0 40px rgba(167,139,250,.4)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px' }}>
-                    <span style={{ fontSize: '14px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>UNIFIED ORDER FEED</span>
+                    <span style={{ fontSize: '14px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>INVENTORY &amp; RETURNS FEED</span>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11.5px', fontWeight: 700, color: '#0B0619', background: '#fff', borderRadius: '999px', padding: '5px 12px', boxShadow: '0 4px 10px rgba(0,0,0,.1)' }}>
                       <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#22C55E' }}></span>Live
                     </span>
@@ -595,7 +595,7 @@ export default function OrderAndWarehouseManagementPage() {
                         <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
                           <img src="/uploads/pasted-1785731347143-0.png" alt="Amazon" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>#AMZ-5421</div></div>
+                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>SKU-7721 Stock Replenished</div></div>
                       </div>
                       <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>2 sec ago</span>
                     </div>
@@ -605,7 +605,7 @@ export default function OrderAndWarehouseManagementPage() {
                         <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
                           <img src="/uploads/pasted-1785731537374-0.png" alt="Flipkart" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>#FLP-9823</div></div>
+                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>RMA #RET-4819 Inspected (Grade A)</div></div>
                       </div>
                       <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>5 sec ago</span>
                     </div>
@@ -615,7 +615,7 @@ export default function OrderAndWarehouseManagementPage() {
                         <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
                           <img src="/uploads/pasted-1785731732420-0.png" alt="Shopify" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>#SHP-7214</div></div>
+                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Inventory Allocated to Hub-02</div></div>
                       </div>
                       <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>8 sec ago</span>
                     </div>
@@ -625,9 +625,9 @@ export default function OrderAndWarehouseManagementPage() {
                         <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
                           <img src="/uploads/pasted-1785731671522-0.png" alt="Myntra" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>#MYN-1923</div></div>
+                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>RMA #RET-4822 Quality Check</div></div>
                       </div>
-                      <span style={{ fontSize: '11.5px', color: '#F59E0B', fontWeight: 700, whiteSpace: 'nowrap' }}>Processing</span>
+                      <span style={{ fontSize: '11.5px', color: '#F59E0B', fontWeight: 700, whiteSpace: 'nowrap' }}>Grading</span>
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row5 5.8s linear infinite' }}>
@@ -635,9 +635,9 @@ export default function OrderAndWarehouseManagementPage() {
                         <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
                           <img src="/uploads/pasted-1785731892932-0.png" alt="Blinkit" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>#BLK-8821</div></div>
+                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Re-shelved for Dispatch</div></div>
                       </div>
-                      <span style={{ fontSize: '11.5px', color: '#22C55E', fontWeight: 700, whiteSpace: 'nowrap' }}>Dispatched</span>
+                      <span style={{ fontSize: '11.5px', color: '#22C55E', fontWeight: 700, whiteSpace: 'nowrap' }}>Restocked</span>
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row6 5.8s linear infinite' }}>
@@ -645,7 +645,7 @@ export default function OrderAndWarehouseManagementPage() {
                         <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
                           <img src="/uploads/pasted-1785732016871-0.png" alt="Zepto" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>#ZEP-3390</div></div>
+                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Cycle Count Confirmed 100%</div></div>
                       </div>
                       <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>Just now</span>
                     </div>
@@ -681,7 +681,7 @@ export default function OrderAndWarehouseManagementPage() {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
                     <img src="/assets/warevolt-mark.svg" alt="Warevolt" style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
                     <span style={{ fontSize: '10px', fontWeight: 600, color: '#0B0619', background: '#F3F1FA', borderRadius: '8px', padding: '4px 8px', whiteSpace: 'nowrap' }}>
-                      Today, 16 May
+                      Live Network Sync
                     </span>
                   </div>
 
@@ -689,59 +689,59 @@ export default function OrderAndWarehouseManagementPage() {
                     <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
                         <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#7B5BFB', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Orders Today</span>
+                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Total SKUs</span>
                       </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>2,857</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>↑ 18.6%</div>
+                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>14,290</div>
+                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>↑ Active</div>
                     </div>
                     <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
                         <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#2F7BF6', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Processing</span>
+                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>In-Transit</span>
                       </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>1,482</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>↑ 16.3%</div>
+                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>2,410</div>
+                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>On Time</div>
                     </div>
                     <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
                         <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#22C55E', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Shipped</span>
+                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Restocked</span>
                       </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>1,103</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>↑ 12.8%</div>
+                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>98.4%</div>
+                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>Same Day</div>
                     </div>
                     <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
                         <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#7B5BFB', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Delivered</span>
+                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Accuracy</span>
                       </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>2,012</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>↑ 20.1%</div>
+                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>99.9%</div>
+                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>Cycle Count</div>
                     </div>
                   </div>
 
                   <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '12px', padding: '12px', marginBottom: '12px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#0B0619' }}>Order Volume Trend</span>
-                      <span style={{ fontSize: '9px', fontWeight: 600, color: '#6B6480', background: '#F3F1FA', borderRadius: '6px', padding: '3px 7px' }}>This Week</span>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#0B0619' }}>Inventory Velocity &amp; Replenishment</span>
+                      <span style={{ fontSize: '9px', fontWeight: 600, color: '#6B6480', background: '#F3F1FA', borderRadius: '6px', padding: '3px 7px' }}>Weekly Rate</span>
                     </div>
                     <svg width="100%" height="70" viewBox="0 0 300 70" preserveAspectRatio="none">
                       <defs>
-                        <linearGradient id="feedAreaFill" x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id="feedAreaFillInv" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="0%" stopColor="#7B5BFB" stopOpacity=".35" />
                           <stop offset="100%" stopColor="#7B5BFB" stopOpacity="0" />
                         </linearGradient>
                       </defs>
-                      <path d="M0 45 L43 38 L86 50 L129 28 L172 12 L215 40 L258 24 L300 30 L300 70 L0 70 Z" fill="url(#feedAreaFill)" />
-                      <path id="feedTrendLine" d="M0 45 L43 38 L86 50 L129 28 L172 12 L215 40 L258 24 L300 30" fill="none" stroke="#7B5BFB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M0 45 L43 38 L86 50 L129 28 L172 12 L215 40 L258 24 L300 30 L300 70 L0 70 Z" fill="url(#feedAreaFillInv)" />
+                      <path id="feedTrendLineInv" d="M0 45 L43 38 L86 50 L129 28 L172 12 L215 40 L258 24 L300 30" fill="none" stroke="#7B5BFB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       <circle r="4" fill="#7B5BFB">
                         <animateMotion dur="3.5s" repeatCount="indefinite">
-                          <mpath href="#feedTrendLine" />
+                          <mpath href="#feedTrendLineInv" />
                         </animateMotion>
                       </circle>
                       <circle r="7" fill="#7B5BFB" opacity=".35">
                         <animateMotion dur="3.5s" repeatCount="indefinite">
-                          <mpath href="#feedTrendLine" />
+                          <mpath href="#feedTrendLineInv" />
                         </animateMotion>
                       </circle>
                     </svg>
@@ -752,20 +752,20 @@ export default function OrderAndWarehouseManagementPage() {
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '8px' }}>
                     <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Inventory Status</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#22C55E' }}>Healthy</div>
+                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Stock Health</div>
+                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#22C55E' }}>Optimal</div>
                     </div>
                     <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>SLA Performance</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0B0619' }}>96.4%</div>
+                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Restock SLA</div>
+                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0B0619' }}>&lt; 24 Hrs</div>
                     </div>
                     <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Dispatch Today</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0B0619' }}>97.8%</div>
+                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>RTO Rate</div>
+                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#22C55E' }}>1.4%</div>
                     </div>
                     <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Returns</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#F59E0B' }}>1.2%</div>
+                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Recovery</div>
+                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#4D0DD9' }}>94.2%</div>
                     </div>
                   </div>
                 </div>
@@ -788,22 +788,13 @@ export default function OrderAndWarehouseManagementPage() {
               </p>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="#" style={{ width: '38px', height: '38px', background: 'rgba(255,255,255,.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background .2s' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="white" strokeWidth="1.5" />
-                    <circle cx="4" cy="4" r="2" stroke="white" strokeWidth="1.5" />
-                  </svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="rgba(255,255,255,.6)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </a>
                 <a href="#" style={{ width: '38px', height: '38px', background: 'rgba(255,255,255,.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background .2s' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="rgba(255,255,255,.6)" strokeWidth="1.5" /><circle cx="12" cy="12" r="4" stroke="rgba(255,255,255,.6)" strokeWidth="1.5" /></svg>
                 </a>
                 <a href="#" style={{ width: '38px', height: '38px', background: 'rgba(255,255,255,.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background .2s' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" strokeWidth="1.5" />
-                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke="white" strokeWidth="1.5" />
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="rgba(255,255,255,.6)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /><circle cx="4" cy="4" r="2" stroke="rgba(255,255,255,.6)" strokeWidth="1.5" /></svg>
                 </a>
               </div>
             </div>
@@ -811,20 +802,21 @@ export default function OrderAndWarehouseManagementPage() {
             <div>
               <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>Quick Links</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <Link href="/#about" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>About Us</Link>
-                <Link href="/#solutions" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Solutions</Link>
-                <Link href="/#projects" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Projects</Link>
-                <Link href="/#industries" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Industries</Link>
-                <a href="#" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Blog</a>
+                <Link href="/" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Home</Link>
+                <Link href="/#about" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>About Us</Link>
+                <Link href="/#solutions" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Solutions</Link>
+                <Link href="/#projects" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Projects</Link>
+                <Link href="/#industries" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Industries</Link>
               </div>
             </div>
 
             <div>
               <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>Solutions</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <Link href="/order-and-warehouse-management" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Order &amp; Warehouse Management</Link>
-                <Link href="/order-and-warehouse-management" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Inventory &amp; Returns Management</Link>
-                <Link href="/platform" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Analytics &amp; Reporting</Link>
+                <Link href="/order-and-warehouse-management/" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Order &amp; Warehouse Management</Link>
+                <Link href="/d2c-marketplace-fulfillment/" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>D2C &amp; Marketplace Fulfillment</Link>
+                <Link href="/inventory-and-returns-management/" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Inventory &amp; Returns Management</Link>
+                <Link href="/analytics-and-reporting/" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Analytics &amp; Reporting</Link>
               </div>
             </div>
 
@@ -832,59 +824,22 @@ export default function OrderAndWarehouseManagementPage() {
               <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>Contact</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '28px' }}>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" />
-                    <circle cx="12" cy="10" r="3" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" />
-                  </svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0, marginTop: '2px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /><circle cx="12" cy="10" r="3" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
                   <span style={{ fontSize: '14px', lineHeight: 1.6 }}>123 Industrial Zone, Navi Mumbai, Maharashtra 400708</span>
                 </div>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.16 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.19 6.19l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" />
-                  </svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.16 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.19 6.19l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
                   <span style={{ fontSize: '14px' }}>+91 98765 43210</span>
                 </div>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" />
-                    <polyline points="22,6 12,13 2,6" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" />
-                  </svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /><polyline points="22,6 12,13 2,6" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
                   <span style={{ fontSize: '14px' }}>hello@warevolt.in</span>
                 </div>
               </div>
+
               <div style={{ display: 'flex', gap: '8px' }}>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  style={{
-                    flex: 1,
-                    background: 'rgba(255,255,255,.08)',
-                    border: '1.5px solid rgba(255,255,255,.12)',
-                    borderRadius: '12px',
-                    padding: '12px 16px',
-                    color: '#fff',
-                    fontSize: '13.5px',
-                    fontFamily: 'inherit',
-                    outline: 'none',
-                  }}
-                />
-                <button
-                  onClick={() => setPricingOpen(true)}
-                  style={{
-                    background: '#4D0DD9',
-                    color: '#fff',
-                    border: 'none',
-                    borderRadius: '12px',
-                    padding: '12px 18px',
-                    fontSize: '13.5px',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    whiteSpace: 'nowrap',
-                    transition: 'background .2s',
-                  }}
-                >
-                  Subscribe
-                </button>
+                <input type="email" placeholder="Enter your email" style={{ flex: 1, background: 'rgba(255,255,255,.08)', border: '1.5px solid rgba(255,255,255,.12)', borderRadius: '12px', padding: '12px 16px', color: '#fff', fontSize: '13.5px', outline: 'none' }} />
+                <button style={{ background: '#4D0DD9', color: '#fff', border: 'none', borderRadius: '12px', padding: '12px 18px', fontSize: '13.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}>Subscribe</button>
               </div>
             </div>
           </div>
@@ -892,8 +847,8 @@ export default function OrderAndWarehouseManagementPage() {
           <div style={{ borderTop: '1px solid rgba(255,255,255,.07)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
             <p style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)' }}>© 2026 Warevolt. All rights reserved.</p>
             <div style={{ display: 'flex', gap: '28px' }}>
-              <a href="#" style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none', transition: 'color .2s' }}>Privacy Policy</a>
-              <a href="#" style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none', transition: 'color .2s' }}>Terms of Service</a>
+              <a href="#" style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' }}>Privacy Policy</a>
+              <a href="#" style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' }}>Terms of Service</a>
             </div>
           </div>
         </div>
