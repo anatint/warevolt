@@ -16,14 +16,15 @@ export default function InventoryAndReturnsManagementPage() {
   ];
 
   const inventoryCapabilities = [
-    { title: 'Real-Time Multi-Node Sync', desc: 'Synchronize available-to-promise inventory instantly across Shopify, marketplaces, and physical warehouse nodes.' },
-    { title: 'Intelligent Stock Allocation', desc: 'Dynamically route orders to the closest fulfillment facility with available stock to cut shipping zones and transit times.' },
-    { title: 'Batch, Lot & Serial Tracking', desc: 'Maintain complete traceability for serialized goods, production batches, manufacturing dates, and strict expiry windows.' },
-    { title: 'Predictive Reorder Alerts', desc: 'Automated replenishment recommendations based on SKU velocity forecasts, historical trends, and supplier lead times.' },
-    { title: 'Rolling Cycle Counting', desc: 'Perform scheduled and continuous cycle counts across aisles and bins without interrupting active dispatch operations.' },
-    { title: 'Safety Stock & Buffer Rules', desc: 'Guard against sudden volume spikes and stockouts with configurable buffer margins and channel-specific reservation rules.' },
-    { title: 'Kitting, Bundling & Assemblies', desc: 'Easily assemble and disassemble multi-item kits, gift packs, and promos with automatic child-SKU inventory deduction.' },
-    { title: 'Comprehensive Audit Trails', desc: 'Granular movement history tracking every inbound receiving, bin transfer, pick, write-off, and cycle adjustment.' },
+    { title: 'Live Inventory Overview', desc: 'Monitor real-time stock levels across every warehouse and storage location.' },
+    { title: 'Multi-Channel Inventory Synchronization', desc: 'Automatically synchronize inventory across your online store, marketplaces, retail, and B2B channels in real time.' },
+    { title: 'SKU-Level Traceability', desc: 'Track inventory by SKU, serial number, batch, lot, and expiry date.' },
+    { title: 'Inventory Availability', desc: 'Instantly view available, allocated, reserved, damaged, and incoming inventory.' },
+    { title: 'Bin & Location Management', desc: 'Locate every item with precise warehouse, zone, aisle, rack, shelf, and bin visibility.' },
+    { title: 'Automated Inventory Updates', desc: 'Keep stock accurate with real-time updates from receiving, picking, packing, dispatch, returns, and stock adjustments.' },
+    { title: 'Inventory Ageing & Valuation', desc: 'Identify slow-moving inventory, monitor stock ageing, and evaluate inventory value.' },
+    { title: 'Low Stock Alerts & Replenishment', desc: 'Configure intelligent reorder points and proactive stock alerts to prevent stockouts.' },
+    { title: 'Inventory Intelligence', desc: 'Analyse inventory health, optimise safety stock, forecast demand, and make smarter replenishment decisions with real-time insights.' },
   ];
 
   const returnsCapabilities = [
@@ -444,7 +445,7 @@ export default function InventoryAndReturnsManagementPage() {
           <p data-animate data-delay="40" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.6, marginBottom: '36px' }}>
             Precision control across every stock movement and storage location.
           </p>
-          <div id="order-cap-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px', textAlign: 'left' }}>
+          <div id="order-cap-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', textAlign: 'left' }}>
             {inventoryCapabilities.map((c, idx) => (
               <div key={idx} data-animate style={{ background: '#F5F3FC', borderRadius: '16px', padding: '26px 24px' }}>
                 <h3 style={{ fontSize: '17px', fontWeight: 800, color: '#0B0619', lineHeight: 1.3, marginBottom: '12px' }}>{c.title}</h3>
