@@ -2,27 +2,17 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { wixClient } from '@/lib/wixClient';
+import { toInternalRows, type InternalRow, type Templates } from '@/lib/cmsAdapter';
+import templatesJson from '@/content/cms-templates.json';
+
+const templates = templatesJson as unknown as Templates;
 
 /**
- * One row of content in a Wix CMS collection. Every section collection shares this shape:
- * a row is a piece of content (a heading, a paragraph, a card, a list item, an image...)
- * that belongs to a `section` and is sorted by `order`.
- * Collections that are reused across pages also carry a `page` field.
+ * One piece of content as the page components read it. The website owner never sees this shape:
+ * in the Wix dashboard they edit the friendly collections (Hero Section, Cards & Lists, Header ...),
+ * and src/lib/cmsAdapter.ts converts those rows into this flat form.
  */
-export type CmsRow = {
-  page?: string;
-  section: string;
-  order?: number;
-  key?: string;
-  label?: string;
-  title?: string;
-  description?: string;
-  image?: string;
-  imageAlt?: string;
-  linkLabel?: string;
-  linkUrl?: string;
-  extra?: string;
-};
+export type CmsRow = InternalRow;
 
 /** Converts a Wix media reference (wix:image://v1/<id>/<name>) into a browser-loadable URL. */
 export function wixImageUrl(src?: string): string | undefined {
@@ -42,21 +32,17 @@ export type CmsContent = {
   one: (section: string, key?: string) => CmsRow;
 };
 
-/** Wix collections that hold reusable, section-wise page content. Each row carries a `page` field. */
-export const SECTION_COLLECTIONS = [
-  'PageHero',
-  'ContentBlocks',
-  'FeatureCards',
-  'Faqs',
-  'LogoStrip',
-  'DashboardDemo',
-  'CtaBanner',
-  'Testimonials',
+/** Wix collections that hold the content of the individual pages (each row has a "Page Name"). */
+export const PAGE_COLLECTIONS = [
+  'HeroSection',
+  'TextImageSections',
+  'CardsAndLists',
+  'FaqSection',
+  'LogoSection',
+  'CtaSection',
+  'TestimonialsSection',
+  'DashboardDemoSection',
 ] as const;
-
-function normalize(row: any): CmsRow {
-  return { ...row, image: wixImageUrl(row.image) };
-}
 
 function toContent(rows: CmsRow[]): CmsContent {
   const list = (section: string) =>
@@ -75,17 +61,18 @@ function mergeBySection(defaults: CmsRow[], live: CmsRow[]): CmsRow[] {
   return [...defaults.filter((r) => !liveSections.has(r.section)), ...live];
 }
 
-async function queryAll(collectionId: string, filter?: { page: string }): Promise<CmsRow[]> {
+/** Reads a friendly collection from Wix (optionally only one page's rows) and converts it for the pages. */
+async function loadCollection(collectionId: string, pageName?: string): Promise<CmsRow[]> {
   let q = wixClient.items.query(collectionId);
-  if (filter) q = q.eq('page', filter.page);
-  const res = await q.ascending('order').limit(1000).find();
-  return res.items.map(normalize);
+  if (pageName) q = q.eq('pageName', pageName);
+  const res = await q.limit(1000).find();
+  return toInternalRows(collectionId, res.items as any[], templates).map((r) => ({ ...r, image: wixImageUrl(r.image) }));
 }
 
 /**
  * Loads all of one page's content from the section-wise Wix CMS collections
- * (Hero, Content Blocks, Feature Cards, FAQs, Logo Strips, Dashboard Demo, CTA Banners, Testimonials),
- * filtered by `page`. The bundled `defaults` render first (the static HTML is complete and SEO-friendly),
+ * (Hero Section, Text & Image Sections, Cards & Lists, FAQ, Logos, Call To Action, Testimonials, Dashboard Demo),
+ * filtered by the page's name. The bundled `defaults` render first (the static HTML is complete and SEO-friendly),
  * then live CMS content replaces them section by section as soon as it arrives.
  * If Wix is unreachable, the defaults simply stay on screen.
  */
@@ -94,11 +81,12 @@ export function usePageCms(page: string, defaults: CmsRow[]): CmsContent {
 
   useEffect(() => {
     let cancelled = false;
-    Promise.allSettled(SECTION_COLLECTIONS.map((id) => queryAll(id, { page }))).then((results) => {
+    const pageName = templates.pages[page];
+    Promise.allSettled(PAGE_COLLECTIONS.map((id) => loadCollection(id, pageName))).then((results) => {
       if (cancelled) return;
       const live = results.flatMap((r) => (r.status === 'fulfilled' ? r.value : []));
       results.forEach((r, i) => {
-        if (r.status === 'rejected') console.warn(`CMS "${SECTION_COLLECTIONS[i]}" unavailable, using bundled content`, r.reason);
+        if (r.status === 'rejected') console.warn(`CMS "${PAGE_COLLECTIONS[i]}" unavailable, using bundled content`, r.reason);
       });
       if (live.length > 0) setRows(mergeBySection(defaults, live));
     });
@@ -111,13 +99,13 @@ export function usePageCms(page: string, defaults: CmsRow[]): CmsContent {
   return useMemo(() => toContent(rows), [rows]);
 }
 
-/** Loads a whole common (page-independent) collection such as the shared Header or Footer. */
+/** Loads a whole common (all pages) collection: "Header" or "Footer". */
 export function useCommonCms(collectionId: string, defaults: CmsRow[]): CmsContent {
   const [rows, setRows] = useState<CmsRow[]>(defaults);
 
   useEffect(() => {
     let cancelled = false;
-    queryAll(collectionId)
+    loadCollection(collectionId)
       .then((live) => {
         if (!cancelled && live.length > 0) setRows(mergeBySection(defaults, live));
       })
