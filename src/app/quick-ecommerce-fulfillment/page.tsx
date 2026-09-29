@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
 
-export default function OrderAndWarehouseManagementPage() {
+export default function QuickEcommerceFulfillmentPage() {
   const [pricingOpen, setPricingOpen] = useState(false);
   const [heroMobileOpen, setHeroMobileOpen] = useState(false);
   const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
@@ -15,74 +15,74 @@ export default function OrderAndWarehouseManagementPage() {
     { label: 'Analytics & Reporting', desc: 'Turn fulfillment data into clear, actionable insights.', href: '/analytics-and-reporting' },
   ];
 
-  const orderServices = [
-    'Unified Order Dashboard',
-    'Multi-Channel Synchronization',
-    'Intelligent Order Prioritization',
-    'Automated Batch & Wave Picking',
-    'Split & Partial Fulfillment',
-    'B2B & Wholesale Order Workflows',
-    'Real-Time Order Tracking',
-    'Automated Label & Invoice Printing',
-    'Multi-Location Routing Rules',
-    'Backorder & Preorder Handling',
-    'Custom Packing Slip Generation',
-    'Address Validation & NDR Alerts',
-    'Courier Allocation Engine',
-    'Comprehensive Order Audit Trails',
+  const quickServices = [
+    'Micro-Fulfillment Dark Store Setup',
+    'Sub-3 Minute Picking & Staging',
+    'Mother Hub to Dark Store Auto-Replenishment',
+    'Real-Time Rider Staging & Handoff',
+    'Temperature-Controlled Cold Storage Bins',
+    'High-Velocity SKU Density Planning',
+    'Live Available-to-Promise Inventory Sync',
+    'Real-Time Stockout Prevention Alerts',
+    'FIFO & Strict Expiry Management',
+    'Flash Sale & Surge Demand Buffers',
+    'Rapid Inbound Dockside QC Audits',
+    'Hyper-Local Geofenced Inventory Visibility',
+    'Multi-Platform API Integrations',
+    'Shift-Level Productivity & SLA Analytics',
   ];
 
   const compliancePoints = [
-    'Strict dock-to-stock turnaround times',
-    'Double-scan barcode picking validation',
-    'Dimensional weight & scale verification',
-    'Serial, lot, and expiry batch control',
-    'Carrier cutoff & dispatch staging schedules',
-    'Tamper-evident branded packaging compliance',
-    'Dangerous goods & regulated handling',
-    'Daily cycle counting & reconciliation',
+    'Sub-3 minute order receipt-to-rider handover',
+    '99.9% inventory picking accuracy via scan validation',
+    'Strict FIFO rotation and daily expiry audits',
+    'Continuous temperature logging for cold chain bins',
+    '100% rider handoff tracking with digital signoff',
+    'Automated minimum reorder point triggers',
+    'Real-time dark store stock reconciliation',
+    'Spill, leak, and damage mitigation protocols',
   ];
 
   const faqs = [
     {
-      q: 'How does Warevolt connect orders across multiple sales channels?',
-      a: 'Warevolt Scale™ integrates seamlessly with your online storefronts (Shopify, WooCommerce, Magento), major marketplaces (Amazon, Flipkart, Myntra), and B2B EDI channels. Orders are ingested in real time, checked for inventory availability, and routed to the optimal warehouse node automatically.',
+      q: 'What is Quick Commerce fulfillment and how does it work?',
+      a: 'Quick Commerce fulfillment utilizes hyper-local micro-fulfillment centers (dark stores) strategically positioned near high-density residential and commercial clusters. When an order is placed on Blinkit, Zepto, Swiggy Instamart, or your brand app, pickers receive instant handheld alerts to pick and pack items in under 3 minutes for immediate rider pickup.',
     },
     {
-      q: 'Can the system handle split shipments and multi-warehouse order routing?',
-      a: 'Yes. Our intelligent order routing engine automatically calculates the closest fulfillment node with available stock, evaluates shipping costs, and executes single-origin or split shipments according to your business rules and SLA commitments.',
+      q: 'How does Warevolt achieve sub-3 minute order fulfillment?',
+      a: 'We organize dark stores with high-density, ergonomic fast-pick zones. SKUs are slotted based on real-time buying frequency, while pickers use wireless RF scanners with optimal route navigation to locate and scan items in seconds without bottlenecks.',
     },
     {
-      q: 'What picking strategies are supported in the warehouse?',
-      a: 'Warevolt supports single order picking, batch picking, wave picking, cluster picking, and multi-zone picking. Handheld barcode scanners calculate the most efficient path through the aisles to eliminate unnecessary walking time.',
+      q: 'Can Warevolt manage dark store replenishment from a central mother hub?',
+      a: 'Yes. Our integrated fulfillment network links regional mother warehouses to distributed micro-fulfillment dark stores. Automated replenishment triggers monitor daily consumption velocity and initiate transfer dispatches to ensure dark stores never run out of top-selling SKUs.',
     },
     {
-      q: 'How does barcode verification prevent packing and dispatch errors?',
-      a: 'Every item picked is verified with a handheld barcode scanner at the packing station. If an incorrect SKU or quantity is scanned, the system halts the packing workflow until resolved, achieving 99.9% fulfillment accuracy.',
+      q: 'Does Warevolt support perishable, chilled, and frozen products?',
+      a: 'Yes. Our facilities and dark stores include multi-temperature storage zones—ambient, chilled (2°C to 8°C), and frozen (-18°C). We maintain continuous IoT digital temperature logs and strict FEFO (First Expired, First Out) inventory rotation.',
     },
     {
-      q: 'Does Warevolt support B2B and wholesale fulfillment requirements?',
-      a: 'Yes. We support custom palletization, master carton labeling, UCC-128 barcode generation, scheduled LTL/FTL dock appointments, and retailer-specific routing guides for enterprise wholesale and modern retail distribution.',
+      q: 'How does Warevolt handle integration with quick commerce platforms?',
+      a: 'Warevolt Scale™ integrates via real-time webhooks and APIs with quick commerce platforms including Blinkit, Zepto, Swiggy Instamart, BigBasket Now, and custom brand storefronts. Inventory availability and order statuses synchronize instantly across all channels.',
     },
     {
-      q: 'How does Warevolt manage inventory put-away and bin allocation?',
-      a: 'Upon inbound verification, our WMS directs staff to optimal put-away locations based on SKU velocity, product dimensions, weight limits, and zone compatibility—maximizing warehouse cubic capacity.',
+      q: 'How do rider handovers work at the dark store dispatch bay?',
+      a: 'Packed orders are staged in color-coded, labeled dispatch bins matching the order ID. Delivery riders scan the parcel barcode upon arrival for digital handoff verification, completing the transfer in under 20 seconds.',
     },
     {
-      q: 'Can we track lot numbers, batch codes, and expiration dates?',
-      a: 'Yes. Warevolt tracks inventory at the lot, batch, and individual serial number level. We strictly enforce FIFO (First In, First Out) and FEFO (First Expired, First Out) picking protocols to prevent stock expiry.',
+      q: 'How do you handle stockouts and inventory discrepancy in quick commerce?',
+      a: 'Real-time perpetual cycle counting, double-scan picking, and intelligent buffer safety margins ensure that catalog inventory matches physical shelf stock with 99.9% accuracy, virtually eliminating cancellations due to out-of-stock items.',
     },
     {
-      q: 'How are carrier handovers and dispatch manifestings coordinated?',
-      a: 'The platform integrates directly with national and regional couriers. Shipping labels, carrier manifests, and tracking numbers are generated automatically, with staged consignments scanned upon carrier driver handover.',
+      q: 'Can brands run flash sales and promotional spikes in quick commerce?',
+      a: 'Yes. We configure dynamic safety stock buffers and deploy flexible shift staffing during festival seasons, IPL matches, and flash promotional campaigns to effortlessly handle 5x to 10x order volume surges without breaching SLAs.',
     },
     {
-      q: 'Does Warevolt provide real-time visibility into warehouse productivity?',
-      a: 'Yes. Dashboards monitor dock-to-stock turnaround, picking rates per hour, packing velocity, and on-time carrier dispatch rates so operations managers can maintain strict SLA adherence.',
+      q: 'What reporting and operational analytics are provided for dark stores?',
+      a: 'Brands gain real-time visibility into pick-to-pack durations, rider wait times, SKU sales velocity, hourly order volume curves, inventory age, and dark store throughput via centralized live dashboards.',
     },
     {
-      q: 'How do you handle stock counts without halting daily operations?',
-      a: 'Warevolt utilizes continuous rolling cycle counting. System-generated cycle count tasks are executed during low-activity windows or alongside active picking, eliminating the need to shut down the warehouse for physical audits.',
+      q: 'Can Warevolt help a brand launch in new cities with quick commerce?',
+      a: 'Yes. With a ready-to-scale fulfillment network spanning major metros (Mumbai, Delhi NCR, Bangalore, Hyderabad, Kochi, Chennai, Pune), Warevolt enables brands to plug into established micro-fulfillment infrastructure without massive capital expenditure.',
     },
   ];
 
@@ -126,7 +126,7 @@ export default function OrderAndWarehouseManagementPage() {
   }, []);
 
   const handlePricingSubmit = (data: PricingFormData) => {
-    console.log('Pricing lead received from Order & Warehouse Management:', data);
+    console.log('Pricing lead received from Quick E-commerce Fulfillment:', data);
   };
 
   return (
@@ -402,13 +402,13 @@ export default function OrderAndWarehouseManagementPage() {
           <div id="d2c-hero-grid" style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '52px', alignItems: 'center' }}>
             <div>
               <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'rgba(255,255,255,.68)', letterSpacing: '.04em', marginBottom: '14px' }}>
-                Solutions / Order &amp; Warehouse Management
+                Solutions / Quick E-commerce Fulfillment
               </div>
               <h1 style={{ fontSize: 'clamp(34px,3.8vw,52px)', fontWeight: 800, lineHeight: 1.14, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '20px' }}>
-                From order creation to final dispatch, every fulfillment workflow connected.
+                Dark-store-ready micro-fulfillment for 10–30 minute delivery promises.
               </h1>
               <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.85)', lineHeight: 1.68, maxWidth: '740px', marginBottom: '32px' }}>
-                Manage high-volume order flows, streamline intelligent put-away and picking, and coordinate multi-carrier dispatches with complete operational visibility.
+                Ultra-fast picking, automated micro-hub replenishment, and hyper-local dispatch operations engineered to power rapid commerce growth.
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
@@ -426,31 +426,29 @@ export default function OrderAndWarehouseManagementPage() {
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src="/assets/b2b-fulfillment.jpg" alt="Order and Warehouse Management illustration" style={{ width: '100%', maxWidth: '470px', maxHeight: '360px', height: 'auto', objectFit: 'contain' }} />
+              <img src="/assets/quick-commerce.jpg" alt="Quick E-commerce fulfillment illustration" style={{ width: '100%', maxWidth: '470px', maxHeight: '360px', height: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══ PLATFORM / CARRIER LOGO STRIP ══ */}
+      {/* ══ QUICK COMMERCE PLATFORMS LOGO STRIP ══ */}
       <section style={{ padding: '28px 0', background: '#fff', borderBottom: '1px solid #F0EBF8', overflow: 'hidden' }}>
         <div style={{ overflow: 'hidden', WebkitMaskImage: 'linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)', maskImage: 'linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)' }}>
           <div style={{ display: 'flex', gap: '88px', alignItems: 'center', animation: 'marquee 30s linear infinite', whiteSpace: 'nowrap', width: 'max-content' }}>
             {[
-              { src: '/uploads/pasted-1785731347143-0.png', alt: 'Amazon ATS' },
-              { src: '/uploads/pasted-1785731537374-0.png', alt: 'Flipkart Logistics' },
-              { src: '/uploads/pasted-1785731732420-0.png', alt: 'Shopify Plus' },
-              { src: '/uploads/pasted-1785731671522-0.png', alt: 'Myntra B2B' },
-              { src: '/uploads/pasted-1785731892932-0.png', alt: 'Blinkit Hub' },
-              { src: '/uploads/pasted-1785732016871-0.png', alt: 'Zepto Node' },
-              { src: '/uploads/pasted-1784528144899-0.png', alt: 'Amazon Seller Flex' },
-              { src: '/uploads/pasted-1784528096970-0.png', alt: 'Shopify OMS' },
-              { src: '/uploads/pasted-1785731347143-0.png', alt: 'Amazon ATS' },
-              { src: '/uploads/pasted-1785731537374-0.png', alt: 'Flipkart Logistics' },
-              { src: '/uploads/pasted-1785731732420-0.png', alt: 'Shopify Plus' },
-              { src: '/uploads/pasted-1785731671522-0.png', alt: 'Myntra B2B' },
-              { src: '/uploads/pasted-1785731892932-0.png', alt: 'Blinkit Hub' },
-              { src: '/uploads/pasted-1785732016871-0.png', alt: 'Zepto Node' },
+              { src: '/uploads/pasted-1785731892932-0.png', alt: 'Blinkit' },
+              { src: '/uploads/pasted-1785732016871-0.png', alt: 'Zepto' },
+              { src: '/uploads/pasted-1785731537374-0.png', alt: 'Flipkart Minutes' },
+              { src: '/uploads/pasted-1785731732420-0.png', alt: 'Swiggy Instamart' },
+              { src: '/uploads/pasted-1785731347143-0.png', alt: 'Amazon Now' },
+              { src: '/uploads/pasted-1785731671522-0.png', alt: 'BigBasket Now' },
+              { src: '/uploads/pasted-1785731892932-0.png', alt: 'Blinkit' },
+              { src: '/uploads/pasted-1785732016871-0.png', alt: 'Zepto' },
+              { src: '/uploads/pasted-1785731537374-0.png', alt: 'Flipkart Minutes' },
+              { src: '/uploads/pasted-1785731732420-0.png', alt: 'Swiggy Instamart' },
+              { src: '/uploads/pasted-1785731347143-0.png', alt: 'Amazon Now' },
+              { src: '/uploads/pasted-1785731671522-0.png', alt: 'BigBasket Now' },
             ].map((logo, idx) => (
               <div key={idx} style={{ width: '160px', height: '42px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <img src={logo.src} alt={logo.alt} style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
@@ -464,59 +462,59 @@ export default function OrderAndWarehouseManagementPage() {
       <section style={{ padding: '76px clamp(20px,5%,80px)', background: '#F7F6FB' }}>
         <div data-animate style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(26px,2.6vw,36px)', fontWeight: 800, lineHeight: 1.3, letterSpacing: '-.02em', color: '#0B0619' }}>
-            Connect every sales channel, warehouse facility, and shipping carrier into a single unified execution platform.
+            Power hyper-local 10 to 30 minute delivery networks with high-density dark store fulfillment.
           </h2>
         </div>
       </section>
 
-      {/* ══ ORDER MANAGEMENT DEEP DIVE ══ */}
-      <section id="order-management" style={{ position: 'relative', overflow: 'hidden', padding: '96px clamp(20px,5%,80px)', background: '#fff' }}>
+      {/* ══ MICRO-FULFILLMENT DEEP DIVE ══ */}
+      <section id="micro-fulfillment" style={{ position: 'relative', overflow: 'hidden', padding: '96px clamp(20px,5%,80px)', background: '#fff' }}>
         <div id="d2c-section-grid" style={{ position: 'relative', maxWidth: '1440px', margin: '0 auto', display: 'grid', gridTemplateColumns: '.9fr 1.1fr', gap: '80px', alignItems: 'stretch' }}>
           <div data-animate style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(20,10,50,.1)', minHeight: '340px' }}>
-            <img src="/uploads/warevolt-scale-diagram-flat.png" alt="Omnichannel order management ecosystem" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src="/uploads/Quick_commerce.jpg" alt="Quick commerce micro-fulfillment dark store" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           <div>
             <h2 data-animate style={{ fontSize: 'clamp(30px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', lineHeight: 1.15, marginBottom: '20px' }}>
-              Omnichannel Order Management
+              Hyper-Local Micro-Fulfillment
             </h2>
             <p data-animate data-delay="30" style={{ fontSize: '19px', fontWeight: 600, color: '#fff', background: '#4F1CF7', lineHeight: 1.5, marginBottom: '28px', padding: '16px 20px', borderRadius: '12px' }}>
-              Automate multi-channel order routing, split shipments, and SLA prioritization in real time.
+              Under 3-minute pick-and-pack times with barcode-guided handheld routing.
             </p>
             <p data-animate data-delay="70" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '22px' }}>
-              Warevolt connects every customer order from your eCommerce storefronts, online marketplaces, B2B wholesale channels, and quick-commerce dark stores into a single command center. Orders are ingested instantly, validated against live available-to-promise inventory, and prepared for warehouse wave release without manual data entry.
+              Quick commerce demands microsecond responsiveness and near-zero error margins. Warevolt deploys high-density micro-fulfillment centers (dark stores) within key urban delivery radiuses, enabling brands to fulfill on-demand grocery, D2C impulse purchases, consumer electronics, and daily essentials in 10 to 30 minutes.
             </p>
             <p data-animate data-delay="110" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '22px' }}>
-              Our intelligent routing engine evaluates delivery address geocodes, current stock levels across regional facilities, carrier cutoffs, and fulfillment costs to assign orders to the optimal facility. Whether executing partial shipments, backorders, or high-volume flash sale surges, Warevolt guarantees consistent turnaround speed and fulfillment SLA compliance.
+              Each micro-facility is mapped for maximum picking speed. Fast-moving SKUs are slotted in ergonomic forward-pick zones, and incoming orders trigger instant RF scanner audio-visual cues so staff locate, scan, and stage bags in under 180 seconds.
             </p>
             <p data-animate data-delay="150" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '26px' }}>
-              Brands maintain end-to-end visibility with continuous status tracking, automated customer notification triggers, complete audit trails, and instant shipping label generation across major carriers.
+              Centralized inventory feeds automatically replenish dark store inventory from regional mother hubs, ensuring consistent high availability across rapid delivery channels without overstocking micro-footprints.
             </p>
             <div data-animate data-delay="180" style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>Real-time synchronization</span>
+                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>Sub-3 min pick SLA</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>Automated batch &amp; routing</span>
+                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>Hyper-local inventory</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>Audit trails &amp; tracking</span>
+                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>Dark store automation</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══ ORDER SERVICES GRID ══ */}
+      {/* ══ QUICK SERVICES GRID ══ */}
       <section style={{ padding: '88px clamp(20px,5%,80px)', background: '#F5F3FE' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <h2 data-animate style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '48px', textAlign: 'center' }}>
-            Order Management Capabilities
+            Quick Commerce Fulfillment Capabilities
           </h2>
           <div id="d2c-services-grid" data-animate data-delay="60" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
-            {orderServices.map((service, idx) => (
+            {quickServices.map((service, idx) => (
               <div
                 key={idx}
                 style={{
@@ -544,42 +542,42 @@ export default function OrderAndWarehouseManagementPage() {
         </div>
       </section>
 
-      {/* ══ WAREHOUSE MANAGEMENT (WMS) DEEP DIVE ══ */}
-      <section id="warehouse-management" style={{ position: 'relative', overflow: 'hidden', background: '#0B0619' }}>
+      {/* ══ DARK STORE NETWORK & PLATFORMS DEEP DIVE ══ */}
+      <section id="dark-store-network" style={{ position: 'relative', overflow: 'hidden', background: '#0B0619' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/uploads/pasted-1784525640761-0.png')", backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg,rgba(11,6,25,.94) 0%,rgba(11,6,25,.82) 40%,rgba(11,6,25,.55) 65%,rgba(11,6,25,.3) 100%)', zIndex: 1 }}></div>
         <div id="marketplace-section-grid" style={{ position: 'relative', zIndex: 2, maxWidth: '1440px', margin: '0 auto', padding: '110px clamp(20px,5%,80px)', display: 'grid', gridTemplateColumns: '1.1fr .9fr', gap: '48px', alignItems: 'center' }}>
           <div>
             <h2 data-animate style={{ fontSize: 'clamp(34px,4.2vw,58px)', fontWeight: 800, letterSpacing: '-.02em', lineHeight: 1.08, color: '#fff', marginBottom: '24px' }}>
-              Intelligent Warehouse Operations (WMS)
+              Platform Integration &amp; Dark Store Network
             </h2>
             <p data-animate data-delay="60" style={{ fontSize: '17px', fontWeight: 600, color: '#C9B8FF', lineHeight: 1.6, marginBottom: '22px', maxWidth: '460px' }}>
-              High-velocity picking, directed put-away, and barcode verification designed for 99.9% accuracy.
+              Fulfill orders across Blinkit, Zepto, Swiggy Instamart, and brand quick-commerce apps simultaneously.
             </p>
             <p data-animate data-delay="100" style={{ fontSize: '15px', color: 'rgba(255,255,255,.72)', lineHeight: 1.85, maxWidth: '460px', marginBottom: '16px' }}>
-              Warevolt WMS streamlines warehouse floor operations from dock-to-stock receiving to final carrier loading. Configurable put-away logic directs palletized and carton inventory to optimal high-bay racks or fast-pick forward bins based on product velocity and dimensions.
+              Warevolt centralizes rapid commerce operations. Products are cataloged and allocated dynamically so your brand can participate in multiple rapid delivery networks from shared or dedicated micro-fulfillment dark stores without inventory fragmentation.
             </p>
             <p data-animate data-delay="140" style={{ fontSize: '15px', color: 'rgba(255,255,255,.72)', lineHeight: 1.85, maxWidth: '460px' }}>
-              Pickers execute batch, wave, and cluster picking using wireless handheld RF barcode scanners that calculate the shortest travel path, while double-scan packing checkpoints guarantee that the correct item reaches the correct customer every time.
+              Real-time API handshakes update stock levels across all storefronts instantly upon item pick, while staging bays allow delivery riders to pick up sealed packages seamlessly within seconds of arrival.
             </p>
           </div>
           <div id="marketplace-hero-tiles" data-animate data-delay="80" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ background: 'rgba(255,255,255,.08)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '18px', padding: '32px 28px', minHeight: '132px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div style={{ fontSize: '19px', fontWeight: 800, color: '#fff', letterSpacing: '.01em', lineHeight: 1.4 }}>
-                Aisles · Racks · Shelves · Bins
+                Blinkit · Zepto · Instamart · BB Now · ONDC
               </div>
             </div>
             <div style={{ background: 'rgba(255,255,255,.08)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '18px', padding: '32px 28px', minHeight: '132px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Optimized Picking</div>
-              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>Batch, wave, cluster &amp; zone picking strategies</div>
+              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Sub-3 Min Assembly</div>
+              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>High-speed pick and pack with digital validation</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,.08)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '18px', padding: '32px 28px', minHeight: '132px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Barcode Validated</div>
-              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>Zero-error packing with scan verification</div>
+              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Auto-Replenishment</div>
+              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>Mother hub to dark store continuous transfer</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,.08)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '18px', padding: '32px 28px', minHeight: '132px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Continuous Counting</div>
-              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>Rolling cycle counts without downtime</div>
+              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Multi-Temp Storage</div>
+              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>Ambient, chilled &amp; frozen temperature control</div>
             </div>
           </div>
         </div>
@@ -590,10 +588,10 @@ export default function OrderAndWarehouseManagementPage() {
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <div data-animate style={{ maxWidth: '760px', margin: '0 auto 48px', textAlign: 'center' }}>
             <h2 style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '16px' }}>
-              Warehouse Operational Compliance &amp; SLAs
+              Quick Commerce Operational Standards &amp; SLAs
             </h2>
             <p style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8 }}>
-              Standardized warehouse operating procedures designed to guarantee fulfillment accuracy and on-time carrier handovers:
+              Strict operational metrics engineered to satisfy instant delivery promises:
             </p>
           </div>
           <div id="compliance-grid" data-animate data-delay="60" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', maxWidth: '1000px', margin: '0 auto' }}>
@@ -627,7 +625,7 @@ export default function OrderAndWarehouseManagementPage() {
               Operational Excellence
             </h2>
             <p style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8 }}>
-              Warevolt follows structured warehouse processes designed to support consistent fulfillment accuracy and speed.
+              Ultra-responsive micro-fulfillment processes designed for lightning-fast execution and zero cancellations.
             </p>
           </div>
           <div id="excellence-grid" data-animate data-delay="60" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', marginBottom: '24px' }}>
@@ -636,24 +634,24 @@ export default function OrderAndWarehouseManagementPage() {
                 <circle cx="12" cy="12" r="9" stroke="#4F1CF7" strokeWidth="1.4" />
                 <path d="M12 7v5l3.5 2" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>SLA-Driven Order Processing</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Defined cutoff hours and turnaround times govern every order from ingestion to dispatch.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Sub-3 Min SLA Picking</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Rapid picking, bag assembly, and staging in under 180 seconds from order receipt.</p>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '32px 28px' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '22px' }}>
                 <path d="M6 3h9l3 3v15H6z" stroke="#4F1CF7" strokeWidth="1.4" strokeLinejoin="round" />
                 <path d="M9 10h6M9 13.5h6M9 17h4" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Standard Operating Procedures</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Documented SOPs keep every inbound, put-away, and packing operation consistent.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Rapid Handheld SOPs</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Guided scanner navigation minimizes footwork and accelerates bin retrieval.</p>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '32px 28px' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '22px' }}>
                 <path d="M9 12l2 2 4-4" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M7.84 4.7a3.4 3.4 0 001.95-.81 3.4 3.4 0 014.42 0 3.4 3.4 0 001.95.81 3.4 3.4 0 013.13 3.13 3.4 3.4 0 00.81 1.95 3.4 3.4 0 010 4.42 3.4 3.4 0 00-.81 1.95 3.4 3.4 0 01-3.13 3.13 3.4 3.4 0 00-1.95.81 3.4 3.4 0 01-4.42 0 3.4 3.4 0 00-1.95-.81 3.4 3.4 0 01-3.13-3.13 3.4 3.4 0 00-.81-1.95 3.4 3.4 0 010-4.42 3.4 3.4 0 00.81-1.95 3.4 3.4 0 013.13-3.13z" stroke="#4F1CF7" strokeWidth="1.4" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Quality Control Checkpoints</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Multi-stage barcode validation catches mispicks and damaged packaging before sealing.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Barcode Staging Checkpoints</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Scan checks at the staging bin ensure exact matching before rider handoff.</p>
             </div>
           </div>
           <div id="excellence-grid-2" data-animate data-delay="80" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '24px' }}>
@@ -664,31 +662,31 @@ export default function OrderAndWarehouseManagementPage() {
                 <rect x="3" y="16" width="7" height="5" rx="1" stroke="#4F1CF7" strokeWidth="1.4" />
                 <path d="M14 18h7" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Real-Time Reconciliation</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Continuous synchronization between physical bin stock and digital ledger.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Real-Time Stock Sync</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Sub-second catalog deduction prevents overselling and out-of-stock cancellations.</p>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '32px 28px' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '22px' }}>
                 <rect x="3" y="6" width="18" height="12" rx="1.5" stroke="#4F1CF7" strokeWidth="1.4" />
                 <path d="M6.5 6v12M9.5 6v12M13 6v12M17 6v12" stroke="#4F1CF7" strokeWidth="1.4" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Batch &amp; Lot Control</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>End-to-end traceability with strict FIFO and FEFO dispatch automation.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>FIFO &amp; Expiry Control</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Continuous shelf-life tracking guards against near-expiry dispatch to customers.</p>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '32px 28px' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '22px' }}>
                 <path d="M4 12a8 8 0 1114 5.5" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" />
                 <path d="M4 12l0 5h5" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Dock-to-Stock Speed</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Fast-tracked inbound inspection, sorting, and directed bin put-away.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Mother Hub Inbound</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Scheduled intra-city replenishment keeps micro-store stock levels optimal.</p>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '32px 28px' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '22px' }}>
                 <path d="M4 20V10M11 20V4M18 20v-7" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Live SLA Reporting</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Real-time metrics on pick speeds, packing rates, and carrier dispatch times.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Rider Handoff Metrics</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Granular metrics on pickup wait times and dark store throughput speed.</p>
             </div>
           </div>
         </div>
@@ -744,13 +742,13 @@ export default function OrderAndWarehouseManagementPage() {
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <div data-animate style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,.15)', backdropFilter: 'blur(8px)', borderRadius: '12px', padding: '7px 18px', marginBottom: '28px', border: '1px solid rgba(255,255,255,.2)' }}>
             <div style={{ width: '8px', height: '8px', background: '#22C55E', borderRadius: '50%', animation: 'pulse-dot 2s infinite' }}></div>
-            <span style={{ fontSize: '13px', fontWeight: 600, color: '#fff', letterSpacing: '.04em' }}>Now onboarding new brands</span>
+            <span style={{ fontSize: '13px', fontWeight: 600, color: '#fff', letterSpacing: '.04em' }}>Now onboarding rapid commerce brands</span>
           </div>
           <h2 data-animate data-delay="60" style={{ fontSize: 'clamp(34px,4vw,56px)', fontWeight: 800, color: '#fff', letterSpacing: '-.03em', lineHeight: 1.12, marginBottom: '20px' }}>
-            Ready to streamline your fulfillment operations?
+            Ready to scale your quick commerce operations?
           </h2>
           <p data-animate data-delay="100" style={{ fontSize: '17px', color: 'rgba(255,255,255,.8)', lineHeight: 1.6, marginBottom: '36px' }}>
-            Speak with our fulfillment experts today and discover how Warevolt connects your commerce and warehouse workflows.
+            Connect with our quick-commerce specialists and start delivering 10–30 minute fulfillment nationwide.
           </p>
           <div data-animate data-delay="140" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button

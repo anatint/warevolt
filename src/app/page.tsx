@@ -1424,7 +1424,7 @@ export default function HomePage() {
               <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '14px' }}>From order creation to final dispatch, every fulfillment workflow connected in one intelligent platform.</p>
             </a>
 
-            <div data-animate data-delay="160" style={{ cursor: 'pointer' }} onClick={() => setPricingOpen(true)}>
+            <a data-animate data-delay="160" href="/quick-ecommerce-fulfillment" style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
               <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '20px', borderRadius: '14px', overflow: 'hidden' }}>
                 <img src="/assets/quick-commerce.jpg" alt="Quickcommerce Fulfillment" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animation: 'card-zoom 8.5s ease-in-out infinite' }} />
                 <div style={{ position: 'absolute', top: '14px', right: '14px', width: '34px', height: '34px', borderRadius: '50%', background: '#1A3ADB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -1433,7 +1433,7 @@ export default function HomePage() {
               </div>
               <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0B0619', marginBottom: '10px' }}>Quickcommerce Fulfillment</h3>
               <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '14px' }}>Dark-store-ready micro-fulfillment for 10-30 minute delivery promises.</p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
