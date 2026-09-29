@@ -381,7 +381,7 @@ export default function InventoryAndReturnsManagementPage() {
                 Order &amp; Warehouse Management
               </h1>
               <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.86)', lineHeight: 1.68, maxWidth: '740px', marginBottom: '32px' }}>
-                WareVolt Scale™ brings order, inventory, warehouse, shipping, and returns data into a single operational view — giving leadership the metrics to run the business proactively, not reactively.
+                Today&apos;s commerce landscape moves faster and operates across more channels than ever before.
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
