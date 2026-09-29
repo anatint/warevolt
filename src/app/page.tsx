@@ -1415,12 +1415,12 @@ export default function HomePage() {
 
             <a data-animate data-delay="80" href="/order-and-warehouse-management" style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
               <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '20px', borderRadius: '14px', overflow: 'hidden' }}>
-                <img src="/assets/b2b-fulfillment.jpg" alt="B2B Fulfillment" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animation: 'card-zoom 10s ease-in-out infinite' }} />
+                <img src="/assets/b2b-fulfillment.jpg" alt="B2B Isometric" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animation: 'card-zoom 10s ease-in-out infinite' }} />
                 <div style={{ position: 'absolute', top: '14px', right: '14px', width: '34px', height: '34px', borderRadius: '50%', background: '#1A3ADB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </div>
               </div>
-              <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0B0619', marginBottom: '10px' }}>Order &amp; Warehouse Management</h3>
+              <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0B0619', marginBottom: '10px' }}>B2B Isometric</h3>
               <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '14px' }}>From order creation to final dispatch, every fulfillment workflow connected in one intelligent platform.</p>
             </a>
 
