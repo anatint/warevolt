@@ -460,13 +460,13 @@ export default function InventoryAndReturnsManagementPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '36px' }}>
             <div data-animate style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '.08em', color: '#4D0DD9', textTransform: 'uppercase', marginBottom: '14px' }}>
-              Reverse Logistics &amp; QC
+              Warehouse Management
             </div>
             <h2 data-animate data-delay="30" style={{ fontSize: 'clamp(28px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '20px', maxWidth: '760px', marginLeft: 'auto', marginRight: 'auto' }}>
-              Turn Returns into Recovered Revenue.
+              Built for Elite Warehouse Productivity.
             </h2>
             <p data-animate data-delay="60" style={{ fontSize: '16px', color: '#3A3550', lineHeight: 1.75, maxWidth: '820px', margin: '0 auto' }}>
-              Customer returns shouldn&apos;t drain your bottom line. WareVolt Scale™ accelerates reverse logistics with standardized dockside verification, SOP-driven quality grading, and automated restock pipelines. Whether re-bagging saleable units or handling vendor returns, our structured reverse workflow ensures minimal value loss and rapid return-to-shelf turnaround.
+              Warehouse efficiency drives fulfillment performance. WareVolt Scale™ transforms warehouse operations with structured, repeatable, and intelligent workflows that reduce travel time, minimise picking errors, and maximise daily throughput. From inbound receiving and put-away to picking, packing, and dispatch, every warehouse movement is orchestrated through a single intelligent platform—keeping your operations organised, efficient, and ready to scale.
             </p>
           </div>
           <div data-animate data-delay="100" style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 24px 60px rgba(20,10,40,.16)', maxWidth: '427px', margin: '0 auto' }}>
