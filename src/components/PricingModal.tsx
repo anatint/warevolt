@@ -287,6 +287,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
 
                 {/* Form Fields */}
                 <form
+                  id="pricing-modal-form"
                   onSubmit={handleSubmit}
                   style={{
                     display: 'grid',

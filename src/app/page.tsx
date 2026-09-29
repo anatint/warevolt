@@ -381,8 +381,9 @@ export default function HomePage() {
 
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
+          <div id="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
             <a
+              id="nav-phone-link"
               href="tel:+919876543210"
               style={{
                 display: 'flex',
@@ -406,6 +407,7 @@ export default function HomePage() {
               +91 98765 43210
             </a>
             <button
+              id="nav-cta"
               onClick={() => setPricingOpen(true)}
               style={{
                 background: '#4D0DD9',
@@ -710,6 +712,7 @@ export default function HomePage() {
                 Login
               </button>
               <button
+                id="hero-cta"
                 onClick={() => setPricingOpen(true)}
                 style={{
                   background: '#4D0DD9',

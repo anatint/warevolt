@@ -407,23 +407,32 @@ body::before {
 }
 
 @media (max-width: 1120px) {
-  #hero-nav-links { display: none !important; }
+  #hero-nav-links, #ph-nav-links { display: none !important; }
   #hero-phone-link { display: none !important; }
-  #hero-hamburger { display: flex !important; }
-  #hero-menu-toggle:checked ~ #hero-mobile-panel { display: flex !important; }
+  #hero-hamburger, #ph-hamburger { display: flex !important; }
+  #hero-menu-toggle:checked ~ #hero-mobile-panel,
+  #ph-menu-toggle:checked ~ #ph-mobile-panel { display: flex !important; }
+  #order-grid, #inventory-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  #inventory-grid > div:first-child { order: 2; }
 }
 
 @media (max-width: 900px) {
   #hero-grid { grid-template-columns: 1fr !important; }
+  #d2c-hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  #d2c-section-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  #marketplace-section-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  #platform-hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
   #about-grid { grid-template-columns: 1fr !important; }
   #hero-right { display: none !important; }
   #nav-links { display: none !important; }
   #nav-hamburger { display: flex !important; }
+  #nav-phone-link { display: none !important; }
   #nav-menu-toggle:checked ~ #nav-mobile-panel { display: flex !important; }
   #solutions-grid { grid-template-columns: repeat(2, 1fr) !important; }
   #fulfillment-grid { grid-template-columns: repeat(2, 1fr) !important; }
   #why-grid { grid-template-columns: 1fr !important; }
   #platform-grid { grid-template-columns: 1fr !important; }
+  #modern-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
   #industries-grid { grid-template-columns: repeat(3, 1fr) !important; }
   #projects-grid { grid-template-columns: 1fr !important; }
   #process-row { flex-direction: column !important; align-items: flex-start !important; }
@@ -431,22 +440,73 @@ body::before {
   #stats-bar-grid { grid-template-columns: repeat(2, 1fr) !important; }
   #stats-bar-grid > div { border-right: none !important; margin-bottom: 24px; }
   #testi-grid { grid-template-columns: 1fr !important; }
-  #footer-grid { grid-template-columns: 1fr 1fr !important; }
+  #footer-grid { grid-template-columns: 1fr 1fr !important; gap: 40px !important; }
   #why-visual { min-height: 380px !important; }
   #why-visual svg { width: 80% !important; height: auto !important; max-width: 380px !important; }
   #hero-logo { height: 90px !important; }
   #about-badges { gap: 16px !important; }
+
+  /* Order & Warehouse page responsive additions */
+  #order-cap-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  #warehouse-cap-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+  #order-diagram { aspect-ratio: auto !important; min-height: 520px !important; }
+
+  /* D2C & Marketplace Fulfillment page responsive additions */
+  #marketplace-hero-tiles { grid-template-columns: 1fr 1fr !important; }
+  #marketplace-cards-grid { grid-template-columns: 1fr 1fr !important; }
+  #d2c-services-grid > div { flex-basis: calc(50% - 8px) !important; }
+  #compliance-grid { grid-template-columns: 1fr 1fr !important; }
+  #compliance-grid > div { border-right: none !important; }
+  #excellence-grid { grid-template-columns: 1fr 1fr !important; }
+  #excellence-grid-2 { grid-template-columns: 1fr 1fr !important; }
+  #faq-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  #faq-grid > div:first-child { position: relative !important; top: auto !important; }
+
+  /* Platform page responsive additions */
+  #platform-cap-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 768px) {
+  #hero-cta { display: none !important; }
+  #nav-cta { display: none !important; }
+  #nav-actions { display: none !important; }
+  #hero-actions { gap: 12px !important; }
+  #industries-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
 @media (max-width: 640px) {
   #fulfillment-grid { grid-template-columns: 1fr !important; }
-  #footer-grid { grid-template-columns: 1fr !important; }
+  #footer-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
   #about-badges { grid-template-columns: 1fr !important; }
   #solutions-grid { grid-template-columns: 1fr !important; }
+  #industries-grid { grid-template-columns: 1fr !important; }
   #why-grid { gap: 40px !important; }
   #platform-grid { gap: 40px !important; }
   #why-visual { min-height: 280px !important; }
   #why-visual svg { max-width: 260px !important; }
   #hero-logo { height: 70px !important; }
   #stats-bar-grid > div { padding: 0 12px !important; }
+
+  /* Order & Warehouse */
+  #order-cap-grid { grid-template-columns: 1fr !important; }
+
+  /* D2C */
+  #marketplace-hero-tiles { grid-template-columns: 1fr !important; }
+  #marketplace-cards-grid { grid-template-columns: 1fr !important; }
+  #d2c-services-grid > div { flex-basis: 100% !important; }
+  #compliance-grid { grid-template-columns: 1fr !important; }
+  #compliance-grid > div { border-right: none !important; border-bottom: 1px solid #E4DEF5 !important; }
+  #excellence-grid { grid-template-columns: 1fr !important; }
+  #excellence-grid-2 { grid-template-columns: 1fr !important; }
+
+  /* Platform */
+  #platform-cap-grid { grid-template-columns: 1fr !important; }
+  #modern-commerce-corners > div[style*="width:150px"] { position: static !important; width: 100% !important; margin-bottom: 16px; }
+  #modern-commerce-corners { display: flex !important; flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 540px) {
+  #pricing-modal-form { grid-template-columns: 1fr !important; }
+  #pricing-modal-form > div { grid-column: 1 / -1 !important; }
+  #pricing-modal-card { border-radius: 18px !important; }
 }

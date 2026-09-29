@@ -314,6 +314,7 @@ export default function D2CMarketplaceFulfillmentPage() {
                 Login
               </button>
               <button
+                id="hero-cta"
                 onClick={() => setPricingOpen(true)}
                 style={{
                   background: '#4D0DD9',
@@ -549,7 +550,7 @@ export default function D2CMarketplaceFulfillmentPage() {
       <section id="marketplace" style={{ position: 'relative', overflow: 'hidden', background: '#0B0619' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/uploads/pasted-1784525640761-0.png')", backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg,rgba(11,6,25,.94) 0%,rgba(11,6,25,.82) 40%,rgba(11,6,25,.55) 65%,rgba(11,6,25,.3) 100%)', zIndex: 1 }}></div>
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '1440px', margin: '0 auto', padding: '110px clamp(20px,5%,80px)', display: 'grid', gridTemplateColumns: '1.1fr .9fr', gap: '48px', alignItems: 'center' }}>
+        <div id="marketplace-section-grid" style={{ position: 'relative', zIndex: 2, maxWidth: '1440px', margin: '0 auto', padding: '110px clamp(20px,5%,80px)', display: 'grid', gridTemplateColumns: '1.1fr .9fr', gap: '48px', alignItems: 'center' }}>
           <div>
             <h2 data-animate style={{ fontSize: 'clamp(34px,4.2vw,58px)', fontWeight: 800, letterSpacing: '-.02em', lineHeight: 1.08, color: '#fff', marginBottom: '24px' }}>
               Marketplace Fulfillment
