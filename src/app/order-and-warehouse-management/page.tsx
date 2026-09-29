@@ -250,13 +250,23 @@ export default function OrderAndWarehouseManagementPage() {
               </Link>
               <button
                 onClick={() => setPricingOpen(true)}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '15px', fontWeight: 400, color: 'rgba(255,255,255,.92)', transition: 'color .2s', whiteSpace: 'nowrap', padding: 0 }}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '15px',
+                  fontWeight: 400,
+                  color: 'rgba(255,255,255,.92)',
+                  transition: 'color .2s',
+                  whiteSpace: 'nowrap',
+                  padding: 0,
+                  fontFamily: 'inherit',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.92)')}
               >
                 Pricing
               </button>
-              <Link href="/#projects" style={{ fontSize: '15px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
-                Track
-              </Link>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '26px', flexShrink: 0, marginLeft: 'auto' }}>
@@ -345,13 +355,10 @@ export default function OrderAndWarehouseManagementPage() {
                 </Link>
                 <button
                   onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
-                  style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: '14px 0', color: '#fff', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}
+                  style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: '14px 0', color: '#fff', fontSize: '16px', fontWeight: 500, fontFamily: 'inherit' }}
                 >
                   Pricing
                 </button>
-                <Link href="/#projects" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500 }}>
-                  Track
-                </Link>
                 <a href="tel:+919876543210" style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
                   +91 98765 43210
                 </a>

@@ -379,12 +379,6 @@ export default function HomePage() {
               Pricing
             </button>
 
-            <a
-              href="#projects"
-              style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', transition: 'color .3s' }}
-            >
-              Track
-            </a>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
@@ -496,13 +490,10 @@ export default function HomePage() {
               </a>
               <button
                 onClick={() => { setPricingOpen(true); setMobileNavOpen(false); }}
-                style={{ padding: '14px 0', color: '#fff', textAlign: 'left', background: 'none', border: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)', cursor: 'pointer', fontFamily: 'inherit' }}
+                style={{ padding: '14px 0', color: '#fff', textAlign: 'left', background: 'none', border: 'none', fontSize: '16px', fontWeight: 500, cursor: 'pointer', fontFamily: 'inherit' }}
               >
                 Pricing
               </button>
-              <a href="#projects" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500 }}>
-                Track
-              </a>
             </div>
           )}
         </div>
@@ -799,13 +790,10 @@ export default function HomePage() {
                 </a>
                 <button
                   onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
-                  style={{ padding: '14px 0', color: '#fff', textAlign: 'left', background: 'none', border: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)', cursor: 'pointer', fontFamily: 'inherit' }}
+                  style={{ padding: '14px 0', color: '#fff', textAlign: 'left', background: 'none', border: 'none', fontSize: '16px', fontWeight: 500, cursor: 'pointer', fontFamily: 'inherit' }}
                 >
                   Pricing
                 </button>
-                <a href="#projects" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500 }}>
-                  Track
-                </a>
                 <a href="tel:+919876543210" style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
                   +91 98765 43210
                 </a>

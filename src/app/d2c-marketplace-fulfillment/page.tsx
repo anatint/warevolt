@@ -274,13 +274,23 @@ export default function D2CMarketplaceFulfillmentPage() {
               </Link>
               <button
                 onClick={() => setPricingOpen(true)}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', transition: 'color .2s', whiteSpace: 'nowrap', padding: 0 }}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '16px',
+                  fontWeight: 400,
+                  color: 'rgba(255,255,255,.92)',
+                  transition: 'color .2s',
+                  whiteSpace: 'nowrap',
+                  padding: 0,
+                  fontFamily: 'inherit',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.92)')}
               >
                 Pricing
               </button>
-              <Link href="/#projects" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
-                Track
-              </Link>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '26px', flexShrink: 0, marginLeft: 'auto' }}>
@@ -331,6 +341,58 @@ export default function D2CMarketplaceFulfillmentPage() {
                 <path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </button>
+
+            {heroMobileOpen && (
+              <div
+                id="hero-mobile-panel"
+                style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: 0,
+                  right: 0,
+                  background: '#0B0619',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  padding: '8px clamp(20px,5%,80px) 24px',
+                  gap: '2px',
+                  boxShadow: '0 12px 30px rgba(0,0,0,.4)',
+                  zIndex: 40,
+                }}
+              >
+                <Link href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
+                  Home
+                </Link>
+                <Link href="/#solutions" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
+                  Solutions
+                </Link>
+                <div style={{ padding: '14px 0 8px', color: '#fff', fontSize: '16px', fontWeight: 500 }}>Technology</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', padding: '0 0 12px 14px', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
+                  {techMegaMenu.map((item, idx) => (
+                    <Link key={idx} href={item.href} style={{ padding: '9px 0', color: 'rgba(255,255,255,.72)', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+                <Link href="/#industries" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
+                  Sectors
+                </Link>
+                <button
+                  onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
+                  style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: '14px 0', color: '#fff', fontSize: '16px', fontWeight: 500, fontFamily: 'inherit' }}
+                >
+                  Pricing
+                </button>
+                <a href="tel:+919876543210" style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
+                  +91 98765 43210
+                </a>
+                <button
+                  onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
+                  style={{ marginTop: '12px', background: '#4D0DD9', color: '#fff', padding: '13px 20px', borderRadius: '12px', fontSize: '14px', fontWeight: 700, border: 'none', cursor: 'pointer', textAlign: 'center' }}
+                >
+                  Speak to an expert
+                </button>
+              </div>
+            )}
           </nav>
         </div>
 
