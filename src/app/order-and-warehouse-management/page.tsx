@@ -27,14 +27,14 @@ export default function InventoryAndReturnsManagementPage() {
   ];
 
   const returnsCapabilities = [
-    { num: '01', title: 'Omnichannel Return Ingestion', desc: 'Centralize customer returns originating from brand webstores, Amazon, Flipkart, Myntra, and retail channels.' },
-    { num: '02', title: 'Dockside Barcode Verification', desc: 'Rapid scan verification upon receiving to validate RMA numbers, item validity, and customer return reasons.' },
-    { num: '03', title: 'Standardized Quality Grading', desc: 'SOP-guided inspection workflows that categorize items into Grade-A (restock), Grade-B (discount/liquidation), or RTV.' },
-    { num: '04', title: 'Rapid Return-to-Shelf Cycles', desc: 'Verified Grade-A merchandise is immediately restocked and relisted across all channels to preserve revenue.' },
-    { num: '05', title: 'Repackaging & Refurbishment', desc: 'Value-added services including re-tagging, polybag replacement, barcode re-labeling, and accessory checks.' },
-    { num: '06', title: 'Automated Refund & Exchange Triggers', desc: 'Instant API webhooks to your commerce platform upon QC approval for rapid customer refund settlement.' },
-    { num: '07', title: 'NDR & RTO Mitigation Workflows', desc: 'Real-time non-delivery tracking and proactive address validation to prevent return-to-origin incidents before they occur.' },
-    { num: '08', title: 'Claims & Damage Documentation', desc: 'High-definition photo capture and digital dispute records for carrier transit damage and marketplace reimbursement claims.' },
+    { num: '01', title: 'Structured Goods Receiving', desc: 'Streamline inbound verification, discrepancy logging, and dock-to-stock processing.' },
+    { num: '02', title: 'Put-Away Optimisation', desc: 'Guide inventory to the most efficient storage locations using configurable put-away rules.' },
+    { num: '03', title: 'Bin & Location Management', desc: 'Manage inventory across warehouses, zones, aisles, racks, shelves, and bins with complete visibility.' },
+    { num: '04', title: 'Optimised Picking Workflows', desc: 'Accelerate fulfilment with single, batch, wave, cluster, and zone picking strategies.' },
+    { num: '05', title: 'Barcode-Verified Packing', desc: 'Validate every item before dispatch to improve fulfilment accuracy.' },
+    { num: '06', title: 'Dispatch Management', desc: 'Coordinate staging, loading, and carrier handovers with complete operational visibility.' },
+    { num: '07', title: 'Cycle Counting & Stock Adjustments', desc: 'Maintain inventory accuracy through continuous stock verification and reconciliation.' },
+    { num: '08', title: 'Mobile Warehouse Operations', desc: 'Execute warehouse tasks seamlessly using handheld barcode scanners and mobile devices.' },
   ];
 
   useEffect(() => {
