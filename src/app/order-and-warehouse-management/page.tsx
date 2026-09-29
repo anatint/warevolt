@@ -380,23 +380,9 @@ export default function InventoryAndReturnsManagementPage() {
               <h1 style={{ fontSize: 'clamp(34px,3.8vw,52px)', fontWeight: 800, lineHeight: 1.14, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '20px' }}>
                 Order Management
               </h1>
-              <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.86)', lineHeight: 1.68, maxWidth: '740px', marginBottom: '32px' }}>
+              <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.86)', lineHeight: 1.68, maxWidth: '740px', marginBottom: 0 }}>
                 Today&apos;s commerce landscape moves faster and operates across more channels than ever before.
               </p>
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                <button
-                  onClick={() => setPricingOpen(true)}
-                  style={{ background: '#4D0DD9', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
-                >
-                  Get a Quote
-                </button>
-                <button
-                  onClick={() => setPricingOpen(true)}
-                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
-                >
-                  Speak to an expert
-                </button>
-              </div>
             </div>
             <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '360px' }}>
               <div style={{ position: 'absolute', width: '94%', height: '94%', background: 'radial-gradient(circle,rgba(139,107,255,.45) 0%,transparent 70%)', filter: 'blur(24px)' }}></div>
