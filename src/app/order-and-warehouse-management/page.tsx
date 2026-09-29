@@ -112,16 +112,35 @@ export default function OrderAndWarehouseManagementPage() {
           position: 'relative',
           overflow: 'hidden',
           background: 'linear-gradient(120deg,#0B0619 0%,#251157 40%,#160A38 70%,#0B0619 100%)',
+          minHeight: '941px',
+          height: '941px',
+          display: 'flex',
+          flexDirection: 'column',
+          boxSizing: 'border-box',
         }}
       >
+        <style>{`
+          @media (min-width: 901px) {
+            #hero-section {
+              height: 941px !important;
+              min-height: 941px !important;
+            }
+          }
+          @media (max-width: 900px) {
+            #hero-section {
+              height: auto !important;
+              min-height: 941px !important;
+            }
+          }
+        `}</style>
         <div style={{ position: 'absolute', top: '-100px', left: '-6%', width: '420px', height: '420px', background: 'radial-gradient(circle,rgba(77,13,217,.32) 0%,transparent 65%)', pointerEvents: 'none' }}></div>
         <div style={{ position: 'absolute', bottom: '-140px', right: '-6%', width: '460px', height: '460px', background: 'radial-gradient(circle,rgba(124,91,251,.28) 0%,transparent 65%)', pointerEvents: 'none' }}></div>
 
         {/* Hero Nav */}
         <div style={{ position: 'relative', zIndex: 30, padding: '0 clamp(20px,5%,80px)' }}>
-          <nav style={{ height: '84px', maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '40px' }}>
+          <nav style={{ height: '115px', maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '40px' }}>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-              <img id="hero-logo" src="/assets/warevolt-logo-white.png" alt="Warevolt" style={{ height: '100px', width: 'auto', objectFit: 'contain', display: 'block' }} />
+              <img id="hero-logo" src="/assets/warevolt-logo-white.png" alt="Warevolt" style={{ height: '135px', width: 'auto', objectFit: 'contain', display: 'block' }} />
             </Link>
 
             <div id="hero-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
@@ -240,13 +259,13 @@ export default function OrderAndWarehouseManagementPage() {
               </Link>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexShrink: 0, marginLeft: 'auto' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '26px', flexShrink: 0, marginLeft: 'auto' }}>
               <button
                 onClick={() => setPricingOpen(true)}
                 style={{
                   background: 'none',
                   border: 'none',
-                  fontSize: '14.5px',
+                  fontSize: '15px',
                   fontWeight: 500,
                   color: 'rgba(255,255,255,.9)',
                   cursor: 'pointer',
@@ -266,9 +285,9 @@ export default function OrderAndWarehouseManagementPage() {
                 style={{
                   background: '#4D0DD9',
                   color: '#fff',
-                  padding: '13px 28px',
+                  padding: '15px 32px',
                   borderRadius: '12px',
-                  fontSize: '14.5px',
+                  fontSize: '15px',
                   fontWeight: 700,
                   border: 'none',
                   cursor: 'pointer',
@@ -348,40 +367,40 @@ export default function OrderAndWarehouseManagementPage() {
         </div>
 
         {/* Hero Body */}
-        <div id="hero-body" style={{ position: 'relative', zIndex: 10, padding: '68px clamp(20px,5%,80px) 76px' }}>
-          <div id="hero-grid" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '48px', alignItems: 'center' }}>
+        <div id="hero-body" style={{ position: 'relative', zIndex: 10, flex: 1, display: 'flex', alignItems: 'center', padding: '30px clamp(20px,5%,80px) 50px' }}>
+          <div id="hero-grid" style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '60px', alignItems: 'center' }}>
             <div>
-              <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'rgba(255,255,255,.68)', letterSpacing: '.04em', marginBottom: '14px' }}>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: 'rgba(255,255,255,.68)', letterSpacing: '.04em', marginBottom: '18px' }}>
                 Solutions / Order &amp; Warehouse Management
               </div>
-              <h1 style={{ fontSize: 'clamp(32px,3.8vw,52px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '20px' }}>
+              <h1 style={{ fontSize: 'clamp(38px,4.4vw,58px)', fontWeight: 800, lineHeight: 1.13, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '26px' }}>
                 Order &amp; Warehouse Management
               </h1>
-              <p style={{ fontSize: '16.5px', color: 'rgba(255,255,255,.86)', lineHeight: 1.68, maxWidth: '740px', marginBottom: '32px' }}>
+              <p style={{ fontSize: '18px', color: 'rgba(255,255,255,.86)', lineHeight: 1.75, maxWidth: '760px', marginBottom: '38px' }}>
                 Today&apos;s commerce landscape moves faster and operates across more channels than ever before. Centralise orders, streamline warehouse operations, and scale fulfillment with WareVolt Scale™.
               </p>
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '18px', flexWrap: 'wrap' }}>
                 <button
                   onClick={() => setPricingOpen(true)}
-                  style={{ background: '#4D0DD9', color: '#fff', padding: '13px 28px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
+                  style={{ background: '#4D0DD9', color: '#fff', padding: '16px 36px', borderRadius: '12px', fontSize: '15.5px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
                   Get a Quote
                 </button>
                 <button
                   onClick={() => setPricingOpen(true)}
-                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '13px 28px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
+                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '16px 36px', borderRadius: '12px', fontSize: '15.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
                   Speak to an expert
                 </button>
               </div>
             </div>
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '360px' }}>
-              <div style={{ position: 'absolute', width: '92%', height: '92%', background: 'radial-gradient(circle,rgba(139,107,255,.4) 0%,transparent 70%)', filter: 'blur(22px)' }}></div>
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '440px' }}>
+              <div style={{ position: 'absolute', width: '94%', height: '94%', background: 'radial-gradient(circle,rgba(139,107,255,.45) 0%,transparent 70%)', filter: 'blur(24px)' }}></div>
               <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{ width: '150px', height: '48px', background: 'linear-gradient(135deg,#A78BFA,#7B5BFB)', borderRadius: '12px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 40px rgba(167,139,250,.65)', marginBottom: '-16px' }}></div>
-                <div style={{ width: '215px', height: '48px', background: 'linear-gradient(135deg,#8B5CF6,#4D0DD9)', borderRadius: '12px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 48px rgba(139,92,246,.6)', marginBottom: '-16px' }}></div>
-                <div style={{ width: '280px', height: '48px', background: 'linear-gradient(135deg,#7B5BFB,#3A0FD9)', borderRadius: '12px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 56px rgba(123,91,251,.55)', marginBottom: '-16px' }}></div>
-                <div style={{ width: '345px', height: '48px', background: 'linear-gradient(135deg,#6D28D9,#2E0B8F)', borderRadius: '12px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 56px rgba(109,40,217,.5)' }}></div>
+                <div style={{ width: '175px', height: '56px', background: 'linear-gradient(135deg,#A78BFA,#7B5BFB)', borderRadius: '14px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 46px rgba(167,139,250,.68)', marginBottom: '-18px' }}></div>
+                <div style={{ width: '250px', height: '56px', background: 'linear-gradient(135deg,#8B5CF6,#4D0DD9)', borderRadius: '14px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 54px rgba(139,92,246,.62)', marginBottom: '-18px' }}></div>
+                <div style={{ width: '325px', height: '56px', background: 'linear-gradient(135deg,#7B5BFB,#3A0FD9)', borderRadius: '14px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 62px rgba(123,91,251,.58)', marginBottom: '-18px' }}></div>
+                <div style={{ width: '400px', height: '56px', background: 'linear-gradient(135deg,#6D28D9,#2E0B8F)', borderRadius: '14px', transform: 'perspective(400px) rotateX(55deg)', boxShadow: '0 0 62px rgba(109,40,217,.52)' }}></div>
               </div>
             </div>
           </div>
