@@ -16,14 +16,14 @@ export default function InventoryAndReturnsManagementPage() {
   ];
 
   const inventoryCapabilities = [
-    { title: 'Real-Time Multi-Node Sync', desc: 'Synchronize available-to-promise inventory instantly across Shopify, marketplaces, and physical warehouse nodes.' },
-    { title: 'Intelligent Stock Allocation', desc: 'Dynamically route orders to the closest fulfillment facility with available stock to cut shipping zones and transit times.' },
-    { title: 'Batch, Lot & Serial Tracking', desc: 'Maintain complete traceability for serialized goods, production batches, manufacturing dates, and strict expiry windows.' },
-    { title: 'Predictive Reorder Alerts', desc: 'Automated replenishment recommendations based on SKU velocity forecasts, historical trends, and supplier lead times.' },
-    { title: 'Rolling Cycle Counting', desc: 'Perform scheduled and continuous cycle counts across aisles and bins without interrupting active dispatch operations.' },
-    { title: 'Safety Stock & Buffer Rules', desc: 'Guard against sudden volume spikes and stockouts with configurable buffer margins and channel-specific reservation rules.' },
-    { title: 'Kitting, Bundling & Assemblies', desc: 'Easily assemble and disassemble multi-item kits, gift packs, and promos with automatic child-SKU inventory deduction.' },
-    { title: 'Comprehensive Audit Trails', desc: 'Granular movement history tracking every inbound receiving, bin transfer, pick, write-off, and cycle adjustment.' },
+    { title: 'Unified Order Dashboard', desc: 'Manage orders from every sales channel through a single operational view.' },
+    { title: 'Multi-Channel Synchronization', desc: 'Automatically synchronize orders across your entire commerce ecosystem in real time.' },
+    { title: 'Live Order Tracking', desc: 'Monitor every stage from order confirmation to picking, packing, shipping, and delivery.' },
+    { title: 'Intelligent Order Prioritization', desc: 'Automatically prioritise orders using configurable business rules and SLA targets.' },
+    { title: 'Bulk Processing & Automation', desc: 'Process thousands of orders with batch actions and automated workflows.' },
+    { title: 'Split & Partial Fulfilment', desc: 'Support split shipments, partial fulfilments, and multi-location order routing.' },
+    { title: 'B2B & Wholesale Workflows', desc: 'Configure dedicated fulfilment rules for wholesale, retail, and enterprise customers.' },
+    { title: 'Order Search & Audit History', desc: 'Quickly locate orders, access complete audit trails, and generate packing slips and shipping documents instantly.' },
   ];
 
   const returnsCapabilities = [
@@ -442,7 +442,7 @@ export default function InventoryAndReturnsManagementPage() {
             Key Capabilities
           </h2>
           <p data-animate data-delay="40" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.6, marginBottom: '36px' }}>
-            Precision control across every stock movement and storage location.
+            With WareVolt Scale™ you have eyes on every order, everywhere.
           </p>
           <div id="order-cap-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px', textAlign: 'left' }}>
             {inventoryCapabilities.map((c, idx) => (
