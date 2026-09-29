@@ -3,13 +3,27 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
-import { useCms, CmsRow } from '@/lib/cms';
+import { usePageCms, CmsRow } from '@/lib/cms';
+import { useSiteHeader } from '@/lib/site';
+import SiteFooter from '@/components/SiteFooter';
 import defaults from '@/content/platform.json';
 
 export default function PlatformPage() {
-  const cms = useCms('PlatformPage', defaults as CmsRow[]);
+  const cms = usePageCms('platform', defaults as CmsRow[]);
   const T = (section: string, key: string) => cms.one(section, key).title ?? '';
   const D = (section: string, key: string) => cms.one(section, key).description ?? '';
+  const header = useSiteHeader();
+  const headerLogo = header.one('brand', 'logo-light');
+  const headerLogin = header.one('actions', 'login');
+  const headerCta = header.one('actions', 'cta');
+  const phone = header.one('actions', 'phone');
+  // Shared nav (minus the Technology mega-menu) with this page's own bold 'Platform' link after Solutions.
+  const navItems: CmsRow[] = [];
+  header.list('nav').forEach((item) => {
+    if (item.extra === 'mega-menu') return;
+    navItems.push(item);
+    if (item.key === 'solutions') navItems.push({ section: 'nav', key: 'platform', linkLabel: 'Platform', linkUrl: '#platform', extra: 'current-page' } as CmsRow);
+  });
   const [pricingOpen, setPricingOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [heroMobileOpen, setHeroMobileOpen] = useState(false);
@@ -193,41 +207,42 @@ export default function PlatformPage() {
         <div style={{ position: 'relative', zIndex: 30, padding: '0 clamp(20px,5%,80px)' }}>
           <nav style={{ height: '110px', maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '40px' }}>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-              <img id="hero-logo" src="/assets/warevolt-logo-white.png" alt="Warevolt" style={{ height: '140px', width: 'auto', objectFit: 'contain', display: 'block' }} />
+              <img id="hero-logo" src={headerLogo.image || '/assets/warevolt-logo-white.png'} alt={headerLogo.imageAlt || 'Warevolt'} style={{ height: '140px', width: 'auto', objectFit: 'contain', display: 'block' }} />
             </Link>
 
             <div id="ph-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
-              <Link href="/" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
-                Home
-              </Link>
-              <Link href="/#solutions" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .2s', whiteSpace: 'nowrap' }}>
-                Solutions
-              </Link>
-              <Link href="#platform" style={{ fontSize: '16px', fontWeight: 700, color: '#fff', textDecoration: 'none', whiteSpace: 'nowrap' }}>
-                Platform
-              </Link>
-              <Link href="/#industries" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
-                Sectors
-              </Link>
-              <button
-                onClick={() => setPricingOpen(true)}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontSize: '16px',
-                  fontWeight: 400,
-                  color: 'rgba(255,255,255,.92)',
-                  transition: 'color .2s',
-                  whiteSpace: 'nowrap',
-                  padding: 0,
-                  fontFamily: 'inherit',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.92)')}
-              >
-                Pricing
-              </button>
+              {navItems.map((item, idx) => {
+                if (item.extra === 'opens-pricing-modal') {
+                  return (
+                    <button
+                      key={item.key ?? idx}
+                      onClick={() => setPricingOpen(true)}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '16px',
+                        fontWeight: 400,
+                        color: 'rgba(255,255,255,.92)',
+                        transition: 'color .2s',
+                        whiteSpace: 'nowrap',
+                        padding: 0,
+                        fontFamily: 'inherit',
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.92)')}
+                    >
+                      {item.linkLabel ?? ''}
+                    </button>
+                  );
+                }
+                const current = item.extra === 'current-page';
+                return (
+                  <Link key={item.key ?? idx} href={item.linkUrl ?? '#'} style={{ fontSize: '16px', fontWeight: current ? 700 : 400, color: current ? '#fff' : 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
+                    {item.linkLabel ?? ''}
+                  </Link>
+                );
+              })}
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0, marginLeft: 'auto' }}>
@@ -248,7 +263,7 @@ export default function PlatformPage() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
               >
-                Login
+                {headerLogin.linkLabel ?? ''}
               </button>
               <button
                 id="hero-cta"
@@ -266,7 +281,7 @@ export default function PlatformPage() {
                   transition: 'background .2s, transform .2s',
                 }}
               >
-                Speak to an expert
+                {headerCta.linkLabel ?? ''}
               </button>
             </div>
 
@@ -297,32 +312,34 @@ export default function PlatformPage() {
                   zIndex: 40,
                 }}
               >
-                <Link href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  Home
-                </Link>
-                <Link href="/#solutions" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  Solutions
-                </Link>
-                <Link href="#platform" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  Platform
-                </Link>
-                <Link href="/#industries" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  Sectors
-                </Link>
-                <button
-                  onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
-                  style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: '14px 0', color: '#fff', fontSize: '16px', fontWeight: 500, fontFamily: 'inherit' }}
-                >
-                  Pricing
-                </button>
-                <a href="tel:+919876543210" style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
-                  +91 98765 43210
-                </a>
+                {navItems.map((item, idx) => {
+                  if (item.extra === 'opens-pricing-modal') {
+                    return (
+                      <button
+                        key={item.key ?? idx}
+                        onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
+                        style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: '14px 0', color: '#fff', fontSize: '16px', fontWeight: 500, fontFamily: 'inherit' }}
+                      >
+                        {item.linkLabel ?? ''}
+                      </button>
+                    );
+                  }
+                  return (
+                    <Link key={item.key ?? idx} href={item.linkUrl ?? '#'} style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
+                      {item.linkLabel ?? ''}
+                    </Link>
+                  );
+                })}
+                {phone.linkLabel && (
+                  <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
+                    {phone.linkLabel}
+                  </a>
+                )}
                 <button
                   onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
                   style={{ marginTop: '12px', background: '#4D0DD9', color: '#fff', padding: '13px 20px', borderRadius: '12px', fontSize: '14px', fontWeight: 700, border: 'none', cursor: 'pointer', textAlign: 'center' }}
                 >
-                  Speak to an expert
+                  {headerCta.linkLabel ?? ''}
                 </button>
               </div>
             )}
@@ -636,91 +653,7 @@ export default function PlatformPage() {
       </section>
 
       {/* ══ FOOTER ══ */}
-      <footer style={{ background: '#0B0619', padding: '80px clamp(20px,5%,80px) 40px', color: 'rgba(255,255,255,.6)' }}>
-        <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
-          <div id="footer-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1.4fr', gap: '60px', marginBottom: '64px' }}>
-            <div>
-              <div style={{ display: 'inline-block', marginBottom: '20px' }}>
-                <img src="/uploads/warevolt-logo-footer-transparent.png" alt="Warevolt" style={{ height: '88px', objectFit: 'contain', display: 'block' }} />
-              </div>
-              <p style={{ fontSize: '14.5px', lineHeight: 1.8, marginBottom: '28px', maxWidth: '280px' }}>
-                Premium industrial infrastructure company specializing in warehouses, PEB structures, and cold storage solutions across India.
-              </p>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <a href="#" style={{ width: '38px', height: '38px', background: 'rgba(255,255,255,.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="white" strokeWidth="1.5" /><circle cx="4" cy="4" r="2" stroke="white" strokeWidth="1.5" /></svg>
-                </a>
-                <a href="#" style={{ width: '38px', height: '38px', background: 'rgba(255,255,255,.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </a>
-                <a href="#" style={{ width: '38px', height: '38px', background: 'rgba(255,255,255,.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" strokeWidth="1.5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke="white" strokeWidth="1.5" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" strokeWidth="2" strokeLinecap="round" /></svg>
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>Quick Links</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <Link href="/#about" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>About Us</Link>
-                <Link href="/#solutions" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Solutions</Link>
-                <Link href="/#projects" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Projects</Link>
-                <Link href="/#industries" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Industries</Link>
-                <a href="#" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Blog</a>
-              </div>
-            </div>
-
-            <div>
-              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>Solutions</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <Link href="/order-and-warehouse-management" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Order &amp; Warehouse Management</Link>
-                <Link href="/d2c-marketplace-fulfillment" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>D2C &amp; Marketplace Fulfillment</Link>
-                <Link href="/inventory-and-returns-management" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Inventory &amp; Returns Management</Link>
-                <Link href="/analytics-and-reporting" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Analytics &amp; Reporting</Link>
-              </div>
-            </div>
-
-            <div>
-              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>Contact</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '28px' }}>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0, marginTop: '2px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /><circle cx="12" cy="10" r="3" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                  <span style={{ fontSize: '14px', lineHeight: 1.6 }}>123 Industrial Zone, Navi Mumbai, Maharashtra 400708</span>
-                </div>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.16 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.19 6.19l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                  <span style={{ fontSize: '14px' }}>+91 98765 43210</span>
-                </div>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /><polyline points="22,6 12,13 2,6" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                  <span style={{ fontSize: '14px' }}>hello@warevolt.in</span>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  style={{ flex: 1, background: 'rgba(255,255,255,.08)', border: '1.5px solid rgba(255,255,255,.12)', borderRadius: '12px', padding: '12px 16px', color: '#fff', fontSize: '13.5px', outline: 'none' }}
-                />
-                <button
-                  onClick={() => setPricingOpen(true)}
-                  style={{ background: '#4D0DD9', color: '#fff', border: 'none', borderRadius: '12px', padding: '12px 18px', fontSize: '13.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
-                >
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div style={{ borderTop: '1px solid rgba(255,255,255,.07)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-            <p style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)' }}>© 2026 Warevolt. All rights reserved.</p>
-            <div style={{ display: 'flex', gap: '28px' }}>
-              <a href="#" style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' }}>Privacy Policy</a>
-              <a href="#" style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' }}>Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter onSubscribe={() => setPricingOpen(true)} />
 
       {/* ══ EXACT PRICING POPUP MODAL ══ */}
       <PricingModal

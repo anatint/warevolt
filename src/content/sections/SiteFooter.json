@@ -1,0 +1,149 @@
+[
+ {
+  "section": "brand",
+  "order": 1,
+  "key": "logo",
+  "image": "https://static.wixstatic.com/media/db6928_92b5efdb04694bb89142ea45fda47b55~mv2.png",
+  "imageAlt": "Warevolt",
+  "linkUrl": "/"
+ },
+ {
+  "section": "brand",
+  "order": 2,
+  "key": "description",
+  "description": "Premium industrial infrastructure company specializing in warehouses, PEB structures, and cold storage solutions across India."
+ },
+ {
+  "section": "quick-links",
+  "order": 0,
+  "key": "heading",
+  "title": "Quick Links"
+ },
+ {
+  "section": "quick-links",
+  "order": 1,
+  "key": "quick-1",
+  "linkLabel": "Home",
+  "linkUrl": "/"
+ },
+ {
+  "section": "quick-links",
+  "order": 2,
+  "key": "quick-2",
+  "linkLabel": "About Us",
+  "linkUrl": "/#about"
+ },
+ {
+  "section": "quick-links",
+  "order": 3,
+  "key": "quick-3",
+  "linkLabel": "Solutions",
+  "linkUrl": "/#solutions"
+ },
+ {
+  "section": "quick-links",
+  "order": 4,
+  "key": "quick-4",
+  "linkLabel": "Projects",
+  "linkUrl": "/#projects"
+ },
+ {
+  "section": "quick-links",
+  "order": 5,
+  "key": "quick-5",
+  "linkLabel": "Industries",
+  "linkUrl": "/#industries"
+ },
+ {
+  "section": "quick-links",
+  "order": 6,
+  "key": "quick-6",
+  "linkLabel": "Blog",
+  "linkUrl": "#"
+ },
+ {
+  "section": "solution-links",
+  "order": 0,
+  "key": "heading",
+  "title": "Solutions"
+ },
+ {
+  "section": "solution-links",
+  "order": 1,
+  "key": "solution-1",
+  "linkLabel": "Order & Warehouse Management",
+  "linkUrl": "/order-and-warehouse-management/"
+ },
+ {
+  "section": "solution-links",
+  "order": 2,
+  "key": "solution-2",
+  "linkLabel": "D2C & Marketplace Fulfillment",
+  "linkUrl": "/d2c-marketplace-fulfillment/"
+ },
+ {
+  "section": "solution-links",
+  "order": 3,
+  "key": "solution-3",
+  "linkLabel": "Inventory & Returns Management",
+  "linkUrl": "/inventory-and-returns-management/"
+ },
+ {
+  "section": "solution-links",
+  "order": 4,
+  "key": "solution-4",
+  "linkLabel": "Analytics & Reporting",
+  "linkUrl": "/analytics-and-reporting/"
+ },
+ {
+  "section": "contact",
+  "order": 0,
+  "key": "heading",
+  "title": "Contact"
+ },
+ {
+  "section": "contact",
+  "order": 1,
+  "key": "address",
+  "description": "123 Industrial Zone, Navi Mumbai, Maharashtra 400708"
+ },
+ {
+  "section": "contact",
+  "order": 2,
+  "key": "phone",
+  "description": "+91 98765 43210"
+ },
+ {
+  "section": "contact",
+  "order": 3,
+  "key": "email",
+  "description": "hello@warevolt.in"
+ },
+ {
+  "section": "newsletter",
+  "order": 1,
+  "key": "newsletter",
+  "label": "Enter your email",
+  "linkLabel": "Subscribe"
+ },
+ {
+  "section": "legal",
+  "order": 1,
+  "key": "copyright",
+  "description": "© 2026 Warevolt. All rights reserved."
+ },
+ {
+  "section": "legal",
+  "order": 2,
+  "key": "privacy",
+  "linkLabel": "Privacy Policy",
+  "linkUrl": "#"
+ },
+ {
+  "section": "legal",
+  "order": 3,
+  "key": "terms",
+  "linkLabel": "Terms of Service",
+  "linkUrl": "#"
+ }
+]

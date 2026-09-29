@@ -1,0 +1,69 @@
+[
+ {
+  "page": "home",
+  "section": "testimonials",
+  "order": 1,
+  "key": "testimonials-title",
+  "title": "What Our Clients Say"
+ },
+ {
+  "page": "home",
+  "section": "testimonials-items",
+  "order": 1,
+  "key": "testimonial-1",
+  "title": "Reliance Retail",
+  "description": "Warevolt delivered our 200,000 sq ft distribution center two weeks ahead of schedule with flawless execution.",
+  "label": "Rahul Kumar",
+  "extra": "Los Angeles"
+ },
+ {
+  "page": "home",
+  "section": "testimonials-items",
+  "order": 2,
+  "key": "testimonial-2",
+  "title": "Mahindra Components",
+  "description": "The PEB structure for our plant was engineered to perfection — workmanship and support were world-class.",
+  "label": "Priya Sharma",
+  "extra": "California"
+ },
+ {
+  "page": "home",
+  "section": "testimonials-items",
+  "order": 3,
+  "key": "testimonial-3",
+  "title": "Sun Pharma",
+  "description": "Warevolt understood our compliance needs and delivered a state-of-the-art facility that passed every inspection.",
+  "label": "Arun Menon",
+  "extra": "California"
+ },
+ {
+  "page": "home",
+  "section": "testimonials-items",
+  "order": 4,
+  "key": "testimonial-4",
+  "title": "Tata Logistics",
+  "description": "Their team scaled our cold storage capacity in record time without a single day of downtime.",
+  "label": "Sanjay Kapoor",
+  "extra": "Mumbai"
+ },
+ {
+  "page": "home",
+  "section": "testimonials-items",
+  "order": 5,
+  "key": "testimonial-5",
+  "title": "Godrej Industries",
+  "description": "Precision engineering and transparent communication throughout — exactly what we needed for our expansion.",
+  "label": "Neha Verma",
+  "extra": "Pune"
+ },
+ {
+  "page": "home",
+  "section": "testimonials-items",
+  "order": 6,
+  "key": "testimonial-6",
+  "title": "Adani Wilmar",
+  "description": "From design to handover, Warevolt made a complex warehouse project feel effortless.",
+  "label": "Ravi Patel",
+  "extra": "Ahmedabad"
+ }
+]

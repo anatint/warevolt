@@ -3,7 +3,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import defaults from '@/content/home.json';
-import { useCms, CmsRow } from '@/lib/cms';
+import { usePageCms, CmsRow } from '@/lib/cms';
+import { useSiteHeader } from '@/lib/site';
+import SiteFooter from '@/components/SiteFooter';
 
 export default function HomePage() {
   const [pricingOpen, setPricingOpen] = useState(false);
@@ -13,7 +15,14 @@ export default function HomePage() {
   const [techMenuOpen, setTechMenuOpen] = useState(false);
   const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
 
-  const cms = useCms('HomePage', defaults as CmsRow[]);
+  const cms = usePageCms('home', defaults as CmsRow[]);
+  const header = useSiteHeader();
+  const nav = (key: string) => header.one('nav', key);
+  const login = header.one('actions', 'login');
+  const cta = header.one('actions', 'cta');
+  const phone = header.one('actions', 'phone');
+  const logoLight = header.one('brand', 'logo-light');
+  const logoDark = header.one('brand', 'logo-dark');
   const c = (section: string, key: string, field: keyof CmsRow): string => (cms.one(section, key)[field] as string | undefined) ?? '';
 
   const feedStatus: { color: string; bold?: boolean }[] = [
@@ -44,11 +53,7 @@ export default function HomePage() {
     returns: 1.2,
   });
 
-  const techMegaMenu = [
-    { label: 'Order & Warehouse Management', desc: 'From order to dispatch, every fulfillment workflow connected.', href: '/order-and-warehouse-management' },
-    { label: 'Inventory & Returns Management', desc: 'Complete control of stock, movements, and returns across your network.', href: '/inventory-and-returns-management' },
-    { label: 'Analytics & Reporting', desc: 'Turn fulfillment data into clear, actionable insights.', href: '/analytics-and-reporting' },
-  ];
+  const techMegaMenu = header.list('mega-menu').map((r) => ({ label: r.title ?? '', desc: r.description ?? '', href: r.linkUrl ?? '#' }));
 
   const testimonialGradients = [
     'linear-gradient(135deg,#4D0DD9,#8B6BFF)',
@@ -243,7 +248,7 @@ export default function HomePage() {
         >
           <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
             <img
-              src="/assets/warevolt-logo-transparent.png"
+              src={logoDark.image || '/assets/warevolt-logo-transparent.png'}
               alt="Warevolt"
               style={{ height: '120px', width: 'auto', objectFit: 'contain', display: 'block' }}
             />
@@ -256,15 +261,15 @@ export default function HomePage() {
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.85)')}
             >
-              Home
+              {nav('home').linkLabel ?? ''}
             </a>
             <a
-              href="#solutions"
+              href={nav('solutions').linkUrl ?? '#solutions'}
               style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', transition: 'color .3s' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.85)')}
             >
-              Solutions
+              {nav('solutions').linkLabel ?? ''}
             </a>
 
             <div
@@ -294,7 +299,7 @@ export default function HomePage() {
                   transition: 'color .3s',
                 }}
               >
-                Technology{' '}
+                {nav('technology').linkLabel ?? ''}{' '}
                 <svg
                   width="14"
                   height="9"
@@ -370,7 +375,7 @@ export default function HomePage() {
             </div>
 
             <a
-              href="#industries"
+              href={nav('sectors').linkUrl ?? '#industries'}
               style={{
                 fontSize: '14.5px',
                 fontWeight: 500,
@@ -379,7 +384,7 @@ export default function HomePage() {
                 transition: 'color .3s',
               }}
             >
-              Sectors
+              {nav('sectors').linkLabel ?? ''}
             </a>
 
             <button
@@ -398,7 +403,7 @@ export default function HomePage() {
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.85)')}
             >
-              Pricing
+              {nav('pricing').linkLabel ?? ''}
             </button>
 
           </div>
@@ -406,7 +411,7 @@ export default function HomePage() {
           <div id="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
             <a
               id="nav-phone-link"
-              href="tel:+919876543210"
+              href={phone.linkUrl ?? '#'}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -426,7 +431,7 @@ export default function HomePage() {
                   strokeWidth="1.6"
                 />
               </svg>
-              +91 98765 43210
+              {phone.linkLabel ?? ''}
             </a>
             <button
               id="nav-cta"
@@ -456,7 +461,7 @@ export default function HomePage() {
                 e.currentTarget.style.transform = 'none';
               }}
             >
-              Get a Quote{' '}
+              {cta.linkLabel ?? ''}{' '}
               <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
                 <path d="M1 1l5 5-5 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -501,22 +506,22 @@ export default function HomePage() {
               }}
             >
               <a href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-                Home
+                {nav('home').linkLabel ?? ''}
               </a>
               <a href="#solutions" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-                Solutions
+                {nav('solutions').linkLabel ?? ''}
               </a>
               <a href="#technology" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
                 Technology
               </a>
               <a href="#industries" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-                Sectors
+                {nav('sectors').linkLabel ?? ''}
               </a>
               <button
                 onClick={() => { setPricingOpen(true); setMobileNavOpen(false); }}
                 style={{ padding: '14px 0', color: '#fff', textAlign: 'left', background: 'none', border: 'none', fontSize: '16px', fontWeight: 500, cursor: 'pointer', fontFamily: 'inherit' }}
               >
-                Pricing
+                {nav('pricing').linkLabel ?? ''}
               </button>
             </div>
           )}
@@ -555,7 +560,7 @@ export default function HomePage() {
             <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
               <img
                 id="hero-logo"
-                src="/assets/warevolt-logo-white.png"
+                src={logoLight.image || '/assets/warevolt-logo-white.png'}
                 alt="Warevolt"
                 style={{ height: '140px', width: 'auto', objectFit: 'contain', display: 'block' }}
               />
@@ -563,10 +568,10 @@ export default function HomePage() {
 
             <div id="hero-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
               <a href="/" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
-                Home
+                {nav('home').linkLabel ?? ''}
               </a>
               <a href="#solutions" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
-                Solutions
+                {nav('solutions').linkLabel ?? ''}
               </a>
 
               <div
@@ -597,7 +602,7 @@ export default function HomePage() {
                     whiteSpace: 'nowrap',
                   }}
                 >
-                  Technology{' '}
+                  {nav('technology').linkLabel ?? ''}{' '}
                   <svg
                     width="14"
                     height="9"
@@ -673,7 +678,7 @@ export default function HomePage() {
               </div>
 
               <a
-                href="#industries"
+                href={nav('sectors').linkUrl ?? '#industries'}
                 style={{
                   fontSize: '16px',
                   fontWeight: 400,
@@ -683,7 +688,7 @@ export default function HomePage() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                Sectors
+                {nav('sectors').linkLabel ?? ''}
               </a>
 
               <button
@@ -703,7 +708,7 @@ export default function HomePage() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.92)')}
               >
-                Pricing
+                {nav('pricing').linkLabel ?? ''}
               </button>
             </div>
 
@@ -725,7 +730,7 @@ export default function HomePage() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
               >
-                Login
+                {login.linkLabel ?? ''}
               </button>
               <button
                 id="hero-cta"
@@ -752,7 +757,7 @@ export default function HomePage() {
                   e.currentTarget.style.transform = 'none';
                 }}
               >
-                Speak to an expert
+                {cta.linkLabel ?? ''}
               </button>
             </div>
 
@@ -796,31 +801,31 @@ export default function HomePage() {
                 }}
               >
                 <a href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  Home
+                  {nav('home').linkLabel ?? ''}
                 </a>
                 <a href="#solutions" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  Solutions
+                  {nav('solutions').linkLabel ?? ''}
                 </a>
                 <a href="#technology" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
                   Technology
                 </a>
                 <a href="#industries" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  Sectors
+                  {nav('sectors').linkLabel ?? ''}
                 </a>
                 <button
                   onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
                   style={{ padding: '14px 0', color: '#fff', textAlign: 'left', background: 'none', border: 'none', fontSize: '16px', fontWeight: 500, cursor: 'pointer', fontFamily: 'inherit' }}
                 >
-                  Pricing
+                  {nav('pricing').linkLabel ?? ''}
                 </button>
-                <a href="tel:+919876543210" style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
-                  +91 98765 43210
+                <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
+                  {phone.linkLabel ?? ''}
                 </a>
                 <button
                   onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
                   style={{ marginTop: '12px', background: '#4D0DD9', color: '#fff', padding: '13px 20px', borderRadius: '12px', fontSize: '14px', fontWeight: 700, border: 'none', cursor: 'pointer', fontFamily: 'inherit', textAlign: 'center' }}
                 >
-                  Speak to an expert
+                  {cta.linkLabel ?? ''}
                 </button>
               </div>
             )}
@@ -1500,94 +1505,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ FOOTER ══ */}
-      <footer style={{ background: '#0B0619', padding: '80px clamp(20px,5%,80px) 40px', color: 'rgba(255,255,255,.6)' }}>
-        <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
-          <div id="footer-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1.4fr', gap: '60px', marginBottom: '64px' }}>
-            {/* Brand */}
-            <div>
-              <div style={{ display: 'inline-block', marginBottom: '20px' }}>
-                <img src="/uploads/warevolt-logo-footer-transparent.png" alt="Warevolt" style={{ height: '88px', objectFit: 'contain', display: 'block' }} />
-              </div>
-              <p style={{ fontSize: '14.5px', lineHeight: 1.8, marginBottom: '28px', maxWidth: '280px' }}>
-                {c('footer','footer-description','description')}
-              </p>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <a href="#" style={{ width: '38px', height: '38px', background: 'rgba(255,255,255,.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="white" strokeWidth="1.5" /><circle cx="4" cy="4" r="2" stroke="white" strokeWidth="1.5" /></svg>
-                </a>
-                <a href="#" style={{ width: '38px', height: '38px', background: 'rgba(255,255,255,.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </a>
-                <a href="#" style={{ width: '38px', height: '38px', background: 'rgba(255,255,255,.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" strokeWidth="1.5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke="white" strokeWidth="1.5" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" strokeWidth="2" strokeLinecap="round" /></svg>
-                </a>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>{c('footer','footer-quick-heading','title')}</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                {cms.list('footer-quick-links').map((r, i) => (
-                  <a key={i} href={r.linkUrl ?? '#'} style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>{r.linkLabel ?? ''}</a>
-                ))}
-              </div>
-            </div>
-
-            {/* Solutions */}
-            <div>
-              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>{c('footer','footer-solutions-heading','title')}</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                {cms.list('footer-solution-links').map((r, i) => (
-                  <a key={i} href={r.linkUrl ?? '#'} style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>{r.linkLabel ?? ''}</a>
-                ))}
-              </div>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>{c('footer','footer-contact-heading','title')}</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '28px' }}>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0, marginTop: '2px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /><circle cx="12" cy="10" r="3" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                  <span style={{ fontSize: '14px', lineHeight: 1.6 }}>{c('footer','footer-address','description')}</span>
-                </div>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.16 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.19 6.19l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                  <span style={{ fontSize: '14px' }}>{c('footer','footer-phone','description')}</span>
-                </div>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /><polyline points="22,6 12,13 2,6" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                  <span style={{ fontSize: '14px' }}>{c('footer','footer-email','description')}</span>
-                </div>
-              </div>
-
-              {/* Newsletter */}
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <input
-                  type="email"
-                  placeholder={c('footer','footer-newsletter','label')}
-                  style={{ flex: 1, background: 'rgba(255,255,255,.08)', border: '1.5px solid rgba(255,255,255,.12)', borderRadius: '12px', padding: '12px 16px', color: '#fff', fontSize: '13.5px', fontFamily: 'inherit', outline: 'none' }}
-                />
-                <button
-                  style={{ background: '#4D0DD9', color: '#fff', border: 'none', borderRadius: '12px', padding: '12px 18px', fontSize: '13.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', fontFamily: 'inherit' }}
-                >
-                  {c('footer','footer-newsletter','linkLabel')}
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Bar */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,.07)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-            <p style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)' }}>{c('footer','footer-copyright','description')}</p>
-            <div style={{ display: 'flex', gap: '28px' }}>
-              <a href={c('footer','footer-privacy','linkUrl')} style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' }}>{c('footer','footer-privacy','linkLabel')}</a>
-              <a href={c('footer','footer-terms','linkUrl')} style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' }}>{c('footer','footer-terms','linkLabel')}</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter onSubscribe={() => setPricingOpen(true)} />
 
       {/* ══ EXACT PRICING MODAL POPUP FROM CLAUDE DESIGN ══ */}
       <PricingModal

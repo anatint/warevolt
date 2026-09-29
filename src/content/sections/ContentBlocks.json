@@ -1,0 +1,751 @@
+[
+ {
+  "page": "home",
+  "section": "about",
+  "order": 1,
+  "key": "about-photo",
+  "image": "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80",
+  "imageAlt": "Warehouse photo"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 2,
+  "key": "about-watermark",
+  "image": "https://static.wixstatic.com/media/db6928_b1cd35348df640fc8a8abbf8214db8d5~mv2.png"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 3,
+  "key": "about-years",
+  "title": "25+",
+  "description": "Years of Excellence"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 4,
+  "key": "about-iso",
+  "label": "ISO Certified",
+  "title": "Verified Quality"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 5,
+  "key": "about-title",
+  "title": "About"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 6,
+  "key": "about-p1",
+  "description": "We build reliable fulfillment solutions that help businesses move products efficiently, safely, and on time. With 25+ years of industry experience, we combine proven processes, quality materials, and technology-driven execution to deliver consistent results for Indian and global brands."
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 7,
+  "key": "about-p2",
+  "description": "Our commitment goes beyond completing an order. From planning and production to quality checks and delivery, every stage is managed with precision and accountability. We follow international standards, prioritize safety, and ensure every project is delivered according to agreed timelines."
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 8,
+  "key": "about-badge-1",
+  "title": "International Standards",
+  "description": "ISO certified materials and processes"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 9,
+  "key": "about-badge-2",
+  "title": "On-Time Delivery",
+  "description": "Milestone-driven project execution"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 10,
+  "key": "about-badge-3",
+  "title": "Safety First",
+  "description": "Zero-incident site management"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 11,
+  "key": "about-badge-4",
+  "title": "25+ Years",
+  "description": "Deep domain expertise"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "order": 12,
+  "key": "about-link",
+  "linkLabel": "Learn More About Us",
+  "linkUrl": "#"
+ },
+ {
+  "page": "home",
+  "section": "channels",
+  "order": 1,
+  "key": "channels-title",
+  "title": "Sell Anywhere. Fulfill Everywhere."
+ },
+ {
+  "page": "home",
+  "section": "channels",
+  "order": 2,
+  "key": "channels-description",
+  "description": "Connect your e-commerce, marketplaces, retail, B2B, and quick commerce channels into a single, automated fulfillment network."
+ },
+ {
+  "page": "home",
+  "section": "channels",
+  "order": 3,
+  "key": "channels-video",
+  "image": "/uploads/warehouse loop.mp4"
+ },
+ {
+  "page": "home",
+  "section": "visibility",
+  "order": 1,
+  "key": "visibility-title",
+  "title": "Real-time visibility across every warehouse"
+ },
+ {
+  "page": "home",
+  "section": "visibility",
+  "order": 2,
+  "key": "visibility-description",
+  "description": "Track stock levels, order status and dispatch progress from a single dashboard — updated the moment it happens on the floor."
+ },
+ {
+  "page": "home",
+  "section": "visibility",
+  "order": 3,
+  "key": "browser-url",
+  "label": "🔒 dashboard.warevolt.in"
+ },
+ {
+  "page": "home",
+  "section": "visibility",
+  "order": 4,
+  "key": "dashboard-image",
+  "image": "https://static.wixstatic.com/media/db6928_32302d5429764ee5bd809d7be1824d76~mv2.png",
+  "imageAlt": "Warevolt Control Tower dashboard"
+ },
+ {
+  "page": "home",
+  "section": "visibility",
+  "order": 5,
+  "key": "journey-image",
+  "image": "https://static.wixstatic.com/media/db6928_bbd1885ff7d64ed6a0c47c17d9339a51~mv2.png",
+  "imageAlt": "Order journey steps"
+ },
+ {
+  "page": "home",
+  "section": "platform",
+  "order": 1,
+  "key": "platform-title",
+  "title": "One Platform. Absolute Control."
+ },
+ {
+  "page": "home",
+  "section": "platform",
+  "order": 2,
+  "key": "platform-description",
+  "description": "Warevolt Scale™ is the intelligent fulfillment platform that powers every Warevolt operation. It brings together order management, inventory management, warehouse operations, shipping, returns, and analytics into a single connected platform—giving your business complete visibility and control over every stage of fulfillment."
+ },
+ {
+  "page": "home",
+  "section": "platform",
+  "order": 3,
+  "key": "platform-diagram",
+  "image": "https://static.wixstatic.com/media/db6928_ac16497fbb184ab5aff02b75882e9873~mv2.png",
+  "imageAlt": "Warevolt Scale ecosystem diagram"
+ },
+ {
+  "page": "home",
+  "section": "shipping",
+  "order": 1,
+  "key": "shipping-image",
+  "image": "https://static.wixstatic.com/media/db6928_df643b36e32d4f85a87fb118be2c812e~mv2.png",
+  "imageAlt": "Warevolt operations dashboard"
+ },
+ {
+  "page": "home",
+  "section": "shipping",
+  "order": 2,
+  "key": "shipping-eyebrow",
+  "label": "Shipping & Distribution"
+ },
+ {
+  "page": "home",
+  "section": "shipping",
+  "order": 3,
+  "key": "shipping-title",
+  "title": "Flexible Shipping. Built Around Your Business."
+ },
+ {
+  "page": "home",
+  "section": "shipping",
+  "order": 4,
+  "key": "shipping-p1",
+  "description": "Every business ships differently. Some fulfill thousands of eCommerce orders every day, while others move pallets of inventory between factories, distributors, retail stores, and warehouses. Warevolt gives you the flexibility to manage both through a single fulfillment partner."
+ },
+ {
+  "page": "home",
+  "section": "shipping",
+  "order": 5,
+  "key": "shipping-p2",
+  "description": "For Ecommerce shipments, our Bring Your Own Account (BYOA) model lets you continue using your preferred shipping platform or courier accounts. For larger inventory movements, our managed freight network connects you with trusted transport partners across India for Full Truckload (FTL), Part Truckload (PTL), and Less Than Truckload (LTL) shipments."
+ },
+ {
+  "page": "home",
+  "section": "shipping",
+  "order": 6,
+  "key": "shipping-p3",
+  "description": "Whether you're shipping a single parcel or an entire truckload, Warevolt provides the technology, operational expertise, and nationwide logistics network to move your inventory efficiently, accurately, and at scale."
+ },
+ {
+  "page": "home",
+  "section": "shipping",
+  "order": 7,
+  "key": "shipping-cta",
+  "linkLabel": "Learn More"
+ },
+ {
+  "page": "platform",
+  "section": "modern-commerce",
+  "order": 1,
+  "key": "title",
+  "title": "Modern Commerce Requires Intelligent Infrastructure"
+ },
+ {
+  "page": "platform",
+  "section": "modern-commerce",
+  "order": 2,
+  "key": "paragraph-1",
+  "description": "Today's commerce landscape moves faster and operates across more channels than ever before. Orders flow simultaneously from your online stores, marketplaces, retail partners, and B2B channels. Inventory moves continuously across warehouses and 3PL networks, while customers expect fast, accurate fulfillment with complete shipment visibility."
+ },
+ {
+  "page": "platform",
+  "section": "modern-commerce",
+  "order": 3,
+  "key": "paragraph-2",
+  "description": "For growing businesses, managing these increasingly complex operations through disconnected spreadsheets, siloed software, and manual processes creates costly inefficiencies. The result is inventory inaccuracies, fulfillment delays, higher operating costs, and missed growth opportunities."
+ },
+ {
+  "page": "platform",
+  "section": "modern-commerce",
+  "order": 4,
+  "key": "paragraph-3",
+  "description": "WareVolt Scale™ unifies your entire commerce operation into one intelligent platform. From order capture and inventory management to warehouse execution, shipping, and delivery, it orchestrates every workflow through a single source of truth—providing complete operational visibility, greater efficiency, and the scalability to support your next stage of growth."
+ },
+ {
+  "page": "platform",
+  "section": "order-management",
+  "order": 1,
+  "key": "title",
+  "title": "Every Order. One Intelligent Workflow."
+ },
+ {
+  "page": "platform",
+  "section": "order-management",
+  "order": 2,
+  "key": "paragraph-1",
+  "description": "Managing orders across multiple sales channels shouldn't mean managing multiple systems. WareVolt Scale™ centralizes every order into a single intelligent workspace, giving your operations team complete visibility from order creation to final dispatch."
+ },
+ {
+  "page": "platform",
+  "section": "order-management",
+  "order": 3,
+  "key": "paragraph-2",
+  "description": "Whether orders originate from your online store, marketplaces, retail partners, or B2B channels, WareVolt Scale™ automates workflows, reduces manual intervention, and ensures every order moves through fulfillment quickly, accurately, and on time."
+ },
+ {
+  "page": "platform",
+  "section": "order-management",
+  "order": 4,
+  "key": "diagram",
+  "image": "https://static.wixstatic.com/media/db6928_7d38cb59e34c45a49380e6ec623ef7d8~mv2.png",
+  "imageAlt": "Warevolt Scale ecosystem diagram"
+ },
+ {
+  "page": "platform",
+  "section": "inventory-management",
+  "order": 1,
+  "key": "title",
+  "title": "Complete Visibility. Absolute Inventory Control."
+ },
+ {
+  "page": "platform",
+  "section": "inventory-management",
+  "order": 2,
+  "key": "paragraph-1",
+  "description": "Inventory is the foundation of efficient fulfilment. WareVolt Scale™ provides a single, real-time view of every SKU across your entire warehouse network, ensuring accurate stock levels, faster fulfilment, and complete inventory confidence."
+ },
+ {
+  "page": "platform",
+  "section": "inventory-management",
+  "order": 3,
+  "key": "paragraph-2",
+  "description": "From receiving and put-away to picking, dispatch, and returns, every inventory movement is automatically synchronised in real time. Keep inventory aligned across every connected sales channel, eliminate overselling, optimize replenishment, and make faster, data-driven inventory decisions."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "intro",
+  "order": 1,
+  "key": "intro-title",
+  "title": "Every Order. One Intelligent Workflow."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "intro",
+  "order": 2,
+  "key": "intro-paragraph-1",
+  "description": "Managing orders across multiple sales channels shouldn't mean managing multiple systems. WareVolt Scale™ centralizes every order into a single intelligent workspace, giving your operations team complete visibility from order creation to final dispatch."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "intro",
+  "order": 3,
+  "key": "intro-paragraph-2",
+  "description": "Whether orders originate from your online store, marketplaces, retail partners, or B2B channels, WareVolt Scale™ automates workflows, reduces manual intervention, and ensures every order moves through fulfillment quickly, accurately, and on time."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "intro",
+  "order": 4,
+  "key": "intro-image",
+  "image": "https://static.wixstatic.com/media/db6928_f580e700318f440aa4493c900a43ce09~mv2.png",
+  "imageAlt": "Warevolt Inventory ecosystem diagram"
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-intro",
+  "order": 1,
+  "key": "warehouse-eyebrow",
+  "label": "Warehouse Management"
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-intro",
+  "order": 2,
+  "key": "warehouse-title",
+  "title": "Built for Elite Warehouse Productivity."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-intro",
+  "order": 3,
+  "key": "warehouse-description",
+  "description": "Warehouse efficiency drives fulfillment performance. WareVolt Scale™ transforms warehouse operations with structured, repeatable, and intelligent workflows that reduce travel time, minimise picking errors, and maximise daily throughput. From inbound receiving and put-away to picking, packing, and dispatch, every warehouse movement is orchestrated through a single intelligent platform—keeping your operations organised, efficient, and ready to scale."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-intro",
+  "order": 4,
+  "key": "warehouse-image",
+  "image": "https://static.wixstatic.com/media/db6928_e2db1131a8284992986bbb1a44b68135~mv2.png",
+  "imageAlt": "Warevolt Returns Control dashboard"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "overview",
+  "order": 1,
+  "key": "overview-title",
+  "title": "Real-Time Visibility. Zero Discrepancies."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "overview",
+  "order": 2,
+  "key": "overview-paragraph-1",
+  "description": "Inventory is the foundation of efficient fulfilment. WareVolt Scale™ provides a single, real-time view of every SKU across your entire warehouse network, ensuring accurate stock levels, faster fulfilment, and complete inventory confidence."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "overview",
+  "order": 3,
+  "key": "overview-paragraph-2",
+  "description": "From receiving and put-away to picking, dispatch, and returns, every inventory movement is automatically synchronised in real time. Keep inventory aligned across every connected sales channel, eliminate overselling, optimize replenishment, and make faster, data-driven inventory decisions."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "overview",
+  "order": 4,
+  "key": "overview-image",
+  "image": "https://static.wixstatic.com/media/db6928_f580e700318f440aa4493c900a43ce09~mv2.png",
+  "imageAlt": "Warevolt Inventory ecosystem diagram"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "returns-intro",
+  "order": 1,
+  "key": "returns-eyebrow",
+  "label": "Reverse Logistics & QC"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "returns-intro",
+  "order": 2,
+  "key": "returns-title",
+  "title": "Turn Returns into Recovered Revenue."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "returns-intro",
+  "order": 3,
+  "key": "returns-description",
+  "description": "Customer returns shouldn't drain your bottom line. WareVolt Scale™ accelerates reverse logistics with standardized dockside verification, SOP-driven quality grading, and automated restock pipelines. Whether re-bagging saleable units or handling vendor returns, our structured reverse workflow ensures minimal value loss and rapid return-to-shelf turnaround."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "returns-intro",
+  "order": 4,
+  "key": "returns-image",
+  "image": "https://static.wixstatic.com/media/db6928_e2db1131a8284992986bbb1a44b68135~mv2.png",
+  "imageAlt": "Warevolt Returns Control dashboard"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "intelligence",
+  "order": 1,
+  "key": "intelligence-title",
+  "title": "Real-Time Operational Intelligence. Complete Visibility."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "intelligence",
+  "order": 2,
+  "key": "intelligence-paragraph-1",
+  "description": "Supply chains generate millions of discrete data points every single day. WareVolt Scale™ aggregates, normalizes, and visualizes this data into unified operational intelligence—giving your team instant clarity over order cycles, carrier SLA delivery, and warehouse throughput."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "intelligence",
+  "order": 3,
+  "key": "intelligence-paragraph-2",
+  "description": "Identify delivery bottlenecks before they hurt customer reviews, measure true unit fulfillment economics, and streamline cross-facility operations with confidence backed by verifiable real-time analytics."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "intelligence",
+  "order": 4,
+  "key": "intelligence-diagram",
+  "image": "https://static.wixstatic.com/media/db6928_f580e700318f440aa4493c900a43ce09~mv2.png",
+  "imageAlt": "Warevolt Analytics and Intelligence diagram"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "enterprise",
+  "order": 1,
+  "key": "enterprise-eyebrow",
+  "label": "Enterprise Intelligence & BI"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "enterprise",
+  "order": 2,
+  "key": "enterprise-title",
+  "title": "Actionable Insights Across Every Supply Chain Touchpoint."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "enterprise",
+  "order": 3,
+  "key": "enterprise-description",
+  "description": "From floor-level warehouse supervisors to executive leadership, WareVolt Analytics connects disparate data streams across sales channels, WMS workflows, and last-mile logistics into a single source of truth. Schedule automated reports, configure proactive alerts, and feed clean fulfillment data into your enterprise BI stack effortlessly."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "enterprise",
+  "order": 4,
+  "key": "enterprise-image",
+  "image": "https://static.wixstatic.com/media/db6928_e2db1131a8284992986bbb1a44b68135~mv2.png",
+  "imageAlt": "Warevolt Analytics Control Tower dashboard"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "intro",
+  "order": 1,
+  "key": "intro-title",
+  "title": "Connect your online store and marketplaces to a single fulfillment platform."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-fulfillment",
+  "order": 1,
+  "key": "d2c-image",
+  "image": "https://static.wixstatic.com/media/db6928_fd0f8619145848718e615f687c585c94~mv2.png",
+  "imageAlt": "D2C fulfillment platform illustration"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-fulfillment",
+  "order": 2,
+  "key": "d2c-title",
+  "title": "D2C Fulfillment"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-fulfillment",
+  "order": 3,
+  "key": "d2c-highlight",
+  "description": "Deliver a consistent post-purchase experience for every order placed through your online store."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-fulfillment",
+  "order": 4,
+  "key": "d2c-paragraph-1",
+  "description": "Warevolt supports brands selling through Shopify, WooCommerce, Magento, and custom e-commerce websites by connecting your storefront directly to our fulfillment platform. Orders are automatically imported, inventory is synchronised in real time, and every order moves through a structured fulfillment workflow—from picking and quality checks to packing, shipping, and returns."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-fulfillment",
+  "order": 5,
+  "key": "d2c-paragraph-2",
+  "description": "Whether you're shipping a few hundred orders each month or processing thousands of orders daily, Warevolt provides the operational infrastructure to help you maintain inventory accuracy, reduce manual processing, and dispatch orders on time. Our warehouse operations follow defined Standard Operating Procedures (SOPs) and Service Level Agreements (SLAs) to ensure consistent fulfillment quality and operational performance."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-fulfillment",
+  "order": 6,
+  "key": "d2c-paragraph-3",
+  "description": "Brands can also customize the customer experience with branded packaging, promotional inserts, gift wrapping, and other value-added services while maintaining complete visibility through the Warevolt platform."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-fulfillment",
+  "order": 7,
+  "key": "d2c-badge-1",
+  "title": "Real-time sync"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-fulfillment",
+  "order": 8,
+  "key": "d2c-badge-2",
+  "title": "SOP & SLA driven"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-fulfillment",
+  "order": 9,
+  "key": "d2c-badge-3",
+  "title": "Branded packaging"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "marketplace",
+  "order": 1,
+  "key": "marketplace-background",
+  "image": "https://static.wixstatic.com/media/db6928_b4c631fe71f949d9abbbaa2f437d5bb4~mv2.png",
+  "imageAlt": "Marketplace fulfillment background"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "marketplace",
+  "order": 2,
+  "key": "marketplace-title",
+  "title": "Marketplace Fulfillment"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "marketplace",
+  "order": 3,
+  "key": "marketplace-highlight",
+  "description": "Expand your marketplace operations without increasing operational complexity."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "marketplace",
+  "order": 4,
+  "key": "marketplace-paragraph-1",
+  "description": "Warevolt helps brands fulfill orders across Amazon, Flipkart, Myntra, Ajio, Nykaa, Meesho, and other leading marketplaces from a single fulfillment operation. Inventory is centrally managed while orders are automatically processed according to each marketplace's shipping, packaging, and compliance requirements."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "marketplace",
+  "order": 5,
+  "key": "marketplace-paragraph-2",
+  "description": "From inbound inventory to outbound dispatch, every shipment follows defined Standard Operating Procedures (SOPs) and Service Level Agreements (SLAs) to help maintain marketplace performance and seller metrics."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "marketplace",
+  "order": 6,
+  "key": "tile-1",
+  "title": "Amazon · Flipkart · Myntra · Ajio · Nykaa · Meesho"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "marketplace",
+  "order": 7,
+  "key": "tile-2",
+  "title": "Single Operation",
+  "description": "Centrally managed inventory across every channel"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "marketplace",
+  "order": 8,
+  "key": "tile-3",
+  "title": "SOPs & SLAs",
+  "description": "Defined processes from inbound to dispatch"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "marketplace",
+  "order": 9,
+  "key": "tile-4",
+  "title": "Compliance-Ready",
+  "description": "Built to each marketplace's requirements"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "intro",
+  "order": 1,
+  "key": "intro-title",
+  "title": "Power hyper-local 10 to 30 minute delivery networks with high-density dark store fulfillment."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "order": 1,
+  "key": "image",
+  "image": "https://static.wixstatic.com/media/db6928_32b907e9be9343579dbe68e276f74ee6~mv2.jpg",
+  "imageAlt": "Quick commerce micro-fulfillment dark store"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "order": 2,
+  "key": "title",
+  "title": "Hyper-Local Micro-Fulfillment"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "order": 3,
+  "key": "highlight",
+  "description": "Under 3-minute pick-and-pack times with barcode-guided handheld routing."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "order": 4,
+  "key": "paragraph-1",
+  "description": "Quick commerce demands microsecond responsiveness and near-zero error margins. Warevolt deploys high-density micro-fulfillment centers (dark stores) within key urban delivery radiuses, enabling brands to fulfill on-demand grocery, D2C impulse purchases, consumer electronics, and daily essentials in 10 to 30 minutes."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "order": 5,
+  "key": "paragraph-2",
+  "description": "Each micro-facility is mapped for maximum picking speed. Fast-moving SKUs are slotted in ergonomic forward-pick zones, and incoming orders trigger instant RF scanner audio-visual cues so staff locate, scan, and stage bags in under 180 seconds."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "order": 6,
+  "key": "paragraph-3",
+  "description": "Centralized inventory feeds automatically replenish dark store inventory from regional mother hubs, ensuring consistent high availability across rapid delivery channels without overstocking micro-footprints."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "order": 7,
+  "key": "point-1",
+  "title": "Sub-3 min pick SLA"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "order": 8,
+  "key": "point-2",
+  "title": "Hyper-local inventory"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "order": 9,
+  "key": "point-3",
+  "title": "Dark store automation"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-network",
+  "order": 1,
+  "key": "background",
+  "image": "https://static.wixstatic.com/media/db6928_b4c631fe71f949d9abbbaa2f437d5bb4~mv2.png"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-network",
+  "order": 2,
+  "key": "title",
+  "title": "Platform Integration & Dark Store Network"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-network",
+  "order": 3,
+  "key": "highlight",
+  "description": "Fulfill orders across Blinkit, Zepto, Swiggy Instamart, and brand quick-commerce apps simultaneously."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-network",
+  "order": 4,
+  "key": "paragraph-1",
+  "description": "Warevolt centralizes rapid commerce operations. Products are cataloged and allocated dynamically so your brand can participate in multiple rapid delivery networks from shared or dedicated micro-fulfillment dark stores without inventory fragmentation."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-network",
+  "order": 5,
+  "key": "paragraph-2",
+  "description": "Real-time API handshakes update stock levels across all storefronts instantly upon item pick, while staging bays allow delivery riders to pick up sealed packages seamlessly within seconds of arrival."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-tiles",
+  "order": 1,
+  "key": "tile-1",
+  "title": "Blinkit · Zepto · Instamart · BB Now · ONDC"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-tiles",
+  "order": 2,
+  "key": "tile-2",
+  "title": "Sub-3 Min Assembly",
+  "description": "High-speed pick and pack with digital validation"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-tiles",
+  "order": 3,
+  "key": "tile-3",
+  "title": "Auto-Replenishment",
+  "description": "Mother hub to dark store continuous transfer"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-tiles",
+  "order": 4,
+  "key": "tile-4",
+  "title": "Multi-Temp Storage",
+  "description": "Ambient, chilled & frozen temperature control"
+ }
+]

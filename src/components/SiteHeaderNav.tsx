@@ -1,0 +1,335 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { useSiteHeader } from '@/lib/site';
+import type { CmsRow } from '@/lib/cms';
+
+const OPENS_PRICING = 'opens-pricing-modal';
+const MEGA_MENU = 'mega-menu';
+
+const navLinkStyle: React.CSSProperties = {
+  fontSize: '15px',
+  fontWeight: 400,
+  color: 'rgba(255,255,255,.92)',
+  textDecoration: 'none',
+  transition: 'color .2s',
+  whiteSpace: 'nowrap',
+};
+
+const mobileLinkStyle: React.CSSProperties = {
+  padding: '14px 0',
+  color: '#fff',
+  textDecoration: 'none',
+  fontSize: '16px',
+  fontWeight: 500,
+  borderBottom: '1px solid rgba(255,255,255,.08)',
+};
+
+/** Internal hrefs use next/link, everything else (#, mailto:, tel:, external) a plain anchor. */
+function SmartLink({
+  href,
+  style,
+  className,
+  onClick,
+  children,
+}: {
+  href: string;
+  style?: React.CSSProperties;
+  className?: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+}) {
+  if (href.startsWith('/')) {
+    return (
+      <Link href={href} style={style} className={className} onClick={onClick}>
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <a href={href} style={style} className={className} onClick={onClick}>
+      {children}
+    </a>
+  );
+}
+
+export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => void }) {
+  const [heroMobileOpen, setHeroMobileOpen] = useState(false);
+  const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
+  const header = useSiteHeader();
+
+  const logo = header.one('brand', 'logo-light');
+  const navItems = header.list('nav');
+  const megaMenu = header.list('mega-menu');
+  const login = header.one('actions', 'login');
+  const cta = header.one('actions', 'cta');
+  const phone = header.one('actions', 'phone');
+
+  const logoSrc = logo.image || '/assets/warevolt-logo-white.png';
+  const logoHref = logo.linkUrl || '/';
+
+  const renderDesktopItem = (item: CmsRow, idx: number) => {
+    if (item.extra === MEGA_MENU) {
+      return (
+        <div
+          key={item.key ?? idx}
+          id="hero-tech-menu-wrap"
+          style={{ position: 'relative', padding: '8px 0' }}
+          onMouseEnter={() => setHeroTechMenuOpen(true)}
+          onMouseLeave={() => setHeroTechMenuOpen(false)}
+        >
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              setHeroTechMenuOpen(!heroTechMenuOpen);
+            }}
+            style={{
+              background: 'none',
+              border: 'none',
+              padding: 0,
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+              fontSize: '15px',
+              fontWeight: 400,
+              color: heroTechMenuOpen ? '#fff' : 'rgba(255,255,255,.92)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              transition: 'color .2s',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {item.linkLabel ?? ''}{' '}
+            <svg
+              width="14"
+              height="9"
+              viewBox="0 0 10 6"
+              fill="none"
+              style={{
+                opacity: 0.75,
+                transform: heroTechMenuOpen ? 'rotate(180deg)' : 'none',
+                transition: 'transform .2s ease',
+              }}
+            >
+              <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          {heroTechMenuOpen && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '100%',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                paddingTop: '8px',
+                zIndex: 200,
+              }}
+            >
+              <div
+                id="hero-tech-mega-menu"
+                style={{
+                  background: '#fff',
+                  borderRadius: '16px',
+                  boxShadow: '0 24px 60px rgba(20,10,40,.25)',
+                  padding: '24px 28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '4px',
+                  minWidth: '340px',
+                }}
+              >
+                {megaMenu.map((m, i) => (
+                  <SmartLink
+                    key={m.key ?? i}
+                    href={m.linkUrl ?? '#'}
+                    onClick={() => setHeroTechMenuOpen(false)}
+                    style={{
+                      display: 'block',
+                      textDecoration: 'none',
+                      padding: '10px 14px',
+                      borderRadius: '8px',
+                      borderLeft: '3px solid transparent',
+                      transition: 'background .2s, border-color .2s, transform .2s',
+                    }}
+                    className="hover:bg-[#F5F3FC] hover:border-l-[#4D0DD9] hover:translate-x-1"
+                  >
+                    <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', whiteSpace: 'nowrap', marginBottom: '3px' }}>{m.title ?? ''}</div>
+                    <div style={{ fontSize: '12px', color: '#6B6480', lineHeight: 1.4 }}>{m.description ?? ''}</div>
+                  </SmartLink>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    if (item.extra === OPENS_PRICING) {
+      return (
+        <button
+          key={item.key ?? idx}
+          onClick={onOpenPricing}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            fontSize: '15px',
+            fontWeight: 400,
+            color: 'rgba(255,255,255,.92)',
+            transition: 'color .2s',
+            whiteSpace: 'nowrap',
+            padding: 0,
+            fontFamily: 'inherit',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.92)')}
+        >
+          {item.linkLabel ?? ''}
+        </button>
+      );
+    }
+
+    return (
+      <SmartLink key={item.key ?? idx} href={item.linkUrl ?? '#'} style={navLinkStyle}>
+        {item.linkLabel ?? ''}
+      </SmartLink>
+    );
+  };
+
+  const renderMobileItem = (item: CmsRow, idx: number) => {
+    if (item.extra === MEGA_MENU) {
+      return (
+        <React.Fragment key={item.key ?? idx}>
+          <div style={{ padding: '14px 0 8px', color: '#fff', fontSize: '16px', fontWeight: 500 }}>{item.linkLabel ?? ''}</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', padding: '0 0 12px 14px', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
+            {megaMenu.map((m, i) => (
+              <SmartLink key={m.key ?? i} href={m.linkUrl ?? '#'} style={{ padding: '9px 0', color: 'rgba(255,255,255,.72)', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
+                {m.title ?? ''}
+              </SmartLink>
+            ))}
+          </div>
+        </React.Fragment>
+      );
+    }
+    if (item.extra === OPENS_PRICING) {
+      return (
+        <button
+          key={item.key ?? idx}
+          onClick={() => {
+            onOpenPricing();
+            setHeroMobileOpen(false);
+          }}
+          style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: '14px 0', color: '#fff', fontSize: '16px', fontWeight: 500, fontFamily: 'inherit' }}
+        >
+          {item.linkLabel ?? ''}
+        </button>
+      );
+    }
+    return (
+      <SmartLink key={item.key ?? idx} href={item.linkUrl ?? '#'} style={mobileLinkStyle}>
+        {item.linkLabel ?? ''}
+      </SmartLink>
+    );
+  };
+
+  return (
+    <div style={{ position: 'relative', zIndex: 30, padding: '0 clamp(20px,5%,80px)' }}>
+      <nav style={{ height: '92px', maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '40px' }}>
+        <SmartLink href={logoHref} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
+          <img id="hero-logo" src={logoSrc} alt={logo.imageAlt || 'Warevolt'} style={{ height: '110px', width: 'auto', objectFit: 'contain', display: 'block' }} />
+        </SmartLink>
+
+        <div id="hero-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
+          {navItems.map(renderDesktopItem)}
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '26px', flexShrink: 0, marginLeft: 'auto' }}>
+          <button
+            onClick={onOpenPricing}
+            style={{
+              background: 'none',
+              border: 'none',
+              fontSize: '15px',
+              fontWeight: 500,
+              color: 'rgba(255,255,255,.9)',
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+              padding: '8px 0',
+              transition: 'color .2s',
+              whiteSpace: 'nowrap',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
+          >
+            {login.linkLabel ?? ''}
+          </button>
+          <button
+            id="hero-cta"
+            onClick={onOpenPricing}
+            style={{
+              background: '#4D0DD9',
+              color: '#fff',
+              padding: '13px 28px',
+              borderRadius: '12px',
+              fontSize: '14.5px',
+              fontWeight: 700,
+              border: 'none',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              transition: 'background .2s, transform .2s',
+            }}
+          >
+            {cta.linkLabel ?? ''}
+          </button>
+        </div>
+
+        <button
+          onClick={() => setHeroMobileOpen(!heroMobileOpen)}
+          id="hero-hamburger"
+          style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', width: '40px', height: '40px', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginLeft: '8px' }}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+
+        {heroMobileOpen && (
+          <div
+            id="hero-mobile-panel"
+            style={{
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              right: 0,
+              background: '#0B0619',
+              display: 'flex',
+              flexDirection: 'column',
+              padding: '8px clamp(20px,5%,80px) 24px',
+              gap: '2px',
+              boxShadow: '0 12px 30px rgba(0,0,0,.4)',
+              zIndex: 40,
+            }}
+          >
+            {navItems.map(renderMobileItem)}
+            {phone.linkLabel && (
+              <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
+                {phone.linkLabel}
+              </a>
+            )}
+            <button
+              onClick={() => {
+                onOpenPricing();
+                setHeroMobileOpen(false);
+              }}
+              style={{ marginTop: '12px', background: '#4D0DD9', color: '#fff', padding: '13px 20px', borderRadius: '12px', fontSize: '14px', fontWeight: 700, border: 'none', cursor: 'pointer', textAlign: 'center' }}
+            >
+              {cta.linkLabel ?? ''}
+            </button>
+          </div>
+        )}
+      </nav>
+    </div>
+  );
+}

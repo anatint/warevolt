@@ -1,0 +1,1183 @@
+[
+ {
+  "page": "home",
+  "section": "stats",
+  "order": 1,
+  "key": "stat-1",
+  "title": "99.5%",
+  "description": "Inventory Accuracy"
+ },
+ {
+  "page": "home",
+  "section": "stats",
+  "order": 2,
+  "key": "stat-2",
+  "title": "99.8%",
+  "description": "Order Accuracy"
+ },
+ {
+  "page": "home",
+  "section": "stats",
+  "order": 3,
+  "key": "stat-3",
+  "title": "45+",
+  "description": "Channel Integrations"
+ },
+ {
+  "page": "home",
+  "section": "stats",
+  "order": 4,
+  "key": "stat-4",
+  "title": "100%",
+  "description": "Same-Day Dispatch"
+ },
+ {
+  "page": "home",
+  "section": "how-it-works",
+  "order": 1,
+  "key": "how-title",
+  "title": "How It Works"
+ },
+ {
+  "page": "home",
+  "section": "how-it-works",
+  "order": 2,
+  "key": "step-1",
+  "label": "1",
+  "title": "Connect Your Sales Channels",
+  "description": "Integrate your D2C store, online marketplaces, ERP, or custom platforms. Orders and inventory synchronize automatically in real time."
+ },
+ {
+  "page": "home",
+  "section": "how-it-works",
+  "order": 3,
+  "key": "step-2",
+  "label": "2",
+  "title": "Send Us Your Inventory",
+  "description": "We receive, inspect, and store your inventory using standardized warehouse processes, ensuring accurate tracking."
+ },
+ {
+  "page": "home",
+  "section": "how-it-works",
+  "order": 4,
+  "key": "step-3",
+  "label": "3",
+  "title": "Automate Order Flow",
+  "description": "Orders from every connected sales channel are automatically routed to our fulfillment platform."
+ },
+ {
+  "page": "home",
+  "section": "how-it-works",
+  "order": 5,
+  "key": "step-4",
+  "label": "4",
+  "title": "Pick, Pack & Dispatch",
+  "description": "Barcode verification, standardized SOPs, and quality checks, shipped through your preferred carrier."
+ },
+ {
+  "page": "home",
+  "section": "how-it-works",
+  "order": 6,
+  "key": "step-5",
+  "label": "5",
+  "title": "Monitor & Scale",
+  "description": "Track inventory, orders, shipments, returns, and performance in real time as your business grows."
+ },
+ {
+  "page": "home",
+  "section": "fulfillment",
+  "order": 1,
+  "key": "fulfillment-title",
+  "title": "Our Fulfillment Services"
+ },
+ {
+  "page": "home",
+  "section": "fulfillment",
+  "order": 2,
+  "key": "card-1",
+  "image": "https://static.wixstatic.com/media/db6928_86057c1027634628b9d2dd2bbc2248b1~mv2.jpg",
+  "imageAlt": "D2C & Marketplace Fulfillment",
+  "title": "D2C & Marketplace Fulfillment",
+  "description": "One fulfillment solution for your online store and every major marketplace.",
+  "linkUrl": "/d2c-marketplace-fulfillment"
+ },
+ {
+  "page": "home",
+  "section": "fulfillment",
+  "order": 3,
+  "key": "card-2",
+  "image": "https://static.wixstatic.com/media/db6928_cc08754644ef49d39b07e102148ae3b8~mv2.jpg",
+  "imageAlt": "B2B Isometric",
+  "title": "B2B Isometric",
+  "description": "From order creation to final dispatch, every fulfillment workflow connected in one intelligent platform.",
+  "linkUrl": "/order-and-warehouse-management"
+ },
+ {
+  "page": "home",
+  "section": "fulfillment",
+  "order": 4,
+  "key": "card-3",
+  "image": "https://static.wixstatic.com/media/db6928_b5f9c054300940ca8d479fa87247fe75~mv2.jpg",
+  "imageAlt": "Quickcommerce Fulfillment",
+  "title": "Quickcommerce Fulfillment",
+  "description": "Dark-store-ready micro-fulfillment for 10-30 minute delivery promises.",
+  "linkUrl": "/quick-ecommerce-fulfillment"
+ },
+ {
+  "page": "home",
+  "section": "why-brands",
+  "order": 1,
+  "key": "why-heading",
+  "label": "Why Brands Choose Warevolt",
+  "title": "Logistics Built for Control, Visibility, and Scale",
+  "description": "Warevolt combines intelligent fulfillment, flexible shipping, nationwide distribution, and connected technology into one scalable logistics platform—helping your business grow without operational complexity."
+ },
+ {
+  "page": "home",
+  "section": "why-brands-items",
+  "order": 1,
+  "key": "item-1",
+  "title": "Flexible Shipping (BYOA)",
+  "description": "Keep your preferred shipping platform, courier partners, and negotiated rates with our Bring Your Own Account (BYOA) model. Enjoy complete flexibility without platform lock-in."
+ },
+ {
+  "page": "home",
+  "section": "why-brands-items",
+  "order": 2,
+  "key": "item-2",
+  "title": "Dedicated Account Manager",
+  "description": "Work with a dedicated logistics expert who understands your products, fulfillment requirements, and growth goals—from onboarding through long-term expansion."
+ },
+ {
+  "page": "home",
+  "section": "why-brands-items",
+  "order": 3,
+  "key": "item-3",
+  "title": "Inventory Accuracy",
+  "description": "Protect your inventory with barcode-driven operations, real-time stock visibility, cycle counting, and multi-point quality checks."
+ },
+ {
+  "page": "home",
+  "section": "why-brands-items",
+  "order": 4,
+  "key": "item-4",
+  "title": "Accurate Weight & Dimensions",
+  "description": "Every shipment is verified for weight and volumetric dimensions before dispatch to reduce billing discrepancies and improve shipping cost accuracy."
+ },
+ {
+  "page": "home",
+  "section": "why-brands-items",
+  "order": 5,
+  "key": "item-5",
+  "title": "Connected Technology",
+  "description": "Integrate your eCommerce stores, marketplaces, ERP, and shipping platforms into one centralized fulfillment ecosystem."
+ },
+ {
+  "page": "home",
+  "section": "why-brands-items",
+  "order": 6,
+  "key": "item-6",
+  "title": "Nationwide Distribution",
+  "description": "Manage everything from eCommerce parcel fulfillment to FTL, PTL, and LTL freight through a single logistics partner."
+ },
+ {
+  "page": "home",
+  "section": "why-brands-items",
+  "order": 7,
+  "key": "item-7",
+  "title": "Operational Excellence",
+  "description": "Standardized SOPs, barcode verification, and automated warehouse workflows ensure faster, more consistent, and highly accurate fulfillment."
+ },
+ {
+  "page": "home",
+  "section": "why-brands-items",
+  "order": 8,
+  "key": "item-8",
+  "title": "Built to Scale",
+  "description": "Whether you're growing your D2C business, expanding into marketplaces, or supplying retail channels, Warevolt scales alongside your business."
+ },
+ {
+  "page": "platform",
+  "section": "key-capabilities",
+  "order": 1,
+  "key": "title",
+  "title": "Key Capabilities"
+ },
+ {
+  "page": "platform",
+  "section": "key-capabilities",
+  "order": 2,
+  "key": "subtitle",
+  "description": "With WareVolt Scale™ you have eyes on every order, everywhere."
+ },
+ {
+  "page": "platform",
+  "section": "capabilities-cards",
+  "order": 1,
+  "key": "card-1",
+  "title": "Unified Order Dashboard",
+  "description": "Manage orders from every sales channel through a single operational view."
+ },
+ {
+  "page": "platform",
+  "section": "capabilities-cards",
+  "order": 2,
+  "key": "card-2",
+  "title": "Multi-Channel Synchronization",
+  "description": "Automatically synchronize orders across your entire commerce ecosystem in real time."
+ },
+ {
+  "page": "platform",
+  "section": "capabilities-cards",
+  "order": 3,
+  "key": "card-3",
+  "title": "Live Order Tracking",
+  "description": "Monitor every stage from order confirmation to picking, packing, shipping, and delivery."
+ },
+ {
+  "page": "platform",
+  "section": "capabilities-cards",
+  "order": 4,
+  "key": "card-4",
+  "title": "Intelligent Order Prioritization",
+  "description": "Automatically prioritise orders using configurable business rules and SLA targets."
+ },
+ {
+  "page": "platform",
+  "section": "capabilities-cards",
+  "order": 5,
+  "key": "card-5",
+  "title": "Bulk Processing & Automation",
+  "description": "Process thousands of orders with batch actions and automated workflows."
+ },
+ {
+  "page": "platform",
+  "section": "capabilities-cards",
+  "order": 6,
+  "key": "card-6",
+  "title": "Split & Partial Fulfilment",
+  "description": "Support split shipments, partial fulfilments, and multi-location order routing."
+ },
+ {
+  "page": "platform",
+  "section": "capabilities-cards",
+  "order": 7,
+  "key": "card-7",
+  "title": "B2B & Wholesale Workflows",
+  "description": "Configure dedicated fulfilment rules for wholesale, retail, and enterprise customers."
+ },
+ {
+  "page": "platform",
+  "section": "capabilities-cards",
+  "order": 8,
+  "key": "card-8",
+  "title": "Order Search & Audit History",
+  "description": "Quickly locate orders, access complete audit trails, and generate packing slips and shipping documents instantly."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "capabilities-heading",
+  "order": 1,
+  "key": "capabilities-heading",
+  "title": "Key Capabilities",
+  "description": "With WareVolt Scale™ you have eyes on every order, everywhere."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "capabilities",
+  "order": 1,
+  "key": "card-1",
+  "title": "Unified Order Dashboard",
+  "description": "Manage orders from every sales channel through a single operational view."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "capabilities",
+  "order": 2,
+  "key": "card-2",
+  "title": "Multi-Channel Synchronization",
+  "description": "Automatically synchronize orders across your entire commerce ecosystem in real time."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "capabilities",
+  "order": 3,
+  "key": "card-3",
+  "title": "Live Order Tracking",
+  "description": "Monitor every stage from order confirmation to picking, packing, shipping, and delivery."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "capabilities",
+  "order": 4,
+  "key": "card-4",
+  "title": "Intelligent Order Prioritization",
+  "description": "Automatically prioritise orders using configurable business rules and SLA targets."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "capabilities",
+  "order": 5,
+  "key": "card-5",
+  "title": "Bulk Processing & Automation",
+  "description": "Process thousands of orders with batch actions and automated workflows."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "capabilities",
+  "order": 6,
+  "key": "card-6",
+  "title": "Split & Partial Fulfilment",
+  "description": "Support split shipments, partial fulfilments, and multi-location order routing."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "capabilities",
+  "order": 7,
+  "key": "card-7",
+  "title": "B2B & Wholesale Workflows",
+  "description": "Configure dedicated fulfilment rules for wholesale, retail, and enterprise customers."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "capabilities",
+  "order": 8,
+  "key": "card-8",
+  "title": "Order Search & Audit History",
+  "description": "Quickly locate orders, access complete audit trails, and generate packing slips and shipping documents instantly."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-capabilities-heading",
+  "order": 1,
+  "key": "warehouse-capabilities-heading",
+  "title": "Key Capabilities"
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-capabilities",
+  "order": 1,
+  "key": "card-1",
+  "label": "01",
+  "title": "Structured Goods Receiving",
+  "description": "Streamline inbound verification, discrepancy logging, and dock-to-stock processing."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-capabilities",
+  "order": 2,
+  "key": "card-2",
+  "label": "02",
+  "title": "Put-Away Optimisation",
+  "description": "Guide inventory to the most efficient storage locations using configurable put-away rules."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-capabilities",
+  "order": 3,
+  "key": "card-3",
+  "label": "03",
+  "title": "Bin & Location Management",
+  "description": "Manage inventory across warehouses, zones, aisles, racks, shelves, and bins with complete visibility."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-capabilities",
+  "order": 4,
+  "key": "card-4",
+  "label": "04",
+  "title": "Optimised Picking Workflows",
+  "description": "Accelerate fulfilment with single, batch, wave, cluster, and zone picking strategies."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-capabilities",
+  "order": 5,
+  "key": "card-5",
+  "label": "05",
+  "title": "Barcode-Verified Packing",
+  "description": "Validate every item before dispatch to improve fulfilment accuracy."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-capabilities",
+  "order": 6,
+  "key": "card-6",
+  "label": "06",
+  "title": "Dispatch Management",
+  "description": "Coordinate staging, loading, and carrier handovers with complete operational visibility."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-capabilities",
+  "order": 7,
+  "key": "card-7",
+  "label": "07",
+  "title": "Cycle Counting & Stock Adjustments",
+  "description": "Maintain inventory accuracy through continuous stock verification and reconciliation."
+ },
+ {
+  "page": "order-warehouse",
+  "section": "warehouse-capabilities",
+  "order": 8,
+  "key": "card-8",
+  "label": "08",
+  "title": "Mobile Warehouse Operations",
+  "description": "Execute warehouse tasks seamlessly using handheld barcode scanners and mobile devices."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "key-capabilities",
+  "order": 1,
+  "key": "header",
+  "title": "What the platform offers",
+  "description": "Precision control across every stock movement and storage location."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "key-capabilities",
+  "order": 2,
+  "key": "card-1",
+  "title": "Live Inventory Overview",
+  "description": "Monitor real-time stock levels across every warehouse and storage location."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "key-capabilities",
+  "order": 3,
+  "key": "card-2",
+  "title": "Multi-Channel Inventory Synchronization",
+  "description": "Automatically synchronize inventory across your online store, marketplaces, retail, and B2B channels in real time."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "key-capabilities",
+  "order": 4,
+  "key": "card-3",
+  "title": "SKU-Level Traceability",
+  "description": "Track inventory by SKU, serial number, batch, lot, and expiry date."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "key-capabilities",
+  "order": 5,
+  "key": "card-4",
+  "title": "Inventory Availability",
+  "description": "Instantly view available, allocated, reserved, damaged, and incoming inventory."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "key-capabilities",
+  "order": 6,
+  "key": "card-5",
+  "title": "Bin & Location Management",
+  "description": "Locate every item with precise warehouse, zone, aisle, rack, shelf, and bin visibility."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "key-capabilities",
+  "order": 7,
+  "key": "card-6",
+  "title": "Automated Inventory Updates",
+  "description": "Keep stock accurate with real-time updates from receiving, picking, packing, dispatch, returns, and stock adjustments."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "key-capabilities",
+  "order": 8,
+  "key": "card-7",
+  "title": "Inventory Ageing & Valuation",
+  "description": "Identify slow-moving inventory, monitor stock ageing, and evaluate inventory value."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "key-capabilities",
+  "order": 9,
+  "key": "card-8",
+  "title": "Low Stock Alerts & Replenishment",
+  "description": "Configure intelligent reorder points and proactive stock alerts to prevent stockouts."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "key-capabilities",
+  "order": 10,
+  "key": "card-9",
+  "title": "Inventory Intelligence",
+  "description": "Analyse inventory health, optimise safety stock, forecast demand, and make smarter replenishment decisions with real-time insights."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "returns-capabilities",
+  "order": 1,
+  "key": "header",
+  "title": "What the platform offers"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "returns-capabilities",
+  "order": 2,
+  "key": "card-1",
+  "label": "01",
+  "title": "Return Request Management",
+  "description": "Automated RMA generation, tied to your existing customer-facing portal."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "returns-capabilities",
+  "order": 3,
+  "key": "card-2",
+  "label": "02",
+  "title": "Lifecycle Tracking",
+  "description": "Full visibility into inbound return transit and warehouse arrival."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "returns-capabilities",
+  "order": 4,
+  "key": "card-3",
+  "label": "03",
+  "title": "Quality Inspection Workflows",
+  "description": "Standardized grading protocols for every returned item."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "returns-capabilities",
+  "order": 5,
+  "key": "card-4",
+  "label": "04",
+  "title": "Intelligent Inventory Recovery",
+  "description": "Automated rules routing goods to restock, refurbishment, or recycling."
+ },
+ {
+  "page": "inventory-returns",
+  "section": "returns-capabilities",
+  "order": 6,
+  "key": "card-5",
+  "label": "05",
+  "title": "Deep Returns Analytics",
+  "description": "Root-cause visibility by product category, vendor, or reason code."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "key-capabilities-header",
+  "order": 1,
+  "key": "key-capabilities-title",
+  "title": "Key Capabilities"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "key-capabilities-header",
+  "order": 2,
+  "key": "key-capabilities-description",
+  "description": "Full-spectrum fulfillment analytics engineered for high-growth commerce brands."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "key-capabilities",
+  "order": 1,
+  "key": "card-1",
+  "title": "Real-Time Executive Dashboards",
+  "description": "Monitor orders dispatched, fulfillment velocity, order aging, and delivery SLA compliance through intuitive visual dashboards."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "key-capabilities",
+  "order": 2,
+  "key": "card-2",
+  "title": "Multi-Carrier SLA Benchmarking",
+  "description": "Measure carrier transit times, on-time delivery rates, exception rates, and cost per kilogram across zones in real time."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "key-capabilities",
+  "order": 3,
+  "key": "card-3",
+  "title": "Inventory Health & Aging Reports",
+  "description": "Track SKU turnover ratios, slow-moving items, deadstock risks, and days-of-inventory on hand to optimize capital allocation."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "key-capabilities",
+  "order": 4,
+  "key": "card-4",
+  "title": "Fulfillment Cost & Unit Economics",
+  "description": "Break down storage, pick-pack, handling, packaging, and freight costs per order to safeguard gross margins."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "key-capabilities",
+  "order": 5,
+  "key": "card-5",
+  "title": "Reverse Logistics & RTO Analytics",
+  "description": "Uncover return patterns, customer return reasons, non-delivery reports (NDR), and transit damage metrics to minimize returns."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "key-capabilities",
+  "order": 6,
+  "key": "card-6",
+  "title": "Labor & Warehouse Productivity",
+  "description": "Analyze picks per hour, dock-to-stock turnaround times, packing speed, and shift-level throughput across fulfillment centers."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "key-capabilities",
+  "order": 7,
+  "key": "card-7",
+  "title": "Demand Forecasting & Velocity",
+  "description": "Utilize historical trends and seasonal velocity forecasting to project reorder quantities and prevent costly stockouts."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "key-capabilities",
+  "order": 8,
+  "key": "card-8",
+  "title": "Custom Report Builder & Data Feeds",
+  "description": "Export scheduled reports in CSV/Excel, configure automated email alerts, or stream live data via webhooks and BI connectors."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "reporting-header",
+  "order": 1,
+  "key": "reporting-title",
+  "title": "Key Capabilities"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "reporting-capabilities",
+  "order": 1,
+  "key": "item-1",
+  "label": "01",
+  "title": "Automated Scheduled Reports",
+  "description": "Daily, weekly, and monthly PDF and Excel executive summaries delivered straight to your team and leadership inbox."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "reporting-capabilities",
+  "order": 2,
+  "key": "item-2",
+  "label": "02",
+  "title": "Cross-Channel Performance Tracking",
+  "description": "Compare volume, fulfillment speed, and margin contribution across Shopify, Amazon, Flipkart, Blinkit, and B2B channels."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "reporting-capabilities",
+  "order": 3,
+  "key": "item-3",
+  "label": "03",
+  "title": "Courier NDR Resolution Rates",
+  "description": "Monitor real-time non-delivery attempts, buyer verification response times, and RTO conversion rates to prevent returns."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "reporting-capabilities",
+  "order": 4,
+  "key": "item-4",
+  "label": "04",
+  "title": "Zone-Wise Transit Analysis",
+  "description": "Identify shipping bottlenecks, lane performance, and transit delays across Metro, Tier-1, Tier-2, and regional zones."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "reporting-capabilities",
+  "order": 5,
+  "key": "item-5",
+  "label": "05",
+  "title": "Dock-to-Stock Turnaround Monitoring",
+  "description": "Benchmark the exact duration from trailer arrival at the dock to inventory availability on warehouse shelves."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "reporting-capabilities",
+  "order": 6,
+  "key": "item-6",
+  "label": "06",
+  "title": "SKU Velocity & Fast-Mover Classification",
+  "description": "Automate ABC SKU categorization and receive slotting recommendations to minimize picker travel distance and time."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "reporting-capabilities",
+  "order": 7,
+  "key": "item-7",
+  "label": "07",
+  "title": "Financial Reconciliation & Freight Audits",
+  "description": "Automated discrepancy detection between carrier freight invoices and actual dimensional weight calculations."
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "reporting-capabilities",
+  "order": 8,
+  "key": "item-8",
+  "label": "08",
+  "title": "Enterprise BI & Data Lake Integration",
+  "description": "Direct sync with Snowflake, BigQuery, Power BI, and Tableau via robust REST APIs and high-throughput webhooks."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 1,
+  "key": "services-title",
+  "title": "D2C Fulfillment Services"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 2,
+  "key": "service-1",
+  "title": "Shopify Fulfillment"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 3,
+  "key": "service-2",
+  "title": "WooCommerce Fulfillment"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 4,
+  "key": "service-3",
+  "title": "Magento Fulfillment"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 5,
+  "key": "service-4",
+  "title": "Custom Store Integrations"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 6,
+  "key": "service-5",
+  "title": "Real-Time Order Synchronisation"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 7,
+  "key": "service-6",
+  "title": "Inventory Management"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 8,
+  "key": "service-7",
+  "title": "Pick, Pack & Ship"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 9,
+  "key": "service-8",
+  "title": "Quality Inspection"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 10,
+  "key": "service-9",
+  "title": "Same-Day Dispatch (where applicable)"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 11,
+  "key": "service-10",
+  "title": "Custom Packaging"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 12,
+  "key": "service-11",
+  "title": "Gift Inserts & Promotional Materials"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 13,
+  "key": "service-12",
+  "title": "Returns Management"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 14,
+  "key": "service-13",
+  "title": "Order Tracking & Notifications"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "d2c-services",
+  "order": 15,
+  "key": "service-14",
+  "title": "Performance Reporting"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "compliance",
+  "order": 1,
+  "key": "compliance-title",
+  "title": "Marketplace Compliance",
+  "description": "Every marketplace has its own operational standards. Warevolt helps brands maintain compliance through:"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "compliance",
+  "order": 2,
+  "key": "point-1",
+  "title": "Marketplace-specific packaging standards"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "compliance",
+  "order": 3,
+  "key": "point-2",
+  "title": "Barcode and product label verification"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "compliance",
+  "order": 4,
+  "key": "point-3",
+  "title": "SKU and inventory validation"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "compliance",
+  "order": 5,
+  "key": "point-4",
+  "title": "Quality inspection before dispatch"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "compliance",
+  "order": 6,
+  "key": "point-5",
+  "title": "Shipment documentation"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "compliance",
+  "order": 7,
+  "key": "point-6",
+  "title": "Carton and pallet compliance"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "compliance",
+  "order": 8,
+  "key": "point-7",
+  "title": "SLA-based order processing"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "compliance",
+  "order": 9,
+  "key": "point-8",
+  "title": "Marketplace-ready shipment preparation"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "excellence",
+  "order": 1,
+  "key": "excellence-title",
+  "title": "Operational Excellence",
+  "description": "Warevolt follows structured warehouse processes designed to support consistent marketplace performance."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "excellence",
+  "order": 2,
+  "key": "card-1",
+  "title": "SLA-Driven Order Processing",
+  "description": "Defined turnaround times govern every order from receipt to dispatch."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "excellence",
+  "order": 3,
+  "key": "card-2",
+  "title": "Standard Operating Procedures",
+  "description": "Documented SOPs keep every warehouse process consistent and repeatable."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "excellence",
+  "order": 4,
+  "key": "card-3",
+  "title": "Quality Control Checkpoints",
+  "description": "Inspection points throughout the workflow catch errors before dispatch."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "excellence",
+  "order": 5,
+  "key": "card-4",
+  "title": "Inventory Reconciliation",
+  "description": "Regular counts keep recorded and physical stock levels aligned."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "excellence",
+  "order": 6,
+  "key": "card-5",
+  "title": "Batch & Serial Tracking",
+  "description": "Traceability down to batch and serial level, where applicable."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "excellence",
+  "order": 7,
+  "key": "card-6",
+  "title": "Returns Inspection & Restocking",
+  "description": "Returned items are inspected and restocked accurately and quickly."
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "excellence",
+  "order": 8,
+  "key": "card-7",
+  "title": "Performance Reporting",
+  "description": "Ongoing visibility into operations to support informed decisions."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services-heading",
+  "order": 1,
+  "key": "title",
+  "title": "Quick Commerce Fulfillment Capabilities"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 1,
+  "key": "service-1",
+  "title": "Micro-Fulfillment Dark Store Setup"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 2,
+  "key": "service-2",
+  "title": "Sub-3 Minute Picking & Staging"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 3,
+  "key": "service-3",
+  "title": "Mother Hub to Dark Store Auto-Replenishment"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 4,
+  "key": "service-4",
+  "title": "Real-Time Rider Staging & Handoff"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 5,
+  "key": "service-5",
+  "title": "Temperature-Controlled Cold Storage Bins"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 6,
+  "key": "service-6",
+  "title": "High-Velocity SKU Density Planning"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 7,
+  "key": "service-7",
+  "title": "Live Available-to-Promise Inventory Sync"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 8,
+  "key": "service-8",
+  "title": "Real-Time Stockout Prevention Alerts"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 9,
+  "key": "service-9",
+  "title": "FIFO & Strict Expiry Management"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 10,
+  "key": "service-10",
+  "title": "Flash Sale & Surge Demand Buffers"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 11,
+  "key": "service-11",
+  "title": "Rapid Inbound Dockside QC Audits"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 12,
+  "key": "service-12",
+  "title": "Hyper-Local Geofenced Inventory Visibility"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 13,
+  "key": "service-13",
+  "title": "Multi-Platform API Integrations"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "order": 14,
+  "key": "service-14",
+  "title": "Shift-Level Productivity & SLA Analytics"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards-heading",
+  "order": 1,
+  "key": "title",
+  "title": "Quick Commerce Operational Standards & SLAs",
+  "description": "Strict operational metrics engineered to satisfy instant delivery promises:"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "order": 1,
+  "key": "point-1",
+  "title": "Sub-3 minute order receipt-to-rider handover"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "order": 2,
+  "key": "point-2",
+  "title": "99.9% inventory picking accuracy via scan validation"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "order": 3,
+  "key": "point-3",
+  "title": "Strict FIFO rotation and daily expiry audits"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "order": 4,
+  "key": "point-4",
+  "title": "Continuous temperature logging for cold chain bins"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "order": 5,
+  "key": "point-5",
+  "title": "100% rider handoff tracking with digital signoff"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "order": 6,
+  "key": "point-6",
+  "title": "Automated minimum reorder point triggers"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "order": 7,
+  "key": "point-7",
+  "title": "Real-time dark store stock reconciliation"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "order": 8,
+  "key": "point-8",
+  "title": "Spill, leak, and damage mitigation protocols"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence-heading",
+  "order": 1,
+  "key": "title",
+  "title": "Operational Excellence",
+  "description": "Ultra-responsive micro-fulfillment processes designed for lightning-fast execution and zero cancellations."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "order": 1,
+  "key": "card-1",
+  "title": "Sub-3 Min SLA Picking",
+  "description": "Rapid picking, bag assembly, and staging in under 180 seconds from order receipt."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "order": 2,
+  "key": "card-2",
+  "title": "Rapid Handheld SOPs",
+  "description": "Guided scanner navigation minimizes footwork and accelerates bin retrieval."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "order": 3,
+  "key": "card-3",
+  "title": "Barcode Staging Checkpoints",
+  "description": "Scan checks at the staging bin ensure exact matching before rider handoff."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "order": 4,
+  "key": "card-4",
+  "title": "Real-Time Stock Sync",
+  "description": "Sub-second catalog deduction prevents overselling and out-of-stock cancellations."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "order": 5,
+  "key": "card-5",
+  "title": "FIFO & Expiry Control",
+  "description": "Continuous shelf-life tracking guards against near-expiry dispatch to customers."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "order": 6,
+  "key": "card-6",
+  "title": "Mother Hub Inbound",
+  "description": "Scheduled intra-city replenishment keeps micro-store stock levels optimal."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "order": 7,
+  "key": "card-7",
+  "title": "Rider Handoff Metrics",
+  "description": "Granular metrics on pickup wait times and dark store throughput speed."
+ }
+]

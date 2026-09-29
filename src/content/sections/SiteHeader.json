@@ -1,0 +1,98 @@
+[
+ {
+  "section": "brand",
+  "order": 1,
+  "key": "logo-light",
+  "image": "https://static.wixstatic.com/media/db6928_19adcd38a546456e974c0d08ff840f8d~mv2.png",
+  "imageAlt": "Warevolt",
+  "linkUrl": "/"
+ },
+ {
+  "section": "brand",
+  "order": 2,
+  "key": "logo-dark",
+  "image": "https://static.wixstatic.com/media/db6928_aee8ad6c93394b0a90e92a755ca473cc~mv2.png",
+  "imageAlt": "Warevolt",
+  "linkUrl": "/"
+ },
+ {
+  "section": "nav",
+  "order": 1,
+  "key": "home",
+  "linkLabel": "Home",
+  "linkUrl": "/"
+ },
+ {
+  "section": "nav",
+  "order": 2,
+  "key": "solutions",
+  "linkLabel": "Solutions",
+  "linkUrl": "/#solutions"
+ },
+ {
+  "section": "nav",
+  "order": 3,
+  "key": "technology",
+  "linkLabel": "Technology",
+  "extra": "mega-menu"
+ },
+ {
+  "section": "nav",
+  "order": 4,
+  "key": "sectors",
+  "linkLabel": "Sectors",
+  "linkUrl": "/#industries"
+ },
+ {
+  "section": "nav",
+  "order": 5,
+  "key": "pricing",
+  "linkLabel": "Pricing",
+  "extra": "opens-pricing-modal"
+ },
+ {
+  "section": "mega-menu",
+  "order": 1,
+  "key": "order-warehouse",
+  "title": "Order & Warehouse Management",
+  "description": "From order to dispatch, every fulfillment workflow connected.",
+  "linkUrl": "/order-and-warehouse-management"
+ },
+ {
+  "section": "mega-menu",
+  "order": 2,
+  "key": "inventory-returns",
+  "title": "Inventory & Returns Management",
+  "description": "Complete control of stock, movements, and returns across your network.",
+  "linkUrl": "/inventory-and-returns-management"
+ },
+ {
+  "section": "mega-menu",
+  "order": 3,
+  "key": "analytics",
+  "title": "Analytics & Reporting",
+  "description": "Turn fulfillment data into clear, actionable insights.",
+  "linkUrl": "/analytics-and-reporting"
+ },
+ {
+  "section": "actions",
+  "order": 1,
+  "key": "login",
+  "linkLabel": "Login",
+  "extra": "opens-pricing-modal"
+ },
+ {
+  "section": "actions",
+  "order": 2,
+  "key": "cta",
+  "linkLabel": "Speak to an expert",
+  "extra": "opens-pricing-modal"
+ },
+ {
+  "section": "actions",
+  "order": 3,
+  "key": "phone",
+  "linkLabel": "+91 98765 43210",
+  "linkUrl": "tel:+919876543210"
+ }
+]

@@ -1,0 +1,356 @@
+[
+ {
+  "page": "home",
+  "section": "integrations",
+  "order": 1,
+  "key": "logo-1",
+  "image": "https://static.wixstatic.com/media/db6928_388c785bd7294681a65cf5635255a2f8~mv2.png",
+  "imageAlt": "Shopify"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "order": 2,
+  "key": "logo-2",
+  "image": "https://static.wixstatic.com/media/db6928_84c071bf9cdb4759996b185d955affc1~mv2.png",
+  "imageAlt": "WooCommerce"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "order": 3,
+  "key": "logo-3",
+  "image": "https://static.wixstatic.com/media/db6928_1337cdaf9aa84e32b9fc240f25ff92cc~mv2.png",
+  "imageAlt": "Amazon"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "order": 4,
+  "key": "logo-4",
+  "image": "https://static.wixstatic.com/media/db6928_1aa522f0fd174fb6951baa769115aad1~mv2.png",
+  "imageAlt": "Flipkart"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "order": 5,
+  "key": "logo-5",
+  "image": "https://static.wixstatic.com/media/db6928_36ba5f061b384865bf00d3109ff7db37~mv2.png",
+  "imageAlt": "Myntra"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "order": 6,
+  "key": "logo-6",
+  "image": "https://static.wixstatic.com/media/db6928_161d3f0963db472a84a965f8a2c0fb51~mv2.png",
+  "imageAlt": "Ajio"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "order": 7,
+  "key": "logo-7",
+  "image": "https://static.wixstatic.com/media/db6928_2d08d8c37a794a4f86794659b44cbd65~mv2.png",
+  "imageAlt": "Nykaa"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "order": 8,
+  "key": "logo-8",
+  "image": "https://static.wixstatic.com/media/db6928_8c523b78e5dc4f05a76441cf06da8f83~mv2.png",
+  "imageAlt": "Magento"
+ },
+ {
+  "page": "order-warehouse",
+  "section": "automation-channels-heading",
+  "order": 1,
+  "key": "channels-heading",
+  "title": "CHANNELS & HUBS"
+ },
+ {
+  "page": "order-warehouse",
+  "section": "automation-channels",
+  "order": 1,
+  "key": "channel-1",
+  "image": "https://static.wixstatic.com/media/db6928_7c82791c7f6c4297a84e842f41f2a555~mv2.png",
+  "imageAlt": "Amazon"
+ },
+ {
+  "page": "order-warehouse",
+  "section": "automation-channels",
+  "order": 2,
+  "key": "channel-2",
+  "image": "https://static.wixstatic.com/media/db6928_4eaa53c6984840ffb918e889f5d0d6e1~mv2.png",
+  "imageAlt": "Flipkart"
+ },
+ {
+  "page": "order-warehouse",
+  "section": "automation-channels",
+  "order": 3,
+  "key": "channel-3",
+  "image": "https://static.wixstatic.com/media/db6928_18f9972df7a44397b27967b51344dacf~mv2.png",
+  "imageAlt": "Shopify"
+ },
+ {
+  "page": "order-warehouse",
+  "section": "automation-channels",
+  "order": 4,
+  "key": "channel-4",
+  "image": "https://static.wixstatic.com/media/db6928_5e73d0b0f3fd48898826ecda830275c0~mv2.png",
+  "imageAlt": "Myntra"
+ },
+ {
+  "page": "order-warehouse",
+  "section": "automation-channels",
+  "order": 5,
+  "key": "channel-5",
+  "image": "https://static.wixstatic.com/media/db6928_f2d16c807a8447f8a859f34d825ee954~mv2.png",
+  "imageAlt": "Blinkit"
+ },
+ {
+  "page": "order-warehouse",
+  "section": "automation-channels",
+  "order": 6,
+  "key": "channel-6",
+  "image": "https://static.wixstatic.com/media/db6928_e7cefd1b13aa46649faf0ba0a8587aa9~mv2.png",
+  "imageAlt": "Zepto"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "automation-channels",
+  "order": 1,
+  "key": "heading",
+  "title": "CHANNELS & HUBS"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "automation-channels",
+  "order": 2,
+  "key": "channel-1",
+  "title": "Amazon",
+  "image": "https://static.wixstatic.com/media/db6928_7c82791c7f6c4297a84e842f41f2a555~mv2.png",
+  "imageAlt": "Amazon"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "automation-channels",
+  "order": 3,
+  "key": "channel-2",
+  "title": "Flipkart",
+  "image": "https://static.wixstatic.com/media/db6928_4eaa53c6984840ffb918e889f5d0d6e1~mv2.png",
+  "imageAlt": "Flipkart"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "automation-channels",
+  "order": 4,
+  "key": "channel-3",
+  "title": "Shopify",
+  "image": "https://static.wixstatic.com/media/db6928_18f9972df7a44397b27967b51344dacf~mv2.png",
+  "imageAlt": "Shopify"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "automation-channels",
+  "order": 5,
+  "key": "channel-4",
+  "title": "Myntra",
+  "image": "https://static.wixstatic.com/media/db6928_5e73d0b0f3fd48898826ecda830275c0~mv2.png",
+  "imageAlt": "Myntra"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "automation-channels",
+  "order": 6,
+  "key": "channel-5",
+  "title": "Blinkit",
+  "image": "https://static.wixstatic.com/media/db6928_f2d16c807a8447f8a859f34d825ee954~mv2.png",
+  "imageAlt": "Blinkit"
+ },
+ {
+  "page": "inventory-returns",
+  "section": "automation-channels",
+  "order": 7,
+  "key": "channel-6",
+  "title": "Zepto",
+  "image": "https://static.wixstatic.com/media/db6928_e7cefd1b13aa46649faf0ba0a8587aa9~mv2.png",
+  "imageAlt": "Zepto"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "channels",
+  "order": 1,
+  "key": "channel-1",
+  "image": "https://static.wixstatic.com/media/db6928_7c82791c7f6c4297a84e842f41f2a555~mv2.png",
+  "imageAlt": "Amazon"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "channels",
+  "order": 2,
+  "key": "channel-2",
+  "image": "https://static.wixstatic.com/media/db6928_4eaa53c6984840ffb918e889f5d0d6e1~mv2.png",
+  "imageAlt": "Flipkart"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "channels",
+  "order": 3,
+  "key": "channel-3",
+  "image": "https://static.wixstatic.com/media/db6928_18f9972df7a44397b27967b51344dacf~mv2.png",
+  "imageAlt": "Shopify"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "channels",
+  "order": 4,
+  "key": "channel-4",
+  "image": "https://static.wixstatic.com/media/db6928_5e73d0b0f3fd48898826ecda830275c0~mv2.png",
+  "imageAlt": "Myntra"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "channels",
+  "order": 5,
+  "key": "channel-5",
+  "image": "https://static.wixstatic.com/media/db6928_f2d16c807a8447f8a859f34d825ee954~mv2.png",
+  "imageAlt": "Blinkit"
+ },
+ {
+  "page": "analytics-reporting",
+  "section": "channels",
+  "order": 6,
+  "key": "channel-6",
+  "image": "https://static.wixstatic.com/media/db6928_e7cefd1b13aa46649faf0ba0a8587aa9~mv2.png",
+  "imageAlt": "Zepto"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "logo-strip",
+  "order": 1,
+  "key": "logo-1",
+  "title": "Shopify",
+  "image": "https://static.wixstatic.com/media/db6928_388c785bd7294681a65cf5635255a2f8~mv2.png",
+  "imageAlt": "Shopify"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "logo-strip",
+  "order": 2,
+  "key": "logo-2",
+  "title": "WooCommerce",
+  "image": "https://static.wixstatic.com/media/db6928_84c071bf9cdb4759996b185d955affc1~mv2.png",
+  "imageAlt": "WooCommerce"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "logo-strip",
+  "order": 3,
+  "key": "logo-3",
+  "title": "Magento",
+  "image": "https://static.wixstatic.com/media/db6928_8c523b78e5dc4f05a76441cf06da8f83~mv2.png",
+  "imageAlt": "Magento"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "logo-strip",
+  "order": 4,
+  "key": "logo-4",
+  "title": "Amazon",
+  "image": "https://static.wixstatic.com/media/db6928_1337cdaf9aa84e32b9fc240f25ff92cc~mv2.png",
+  "imageAlt": "Amazon"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "logo-strip",
+  "order": 5,
+  "key": "logo-5",
+  "title": "Flipkart",
+  "image": "https://static.wixstatic.com/media/db6928_1aa522f0fd174fb6951baa769115aad1~mv2.png",
+  "imageAlt": "Flipkart"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "logo-strip",
+  "order": 6,
+  "key": "logo-6",
+  "title": "Myntra",
+  "image": "https://static.wixstatic.com/media/db6928_36ba5f061b384865bf00d3109ff7db37~mv2.png",
+  "imageAlt": "Myntra"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "logo-strip",
+  "order": 7,
+  "key": "logo-7",
+  "title": "Ajio",
+  "image": "https://static.wixstatic.com/media/db6928_161d3f0963db472a84a965f8a2c0fb51~mv2.png",
+  "imageAlt": "Ajio"
+ },
+ {
+  "page": "d2c-marketplace",
+  "section": "logo-strip",
+  "order": 8,
+  "key": "logo-8",
+  "title": "Nykaa",
+  "image": "https://static.wixstatic.com/media/db6928_2d08d8c37a794a4f86794659b44cbd65~mv2.png",
+  "imageAlt": "Nykaa"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "order": 1,
+  "key": "logo-1",
+  "title": "Blinkit",
+  "image": "https://static.wixstatic.com/media/db6928_f2d16c807a8447f8a859f34d825ee954~mv2.png",
+  "imageAlt": "Blinkit"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "order": 2,
+  "key": "logo-2",
+  "title": "Zepto",
+  "image": "https://static.wixstatic.com/media/db6928_e7cefd1b13aa46649faf0ba0a8587aa9~mv2.png",
+  "imageAlt": "Zepto"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "order": 3,
+  "key": "logo-3",
+  "title": "Flipkart Minutes",
+  "image": "https://static.wixstatic.com/media/db6928_4eaa53c6984840ffb918e889f5d0d6e1~mv2.png",
+  "imageAlt": "Flipkart Minutes"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "order": 4,
+  "key": "logo-4",
+  "title": "Swiggy Instamart",
+  "image": "https://static.wixstatic.com/media/db6928_18f9972df7a44397b27967b51344dacf~mv2.png",
+  "imageAlt": "Swiggy Instamart"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "order": 5,
+  "key": "logo-5",
+  "title": "Amazon Now",
+  "image": "https://static.wixstatic.com/media/db6928_7c82791c7f6c4297a84e842f41f2a555~mv2.png",
+  "imageAlt": "Amazon Now"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "order": 6,
+  "key": "logo-6",
+  "title": "BigBasket Now",
+  "image": "https://static.wixstatic.com/media/db6928_5e73d0b0f3fd48898826ecda830275c0~mv2.png",
+  "imageAlt": "BigBasket Now"
+ }
+]
