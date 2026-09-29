@@ -381,7 +381,7 @@ export default function AnalyticsAndReportingPage() {
                 Analytics &amp; Reporting
               </h1>
               <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.86)', lineHeight: 1.68, maxWidth: '740px', marginBottom: '32px' }}>
-                Transform complex fulfillment, inventory velocity, and multi-carrier logistics data into clear, actionable intelligence. Uncover SLA bottlenecks, optimize warehouse labor, and drive profitable growth with WareVolt Scale™.
+                WareVolt Scale™ brings order, inventory, warehouse, shipping, and returns data into a single operational view — giving leadership the metrics to run the business proactively, not reactively.
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
