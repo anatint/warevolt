@@ -1,0 +1,395 @@
+[
+  {
+    "section": "hero",
+    "order": 1,
+    "key": "hero-eyebrow",
+    "title": "The Warevolt Platform"
+  },
+  {
+    "section": "hero",
+    "order": 2,
+    "key": "hero-title",
+    "title": "One Platform. Absolute Control."
+  },
+  {
+    "section": "hero",
+    "order": 3,
+    "key": "hero-description",
+    "description": "Warevolt Scale™ is the intelligent fulfillment platform that powers every Warevolt operation—bringing order management, inventory, warehouse execution, shipping, and analytics into one connected system."
+  },
+  {
+    "section": "hero",
+    "order": 4,
+    "key": "hero-image",
+    "image": "/uploads/hero-control-dashboard-v2.png",
+    "imageAlt": "Warevolt Scale dashboard"
+  },
+  {
+    "section": "modern-commerce",
+    "order": 1,
+    "key": "title",
+    "title": "Modern Commerce Requires Intelligent Infrastructure"
+  },
+  {
+    "section": "modern-commerce",
+    "order": 2,
+    "key": "paragraph-1",
+    "description": "Today's commerce landscape moves faster and operates across more channels than ever before. Orders flow simultaneously from your online stores, marketplaces, retail partners, and B2B channels. Inventory moves continuously across warehouses and 3PL networks, while customers expect fast, accurate fulfillment with complete shipment visibility."
+  },
+  {
+    "section": "modern-commerce",
+    "order": 3,
+    "key": "paragraph-2",
+    "description": "For growing businesses, managing these increasingly complex operations through disconnected spreadsheets, siloed software, and manual processes creates costly inefficiencies. The result is inventory inaccuracies, fulfillment delays, higher operating costs, and missed growth opportunities."
+  },
+  {
+    "section": "modern-commerce",
+    "order": 4,
+    "key": "paragraph-3",
+    "description": "WareVolt Scale™ unifies your entire commerce operation into one intelligent platform. From order capture and inventory management to warehouse execution, shipping, and delivery, it orchestrates every workflow through a single source of truth—providing complete operational visibility, greater efficiency, and the scalability to support your next stage of growth."
+  },
+  {
+    "section": "modern-kpis",
+    "order": 1,
+    "key": "kpi-1",
+    "title": "Orders",
+    "description": "4,812",
+    "extra": "↑ 12.4% vs yesterday"
+  },
+  {
+    "section": "modern-kpis",
+    "order": 2,
+    "key": "kpi-2",
+    "title": "Inventory Accuracy",
+    "description": "99.4%",
+    "extra": "↑ 2.1% vs yesterday"
+  },
+  {
+    "section": "modern-kpis",
+    "order": 3,
+    "key": "kpi-3",
+    "title": "Fulfilled Today",
+    "description": "3,190",
+    "extra": "↑ 18.7% vs yesterday"
+  },
+  {
+    "section": "modern-kpis",
+    "order": 4,
+    "key": "kpi-4",
+    "title": "Avg. Dispatch",
+    "description": "2.1h",
+    "extra": "↓ 0.3h vs yesterday"
+  },
+  {
+    "section": "modern-chart",
+    "order": 1,
+    "key": "chart-title",
+    "title": "Orders Across Channels"
+  },
+  {
+    "section": "modern-chart",
+    "order": 2,
+    "key": "chart-badge",
+    "title": "4,812"
+  },
+  {
+    "section": "modern-chart-dates",
+    "order": 1,
+    "key": "date-1",
+    "title": "May 17"
+  },
+  {
+    "section": "modern-chart-dates",
+    "order": 2,
+    "key": "date-2",
+    "title": "May 18"
+  },
+  {
+    "section": "modern-chart-dates",
+    "order": 3,
+    "key": "date-3",
+    "title": "May 19"
+  },
+  {
+    "section": "modern-chart-dates",
+    "order": 4,
+    "key": "date-4",
+    "title": "May 20"
+  },
+  {
+    "section": "modern-chart-dates",
+    "order": 5,
+    "key": "date-5",
+    "title": "May 21"
+  },
+  {
+    "section": "modern-chart-dates",
+    "order": 6,
+    "key": "date-6",
+    "title": "May 22"
+  },
+  {
+    "section": "modern-chart-dates",
+    "order": 7,
+    "key": "date-7",
+    "title": "May 23"
+  },
+  {
+    "section": "order-management",
+    "order": 1,
+    "key": "title",
+    "title": "Every Order. One Intelligent Workflow."
+  },
+  {
+    "section": "order-management",
+    "order": 2,
+    "key": "paragraph-1",
+    "description": "Managing orders across multiple sales channels shouldn't mean managing multiple systems. WareVolt Scale™ centralizes every order into a single intelligent workspace, giving your operations team complete visibility from order creation to final dispatch."
+  },
+  {
+    "section": "order-management",
+    "order": 3,
+    "key": "paragraph-2",
+    "description": "Whether orders originate from your online store, marketplaces, retail partners, or B2B channels, WareVolt Scale™ automates workflows, reduces manual intervention, and ensures every order moves through fulfillment quickly, accurately, and on time."
+  },
+  {
+    "section": "order-management",
+    "order": 4,
+    "key": "diagram",
+    "image": "/uploads/warevolt-scale-ecosystem-diagram.png",
+    "imageAlt": "Warevolt Scale ecosystem diagram"
+  },
+  {
+    "section": "key-capabilities",
+    "order": 1,
+    "key": "title",
+    "title": "Key Capabilities"
+  },
+  {
+    "section": "key-capabilities",
+    "order": 2,
+    "key": "subtitle",
+    "description": "With WareVolt Scale™ you have eyes on every order, everywhere."
+  },
+  {
+    "section": "capabilities-cards",
+    "order": 1,
+    "key": "card-1",
+    "title": "Unified Order Dashboard",
+    "description": "Manage orders from every sales channel through a single operational view."
+  },
+  {
+    "section": "capabilities-cards",
+    "order": 2,
+    "key": "card-2",
+    "title": "Multi-Channel Synchronization",
+    "description": "Automatically synchronize orders across your entire commerce ecosystem in real time."
+  },
+  {
+    "section": "capabilities-cards",
+    "order": 3,
+    "key": "card-3",
+    "title": "Live Order Tracking",
+    "description": "Monitor every stage from order confirmation to picking, packing, shipping, and delivery."
+  },
+  {
+    "section": "capabilities-cards",
+    "order": 4,
+    "key": "card-4",
+    "title": "Intelligent Order Prioritization",
+    "description": "Automatically prioritise orders using configurable business rules and SLA targets."
+  },
+  {
+    "section": "capabilities-cards",
+    "order": 5,
+    "key": "card-5",
+    "title": "Bulk Processing & Automation",
+    "description": "Process thousands of orders with batch actions and automated workflows."
+  },
+  {
+    "section": "capabilities-cards",
+    "order": 6,
+    "key": "card-6",
+    "title": "Split & Partial Fulfilment",
+    "description": "Support split shipments, partial fulfilments, and multi-location order routing."
+  },
+  {
+    "section": "capabilities-cards",
+    "order": 7,
+    "key": "card-7",
+    "title": "B2B & Wholesale Workflows",
+    "description": "Configure dedicated fulfilment rules for wholesale, retail, and enterprise customers."
+  },
+  {
+    "section": "capabilities-cards",
+    "order": 8,
+    "key": "card-8",
+    "title": "Order Search & Audit History",
+    "description": "Quickly locate orders, access complete audit trails, and generate packing slips and shipping documents instantly."
+  },
+  {
+    "section": "channel-nodes",
+    "order": 1,
+    "key": "node-1",
+    "title": "E-COMMERCE"
+  },
+  {
+    "section": "channel-nodes",
+    "order": 2,
+    "key": "node-2",
+    "title": "RETAIL"
+  },
+  {
+    "section": "channel-nodes",
+    "order": 3,
+    "key": "node-3",
+    "title": "B2B / WHOLESALE"
+  },
+  {
+    "section": "channel-nodes",
+    "order": 4,
+    "key": "node-4",
+    "title": "QUICK COMMERCE"
+  },
+  {
+    "section": "channel-warehouse",
+    "order": 1,
+    "key": "warehouse-image",
+    "image": "/assets/warehouse.svg",
+    "imageAlt": "Warevolt warehouse"
+  },
+  {
+    "section": "channel-benefits",
+    "order": 1,
+    "key": "benefit-1",
+    "title": "REAL-TIME VISIBILITY"
+  },
+  {
+    "section": "channel-benefits",
+    "order": 2,
+    "key": "benefit-2",
+    "title": "ACCURATE INVENTORY"
+  },
+  {
+    "section": "channel-benefits",
+    "order": 3,
+    "key": "benefit-3",
+    "title": "FASTER FULFILLMENT"
+  },
+  {
+    "section": "channel-benefits",
+    "order": 4,
+    "key": "benefit-4",
+    "title": "SMARTER DECISIONS"
+  },
+  {
+    "section": "inventory-dashboard",
+    "order": 1,
+    "key": "panel-title",
+    "title": "Inventory Overview"
+  },
+  {
+    "section": "inventory-dashboard",
+    "order": 2,
+    "key": "panel-status",
+    "title": "Synced"
+  },
+  {
+    "section": "inventory-dashboard",
+    "order": 3,
+    "key": "stock-title",
+    "title": "Stock by Warehouse"
+  },
+  {
+    "section": "inventory-dashboard",
+    "order": 4,
+    "key": "sync-title",
+    "title": "Sync Accuracy"
+  },
+  {
+    "section": "inventory-dashboard",
+    "order": 5,
+    "key": "sync-value",
+    "title": "99.4%"
+  },
+  {
+    "section": "inventory-dashboard",
+    "order": 6,
+    "key": "sync-caption",
+    "title": "Real-time across channels"
+  },
+  {
+    "section": "inventory-kpis",
+    "order": 1,
+    "key": "kpi-1",
+    "title": "Total SKUs",
+    "description": "8,642"
+  },
+  {
+    "section": "inventory-kpis",
+    "order": 2,
+    "key": "kpi-2",
+    "title": "In Stock",
+    "description": "7,910"
+  },
+  {
+    "section": "inventory-kpis",
+    "order": 3,
+    "key": "kpi-3",
+    "title": "Low Stock",
+    "description": "548"
+  },
+  {
+    "section": "inventory-kpis",
+    "order": 4,
+    "key": "kpi-4",
+    "title": "Out of Stock",
+    "description": "184"
+  },
+  {
+    "section": "warehouse-stock",
+    "order": 1,
+    "key": "warehouse-1",
+    "title": "Mumbai FC",
+    "description": "82%"
+  },
+  {
+    "section": "warehouse-stock",
+    "order": 2,
+    "key": "warehouse-2",
+    "title": "Delhi FC",
+    "description": "68%"
+  },
+  {
+    "section": "warehouse-stock",
+    "order": 3,
+    "key": "warehouse-3",
+    "title": "Bangalore FC",
+    "description": "91%"
+  },
+  {
+    "section": "warehouse-stock",
+    "order": 4,
+    "key": "warehouse-4",
+    "title": "Kochi FC",
+    "description": "74%"
+  },
+  {
+    "section": "inventory-management",
+    "order": 1,
+    "key": "title",
+    "title": "Complete Visibility. Absolute Inventory Control."
+  },
+  {
+    "section": "inventory-management",
+    "order": 2,
+    "key": "paragraph-1",
+    "description": "Inventory is the foundation of efficient fulfilment. WareVolt Scale™ provides a single, real-time view of every SKU across your entire warehouse network, ensuring accurate stock levels, faster fulfilment, and complete inventory confidence."
+  },
+  {
+    "section": "inventory-management",
+    "order": 3,
+    "key": "paragraph-2",
+    "description": "From receiving and put-away to picking, dispatch, and returns, every inventory movement is automatically synchronised in real time. Keep inventory aligned across every connected sales channel, eliminate overselling, optimize replenishment, and make faster, data-driven inventory decisions."
+  }
+]

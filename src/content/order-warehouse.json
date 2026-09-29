@@ -1,0 +1,447 @@
+[
+  {
+    "section": "hero",
+    "order": 1,
+    "key": "hero-eyebrow",
+    "label": "Solutions / Order & Warehouse Management"
+  },
+  {
+    "section": "hero",
+    "order": 2,
+    "key": "hero-title",
+    "title": "Order & Warehouse Management"
+  },
+  {
+    "section": "hero",
+    "order": 3,
+    "key": "hero-description",
+    "description": "Today's commerce landscape moves faster and operates across more channels than ever before."
+  },
+  {
+    "section": "hero",
+    "order": 4,
+    "key": "hero-cta-primary",
+    "linkLabel": "Get a Quote"
+  },
+  {
+    "section": "hero",
+    "order": 5,
+    "key": "hero-cta-secondary",
+    "linkLabel": "Speak to an expert"
+  },
+  {
+    "section": "intro",
+    "order": 1,
+    "key": "intro-title",
+    "title": "Every Order. One Intelligent Workflow."
+  },
+  {
+    "section": "intro",
+    "order": 2,
+    "key": "intro-paragraph-1",
+    "description": "Managing orders across multiple sales channels shouldn't mean managing multiple systems. WareVolt Scale™ centralizes every order into a single intelligent workspace, giving your operations team complete visibility from order creation to final dispatch."
+  },
+  {
+    "section": "intro",
+    "order": 3,
+    "key": "intro-paragraph-2",
+    "description": "Whether orders originate from your online store, marketplaces, retail partners, or B2B channels, WareVolt Scale™ automates workflows, reduces manual intervention, and ensures every order moves through fulfillment quickly, accurately, and on time."
+  },
+  {
+    "section": "intro",
+    "order": 4,
+    "key": "intro-image",
+    "image": "/uploads/warevolt-scale-diagram-flat.png",
+    "imageAlt": "Warevolt Inventory ecosystem diagram"
+  },
+  {
+    "section": "capabilities-heading",
+    "order": 1,
+    "key": "capabilities-heading",
+    "title": "Key Capabilities",
+    "description": "With WareVolt Scale™ you have eyes on every order, everywhere."
+  },
+  {
+    "section": "capabilities",
+    "order": 1,
+    "key": "card-1",
+    "title": "Unified Order Dashboard",
+    "description": "Manage orders from every sales channel through a single operational view."
+  },
+  {
+    "section": "capabilities",
+    "order": 2,
+    "key": "card-2",
+    "title": "Multi-Channel Synchronization",
+    "description": "Automatically synchronize orders across your entire commerce ecosystem in real time."
+  },
+  {
+    "section": "capabilities",
+    "order": 3,
+    "key": "card-3",
+    "title": "Live Order Tracking",
+    "description": "Monitor every stage from order confirmation to picking, packing, shipping, and delivery."
+  },
+  {
+    "section": "capabilities",
+    "order": 4,
+    "key": "card-4",
+    "title": "Intelligent Order Prioritization",
+    "description": "Automatically prioritise orders using configurable business rules and SLA targets."
+  },
+  {
+    "section": "capabilities",
+    "order": 5,
+    "key": "card-5",
+    "title": "Bulk Processing & Automation",
+    "description": "Process thousands of orders with batch actions and automated workflows."
+  },
+  {
+    "section": "capabilities",
+    "order": 6,
+    "key": "card-6",
+    "title": "Split & Partial Fulfilment",
+    "description": "Support split shipments, partial fulfilments, and multi-location order routing."
+  },
+  {
+    "section": "capabilities",
+    "order": 7,
+    "key": "card-7",
+    "title": "B2B & Wholesale Workflows",
+    "description": "Configure dedicated fulfilment rules for wholesale, retail, and enterprise customers."
+  },
+  {
+    "section": "capabilities",
+    "order": 8,
+    "key": "card-8",
+    "title": "Order Search & Audit History",
+    "description": "Quickly locate orders, access complete audit trails, and generate packing slips and shipping documents instantly."
+  },
+  {
+    "section": "warehouse-intro",
+    "order": 1,
+    "key": "warehouse-eyebrow",
+    "label": "Warehouse Management"
+  },
+  {
+    "section": "warehouse-intro",
+    "order": 2,
+    "key": "warehouse-title",
+    "title": "Built for Elite Warehouse Productivity."
+  },
+  {
+    "section": "warehouse-intro",
+    "order": 3,
+    "key": "warehouse-description",
+    "description": "Warehouse efficiency drives fulfillment performance. WareVolt Scale™ transforms warehouse operations with structured, repeatable, and intelligent workflows that reduce travel time, minimise picking errors, and maximise daily throughput. From inbound receiving and put-away to picking, packing, and dispatch, every warehouse movement is orchestrated through a single intelligent platform—keeping your operations organised, efficient, and ready to scale."
+  },
+  {
+    "section": "warehouse-intro",
+    "order": 4,
+    "key": "warehouse-image",
+    "image": "/uploads/pasted-1787544112877-0.png",
+    "imageAlt": "Warevolt Returns Control dashboard"
+  },
+  {
+    "section": "warehouse-capabilities-heading",
+    "order": 1,
+    "key": "warehouse-capabilities-heading",
+    "title": "Key Capabilities"
+  },
+  {
+    "section": "warehouse-capabilities",
+    "order": 1,
+    "key": "card-1",
+    "label": "01",
+    "title": "Structured Goods Receiving",
+    "description": "Streamline inbound verification, discrepancy logging, and dock-to-stock processing."
+  },
+  {
+    "section": "warehouse-capabilities",
+    "order": 2,
+    "key": "card-2",
+    "label": "02",
+    "title": "Put-Away Optimisation",
+    "description": "Guide inventory to the most efficient storage locations using configurable put-away rules."
+  },
+  {
+    "section": "warehouse-capabilities",
+    "order": 3,
+    "key": "card-3",
+    "label": "03",
+    "title": "Bin & Location Management",
+    "description": "Manage inventory across warehouses, zones, aisles, racks, shelves, and bins with complete visibility."
+  },
+  {
+    "section": "warehouse-capabilities",
+    "order": 4,
+    "key": "card-4",
+    "label": "04",
+    "title": "Optimised Picking Workflows",
+    "description": "Accelerate fulfilment with single, batch, wave, cluster, and zone picking strategies."
+  },
+  {
+    "section": "warehouse-capabilities",
+    "order": 5,
+    "key": "card-5",
+    "label": "05",
+    "title": "Barcode-Verified Packing",
+    "description": "Validate every item before dispatch to improve fulfilment accuracy."
+  },
+  {
+    "section": "warehouse-capabilities",
+    "order": 6,
+    "key": "card-6",
+    "label": "06",
+    "title": "Dispatch Management",
+    "description": "Coordinate staging, loading, and carrier handovers with complete operational visibility."
+  },
+  {
+    "section": "warehouse-capabilities",
+    "order": 7,
+    "key": "card-7",
+    "label": "07",
+    "title": "Cycle Counting & Stock Adjustments",
+    "description": "Maintain inventory accuracy through continuous stock verification and reconciliation."
+  },
+  {
+    "section": "warehouse-capabilities",
+    "order": 8,
+    "key": "card-8",
+    "label": "08",
+    "title": "Mobile Warehouse Operations",
+    "description": "Execute warehouse tasks seamlessly using handheld barcode scanners and mobile devices."
+  },
+  {
+    "section": "automation-channels-heading",
+    "order": 1,
+    "key": "channels-heading",
+    "title": "CHANNELS & HUBS"
+  },
+  {
+    "section": "automation-channels",
+    "order": 1,
+    "key": "channel-1",
+    "image": "/uploads/pasted-1785731347143-0.png",
+    "imageAlt": "Amazon"
+  },
+  {
+    "section": "automation-channels",
+    "order": 2,
+    "key": "channel-2",
+    "image": "/uploads/pasted-1785731537374-0.png",
+    "imageAlt": "Flipkart"
+  },
+  {
+    "section": "automation-channels",
+    "order": 3,
+    "key": "channel-3",
+    "image": "/uploads/pasted-1785731732420-0.png",
+    "imageAlt": "Shopify"
+  },
+  {
+    "section": "automation-channels",
+    "order": 4,
+    "key": "channel-4",
+    "image": "/uploads/pasted-1785731671522-0.png",
+    "imageAlt": "Myntra"
+  },
+  {
+    "section": "automation-channels",
+    "order": 5,
+    "key": "channel-5",
+    "image": "/uploads/pasted-1785731892932-0.png",
+    "imageAlt": "Blinkit"
+  },
+  {
+    "section": "automation-channels",
+    "order": 6,
+    "key": "channel-6",
+    "image": "/uploads/pasted-1785732016871-0.png",
+    "imageAlt": "Zepto"
+  },
+  {
+    "section": "automation-feed-heading",
+    "order": 1,
+    "key": "feed-heading",
+    "title": "INVENTORY & RETURNS FEED",
+    "extra": "Live"
+  },
+  {
+    "section": "automation-feed",
+    "order": 1,
+    "key": "feed-1",
+    "label": "time",
+    "title": "SKU-7721 Stock Replenished",
+    "extra": "2 sec ago",
+    "image": "/uploads/pasted-1785731347143-0.png",
+    "imageAlt": "Amazon"
+  },
+  {
+    "section": "automation-feed",
+    "order": 2,
+    "key": "feed-2",
+    "label": "time",
+    "title": "RMA #RET-4819 Inspected (Grade A)",
+    "extra": "5 sec ago",
+    "image": "/uploads/pasted-1785731537374-0.png",
+    "imageAlt": "Flipkart"
+  },
+  {
+    "section": "automation-feed",
+    "order": 3,
+    "key": "feed-3",
+    "label": "time",
+    "title": "Inventory Allocated to Hub-02",
+    "extra": "8 sec ago",
+    "image": "/uploads/pasted-1785731732420-0.png",
+    "imageAlt": "Shopify"
+  },
+  {
+    "section": "automation-feed",
+    "order": 4,
+    "key": "feed-4",
+    "label": "status",
+    "title": "RMA #RET-4822 Quality Check",
+    "extra": "Grading",
+    "image": "/uploads/pasted-1785731671522-0.png",
+    "imageAlt": "Myntra"
+  },
+  {
+    "section": "automation-feed",
+    "order": 5,
+    "key": "feed-5",
+    "label": "status",
+    "title": "Re-shelved for Dispatch",
+    "extra": "Restocked",
+    "image": "/uploads/pasted-1785731892932-0.png",
+    "imageAlt": "Blinkit"
+  },
+  {
+    "section": "automation-feed",
+    "order": 6,
+    "key": "feed-6",
+    "label": "time",
+    "title": "Cycle Count Confirmed 100%",
+    "extra": "Just now",
+    "image": "/uploads/pasted-1785732016871-0.png",
+    "imageAlt": "Zepto"
+  },
+  {
+    "section": "automation-panel-heading",
+    "order": 1,
+    "key": "panel-heading",
+    "title": "Live Network Sync",
+    "image": "/assets/warevolt-mark.svg",
+    "imageAlt": "Warevolt"
+  },
+  {
+    "section": "automation-kpis",
+    "order": 1,
+    "key": "kpi-1",
+    "title": "Total SKUs",
+    "description": "14,290",
+    "extra": "↑ Active"
+  },
+  {
+    "section": "automation-kpis",
+    "order": 2,
+    "key": "kpi-2",
+    "title": "In-Transit",
+    "description": "2,410",
+    "extra": "On Time"
+  },
+  {
+    "section": "automation-kpis",
+    "order": 3,
+    "key": "kpi-3",
+    "title": "Restocked",
+    "description": "98.4%",
+    "extra": "Same Day"
+  },
+  {
+    "section": "automation-kpis",
+    "order": 4,
+    "key": "kpi-4",
+    "title": "Accuracy",
+    "description": "99.9%",
+    "extra": "Cycle Count"
+  },
+  {
+    "section": "automation-chart",
+    "order": 1,
+    "key": "chart-heading",
+    "title": "Inventory Velocity & Replenishment",
+    "extra": "Weekly Rate"
+  },
+  {
+    "section": "automation-chart-days",
+    "order": 1,
+    "key": "day-1",
+    "title": "Mon"
+  },
+  {
+    "section": "automation-chart-days",
+    "order": 2,
+    "key": "day-2",
+    "title": "Tue"
+  },
+  {
+    "section": "automation-chart-days",
+    "order": 3,
+    "key": "day-3",
+    "title": "Wed"
+  },
+  {
+    "section": "automation-chart-days",
+    "order": 4,
+    "key": "day-4",
+    "title": "Thu"
+  },
+  {
+    "section": "automation-chart-days",
+    "order": 5,
+    "key": "day-5",
+    "title": "Fri"
+  },
+  {
+    "section": "automation-chart-days",
+    "order": 6,
+    "key": "day-6",
+    "title": "Sat"
+  },
+  {
+    "section": "automation-chart-days",
+    "order": 7,
+    "key": "day-7",
+    "title": "Sun"
+  },
+  {
+    "section": "automation-stats",
+    "order": 1,
+    "key": "stat-1",
+    "title": "Stock Health",
+    "description": "Optimal"
+  },
+  {
+    "section": "automation-stats",
+    "order": 2,
+    "key": "stat-2",
+    "title": "Restock SLA",
+    "description": "< 24 Hrs"
+  },
+  {
+    "section": "automation-stats",
+    "order": 3,
+    "key": "stat-3",
+    "title": "RTO Rate",
+    "description": "1.4%"
+  },
+  {
+    "section": "automation-stats",
+    "order": 4,
+    "key": "stat-4",
+    "title": "Recovery",
+    "description": "94.2%"
+  }
+]

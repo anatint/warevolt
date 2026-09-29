@@ -1,0 +1,409 @@
+[
+  {
+    "section": "hero",
+    "order": 1,
+    "key": "hero-eyebrow",
+    "title": "Solutions / Inventory & Returns Management"
+  },
+  {
+    "section": "hero",
+    "order": 2,
+    "key": "hero-title",
+    "title": "Inventory & Returns Management"
+  },
+  {
+    "section": "hero",
+    "order": 3,
+    "key": "hero-description",
+    "description": "WareVolt Scale™ brings order, inventory, warehouse, shipping, and returns data into a single operational view — giving leadership the metrics to run the business proactively, not reactively."
+  },
+  {
+    "section": "hero",
+    "order": 4,
+    "key": "hero-cta-primary",
+    "linkLabel": "Get a Quote"
+  },
+  {
+    "section": "hero",
+    "order": 5,
+    "key": "hero-cta-secondary",
+    "linkLabel": "Speak to an expert"
+  },
+  {
+    "section": "overview",
+    "order": 1,
+    "key": "overview-title",
+    "title": "Real-Time Visibility. Zero Discrepancies."
+  },
+  {
+    "section": "overview",
+    "order": 2,
+    "key": "overview-paragraph-1",
+    "description": "Inventory is the foundation of efficient fulfilment. WareVolt Scale™ provides a single, real-time view of every SKU across your entire warehouse network, ensuring accurate stock levels, faster fulfilment, and complete inventory confidence."
+  },
+  {
+    "section": "overview",
+    "order": 3,
+    "key": "overview-paragraph-2",
+    "description": "From receiving and put-away to picking, dispatch, and returns, every inventory movement is automatically synchronised in real time. Keep inventory aligned across every connected sales channel, eliminate overselling, optimize replenishment, and make faster, data-driven inventory decisions."
+  },
+  {
+    "section": "overview",
+    "order": 4,
+    "key": "overview-image",
+    "image": "/uploads/warevolt-scale-diagram-flat.png",
+    "imageAlt": "Warevolt Inventory ecosystem diagram"
+  },
+  {
+    "section": "key-capabilities",
+    "order": 1,
+    "key": "header",
+    "title": "What the platform offers",
+    "description": "Precision control across every stock movement and storage location."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 2,
+    "key": "card-1",
+    "title": "Live Inventory Overview",
+    "description": "Monitor real-time stock levels across every warehouse and storage location."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 3,
+    "key": "card-2",
+    "title": "Multi-Channel Inventory Synchronization",
+    "description": "Automatically synchronize inventory across your online store, marketplaces, retail, and B2B channels in real time."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 4,
+    "key": "card-3",
+    "title": "SKU-Level Traceability",
+    "description": "Track inventory by SKU, serial number, batch, lot, and expiry date."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 5,
+    "key": "card-4",
+    "title": "Inventory Availability",
+    "description": "Instantly view available, allocated, reserved, damaged, and incoming inventory."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 6,
+    "key": "card-5",
+    "title": "Bin & Location Management",
+    "description": "Locate every item with precise warehouse, zone, aisle, rack, shelf, and bin visibility."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 7,
+    "key": "card-6",
+    "title": "Automated Inventory Updates",
+    "description": "Keep stock accurate with real-time updates from receiving, picking, packing, dispatch, returns, and stock adjustments."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 8,
+    "key": "card-7",
+    "title": "Inventory Ageing & Valuation",
+    "description": "Identify slow-moving inventory, monitor stock ageing, and evaluate inventory value."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 9,
+    "key": "card-8",
+    "title": "Low Stock Alerts & Replenishment",
+    "description": "Configure intelligent reorder points and proactive stock alerts to prevent stockouts."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 10,
+    "key": "card-9",
+    "title": "Inventory Intelligence",
+    "description": "Analyse inventory health, optimise safety stock, forecast demand, and make smarter replenishment decisions with real-time insights."
+  },
+  {
+    "section": "returns-intro",
+    "order": 1,
+    "key": "returns-eyebrow",
+    "label": "Reverse Logistics & QC"
+  },
+  {
+    "section": "returns-intro",
+    "order": 2,
+    "key": "returns-title",
+    "title": "Turn Returns into Recovered Revenue."
+  },
+  {
+    "section": "returns-intro",
+    "order": 3,
+    "key": "returns-description",
+    "description": "Customer returns shouldn't drain your bottom line. WareVolt Scale™ accelerates reverse logistics with standardized dockside verification, SOP-driven quality grading, and automated restock pipelines. Whether re-bagging saleable units or handling vendor returns, our structured reverse workflow ensures minimal value loss and rapid return-to-shelf turnaround."
+  },
+  {
+    "section": "returns-intro",
+    "order": 4,
+    "key": "returns-image",
+    "image": "/uploads/pasted-1787544112877-0.png",
+    "imageAlt": "Warevolt Returns Control dashboard"
+  },
+  {
+    "section": "returns-capabilities",
+    "order": 1,
+    "key": "header",
+    "title": "What the platform offers"
+  },
+  {
+    "section": "returns-capabilities",
+    "order": 2,
+    "key": "card-1",
+    "label": "01",
+    "title": "Return Request Management",
+    "description": "Automated RMA generation, tied to your existing customer-facing portal."
+  },
+  {
+    "section": "returns-capabilities",
+    "order": 3,
+    "key": "card-2",
+    "label": "02",
+    "title": "Lifecycle Tracking",
+    "description": "Full visibility into inbound return transit and warehouse arrival."
+  },
+  {
+    "section": "returns-capabilities",
+    "order": 4,
+    "key": "card-3",
+    "label": "03",
+    "title": "Quality Inspection Workflows",
+    "description": "Standardized grading protocols for every returned item."
+  },
+  {
+    "section": "returns-capabilities",
+    "order": 5,
+    "key": "card-4",
+    "label": "04",
+    "title": "Intelligent Inventory Recovery",
+    "description": "Automated rules routing goods to restock, refurbishment, or recycling."
+  },
+  {
+    "section": "returns-capabilities",
+    "order": 6,
+    "key": "card-5",
+    "label": "05",
+    "title": "Deep Returns Analytics",
+    "description": "Root-cause visibility by product category, vendor, or reason code."
+  },
+  {
+    "section": "automation-channels",
+    "order": 1,
+    "key": "heading",
+    "title": "CHANNELS & HUBS"
+  },
+  {
+    "section": "automation-channels",
+    "order": 2,
+    "key": "channel-1",
+    "title": "Amazon",
+    "image": "/uploads/pasted-1785731347143-0.png",
+    "imageAlt": "Amazon"
+  },
+  {
+    "section": "automation-channels",
+    "order": 3,
+    "key": "channel-2",
+    "title": "Flipkart",
+    "image": "/uploads/pasted-1785731537374-0.png",
+    "imageAlt": "Flipkart"
+  },
+  {
+    "section": "automation-channels",
+    "order": 4,
+    "key": "channel-3",
+    "title": "Shopify",
+    "image": "/uploads/pasted-1785731732420-0.png",
+    "imageAlt": "Shopify"
+  },
+  {
+    "section": "automation-channels",
+    "order": 5,
+    "key": "channel-4",
+    "title": "Myntra",
+    "image": "/uploads/pasted-1785731671522-0.png",
+    "imageAlt": "Myntra"
+  },
+  {
+    "section": "automation-channels",
+    "order": 6,
+    "key": "channel-5",
+    "title": "Blinkit",
+    "image": "/uploads/pasted-1785731892932-0.png",
+    "imageAlt": "Blinkit"
+  },
+  {
+    "section": "automation-channels",
+    "order": 7,
+    "key": "channel-6",
+    "title": "Zepto",
+    "image": "/uploads/pasted-1785732016871-0.png",
+    "imageAlt": "Zepto"
+  },
+  {
+    "section": "automation-feed",
+    "order": 1,
+    "key": "feed-title",
+    "title": "INVENTORY & RETURNS FEED"
+  },
+  {
+    "section": "automation-feed",
+    "order": 2,
+    "key": "feed-status",
+    "title": "Live"
+  },
+  {
+    "section": "automation-feed",
+    "order": 3,
+    "key": "feed-row-1",
+    "title": "SKU-7721 Stock Replenished",
+    "image": "/uploads/pasted-1785731347143-0.png",
+    "imageAlt": "Amazon",
+    "extra": "2 sec ago"
+  },
+  {
+    "section": "automation-feed",
+    "order": 4,
+    "key": "feed-row-2",
+    "title": "RMA #RET-4819 Inspected (Grade A)",
+    "image": "/uploads/pasted-1785731537374-0.png",
+    "imageAlt": "Flipkart",
+    "extra": "5 sec ago"
+  },
+  {
+    "section": "automation-feed",
+    "order": 5,
+    "key": "feed-row-3",
+    "title": "Inventory Allocated to Hub-02",
+    "image": "/uploads/pasted-1785731732420-0.png",
+    "imageAlt": "Shopify",
+    "extra": "8 sec ago"
+  },
+  {
+    "section": "automation-feed",
+    "order": 6,
+    "key": "feed-row-4",
+    "title": "RMA #RET-4822 Quality Check",
+    "image": "/uploads/pasted-1785731671522-0.png",
+    "imageAlt": "Myntra",
+    "extra": "Grading",
+    "label": "#F59E0B"
+  },
+  {
+    "section": "automation-feed",
+    "order": 7,
+    "key": "feed-row-5",
+    "title": "Re-shelved for Dispatch",
+    "image": "/uploads/pasted-1785731892932-0.png",
+    "imageAlt": "Blinkit",
+    "extra": "Restocked",
+    "label": "#22C55E"
+  },
+  {
+    "section": "automation-feed",
+    "order": 8,
+    "key": "feed-row-6",
+    "title": "Cycle Count Confirmed 100%",
+    "image": "/uploads/pasted-1785732016871-0.png",
+    "imageAlt": "Zepto",
+    "extra": "Just now"
+  },
+  {
+    "section": "automation-panel",
+    "order": 1,
+    "key": "panel-logo",
+    "image": "/assets/warevolt-mark.svg",
+    "imageAlt": "Warevolt"
+  },
+  {
+    "section": "automation-panel",
+    "order": 2,
+    "key": "panel-badge",
+    "title": "Live Network Sync"
+  },
+  {
+    "section": "automation-panel",
+    "order": 3,
+    "key": "chart",
+    "title": "Inventory Velocity & Replenishment",
+    "extra": "Weekly Rate",
+    "description": "Mon,Tue,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "section": "automation-kpis",
+    "order": 1,
+    "key": "kpi-1",
+    "label": "#7B5BFB",
+    "title": "Total SKUs",
+    "description": "14,290",
+    "extra": "↑ Active"
+  },
+  {
+    "section": "automation-kpis",
+    "order": 2,
+    "key": "kpi-2",
+    "label": "#2F7BF6",
+    "title": "In-Transit",
+    "description": "2,410",
+    "extra": "On Time"
+  },
+  {
+    "section": "automation-kpis",
+    "order": 3,
+    "key": "kpi-3",
+    "label": "#22C55E",
+    "title": "Restocked",
+    "description": "98.4%",
+    "extra": "Same Day"
+  },
+  {
+    "section": "automation-kpis",
+    "order": 4,
+    "key": "kpi-4",
+    "label": "#7B5BFB",
+    "title": "Accuracy",
+    "description": "99.9%",
+    "extra": "Cycle Count"
+  },
+  {
+    "section": "automation-stats",
+    "order": 1,
+    "key": "stat-1",
+    "label": "#22C55E",
+    "title": "Stock Health",
+    "description": "Optimal"
+  },
+  {
+    "section": "automation-stats",
+    "order": 2,
+    "key": "stat-2",
+    "label": "#0B0619",
+    "title": "Restock SLA",
+    "description": "< 24 Hrs"
+  },
+  {
+    "section": "automation-stats",
+    "order": 3,
+    "key": "stat-3",
+    "label": "#22C55E",
+    "title": "RTO Rate",
+    "description": "1.4%"
+  },
+  {
+    "section": "automation-stats",
+    "order": 4,
+    "key": "stat-4",
+    "label": "#4D0DD9",
+    "title": "Recovery",
+    "description": "94.2%"
+  }
+]

@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
+import defaults from '@/content/home.json';
+import { useCms, CmsRow } from '@/lib/cms';
 
 export default function HomePage() {
   const [pricingOpen, setPricingOpen] = useState(false);
@@ -11,6 +13,27 @@ export default function HomePage() {
   const [techMenuOpen, setTechMenuOpen] = useState(false);
   const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
 
+  const cms = useCms('HomePage', defaults as CmsRow[]);
+  const c = (section: string, key: string, field: keyof CmsRow): string => (cms.one(section, key)[field] as string | undefined) ?? '';
+
+  const feedStatus: { color: string; bold?: boolean }[] = [
+    { color: '#4B4460' },
+    { color: '#4B4460' },
+    { color: '#4B4460' },
+    { color: '#7B5BFB', bold: true },
+    { color: '#22C55E', bold: true },
+  ];
+
+  const whyIcons = [
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><circle cx="7.5" cy="18.5" r="1.6" stroke="#C9B8F5" strokeWidth="1.6" /><circle cx="17.5" cy="18.5" r="1.6" stroke="#C9B8F5" strokeWidth="1.6" /></svg>,
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="#C9B8F5" strokeWidth="1.8" /><path d="M4.5 20c0-4 3.5-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" /></svg>,
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#C9B8F5" strokeWidth="1.8" /><path d="M9 12l2 2 4-4" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>,
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 16V8l8-4 8 4v8l-8 4-8-4z" stroke="#C9B8F5" strokeWidth="1.8" strokeLinejoin="round" /><path d="M4 8l8 4 8-4M12 12v8" stroke="#C9B8F5" strokeWidth="1.8" strokeLinejoin="round" /></svg>,
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="2" stroke="#C9B8F5" strokeWidth="1.8" /><path d="M8 20h8M12 16v4" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" /></svg>,
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9z" stroke="#C9B8F5" strokeWidth="1.8" /></svg>,
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 20l6-6M14 4h6v6M20 4L10 14" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>,
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-8" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><path d="M15 8h5v5" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>,
+  ];
   const [ctVals, setCtVals] = useState({
     orders: 2857,
     processing: 1482,
@@ -27,14 +50,19 @@ export default function HomePage() {
     { label: 'Analytics & Reporting', desc: 'Turn fulfillment data into clear, actionable insights.', href: '/analytics-and-reporting' },
   ];
 
-  const testimonialsData = [
-    { company: 'Reliance Retail', quote: 'Warevolt delivered our 200,000 sq ft distribution center two weeks ahead of schedule with flawless execution.', initials: 'RK', name: 'Rahul Kumar', city: 'Los Angeles', avatarBg: 'linear-gradient(135deg,#4D0DD9,#8B6BFF)' },
-    { company: 'Mahindra Components', quote: 'The PEB structure for our plant was engineered to perfection — workmanship and support were world-class.', initials: 'PS', name: 'Priya Sharma', city: 'California', avatarBg: 'linear-gradient(135deg,#7B5BFB,#A78BFA)' },
-    { company: 'Sun Pharma', quote: 'Warevolt understood our compliance needs and delivered a state-of-the-art facility that passed every inspection.', initials: 'AM', name: 'Arun Menon', city: 'California', avatarBg: 'linear-gradient(135deg,#3A0FD9,#4D0DD9)' },
-    { company: 'Tata Logistics', quote: 'Their team scaled our cold storage capacity in record time without a single day of downtime.', initials: 'SK', name: 'Sanjay Kapoor', city: 'Mumbai', avatarBg: 'linear-gradient(135deg,#4D0DD9,#8B6BFF)' },
-    { company: 'Godrej Industries', quote: 'Precision engineering and transparent communication throughout — exactly what we needed for our expansion.', initials: 'NV', name: 'Neha Verma', city: 'Pune', avatarBg: 'linear-gradient(135deg,#7B5BFB,#A78BFA)' },
-    { company: 'Adani Wilmar', quote: 'From design to handover, Warevolt made a complex warehouse project feel effortless.', initials: 'RP', name: 'Ravi Patel', city: 'Ahmedabad', avatarBg: 'linear-gradient(135deg,#3A0FD9,#4D0DD9)' },
+  const testimonialGradients = [
+    'linear-gradient(135deg,#4D0DD9,#8B6BFF)',
+    'linear-gradient(135deg,#7B5BFB,#A78BFA)',
+    'linear-gradient(135deg,#3A0FD9,#4D0DD9)',
   ];
+  const testimonialsData = cms.list('testimonials-items').map((r, i) => ({
+    company: r.title ?? '',
+    quote: r.description ?? '',
+    initials: (r.label ?? '').split(/\s+/).filter(Boolean).map((w) => w[0]).join('').slice(0, 2).toUpperCase(),
+    name: r.label ?? '',
+    city: r.extra ?? '',
+    avatarBg: testimonialGradients[i % testimonialGradients.length],
+  }));
 
   const prevTesti = () => {
     setTestiIndex((prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length);
@@ -45,8 +73,8 @@ export default function HomePage() {
   };
 
   const visibleTestimonials = [0, 1, 2].map(
-    (i) => testimonialsData[(testiIndex + i) % testimonialsData.length]
-  );
+    (i) => testimonialsData[(testiIndex + i) % Math.max(testimonialsData.length, 1)]
+  ).filter(Boolean);
 
   useEffect(() => {
     // ── Floating Navbar scroll handling ──
@@ -501,7 +529,7 @@ export default function HomePage() {
           style={{
             position: 'absolute',
             inset: '-5%',
-            backgroundImage: "url('/uploads/pasted-1784525640761-0.png')",
+            backgroundImage: `url('${c('hero','hero-bg','image')}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             zIndex: 0,
@@ -816,7 +844,7 @@ export default function HomePage() {
                   animation: 'fadeUp .8s ease .2s both',
                 }}
               >
-                Scale Faster with Pan-India eCommerce Fulfillment &amp; 3PL
+                {c('hero','hero-title','title')}
               </h1>
               <p
                 style={{
@@ -829,7 +857,7 @@ export default function HomePage() {
                   animation: 'fadeUp .8s ease .32s both',
                 }}
               >
-                Headquartered in Kochi, Warevolt powers inventory management, warehousing, order fulfillment, shipping, and nationwide distribution for modern D2C, B2B, retail, marketplace, and quick commerce businesses.
+                {c('hero','hero-description','description')}
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '28px', animation: 'fadeUp .8s ease .44s both', flexWrap: 'wrap' }}>
                 <button
@@ -858,7 +886,7 @@ export default function HomePage() {
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  Get Started
+                  {c('hero','hero-cta','linkLabel')}
                 </button>
               </div>
             </div>
@@ -869,8 +897,8 @@ export default function HomePage() {
       {/* ══ ABOUT SECTION ══ */}
       <section id="about" style={{ position: 'relative', overflow: 'hidden', padding: '80px clamp(20px,5%,80px)' }}>
         <img
-          src="/uploads/pasted-1784523250294-0_1-removebg-preview 1-7ae9daee.png"
-          alt=""
+          src={c('about','about-watermark','image')}
+          alt={c('about','about-watermark','imageAlt')}
           style={{
             position: 'absolute',
             bottom: 0,
@@ -901,24 +929,24 @@ export default function HomePage() {
           <div data-animate style={{ position: 'relative' }}>
             <div style={{ borderRadius: '28px', overflow: 'hidden', aspectRatio: '4/3', background: 'linear-gradient(135deg,#C4B5FD,#7B5BFB)' }}>
               <img
-                src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80"
-                alt="Warehouse photo"
+                src={c('about','about-photo','image')}
+                alt={c('about','about-photo','imageAlt')}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
             <div style={{ position: 'absolute', bottom: '28px', right: '28px', background: '#4F1CF7', color: '#fff', borderRadius: '20px', padding: '22px 26px' }}>
-              <div style={{ fontSize: '38px', fontWeight: 800, letterSpacing: '-.04em', lineHeight: 1 }}>25+</div>
-              <div style={{ fontSize: '12px', fontWeight: 500, opacity: 0.8, marginTop: '5px' }}>Years of Excellence</div>
+              <div style={{ fontSize: '38px', fontWeight: 800, letterSpacing: '-.04em', lineHeight: 1 }}>{c('about','about-years','title')}</div>
+              <div style={{ fontSize: '12px', fontWeight: 500, opacity: 0.8, marginTop: '5px' }}>{c('about','about-years','description')}</div>
             </div>
             <div style={{ position: 'absolute', top: '28px', left: '-24px', background: '#fff', borderRadius: '16px', padding: '14px 18px', boxShadow: '0 12px 40px rgba(79,28,247,.12)' }}>
               <div style={{ fontSize: '11px', fontWeight: 700, color: '#6B6480', textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: '6px' }}>
-                ISO Certified
+                {c('about','about-iso','label')}
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                   <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="#4F1CF7" strokeWidth="2" />
                 </svg>
-                <span style={{ fontSize: '14px', fontWeight: 700, color: '#0B0619' }}>Verified Quality</span>
+                <span style={{ fontSize: '14px', fontWeight: 700, color: '#0B0619' }}>{c('about','about-iso','title')}</span>
               </div>
             </div>
           </div>
@@ -926,13 +954,13 @@ export default function HomePage() {
           {/* Text */}
           <div>
             <h2 data-animate data-delay="80" style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '20px' }}>
-              About
+              {c('about','about-title','title')}
             </h2>
             <p data-animate data-delay="130" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8, marginBottom: '24px' }}>
-              We build reliable fulfillment solutions that help businesses move products efficiently, safely, and on time. With 25+ years of industry experience, we combine proven processes, quality materials, and technology-driven execution to deliver consistent results for Indian and global brands.
+              {c('about','about-p1','description')}
             </p>
             <p data-animate data-delay="150" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8, marginBottom: '40px' }}>
-              Our commitment goes beyond completing an order. From planning and production to quality checks and delivery, every stage is managed with precision and accountability. We follow international standards, prioritize safety, and ensure every project is delivered according to agreed timelines.
+              {c('about','about-p2','description')}
             </p>
 
             <div data-animate data-delay="180" id="about-badges" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '22px', marginBottom: '44px' }}>
@@ -943,8 +971,8 @@ export default function HomePage() {
                   </svg>
                 </div>
                 <div>
-                  <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#0B0619', marginBottom: '4px' }}>International Standards</div>
-                  <div style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.5 }}>ISO certified materials and processes</div>
+                  <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#0B0619', marginBottom: '4px' }}>{c('about','about-badge-1','title')}</div>
+                  <div style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.5 }}>{c('about','about-badge-1','description')}</div>
                 </div>
               </div>
 
@@ -955,8 +983,8 @@ export default function HomePage() {
                   </svg>
                 </div>
                 <div>
-                  <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#0B0619', marginBottom: '4px' }}>On-Time Delivery</div>
-                  <div style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.5 }}>Milestone-driven project execution</div>
+                  <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#0B0619', marginBottom: '4px' }}>{c('about','about-badge-2','title')}</div>
+                  <div style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.5 }}>{c('about','about-badge-2','description')}</div>
                 </div>
               </div>
 
@@ -967,8 +995,8 @@ export default function HomePage() {
                   </svg>
                 </div>
                 <div>
-                  <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#0B0619', marginBottom: '4px' }}>Safety First</div>
-                  <div style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.5 }}>Zero-incident site management</div>
+                  <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#0B0619', marginBottom: '4px' }}>{c('about','about-badge-3','title')}</div>
+                  <div style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.5 }}>{c('about','about-badge-3','description')}</div>
                 </div>
               </div>
 
@@ -980,8 +1008,8 @@ export default function HomePage() {
                   </svg>
                 </div>
                 <div>
-                  <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#0B0619', marginBottom: '4px' }}>25+ Years</div>
-                  <div style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.5 }}>Deep domain expertise</div>
+                  <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#0B0619', marginBottom: '4px' }}>{c('about','about-badge-4','title')}</div>
+                  <div style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.5 }}>{c('about','about-badge-4','description')}</div>
                 </div>
               </div>
             </div>
@@ -989,10 +1017,10 @@ export default function HomePage() {
             <a
               data-animate
               data-delay="220"
-              href="#"
+              href={c('about','about-link','linkUrl')}
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#4F1CF7', fontSize: '15px', fontWeight: 600, textDecoration: 'none', transition: 'gap .2s' }}
             >
-              Learn More About Us{' '}
+              {c('about','about-link','linkLabel')}{' '}
               <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
                 <path d="M1 1l5 5-5 5" stroke="#4F1CF7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -1005,22 +1033,9 @@ export default function HomePage() {
       <section style={{ padding: '56px 0', background: '#fff', borderTop: '1px solid #F0EBF8', borderBottom: '1px solid #F0EBF8', overflow: 'hidden' }}>
         <div style={{ overflow: 'hidden', WebkitMaskImage: 'linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)', maskImage: 'linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)' }}>
           <div style={{ display: 'flex', gap: '88px', alignItems: 'center', animation: 'marquee 30s linear infinite', whiteSpace: 'nowrap', width: 'max-content' }}>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528096970-0.png" alt="Shopify" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528121293-0.png" alt="WooCommerce" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528144899-0.png" alt="Amazon" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528167652-0.png" alt="Flipkart" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528198760-0.png" alt="Myntra" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528221498-0.png" alt="Ajio" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528247214-0.png" alt="Nykaa" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528267724-0.png" alt="Magento" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528096970-0.png" alt="Shopify" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528121293-0.png" alt="WooCommerce" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528144899-0.png" alt="Amazon" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528167652-0.png" alt="Flipkart" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528198760-0.png" alt="Myntra" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528221498-0.png" alt="Ajio" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528247214-0.png" alt="Nykaa" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
-            <div style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src="/uploads/pasted-1784528267724-0.png" alt="Magento" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
+            {[...cms.list('integrations'), ...cms.list('integrations')].map((r, i) => (
+              <div key={i} style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src={r.image ?? ''} alt={r.imageAlt ?? ''} style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
+            ))}
           </div>
         </div>
       </section>
@@ -1030,10 +1045,10 @@ export default function HomePage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '48px', textAlign: 'center' }}>
           <div data-animate data-delay="60" style={{ maxWidth: '640px' }}>
             <h2 style={{ fontSize: 'clamp(30px,3vw,44px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '18px' }}>
-              Sell Anywhere. Fulfill Everywhere.
+              {c('channels','channels-title','title')}
             </h2>
             <p style={{ fontSize: '16px', color: '#6B6480', lineHeight: 1.8 }}>
-              Connect your e-commerce, marketplaces, retail, B2B, and quick commerce channels into a single, automated fulfillment network.
+              {c('channels','channels-description','description')}
             </p>
           </div>
           <div data-animate data-delay="120" style={{ width: '100%', maxWidth: '900px', position: 'relative', animation: 'wh-center 8s cubic-bezier(.45,0,.55,1) infinite' }}>
@@ -1044,7 +1059,7 @@ export default function HomePage() {
               playsInline
               id="wh-loop-video"
               style={{ width: '100%', display: 'block', borderRadius: '20px' }}
-              src="/uploads/warehouse loop.mp4"
+              src={c('channels','channels-video','image')}
             />
           </div>
         </div>
@@ -1056,10 +1071,15 @@ export default function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))', gap: '64px', alignItems: 'center' }}>
             <div data-animate data-delay="60">
               <h2 style={{ fontSize: 'clamp(30px,3vw,44px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '20px' }}>
-                Every order is a promise.<br />We keep it.
+                {c('control-tower','tower-title','title').split('\n').map((line, i) => (
+                  <React.Fragment key={i}>
+                    {i > 0 && <br />}
+                    {line}
+                  </React.Fragment>
+                ))}
               </h2>
               <p style={{ fontSize: '16px', color: '#6B6480', lineHeight: 1.8, maxWidth: '420px', marginBottom: '26px' }}>
-                Every order represents a commitment to your customer. Warevolt powers the journey from checkout to doorstep by combining intelligent software, efficient warehouse operations, and seamless shipping integrations - ensuring every shipment is accurate, fast, and dependable.
+                {c('control-tower','tower-description','description')}
               </p>
             </div>
 
@@ -1085,73 +1105,30 @@ export default function HomePage() {
               >
                 <div style={{ position: 'absolute', top: 0, left: 0, width: '70%', height: '55%', background: 'radial-gradient(circle at 25% 20%,rgba(255,255,255,.12),transparent 60%)', pointerEvents: 'none', zIndex: 0 }} />
                 <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-                  <span style={{ fontSize: '12px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>UNIFIED ORDER FEED</span>
+                  <span style={{ fontSize: '12px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>{c('control-tower','feed-title','title')}</span>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 700, color: '#22C55E' }}>
                     <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22C55E', boxShadow: '0 0 8px rgba(34,197,94,.55)', animation: 'dc-live-pulse 1.6s ease-out infinite' }} />
-                    Live
+                    {c('control-tower','feed-title','extra')}
                   </span>
                 </div>
 
                 <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', marginBottom: '8px', background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,.35)', borderRadius: '14px', animation: 'dc-feed5-row1 4.8s linear infinite' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, background: 'rgba(255,255,255,.5)', border: '1px solid rgba(255,255,255,.6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <img src="/uploads/pasted-1785731347143-0.png" alt="Amazon" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  {cms.list('tower-feed').map((r, idx) => {
+                    const st = feedStatus[Math.min(idx, feedStatus.length - 1)];
+                    return (
+                      <div key={r.key ?? idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', ...(idx < 4 ? { marginBottom: '8px' } : {}), background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,.35)', borderRadius: '14px', animation: `dc-feed5-row${idx + 1} 4.8s linear infinite` }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                          <div style={{ width: '32px', height: '32px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, background: 'rgba(255,255,255,.5)', border: '1px solid rgba(255,255,255,.6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <img src={r.image ?? ''} alt={r.imageAlt ?? ''} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                          </div>
+                          <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#0B0619' }}>{r.title ?? ''}</div>
+                        </div>
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '10.5px', color: st.color, ...(st.bold ? { fontWeight: 700 } : {}), whiteSpace: 'nowrap' }}>
+                          <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: idx < 3 ? '#7B5BFB' : st.color }} />{r.extra ?? ''}
+                        </span>
                       </div>
-                      <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#0B0619' }}>#AMZ-5421</div>
-                    </div>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '10.5px', color: '#4B4460', whiteSpace: 'nowrap' }}>
-                      <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#7B5BFB' }} />2 sec ago
-                    </span>
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', marginBottom: '8px', background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,.35)', borderRadius: '14px', animation: 'dc-feed5-row2 4.8s linear infinite' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, background: 'rgba(255,255,255,.5)', border: '1px solid rgba(255,255,255,.6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <img src="/uploads/pasted-1785731537374-0.png" alt="Flipkart" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                      </div>
-                      <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#0B0619' }}>#FLP-9823</div>
-                    </div>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '10.5px', color: '#4B4460', whiteSpace: 'nowrap' }}>
-                      <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#7B5BFB' }} />5 sec ago
-                    </span>
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', marginBottom: '8px', background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,.35)', borderRadius: '14px', animation: 'dc-feed5-row3 4.8s linear infinite' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, background: 'rgba(255,255,255,.5)', border: '1px solid rgba(255,255,255,.6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <img src="/uploads/pasted-1785731732420-0.png" alt="Shopify" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                      </div>
-                      <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#0B0619' }}>#SHP-7214</div>
-                    </div>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '10.5px', color: '#4B4460', whiteSpace: 'nowrap' }}>
-                      <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#7B5BFB' }} />8 sec ago
-                    </span>
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', marginBottom: '8px', background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,.35)', borderRadius: '14px', animation: 'dc-feed5-row4 4.8s linear infinite' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, background: 'rgba(255,255,255,.5)', border: '1px solid rgba(255,255,255,.6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <img src="/uploads/pasted-1785731671522-0.png" alt="Myntra" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                      </div>
-                      <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#0B0619' }}>#MYN-1923</div>
-                    </div>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '10.5px', color: '#7B5BFB', fontWeight: 700, whiteSpace: 'nowrap' }}>
-                      <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#7B5BFB' }} />Processing
-                    </span>
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,.35)', borderRadius: '14px', animation: 'dc-feed5-row5 4.8s linear infinite' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, background: 'rgba(255,255,255,.5)', border: '1px solid rgba(255,255,255,.6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <img src="/uploads/pasted-1785731892932-0.png" alt="Blinkit" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                      </div>
-                      <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#0B0619' }}>#BLK-8821</div>
-                    </div>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '10.5px', color: '#22C55E', fontWeight: 700, whiteSpace: 'nowrap' }}>
-                      <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#22C55E' }} />Dispatched
-                    </span>
-                  </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -1174,53 +1151,31 @@ export default function HomePage() {
               >
                 <div style={{ flex: 1, padding: '22px 24px', minWidth: 0 }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-                    <img src="/assets/warevolt-mark.svg" alt="Warevolt" style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
+                    <img src={c('control-tower','panel-logo','image')} alt={c('control-tower','panel-logo','imageAlt')} style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
                     <span style={{ fontSize: '11px', fontWeight: 600, color: '#0B0619', background: 'rgba(255,255,255,.5)', borderRadius: '8px', padding: '5px 10px', whiteSpace: 'nowrap' }}>
-                      Today, 16 May
+                      {c('control-tower','panel-logo','extra')}
                     </span>
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '12px', marginBottom: '16px' }}>
-                    <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '14px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '7px', marginBottom: '14px' }}>
-                        <span style={{ width: '16px', height: '16px', borderRadius: '5px', background: '#7B5BFB', flexShrink: 0 }} />
-                        <span style={{ fontSize: '10.5px', fontWeight: 700, color: '#3A3550', whiteSpace: 'nowrap' }}>Orders Today</span>
+                    {cms.list('tower-kpis').map((r, idx) => (
+                      <div key={r.key ?? idx} style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '14px', minWidth: 0 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '7px', marginBottom: '14px' }}>
+                          <span style={{ width: '16px', height: '16px', borderRadius: '5px', background: r.extra, flexShrink: 0 }} />
+                          <span style={{ fontSize: '10.5px', fontWeight: 700, color: '#3A3550', whiteSpace: 'nowrap' }}>{r.title ?? ''}</span>
+                        </div>
+                        <div style={{ fontSize: '19px', fontWeight: 800, color: '#0B0619' }}>{[ctVals.orders, ctVals.processing, ctVals.shipped, ctVals.delivered][idx]?.toLocaleString()}</div>
+                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#22C55E' }}>{r.description ?? ''}</div>
                       </div>
-                      <div style={{ fontSize: '19px', fontWeight: 800, color: '#0B0619' }}>{ctVals.orders.toLocaleString()}</div>
-                      <div style={{ fontSize: '10px', fontWeight: 700, color: '#22C55E' }}>↑ 18.6%</div>
-                    </div>
-                    <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '14px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '7px', marginBottom: '14px' }}>
-                        <span style={{ width: '16px', height: '16px', borderRadius: '5px', background: '#2F7BF6', flexShrink: 0 }} />
-                        <span style={{ fontSize: '10.5px', fontWeight: 700, color: '#3A3550', whiteSpace: 'nowrap' }}>Processing</span>
-                      </div>
-                      <div style={{ fontSize: '19px', fontWeight: 800, color: '#0B0619' }}>{ctVals.processing.toLocaleString()}</div>
-                      <div style={{ fontSize: '10px', fontWeight: 700, color: '#22C55E' }}>↑ 16.3%</div>
-                    </div>
-                    <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '14px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '7px', marginBottom: '14px' }}>
-                        <span style={{ width: '16px', height: '16px', borderRadius: '5px', background: '#22C55E', flexShrink: 0 }} />
-                        <span style={{ fontSize: '10.5px', fontWeight: 700, color: '#3A3550', whiteSpace: 'nowrap' }}>Shipped</span>
-                      </div>
-                      <div style={{ fontSize: '19px', fontWeight: 800, color: '#0B0619' }}>{ctVals.shipped.toLocaleString()}</div>
-                      <div style={{ fontSize: '10px', fontWeight: 700, color: '#22C55E' }}>↑ 12.8%</div>
-                    </div>
-                    <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '14px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '7px', marginBottom: '14px' }}>
-                        <span style={{ width: '16px', height: '16px', borderRadius: '5px', background: '#7B5BFB', flexShrink: 0 }} />
-                        <span style={{ fontSize: '10.5px', fontWeight: 700, color: '#3A3550', whiteSpace: 'nowrap' }}>Delivered</span>
-                      </div>
-                      <div style={{ fontSize: '19px', fontWeight: 800, color: '#0B0619' }}>{ctVals.delivered.toLocaleString()}</div>
-                      <div style={{ fontSize: '10px', fontWeight: 700, color: '#22C55E' }}>↑ 20.1%</div>
-                    </div>
+                    ))}
                   </div>
 
                   {/* Volume Trend Graph */}
                   <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '14px', padding: '16px', marginBottom: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-                      <span style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Order Volume Trend</span>
+                      <span style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>{c('control-tower','chart-title','title')}</span>
                       <span style={{ fontSize: '10.5px', fontWeight: 600, color: '#3A3550', background: 'rgba(255,255,255,.5)', borderRadius: '6px', padding: '4px 9px' }}>
-                        This Week
+                        {c('control-tower','chart-title','extra')}
                       </span>
                     </div>
                     <svg width="100%" height="110" viewBox="0 0 460 110" preserveAspectRatio="none">
@@ -1234,27 +1189,17 @@ export default function HomePage() {
                       <path id="towerTrendLine" d="M0 68 L66 58 L132 76 L198 42 L264 18 L330 60 L396 36 L460 46" fill="none" stroke="#7B5BFB" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '10px', color: '#9891AB', marginTop: '4px' }}>
-                      <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                      {cms.list('tower-days').map((r, i) => (<span key={i}>{r.title ?? ''}</span>))}
                     </div>
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '12px' }}>
-                    <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '12px' }}>
-                      <div style={{ fontSize: '10px', fontWeight: 600, color: '#3A3550', marginBottom: '6px' }}>Inventory Status</div>
-                      <div style={{ fontSize: '13px', fontWeight: 800, color: '#22C55E' }}>Healthy</div>
-                    </div>
-                    <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '12px' }}>
-                      <div style={{ fontSize: '10px', fontWeight: 600, color: '#3A3550', marginBottom: '6px' }}>SLA Performance</div>
-                      <div style={{ fontSize: '13px', fontWeight: 800, color: '#0B0619' }}>{ctVals.sla}%</div>
-                    </div>
-                    <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '12px' }}>
-                      <div style={{ fontSize: '10px', fontWeight: 600, color: '#3A3550', marginBottom: '6px' }}>Dispatch Today</div>
-                      <div style={{ fontSize: '13px', fontWeight: 800, color: '#0B0619' }}>{ctVals.dispatch}%</div>
-                    </div>
-                    <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '12px' }}>
-                      <div style={{ fontSize: '10px', fontWeight: 600, color: '#3A3550', marginBottom: '6px' }}>Returns</div>
-                      <div style={{ fontSize: '13px', fontWeight: 800, color: '#F59E0B' }}>{ctVals.returns}%</div>
-                    </div>
+                    {cms.list('tower-metrics').map((r, idx) => (
+                      <div key={r.key ?? idx} style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '12px' }}>
+                        <div style={{ fontSize: '10px', fontWeight: 600, color: '#3A3550', marginBottom: '6px' }}>{r.title ?? ''}</div>
+                        <div style={{ fontSize: '13px', fontWeight: 800, color: r.extra }}>{[r.description ?? '', `${ctVals.sla}%`, `${ctVals.dispatch}%`, `${ctVals.returns}%`][idx]}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -1284,30 +1229,14 @@ export default function HomePage() {
           <div style={{ position: 'absolute', bottom: '-100px', right: '5%', width: '340px', height: '340px', background: 'radial-gradient(circle,rgba(124,91,251,.3) 0%,transparent 65%)', pointerEvents: 'none', animation: 'glow-drift-b 8s ease-in-out infinite' }} />
 
           <div id="stats-bar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '2px', position: 'relative' }}>
-            <div style={{ padding: '0 32px', borderRight: '1px solid rgba(255,255,255,.1)' }}>
-              <div data-counter="99.5" data-suffix="%" style={{ fontSize: 'clamp(40px,4.6vw,64px)', fontWeight: 800, color: '#fff', letterSpacing: '-.02em', lineHeight: 1, marginBottom: '16px' }}>
-                99.5%
+            {cms.list('stats').map((r, idx, arr) => (
+              <div key={r.key ?? idx} style={{ padding: '0 32px', ...(idx < arr.length - 1 ? { borderRight: '1px solid rgba(255,255,255,.1)' } : {}) }}>
+                <div data-counter={String(parseFloat(r.title ?? '0'))} data-suffix={(r.title ?? '').replace(/[0-9.]/g, '')} style={{ fontSize: 'clamp(40px,4.6vw,64px)', fontWeight: 800, color: '#fff', letterSpacing: '-.02em', lineHeight: 1, marginBottom: '16px' }}>
+                  {r.title ?? ''}
+                </div>
+                <div style={{ fontSize: '15.5px', fontWeight: 500, color: 'rgba(255,255,255,.55)' }}>{r.description ?? ''}</div>
               </div>
-              <div style={{ fontSize: '15.5px', fontWeight: 500, color: 'rgba(255,255,255,.55)' }}>Inventory Accuracy</div>
-            </div>
-            <div style={{ padding: '0 32px', borderRight: '1px solid rgba(255,255,255,.1)' }}>
-              <div data-counter="99.8" data-suffix="%" style={{ fontSize: 'clamp(40px,4.6vw,64px)', fontWeight: 800, color: '#fff', letterSpacing: '-.02em', lineHeight: 1, marginBottom: '16px' }}>
-                99.8%
-              </div>
-              <div style={{ fontSize: '15.5px', fontWeight: 500, color: 'rgba(255,255,255,.55)' }}>Order Accuracy</div>
-            </div>
-            <div style={{ padding: '0 32px', borderRight: '1px solid rgba(255,255,255,.1)' }}>
-              <div data-counter="45" data-suffix="+" style={{ fontSize: 'clamp(40px,4.6vw,64px)', fontWeight: 800, color: '#fff', letterSpacing: '-.02em', lineHeight: 1, marginBottom: '16px' }}>
-                45+
-              </div>
-              <div style={{ fontSize: '15.5px', fontWeight: 500, color: 'rgba(255,255,255,.55)' }}>Channel Integrations</div>
-            </div>
-            <div style={{ padding: '0 32px' }}>
-              <div data-counter="100" data-suffix="%" style={{ fontSize: 'clamp(40px,4.6vw,64px)', fontWeight: 800, color: '#fff', letterSpacing: '-.02em', lineHeight: 1, marginBottom: '16px' }}>
-                100%
-              </div>
-              <div style={{ fontSize: '15.5px', fontWeight: 500, color: 'rgba(255,255,255,.55)' }}>Same-Day Dispatch</div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1318,10 +1247,10 @@ export default function HomePage() {
         <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '64px', alignItems: 'center' }}>
           <div data-animate>
             <h2 style={{ fontSize: 'clamp(30px,3.6vw,44px)', fontWeight: 800, color: '#0B0619', lineHeight: 1.15, letterSpacing: '-.02em', marginBottom: '20px' }}>
-              Real-time visibility across every warehouse
+              {c('visibility','visibility-title','title')}
             </h2>
             <p style={{ fontSize: '16px', color: '#6B6480', lineHeight: 1.7, maxWidth: '440px', marginBottom: '32px' }}>
-              Track stock levels, order status and dispatch progress from a single dashboard — updated the moment it happens on the floor.
+              {c('visibility','visibility-description','description')}
             </p>
           </div>
 
@@ -1332,13 +1261,13 @@ export default function HomePage() {
                 <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#E4DEF5' }} />
                 <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#E4DEF5' }} />
                 <span style={{ marginLeft: '12px', background: '#F4F1FB', borderRadius: '999px', padding: '5px 16px', fontSize: '12px', color: '#6B6480' }}>
-                  🔒 dashboard.warevolt.in
+                  {c('visibility','browser-url','label')}
                 </span>
               </div>
-              <img src="/assets/control-tower-dashboard.png" alt="Warevolt Control Tower dashboard" style={{ width: '100%', display: 'block' }} />
+              <img src={c('visibility','dashboard-image','image')} alt={c('visibility','dashboard-image','imageAlt')} style={{ width: '100%', display: 'block' }} />
             </div>
             <div style={{ position: 'absolute', top: 0, left: '-210px', width: '360px', height: '360px', borderRadius: '14px', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'float-a 4s ease-in-out infinite' }}>
-              <img src="/assets/order-journey-screenshot.png" alt="Order journey steps" style={{ width: '100%', height: 'auto', display: 'block', animation: 'dc-card-scroll 16s ease-in-out infinite' }} />
+              <img src={c('visibility','journey-image','image')} alt={c('visibility','journey-image','imageAlt')} style={{ width: '100%', height: 'auto', display: 'block', animation: 'dc-card-scroll 16s ease-in-out infinite' }} />
             </div>
           </div>
         </div>
@@ -1348,35 +1277,17 @@ export default function HomePage() {
       <section style={{ padding: '80px clamp(20px,5%,80px)', background: '#F7F6FB' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <h2 data-animate style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '56px', textAlign: 'center', lineHeight: 1.1 }}>
-            How It Works
+            {c('how-it-works','how-title','title')}
           </h2>
           <div data-animate data-delay="60" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 0, position: 'relative' }}>
             <div style={{ position: 'absolute', top: '19px', left: '38px', right: '38px', height: '2px', background: '#DCD5F5', zIndex: 0 }} />
-            <div style={{ position: 'relative', zIndex: 1, paddingRight: '16px' }}>
-              <span style={{ display: 'flex', width: '38px', height: '38px', borderRadius: '50%', background: '#4D0DD9', color: '#fff', fontSize: '15px', fontWeight: 800, alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>1</span>
-              <div style={{ fontSize: '15.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Connect Your Sales Channels</div>
-              <p style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.65 }}>Integrate your D2C store, online marketplaces, ERP, or custom platforms. Orders and inventory synchronize automatically in real time.</p>
-            </div>
-            <div style={{ position: 'relative', zIndex: 1, paddingRight: '16px' }}>
-              <span style={{ display: 'flex', width: '38px', height: '38px', borderRadius: '50%', background: '#4D0DD9', color: '#fff', fontSize: '15px', fontWeight: 800, alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>2</span>
-              <div style={{ fontSize: '15.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Send Us Your Inventory</div>
-              <p style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.65 }}>We receive, inspect, and store your inventory using standardized warehouse processes, ensuring accurate tracking.</p>
-            </div>
-            <div style={{ position: 'relative', zIndex: 1, paddingRight: '16px' }}>
-              <span style={{ display: 'flex', width: '38px', height: '38px', borderRadius: '50%', background: '#4D0DD9', color: '#fff', fontSize: '15px', fontWeight: 800, alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>3</span>
-              <div style={{ fontSize: '15.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Automate Order Flow</div>
-              <p style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.65 }}>Orders from every connected sales channel are automatically routed to our fulfillment platform.</p>
-            </div>
-            <div style={{ position: 'relative', zIndex: 1, paddingRight: '16px' }}>
-              <span style={{ display: 'flex', width: '38px', height: '38px', borderRadius: '50%', background: '#4D0DD9', color: '#fff', fontSize: '15px', fontWeight: 800, alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>4</span>
-              <div style={{ fontSize: '15.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Pick, Pack &amp; Dispatch</div>
-              <p style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.65 }}>Barcode verification, standardized SOPs, and quality checks, shipped through your preferred carrier.</p>
-            </div>
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              <span style={{ display: 'flex', width: '38px', height: '38px', borderRadius: '50%', background: '#4D0DD9', color: '#fff', fontSize: '15px', fontWeight: 800, alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>5</span>
-              <div style={{ fontSize: '15.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Monitor &amp; Scale</div>
-              <p style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.65 }}>Track inventory, orders, shipments, returns, and performance in real time as your business grows.</p>
-            </div>
+            {cms.list('how-it-works').filter((r) => r.key?.startsWith('step-')).map((r, idx, arr) => (
+              <div key={r.key ?? idx} style={{ position: 'relative', zIndex: 1, ...(idx < arr.length - 1 ? { paddingRight: '16px' } : {}) }}>
+                <span style={{ display: 'flex', width: '38px', height: '38px', borderRadius: '50%', background: '#4D0DD9', color: '#fff', fontSize: '15px', fontWeight: 800, alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>{r.label ?? ''}</span>
+                <div style={{ fontSize: '15.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>{r.title ?? ''}</div>
+                <p style={{ fontSize: '13px', color: '#6B6480', lineHeight: 1.65 }}>{r.description ?? ''}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1386,42 +1297,22 @@ export default function HomePage() {
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <div data-animate style={{ textAlign: 'center', marginBottom: '64px' }}>
             <h2 style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '16px', lineHeight: 1.1 }}>
-              Our Fulfillment Services
+              {c('fulfillment','fulfillment-title','title')}
             </h2>
           </div>
           <div id="fulfillment-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '24px' }}>
-            <a data-animate data-delay="0" href="/d2c-marketplace-fulfillment" style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
-              <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '20px', borderRadius: '14px', overflow: 'hidden' }}>
-                <img src="/assets/d2c-marketplace.jpg" alt="D2C & Marketplace Fulfillment" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animation: 'card-zoom 9s ease-in-out infinite' }} />
-                <div style={{ position: 'absolute', top: '14px', right: '14px', width: '34px', height: '34px', borderRadius: '50%', background: '#1A3ADB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            {cms.list('fulfillment').filter((r) => r.key?.startsWith('card-')).map((r, idx) => (
+              <a key={r.key ?? idx} data-animate data-delay={['0', '80', '160'][idx] ?? String(idx * 80)} href={r.linkUrl ?? '#'} style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '20px', borderRadius: '14px', overflow: 'hidden' }}>
+                  <img src={r.image ?? ''} alt={r.imageAlt ?? ''} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animation: `card-zoom ${['9s', '10s', '8.5s'][idx] ?? '9s'} ease-in-out infinite` }} />
+                  <div style={{ position: 'absolute', top: '14px', right: '14px', width: '34px', height: '34px', borderRadius: '50%', background: '#1A3ADB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </div>
                 </div>
-              </div>
-              <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0B0619', marginBottom: '10px' }}>D2C &amp; Marketplace Fulfillment</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '14px' }}>One fulfillment solution for your online store and every major marketplace.</p>
-            </a>
-
-            <a data-animate data-delay="80" href="/order-and-warehouse-management" style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
-              <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '20px', borderRadius: '14px', overflow: 'hidden' }}>
-                <img src="/assets/b2b-fulfillment.jpg" alt="B2B Isometric" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animation: 'card-zoom 10s ease-in-out infinite' }} />
-                <div style={{ position: 'absolute', top: '14px', right: '14px', width: '34px', height: '34px', borderRadius: '50%', background: '#1A3ADB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </div>
-              </div>
-              <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0B0619', marginBottom: '10px' }}>B2B Isometric</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '14px' }}>From order creation to final dispatch, every fulfillment workflow connected in one intelligent platform.</p>
-            </a>
-
-            <a data-animate data-delay="160" href="/quick-ecommerce-fulfillment" style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
-              <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '20px', borderRadius: '14px', overflow: 'hidden' }}>
-                <img src="/assets/quick-commerce.jpg" alt="Quickcommerce Fulfillment" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animation: 'card-zoom 8.5s ease-in-out infinite' }} />
-                <div style={{ position: 'absolute', top: '14px', right: '14px', width: '34px', height: '34px', borderRadius: '50%', background: '#1A3ADB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </div>
-              </div>
-              <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0B0619', marginBottom: '10px' }}>Quickcommerce Fulfillment</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '14px' }}>Dark-store-ready micro-fulfillment for 10-30 minute delivery promises.</p>
-            </a>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0B0619', marginBottom: '10px' }}>{r.title ?? ''}</h3>
+                <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '14px' }}>{r.description ?? ''}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -1431,15 +1322,15 @@ export default function HomePage() {
         <div id="platform-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '48px', position: 'relative', zIndex: 1, textAlign: 'center' }}>
           <div style={{ maxWidth: '760px' }}>
             <h2 data-animate data-delay="60" style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '12px' }}>
-              One Platform. Absolute Control.
+              {c('platform','platform-title','title')}
             </h2>
             <p data-animate data-delay="120" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8, margin: '0 auto 18px' }}>
-              Warevolt Scale™ is the intelligent fulfillment platform that powers every Warevolt operation. It brings together order management, inventory management, warehouse operations, shipping, returns, and analytics into a single connected platform—giving your business complete visibility and control over every stage of fulfillment.
+              {c('platform','platform-description','description')}
             </p>
           </div>
 
           <div data-animate data-delay="100" style={{ width: '100%' }}>
-            <img src="/uploads/warevolt-scale-ecosystem-diagram-v2.png" alt="Warevolt Scale ecosystem diagram" style={{ width: '100%', height: 'auto', borderRadius: '20px', display: 'block' }} />
+            <img src={c('platform','platform-diagram','image')} alt={c('platform','platform-diagram','imageAlt')} style={{ width: '100%', height: 'auto', borderRadius: '20px', display: 'block' }} />
           </div>
         </div>
       </section>
@@ -1453,24 +1344,24 @@ export default function HomePage() {
               <circle cx="240" cy="240" r="170" stroke="#EDE9FF" strokeWidth="1.5" fill="none" />
               <circle cx="240" cy="240" r="110" stroke="#EDE9FF" strokeWidth="1.5" fill="none" />
             </svg>
-            <img data-animate style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '620px', animation: 'float-a 5s ease-in-out infinite' }} src="/uploads/Group 9.png" alt="Warevolt operations dashboard" />
+            <img data-animate style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '620px', animation: 'float-a 5s ease-in-out infinite' }} src={c('shipping','shipping-image','image')} alt={c('shipping','shipping-image','imageAlt')} />
           </div>
 
           <div>
             <span data-animate style={{ display: 'inline-block', fontSize: '13px', fontWeight: 800, letterSpacing: '.08em', color: '#4D0DD9', marginBottom: '14px', textTransform: 'uppercase' }}>
-              Shipping &amp; Distribution
+              {c('shipping','shipping-eyebrow','label')}
             </span>
             <h2 data-animate data-delay="60" style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '22px' }}>
-              Flexible Shipping. Built Around Your Business.
+              {c('shipping','shipping-title','title')}
             </h2>
             <p data-animate data-delay="100" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8, marginBottom: '16px', maxWidth: '520px' }}>
-              Every business ships differently. Some fulfill thousands of eCommerce orders every day, while others move pallets of inventory between factories, distributors, retail stores, and warehouses. Warevolt gives you the flexibility to manage both through a single fulfillment partner.
+              {c('shipping','shipping-p1','description')}
             </p>
             <p data-animate data-delay="140" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8, marginBottom: '16px', maxWidth: '520px' }}>
-              For Ecommerce shipments, our Bring Your Own Account (BYOA) model lets you continue using your preferred shipping platform or courier accounts. For larger inventory movements, our managed freight network connects you with trusted transport partners across India for Full Truckload (FTL), Part Truckload (PTL), and Less Than Truckload (LTL) shipments.
+              {c('shipping','shipping-p2','description')}
             </p>
             <p data-animate data-delay="180" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8, marginBottom: '28px', maxWidth: '520px' }}>
-              Whether you&apos;re shipping a single parcel or an entire truckload, Warevolt provides the technology, operational expertise, and nationwide logistics network to move your inventory efficiently, accurately, and at scale.
+              {c('shipping','shipping-p3','description')}
             </p>
             <button
               data-animate
@@ -1478,7 +1369,7 @@ export default function HomePage() {
               onClick={() => setPricingOpen(true)}
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#4D0DD9', fontSize: '15px', fontWeight: 600, textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', padding: 0 }}
             >
-              Learn More{' '}
+              {c('shipping','shipping-cta','linkLabel')}{' '}
               <svg width="7" height="12" viewBox="0 0 7 12" fill="none" style={{ display: 'block', flexShrink: 0 }}>
                 <path d="M1 1l5 5-5 5" stroke="#4D0DD9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -1493,96 +1384,28 @@ export default function HomePage() {
           <div data-animate style={{ maxWidth: '760px', marginBottom: '56px' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 800, letterSpacing: '.08em', color: '#B49CFC', marginBottom: '14px', textTransform: 'uppercase' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#B49CFC' }} />
-              Why Brands Choose Warevolt
+              {c('why-brands','why-heading','label')}
             </span>
             <h2 style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-.03em', color: '#fff', marginBottom: '22px' }}>
-              Logistics Built for Control, Visibility, and Scale
+              {c('why-brands','why-heading','title')}
             </h2>
             <p style={{ fontSize: '15.5px', color: 'rgba(255,255,255,.6)', lineHeight: 1.8 }}>
-              Warevolt combines intelligent fulfillment, flexible shipping, nationwide distribution, and connected technology into one scalable logistics platform—helping your business grow without operational complexity.
+              {c('why-brands','why-heading','description')}
             </p>
           </div>
 
           <div data-animate data-delay="60" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '56px' }}>
-            <div style={{ display: 'flex', gap: '18px', padding: '24px 0', borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-              <span style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(123,91,251,.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><circle cx="7.5" cy="18.5" r="1.6" stroke="#C9B8F5" strokeWidth="1.6" /><circle cx="17.5" cy="18.5" r="1.6" stroke="#C9B8F5" strokeWidth="1.6" /></svg>
-              </span>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>Flexible Shipping (BYOA)</h3>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,.55)', lineHeight: 1.7 }}>Keep your preferred shipping platform, courier partners, and negotiated rates with our Bring Your Own Account (BYOA) model. Enjoy complete flexibility without platform lock-in.</p>
+            {cms.list('why-brands-items').map((r, idx, arr) => (
+              <div key={r.key ?? idx} style={{ display: 'flex', gap: '18px', padding: '24px 0', ...(idx < 6 ? { borderBottom: '1px solid rgba(255,255,255,.1)' } : {}) }}>
+                <span style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(123,91,251,.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  {whyIcons[idx]}
+                </span>
+                <div>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>{r.title ?? ''}</h3>
+                  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,.55)', lineHeight: 1.7 }}>{r.description ?? ''}</p>
+                </div>
               </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '18px', padding: '24px 0', borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-              <span style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(123,91,251,.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="#C9B8F5" strokeWidth="1.8" /><path d="M4.5 20c0-4 3.5-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" /></svg>
-              </span>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>Dedicated Account Manager</h3>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,.55)', lineHeight: 1.7 }}>Work with a dedicated logistics expert who understands your products, fulfillment requirements, and growth goals—from onboarding through long-term expansion.</p>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '18px', padding: '24px 0', borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-              <span style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(123,91,251,.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#C9B8F5" strokeWidth="1.8" /><path d="M9 12l2 2 4-4" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </span>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>Inventory Accuracy</h3>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,.55)', lineHeight: 1.7 }}>Protect your inventory with barcode-driven operations, real-time stock visibility, cycle counting, and multi-point quality checks.</p>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '18px', padding: '24px 0', borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-              <span style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(123,91,251,.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 16V8l8-4 8 4v8l-8 4-8-4z" stroke="#C9B8F5" strokeWidth="1.8" strokeLinejoin="round" /><path d="M4 8l8 4 8-4M12 12v8" stroke="#C9B8F5" strokeWidth="1.8" strokeLinejoin="round" /></svg>
-              </span>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>Accurate Weight &amp; Dimensions</h3>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,.55)', lineHeight: 1.7 }}>Every shipment is verified for weight and volumetric dimensions before dispatch to reduce billing discrepancies and improve shipping cost accuracy.</p>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '18px', padding: '24px 0', borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-              <span style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(123,91,251,.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="2" stroke="#C9B8F5" strokeWidth="1.8" /><path d="M8 20h8M12 16v4" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" /></svg>
-              </span>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>Connected Technology</h3>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,.55)', lineHeight: 1.7 }}>Integrate your eCommerce stores, marketplaces, ERP, and shipping platforms into one centralized fulfillment ecosystem.</p>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '18px', padding: '24px 0', borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-              <span style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(123,91,251,.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9z" stroke="#C9B8F5" strokeWidth="1.8" /></svg>
-              </span>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>Nationwide Distribution</h3>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,.55)', lineHeight: 1.7 }}>Manage everything from eCommerce parcel fulfillment to FTL, PTL, and LTL freight through a single logistics partner.</p>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '18px', padding: '24px 0' }}>
-              <span style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(123,91,251,.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 20l6-6M14 4h6v6M20 4L10 14" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </span>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>Operational Excellence</h3>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,.55)', lineHeight: 1.7 }}>Standardized SOPs, barcode verification, and automated warehouse workflows ensure faster, more consistent, and highly accurate fulfillment.</p>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '18px', padding: '24px 0' }}>
-              <span style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(123,91,251,.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-8" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><path d="M15 8h5v5" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </span>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>Built to Scale</h3>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,.55)', lineHeight: 1.7 }}>Whether you&apos;re growing your D2C business, expanding into marketplaces, or supplying retail channels, Warevolt scales alongside your business.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1591,7 +1414,7 @@ export default function HomePage() {
       <section style={{ padding: '80px clamp(20px,5%,80px)', background: '#F7F6FB', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <h2 data-animate data-delay="60" style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '64px' }}>
-            What Our Clients Say
+            {c('testimonials','testimonials-title','title')}
           </h2>
 
           <div id="testi-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '24px', textAlign: 'left', alignItems: 'stretch' }}>
@@ -1642,14 +1465,14 @@ export default function HomePage() {
         <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <div data-animate style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,.15)', backdropFilter: 'blur(8px)', borderRadius: '12px', padding: '7px 18px', marginBottom: '28px', border: '1px solid rgba(255,255,255,.2)' }}>
             <div style={{ width: '8px', height: '8px', background: '#22C55E', borderRadius: '50%', animation: 'pulse-dot 2s infinite' }} />
-            <span style={{ fontSize: '13px', fontWeight: 600, color: '#fff', letterSpacing: '.04em' }}>Now taking new projects</span>
+            <span style={{ fontSize: '13px', fontWeight: 600, color: '#fff', letterSpacing: '.04em' }}>{c('cta','cta-badge','label')}</span>
           </div>
 
           <h2 data-animate data-delay="80" style={{ fontSize: 'clamp(38px,4.5vw,68px)', fontWeight: 800, letterSpacing: '-.035em', color: '#fff', lineHeight: 1.05, marginBottom: '20px' }}>
-            Let&apos;s Build Your Next Warehouse Together.
+            {c('cta','cta-title','title')}
           </h2>
           <p data-animate data-delay="130" style={{ fontSize: '17px', color: 'rgba(255,255,255,.75)', lineHeight: 1.75, maxWidth: '520px', margin: '0 auto 48px' }}>
-            Share your project requirements and our team will get back to you within 24 hours with a detailed plan.
+            {c('cta','cta-description','description')}
           </p>
           <div data-animate data-delay="180" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button
@@ -1664,13 +1487,13 @@ export default function HomePage() {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              Get a Quote
+              {c('cta','cta-quote','linkLabel')}
             </button>
             <a
-              href="tel:+91-9876543210"
+              href={c('cta','cta-call','linkUrl')}
               style={{ background: 'rgba(255,255,255,.12)', backdropFilter: 'blur(8px)', color: '#fff', padding: '16px 36px', borderRadius: '12px', fontSize: '15.5px', fontWeight: 600, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,.3)', transition: 'background .2s' }}
             >
-              Call Us Now
+              {c('cta','cta-call','linkLabel')}
             </a>
           </div>
         </div>
@@ -1686,7 +1509,7 @@ export default function HomePage() {
                 <img src="/uploads/warevolt-logo-footer-transparent.png" alt="Warevolt" style={{ height: '88px', objectFit: 'contain', display: 'block' }} />
               </div>
               <p style={{ fontSize: '14.5px', lineHeight: 1.8, marginBottom: '28px', maxWidth: '280px' }}>
-                Premium industrial infrastructure company specializing in warehouses, PEB structures, and cold storage solutions across India.
+                {c('footer','footer-description','description')}
               </p>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href="#" style={{ width: '38px', height: '38px', background: 'rgba(255,255,255,.08)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -1703,42 +1526,39 @@ export default function HomePage() {
 
             {/* Quick Links */}
             <div>
-              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>Quick Links</h4>
+              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>{c('footer','footer-quick-heading','title')}</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <a href="#about" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>About Us</a>
-                <a href="#solutions" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Solutions</a>
-                <a href="#projects" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Projects</a>
-                <a href="#industries" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Industries</a>
-                <a href="#" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>Blog</a>
+                {cms.list('footer-quick-links').map((r, i) => (
+                  <a key={i} href={r.linkUrl ?? '#'} style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>{r.linkLabel ?? ''}</a>
+                ))}
               </div>
             </div>
 
             {/* Solutions */}
             <div>
-              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>Solutions</h4>
+              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>{c('footer','footer-solutions-heading','title')}</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <a href="/order-and-warehouse-management" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Order &amp; Warehouse Management</a>
-                <a href="/d2c-marketplace-fulfillment" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>D2C &amp; Marketplace Fulfillment</a>
-                <a href="/inventory-and-returns-management" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Inventory &amp; Returns Management</a>
-                <a href="/analytics-and-reporting" style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>Analytics &amp; Reporting</a>
+                {cms.list('footer-solution-links').map((r, i) => (
+                  <a key={i} href={r.linkUrl ?? '#'} style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none', transition: 'color .2s' }}>{r.linkLabel ?? ''}</a>
+                ))}
               </div>
             </div>
 
             {/* Contact */}
             <div>
-              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>Contact</h4>
+              <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#fff', letterSpacing: '.07em', textTransform: 'uppercase', marginBottom: '24px' }}>{c('footer','footer-contact-heading','title')}</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '28px' }}>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0, marginTop: '2px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /><circle cx="12" cy="10" r="3" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                  <span style={{ fontSize: '14px', lineHeight: 1.6 }}>123 Industrial Zone, Navi Mumbai, Maharashtra 400708</span>
+                  <span style={{ fontSize: '14px', lineHeight: 1.6 }}>{c('footer','footer-address','description')}</span>
                 </div>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.16 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.19 6.19l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                  <span style={{ fontSize: '14px' }}>+91 98765 43210</span>
+                  <span style={{ fontSize: '14px' }}>{c('footer','footer-phone','description')}</span>
                 </div>
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /><polyline points="22,6 12,13 2,6" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                  <span style={{ fontSize: '14px' }}>hello@warevolt.in</span>
+                  <span style={{ fontSize: '14px' }}>{c('footer','footer-email','description')}</span>
                 </div>
               </div>
 
@@ -1746,13 +1566,13 @@ export default function HomePage() {
               <div style={{ display: 'flex', gap: '8px' }}>
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={c('footer','footer-newsletter','label')}
                   style={{ flex: 1, background: 'rgba(255,255,255,.08)', border: '1.5px solid rgba(255,255,255,.12)', borderRadius: '12px', padding: '12px 16px', color: '#fff', fontSize: '13.5px', fontFamily: 'inherit', outline: 'none' }}
                 />
                 <button
                   style={{ background: '#4D0DD9', color: '#fff', border: 'none', borderRadius: '12px', padding: '12px 18px', fontSize: '13.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', fontFamily: 'inherit' }}
                 >
-                  Subscribe
+                  {c('footer','footer-newsletter','linkLabel')}
                 </button>
               </div>
             </div>
@@ -1760,10 +1580,10 @@ export default function HomePage() {
 
           {/* Bottom Bar */}
           <div style={{ borderTop: '1px solid rgba(255,255,255,.07)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-            <p style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)' }}>© 2026 Warevolt. All rights reserved.</p>
+            <p style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)' }}>{c('footer','footer-copyright','description')}</p>
             <div style={{ display: 'flex', gap: '28px' }}>
-              <a href="#" style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' }}>Privacy Policy</a>
-              <a href="#" style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' }}>Terms of Service</a>
+              <a href={c('footer','footer-privacy','linkUrl')} style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' }}>{c('footer','footer-privacy','linkLabel')}</a>
+              <a href={c('footer','footer-terms','linkUrl')} style={{ fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' }}>{c('footer','footer-terms','linkLabel')}</a>
             </div>
           </div>
         </div>

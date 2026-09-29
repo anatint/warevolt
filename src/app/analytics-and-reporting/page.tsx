@@ -3,11 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
+import defaults from '@/content/analytics-reporting.json';
+import { useCms, CmsRow } from '@/lib/cms';
 
 export default function AnalyticsAndReportingPage() {
   const [pricingOpen, setPricingOpen] = useState(false);
   const [heroMobileOpen, setHeroMobileOpen] = useState(false);
   const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
+  const cms = useCms('AnalyticsReportingPage', defaults as CmsRow[]);
 
   const techMegaMenu = [
     { label: 'Order & Warehouse Management', desc: 'From order to dispatch, every fulfillment workflow connected.', href: '/order-and-warehouse-management' },
@@ -15,27 +18,15 @@ export default function AnalyticsAndReportingPage() {
     { label: 'Analytics & Reporting', desc: 'Turn fulfillment data into clear, actionable insights.', href: '/analytics-and-reporting' },
   ];
 
-  const analyticsCapabilities = [
-    { title: 'Real-Time Executive Dashboards', desc: 'Monitor orders dispatched, fulfillment velocity, order aging, and delivery SLA compliance through intuitive visual dashboards.' },
-    { title: 'Multi-Carrier SLA Benchmarking', desc: 'Measure carrier transit times, on-time delivery rates, exception rates, and cost per kilogram across zones in real time.' },
-    { title: 'Inventory Health & Aging Reports', desc: 'Track SKU turnover ratios, slow-moving items, deadstock risks, and days-of-inventory on hand to optimize capital allocation.' },
-    { title: 'Fulfillment Cost & Unit Economics', desc: 'Break down storage, pick-pack, handling, packaging, and freight costs per order to safeguard gross margins.' },
-    { title: 'Reverse Logistics & RTO Analytics', desc: 'Uncover return patterns, customer return reasons, non-delivery reports (NDR), and transit damage metrics to minimize returns.' },
-    { title: 'Labor & Warehouse Productivity', desc: 'Analyze picks per hour, dock-to-stock turnaround times, packing speed, and shift-level throughput across fulfillment centers.' },
-    { title: 'Demand Forecasting & Velocity', desc: 'Utilize historical trends and seasonal velocity forecasting to project reorder quantities and prevent costly stockouts.' },
-    { title: 'Custom Report Builder & Data Feeds', desc: 'Export scheduled reports in CSV/Excel, configure automated email alerts, or stream live data via webhooks and BI connectors.' },
-  ];
+  const analyticsCapabilities = cms.list('key-capabilities').map((r) => ({ title: r.title ?? '', desc: r.description ?? '' }));
 
-  const reportingCapabilities = [
-    { num: '01', title: 'Automated Scheduled Reports', desc: 'Daily, weekly, and monthly PDF and Excel executive summaries delivered straight to your team and leadership inbox.' },
-    { num: '02', title: 'Cross-Channel Performance Tracking', desc: 'Compare volume, fulfillment speed, and margin contribution across Shopify, Amazon, Flipkart, Blinkit, and B2B channels.' },
-    { num: '03', title: 'Courier NDR Resolution Rates', desc: 'Monitor real-time non-delivery attempts, buyer verification response times, and RTO conversion rates to prevent returns.' },
-    { num: '04', title: 'Zone-Wise Transit Analysis', desc: 'Identify shipping bottlenecks, lane performance, and transit delays across Metro, Tier-1, Tier-2, and regional zones.' },
-    { num: '05', title: 'Dock-to-Stock Turnaround Monitoring', desc: 'Benchmark the exact duration from trailer arrival at the dock to inventory availability on warehouse shelves.' },
-    { num: '06', title: 'SKU Velocity & Fast-Mover Classification', desc: 'Automate ABC SKU categorization and receive slotting recommendations to minimize picker travel distance and time.' },
-    { num: '07', title: 'Financial Reconciliation & Freight Audits', desc: 'Automated discrepancy detection between carrier freight invoices and actual dimensional weight calculations.' },
-    { num: '08', title: 'Enterprise BI & Data Lake Integration', desc: 'Direct sync with Snowflake, BigQuery, Power BI, and Tableau via robust REST APIs and high-throughput webhooks.' },
-  ];
+  const reportingCapabilities = cms.list('reporting-capabilities').map((r) => ({ num: r.label ?? '', title: r.title ?? '', desc: r.description ?? '' }));
+
+  const channels = cms.list('channels').map((r) => ({ src: r.image ?? '', alt: r.imageAlt ?? '' }));
+  const feedRows = cms.list('feed-rows').map((r) => ({ src: r.image ?? '', alt: r.imageAlt ?? '', title: r.title ?? '', status: r.description ?? '', color: r.extra }));
+  const kpiTiles = cms.list('kpi-tiles').map((r) => ({ title: r.title ?? '', value: r.description ?? '', sub: r.extra ?? '', color: r.label ?? '' }));
+  const trendDays = cms.list('trend-days').map((r) => r.title ?? '');
+  const miniStats = cms.list('mini-stats').map((r) => ({ title: r.title ?? '', value: r.description ?? '', color: r.extra ?? '' }));
 
   useEffect(() => {
     // ── Fade-up on scroll ──
@@ -375,26 +366,26 @@ export default function AnalyticsAndReportingPage() {
           <div id="hero-grid" style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '52px', alignItems: 'center' }}>
             <div>
               <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'rgba(255,255,255,.68)', letterSpacing: '.04em', marginBottom: '14px' }}>
-                Solutions / Analytics &amp; Reporting
+                {cms.one('hero', 'hero-eyebrow').title ?? ''}
               </div>
               <h1 style={{ fontSize: 'clamp(34px,3.8vw,52px)', fontWeight: 800, lineHeight: 1.14, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '20px' }}>
-                Analytics &amp; Reporting
+                {cms.one('hero', 'hero-title').title ?? ''}
               </h1>
               <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.86)', lineHeight: 1.68, maxWidth: '740px', marginBottom: '32px' }}>
-                WareVolt Scale™ brings order, inventory, warehouse, shipping, and returns data into a single operational view — giving leadership the metrics to run the business proactively, not reactively.
+                           {cms.one('hero', 'hero-description').description ?? ''}
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
                   onClick={() => setPricingOpen(true)}
                   style={{ background: '#4D0DD9', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
-                  Get a Quote
+                  {cms.one('hero', 'hero-cta-primary').linkLabel ?? ''}
                 </button>
                 <button
                   onClick={() => setPricingOpen(true)}
                   style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
-                  Speak to an expert
+                  {cms.one('hero', 'hero-cta-secondary').linkLabel ?? ''}
                 </button>
               </div>
             </div>
@@ -417,19 +408,19 @@ export default function AnalyticsAndReportingPage() {
           <div id="order-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: '56px', alignItems: 'center' }}>
             <div>
               <h2 data-animate style={{ fontSize: 'clamp(30px,3.2vw,46px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '12px' }}>
-                Real-Time Operational Intelligence. Complete Visibility.
+                {cms.one('intelligence', 'intelligence-title').title ?? ''}
               </h2>
               <div style={{ width: '44px', height: '3px', background: '#4D0DD9', marginBottom: '22px' }}></div>
               <p data-animate data-delay="60" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '16px' }}>
-                Supply chains generate millions of discrete data points every single day. WareVolt Scale™ aggregates, normalizes, and visualizes this data into unified operational intelligence—giving your team instant clarity over order cycles, carrier SLA delivery, and warehouse throughput.
+                     {cms.one('intelligence', 'intelligence-paragraph-1').description ?? ''}
               </p>
               <p data-animate data-delay="100" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: 0 }}>
-                Identify delivery bottlenecks before they hurt customer reviews, measure true unit fulfillment economics, and streamline cross-facility operations with confidence backed by verifiable real-time analytics.
+                     {cms.one('intelligence', 'intelligence-paragraph-2').description ?? ''}
               </p>
             </div>
 
             <div id="order-diagram" data-animate data-delay="120" style={{ width: '100%' }}>
-              <img src="/uploads/warevolt-scale-diagram-flat.png" alt="Warevolt Analytics and Intelligence diagram" style={{ width: '100%', height: 'auto', borderRadius: '26px', display: 'block' }} />
+              <img src={cms.one('intelligence', 'intelligence-diagram').image ?? ''} alt={cms.one('intelligence', 'intelligence-diagram').imageAlt ?? ''} style={{ width: '100%', height: 'auto', borderRadius: '26px', display: 'block' }} />
             </div>
           </div>
         </div>
@@ -439,10 +430,10 @@ export default function AnalyticsAndReportingPage() {
       <section style={{ padding: '72px clamp(20px,5%,80px)', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           <h2 data-animate style={{ fontSize: 'clamp(28px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '14px' }}>
-            Key Capabilities
+            {cms.one('key-capabilities-header', 'key-capabilities-title').title ?? ''}
           </h2>
           <p data-animate data-delay="40" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.6, marginBottom: '36px' }}>
-            Full-spectrum fulfillment analytics engineered for high-growth commerce brands.
+            {cms.one('key-capabilities-header', 'key-capabilities-description').description ?? ''}
           </p>
           <div id="order-cap-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px', textAlign: 'left' }}>
             {analyticsCapabilities.map((c, idx) => (
@@ -460,17 +451,17 @@ export default function AnalyticsAndReportingPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '36px' }}>
             <div data-animate style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '.08em', color: '#4D0DD9', textTransform: 'uppercase', marginBottom: '14px' }}>
-              Enterprise Intelligence &amp; BI
+              {cms.one('enterprise', 'enterprise-eyebrow').label ?? ''}
             </div>
             <h2 data-animate data-delay="30" style={{ fontSize: 'clamp(28px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '20px', maxWidth: '760px', marginLeft: 'auto', marginRight: 'auto' }}>
-              Actionable Insights Across Every Supply Chain Touchpoint.
+              {cms.one('enterprise', 'enterprise-title').title ?? ''}
             </h2>
             <p data-animate data-delay="60" style={{ fontSize: '16px', color: '#3A3550', lineHeight: 1.75, maxWidth: '820px', margin: '0 auto' }}>
-              From floor-level warehouse supervisors to executive leadership, WareVolt Analytics connects disparate data streams across sales channels, WMS workflows, and last-mile logistics into a single source of truth. Schedule automated reports, configure proactive alerts, and feed clean fulfillment data into your enterprise BI stack effortlessly.
+                     {cms.one('enterprise', 'enterprise-description').description ?? ''}
             </p>
           </div>
           <div data-animate data-delay="100" style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 24px 60px rgba(20,10,40,.16)', maxWidth: '427px', margin: '0 auto' }}>
-            <img src="/uploads/pasted-1787544112877-0.png" alt="Warevolt Analytics Control Tower dashboard" style={{ display: 'block', width: '100%', height: 'auto' }} />
+            <img src={cms.one('enterprise', 'enterprise-image').image ?? ''} alt={cms.one('enterprise', 'enterprise-image').imageAlt ?? ''} style={{ display: 'block', width: '100%', height: 'auto' }} />
           </div>
         </div>
       </section>
@@ -479,7 +470,7 @@ export default function AnalyticsAndReportingPage() {
       <section style={{ padding: '72px clamp(20px,5%,80px)', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 data-animate style={{ fontSize: 'clamp(28px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '36px', textAlign: 'center' }}>
-            Key Capabilities
+            {cms.one('reporting-header', 'reporting-title').title ?? ''}
           </h2>
           <div id="warehouse-cap-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 72px' }}>
             {reportingCapabilities.map((c, idx) => (
@@ -519,17 +510,10 @@ export default function AnalyticsAndReportingPage() {
                 {/* Sales Channels Column */}
                 <div style={{ flex: '0 0 87px' }}>
                   <div style={{ fontSize: '13px', fontWeight: 800, letterSpacing: '.1em', color: '#fff', marginBottom: '22px', display: 'inline-block', whiteSpace: 'nowrap' }}>
-                    DATA STREAMS
+                    {cms.one('automation', 'streams-label').title ?? ''}
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    {[
-                      { src: '/uploads/pasted-1785731347143-0.png', alt: 'Amazon' },
-                      { src: '/uploads/pasted-1785731537374-0.png', alt: 'Flipkart' },
-                      { src: '/uploads/pasted-1785731732420-0.png', alt: 'Shopify' },
-                      { src: '/uploads/pasted-1785731671522-0.png', alt: 'Myntra' },
-                      { src: '/uploads/pasted-1785731892932-0.png', alt: 'Blinkit' },
-                      { src: '/uploads/pasted-1785732016871-0.png', alt: 'Zepto' },
-                    ].map((ch, idx) => (
+                    {channels.map((ch, idx) => (
                       <div key={idx} style={{ width: '63px', height: '63px', background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '13px', padding: '8px', backdropFilter: 'blur(16px)', boxShadow: '0 10px 26px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.1)', boxSizing: 'border-box' }}>
                         <div style={{ width: '47px', height: '47px', borderRadius: '10px', overflow: 'hidden', margin: '0 auto' }}>
                           <img src={ch.src} alt={ch.alt} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
@@ -581,71 +565,27 @@ export default function AnalyticsAndReportingPage() {
                 {/* Unified Intelligence Feed Card */}
                 <div style={{ flex: '0 0 360px', alignSelf: 'center', height: '420px', boxSizing: 'border-box', background: 'linear-gradient(160deg,rgba(205,185,235,.45),rgba(255,255,255,.92))', borderRadius: '20px', padding: '22px', boxShadow: '0 24px 60px rgba(0,0,0,.35),0 0 40px rgba(167,139,250,.4)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px' }}>
-                    <span style={{ fontSize: '14px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>INTELLIGENCE STREAM</span>
+                    <span style={{ fontSize: '14px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>{cms.one('automation', 'feed-title').title ?? ''}</span>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11.5px', fontWeight: 700, color: '#0B0619', background: '#fff', borderRadius: '999px', padding: '5px 12px', boxShadow: '0 4px 10px rgba(0,0,0,.1)' }}>
-                      <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#22C55E' }}></span>Live
+                      <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#22C55E' }}></span>{cms.one('automation', 'feed-live').title ?? ''}
                     </span>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row1 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785731347143-0.png" alt="Amazon" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    {feedRows.map((fr, idx) => (
+                      <div key={idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: `dc-feed-row${idx + 1} 5.8s linear infinite` }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
+                          <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
+                            <img src={fr.src} alt={fr.alt} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                          </div>
+                          <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>{fr.title}</div></div>
                         </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>SLA 99.8% On-Time Dispatch</div></div>
+                        {fr.color ? (
+                          <span style={{ fontSize: '11.5px', color: fr.color, fontWeight: 700, whiteSpace: 'nowrap' }}>{fr.status}</span>
+                        ) : (
+                          <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>{fr.status}</span>
+                        )}
                       </div>
-                      <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>1 sec ago</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row2 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785731537374-0.png" alt="Flipkart" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Carrier Benchmark: Zone A 18h</div></div>
-                      </div>
-                      <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>4 sec ago</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row3 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785731732420-0.png" alt="Shopify" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Velocity Alert: SKU-9901 Fast Mover</div></div>
-                      </div>
-                      <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>7 sec ago</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row4 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785731671522-0.png" alt="Myntra" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>NDR Proactive Verification</div></div>
-                      </div>
-                      <span style={{ fontSize: '11.5px', color: '#F59E0B', fontWeight: 700, whiteSpace: 'nowrap' }}>Resolved</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row5 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785731892932-0.png" alt="Blinkit" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Freight Weight Audit Saved ₹4,200</div></div>
-                      </div>
-                      <span style={{ fontSize: '11.5px', color: '#22C55E', fontWeight: 700, whiteSpace: 'nowrap' }}>Audited</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row6 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785732016871-0.png" alt="Zepto" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Dock-to-Stock Batch Cleared</div></div>
-                      </div>
-                      <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>Just now</span>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
@@ -676,51 +616,29 @@ export default function AnalyticsAndReportingPage() {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-                    <img src="/assets/warevolt-mark.svg" alt="Warevolt" style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
+                    <img src={cms.one('automation', 'panel-logo').image ?? ''} alt={cms.one('automation', 'panel-logo').imageAlt ?? ''} style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
                     <span style={{ fontSize: '10px', fontWeight: 600, color: '#0B0619', background: '#F3F1FA', borderRadius: '8px', padding: '4px 8px', whiteSpace: 'nowrap' }}>
-                      Live Intelligence Stream
+                      {cms.one('automation', 'panel-badge').title ?? ''}
                     </span>
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '8px', marginBottom: '12px' }}>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
-                        <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#7B5BFB', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Dispatch SLA</span>
+                    {kpiTiles.map((k, idx) => (
+                      <div key={idx} style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
+                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
+                          <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: k.color, flexShrink: 0, marginTop: '1px' }}></span>
+                          <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>{k.title}</span>
+                        </div>
+                        <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>{k.value}</div>
+                        <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>{k.sub}</div>
                       </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>99.8%</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>↑ Target Met</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
-                        <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#2F7BF6', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Avg Transit</span>
-                      </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>26.4h</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>Zone A-C</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
-                        <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#22C55E', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Return Rate</span>
-                      </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>1.2%</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>↓ Down 0.8%</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
-                        <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#7B5BFB', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Data Sync</span>
-                      </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>100%</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>Real-Time</div>
-                    </div>
+                    ))}
                   </div>
 
                   <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '12px', padding: '12px', marginBottom: '12px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#0B0619' }}>Fulfillment Velocity &amp; Throughput</span>
-                      <span style={{ fontSize: '9px', fontWeight: 600, color: '#6B6480', background: '#F3F1FA', borderRadius: '6px', padding: '3px 7px' }}>30-Day Trend</span>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#0B0619' }}>{cms.one('automation', 'trend-title').title ?? ''}</span>
+                      <span style={{ fontSize: '9px', fontWeight: 600, color: '#6B6480', background: '#F3F1FA', borderRadius: '6px', padding: '3px 7px' }}>{cms.one('automation', 'trend-badge').title ?? ''}</span>
                     </div>
                     <svg width="100%" height="70" viewBox="0 0 300 70" preserveAspectRatio="none">
                       <defs>
@@ -743,27 +661,17 @@ export default function AnalyticsAndReportingPage() {
                       </circle>
                     </svg>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '8px', color: '#9891AB', marginTop: '2px' }}>
-                      <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                      {trendDays.map((d, idx) => <span key={idx}>{d}</span>)}
                     </div>
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '8px' }}>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Pick Speed</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#22C55E' }}>38s / item</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Freight Audit</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0B0619' }}>14.2% Saved</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Forecast Acc.</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#22C55E' }}>97.6%</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Net SLA</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#4D0DD9' }}>99.4%</div>
-                    </div>
+                    {miniStats.map((s, idx) => (
+                      <div key={idx} style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
+                        <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>{s.title}</div>
+                        <div style={{ fontSize: '11.5px', fontWeight: 800, color: s.color }}>{s.value}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

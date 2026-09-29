@@ -3,11 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
+import { useCms, CmsRow } from '@/lib/cms';
+import defaults from '@/content/order-warehouse.json';
 
 export default function InventoryAndReturnsManagementPage() {
   const [pricingOpen, setPricingOpen] = useState(false);
   const [heroMobileOpen, setHeroMobileOpen] = useState(false);
   const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
+  const cms = useCms('OrderWarehousePage', defaults as CmsRow[]);
 
   const techMegaMenu = [
     { label: 'Order & Warehouse Management', desc: 'From order to dispatch, every fulfillment workflow connected.', href: '/order-and-warehouse-management' },
@@ -15,27 +18,23 @@ export default function InventoryAndReturnsManagementPage() {
     { label: 'Analytics & Reporting', desc: 'Turn fulfillment data into clear, actionable insights.', href: '/analytics-and-reporting' },
   ];
 
-  const inventoryCapabilities = [
-    { title: 'Unified Order Dashboard', desc: 'Manage orders from every sales channel through a single operational view.' },
-    { title: 'Multi-Channel Synchronization', desc: 'Automatically synchronize orders across your entire commerce ecosystem in real time.' },
-    { title: 'Live Order Tracking', desc: 'Monitor every stage from order confirmation to picking, packing, shipping, and delivery.' },
-    { title: 'Intelligent Order Prioritization', desc: 'Automatically prioritise orders using configurable business rules and SLA targets.' },
-    { title: 'Bulk Processing & Automation', desc: 'Process thousands of orders with batch actions and automated workflows.' },
-    { title: 'Split & Partial Fulfilment', desc: 'Support split shipments, partial fulfilments, and multi-location order routing.' },
-    { title: 'B2B & Wholesale Workflows', desc: 'Configure dedicated fulfilment rules for wholesale, retail, and enterprise customers.' },
-    { title: 'Order Search & Audit History', desc: 'Quickly locate orders, access complete audit trails, and generate packing slips and shipping documents instantly.' },
-  ];
+  const inventoryCapabilities = cms.list('capabilities').map((r) => ({ title: r.title ?? '', desc: r.description ?? '' }));
 
-  const returnsCapabilities = [
-    { num: '01', title: 'Structured Goods Receiving', desc: 'Streamline inbound verification, discrepancy logging, and dock-to-stock processing.' },
-    { num: '02', title: 'Put-Away Optimisation', desc: 'Guide inventory to the most efficient storage locations using configurable put-away rules.' },
-    { num: '03', title: 'Bin & Location Management', desc: 'Manage inventory across warehouses, zones, aisles, racks, shelves, and bins with complete visibility.' },
-    { num: '04', title: 'Optimised Picking Workflows', desc: 'Accelerate fulfilment with single, batch, wave, cluster, and zone picking strategies.' },
-    { num: '05', title: 'Barcode-Verified Packing', desc: 'Validate every item before dispatch to improve fulfilment accuracy.' },
-    { num: '06', title: 'Dispatch Management', desc: 'Coordinate staging, loading, and carrier handovers with complete operational visibility.' },
-    { num: '07', title: 'Cycle Counting & Stock Adjustments', desc: 'Maintain inventory accuracy through continuous stock verification and reconciliation.' },
-    { num: '08', title: 'Mobile Warehouse Operations', desc: 'Execute warehouse tasks seamlessly using handheld barcode scanners and mobile devices.' },
-  ];
+  const returnsCapabilities = cms.list('warehouse-capabilities').map((r) => ({ num: r.label ?? '', title: r.title ?? '', desc: r.description ?? '' }));
+
+  const introImage = cms.one('intro', 'intro-image');
+  const capHeading = cms.one('capabilities-heading');
+  const whIntro = cms.one('warehouse-intro', 'warehouse-description');
+  const whEyebrow = cms.one('warehouse-intro', 'warehouse-eyebrow');
+  const whTitle = cms.one('warehouse-intro', 'warehouse-title');
+  const whImage = cms.one('warehouse-intro', 'warehouse-image');
+  const whCapHeading = cms.one('warehouse-capabilities-heading');
+  const channelsHeading = cms.one('automation-channels-heading');
+  const feedHeading = cms.one('automation-feed-heading');
+  const panel = cms.one('automation-panel-heading');
+  const chart = cms.one('automation-chart');
+  const kpiColors = ['#7B5BFB', '#2F7BF6', '#22C55E', '#7B5BFB'];
+  const statColors = ['#22C55E', '#0B0619', '#22C55E', '#4D0DD9'];
 
   useEffect(() => {
     // ── Fade-up on scroll ──
@@ -375,26 +374,26 @@ export default function InventoryAndReturnsManagementPage() {
           <div id="hero-grid" style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '52px', alignItems: 'center' }}>
             <div>
               <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'rgba(255,255,255,.68)', letterSpacing: '.04em', marginBottom: '14px' }}>
-                Solutions / Order &amp; Warehouse Management
+                {cms.one('hero', 'hero-eyebrow').label ?? ''}
               </div>
               <h1 style={{ fontSize: 'clamp(34px,3.8vw,52px)', fontWeight: 800, lineHeight: 1.14, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '20px' }}>
-                Order &amp; Warehouse Management
+                {cms.one('hero', 'hero-title').title ?? ''}
               </h1>
               <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.86)', lineHeight: 1.68, maxWidth: '740px', marginBottom: '32px' }}>
-                Today&apos;s commerce landscape moves faster and operates across more channels than ever before.
+                {cms.one('hero', 'hero-description').description ?? ''}
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
                   onClick={() => setPricingOpen(true)}
                   style={{ background: '#4D0DD9', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
-                  Get a Quote
+                  {cms.one('hero', 'hero-cta-primary').linkLabel ?? ''}
                 </button>
                 <button
                   onClick={() => setPricingOpen(true)}
                   style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
-                  Speak to an expert
+                  {cms.one('hero', 'hero-cta-secondary').linkLabel ?? ''}
                 </button>
               </div>
             </div>
@@ -417,19 +416,19 @@ export default function InventoryAndReturnsManagementPage() {
           <div id="order-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: '56px', alignItems: 'center' }}>
             <div>
               <h2 data-animate style={{ fontSize: 'clamp(30px,3.2vw,46px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '12px' }}>
-                Every Order. One Intelligent Workflow.
+                {cms.one('intro', 'intro-title').title ?? ''}
               </h2>
               <div style={{ width: '44px', height: '3px', background: '#4D0DD9', marginBottom: '22px' }}></div>
               <p data-animate data-delay="60" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '16px' }}>
-                Managing orders across multiple sales channels shouldn&apos;t mean managing multiple systems. WareVolt Scale™ centralizes every order into a single intelligent workspace, giving your operations team complete visibility from order creation to final dispatch.
+                {cms.one('intro', 'intro-paragraph-1').description ?? ''}
               </p>
               <p data-animate data-delay="100" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: 0 }}>
-                Whether orders originate from your online store, marketplaces, retail partners, or B2B channels, WareVolt Scale™ automates workflows, reduces manual intervention, and ensures every order moves through fulfillment quickly, accurately, and on time.
+                {cms.one('intro', 'intro-paragraph-2').description ?? ''}
               </p>
             </div>
 
             <div id="order-diagram" data-animate data-delay="120" style={{ width: '100%' }}>
-              <img src="/uploads/warevolt-scale-diagram-flat.png" alt="Warevolt Inventory ecosystem diagram" style={{ width: '100%', height: 'auto', borderRadius: '26px', display: 'block' }} />
+              <img src={introImage.image ?? ''} alt={introImage.imageAlt ?? ''} style={{ width: '100%', height: 'auto', borderRadius: '26px', display: 'block' }} />
             </div>
           </div>
         </div>
@@ -439,10 +438,10 @@ export default function InventoryAndReturnsManagementPage() {
       <section style={{ padding: '72px clamp(20px,5%,80px)', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           <h2 data-animate style={{ fontSize: 'clamp(28px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '14px' }}>
-            Key Capabilities
+            {capHeading.title ?? ''}
           </h2>
           <p data-animate data-delay="40" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.6, marginBottom: '36px' }}>
-            With WareVolt Scale™ you have eyes on every order, everywhere.
+            {capHeading.description ?? ''}
           </p>
           <div id="order-cap-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px', textAlign: 'left' }}>
             {inventoryCapabilities.map((c, idx) => (
@@ -460,17 +459,17 @@ export default function InventoryAndReturnsManagementPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '36px' }}>
             <div data-animate style={{ fontSize: '13px', fontWeight: 700, letterSpacing: '.08em', color: '#4D0DD9', textTransform: 'uppercase', marginBottom: '14px' }}>
-              Warehouse Management
+              {whEyebrow.label ?? ''}
             </div>
             <h2 data-animate data-delay="30" style={{ fontSize: 'clamp(28px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '20px', maxWidth: '760px', marginLeft: 'auto', marginRight: 'auto' }}>
-              Built for Elite Warehouse Productivity.
+              {whTitle.title ?? ''}
             </h2>
             <p data-animate data-delay="60" style={{ fontSize: '16px', color: '#3A3550', lineHeight: 1.75, maxWidth: '820px', margin: '0 auto' }}>
-              Warehouse efficiency drives fulfillment performance. WareVolt Scale™ transforms warehouse operations with structured, repeatable, and intelligent workflows that reduce travel time, minimise picking errors, and maximise daily throughput. From inbound receiving and put-away to picking, packing, and dispatch, every warehouse movement is orchestrated through a single intelligent platform—keeping your operations organised, efficient, and ready to scale.
+              {whIntro.description ?? ''}
             </p>
           </div>
           <div data-animate data-delay="100" style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 24px 60px rgba(20,10,40,.16)', maxWidth: '427px', margin: '0 auto' }}>
-            <img src="/uploads/pasted-1787544112877-0.png" alt="Warevolt Returns Control dashboard" style={{ display: 'block', width: '100%', height: 'auto' }} />
+            <img src={whImage.image ?? ''} alt={whImage.imageAlt ?? ''} style={{ display: 'block', width: '100%', height: 'auto' }} />
           </div>
         </div>
       </section>
@@ -479,7 +478,7 @@ export default function InventoryAndReturnsManagementPage() {
       <section style={{ padding: '72px clamp(20px,5%,80px)', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 data-animate style={{ fontSize: 'clamp(28px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '36px', textAlign: 'center' }}>
-            Key Capabilities
+            {whCapHeading.title ?? ''}
           </h2>
           <div id="warehouse-cap-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 72px' }}>
             {returnsCapabilities.map((c, idx) => (
@@ -519,17 +518,10 @@ export default function InventoryAndReturnsManagementPage() {
                 {/* Sales Channels Column */}
                 <div style={{ flex: '0 0 87px' }}>
                   <div style={{ fontSize: '13px', fontWeight: 800, letterSpacing: '.1em', color: '#fff', marginBottom: '22px', display: 'inline-block', whiteSpace: 'nowrap' }}>
-                    CHANNELS &amp; HUBS
+                    {channelsHeading.title ?? ''}
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    {[
-                      { src: '/uploads/pasted-1785731347143-0.png', alt: 'Amazon' },
-                      { src: '/uploads/pasted-1785731537374-0.png', alt: 'Flipkart' },
-                      { src: '/uploads/pasted-1785731732420-0.png', alt: 'Shopify' },
-                      { src: '/uploads/pasted-1785731671522-0.png', alt: 'Myntra' },
-                      { src: '/uploads/pasted-1785731892932-0.png', alt: 'Blinkit' },
-                      { src: '/uploads/pasted-1785732016871-0.png', alt: 'Zepto' },
-                    ].map((ch, idx) => (
+                    {cms.list('automation-channels').map((c) => ({ src: c.image ?? '', alt: c.imageAlt ?? '' })).map((ch, idx) => (
                       <div key={idx} style={{ width: '63px', height: '63px', background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '13px', padding: '8px', backdropFilter: 'blur(16px)', boxShadow: '0 10px 26px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.1)', boxSizing: 'border-box' }}>
                         <div style={{ width: '47px', height: '47px', borderRadius: '10px', overflow: 'hidden', margin: '0 auto' }}>
                           <img src={ch.src} alt={ch.alt} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
@@ -581,71 +573,31 @@ export default function InventoryAndReturnsManagementPage() {
                 {/* Unified Inventory Feed Card */}
                 <div style={{ flex: '0 0 360px', alignSelf: 'center', height: '420px', boxSizing: 'border-box', background: 'linear-gradient(160deg,rgba(205,185,235,.45),rgba(255,255,255,.92))', borderRadius: '20px', padding: '22px', boxShadow: '0 24px 60px rgba(0,0,0,.35),0 0 40px rgba(167,139,250,.4)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px' }}>
-                    <span style={{ fontSize: '14px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>INVENTORY &amp; RETURNS FEED</span>
+                    <span style={{ fontSize: '14px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>{feedHeading.title ?? ''}</span>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11.5px', fontWeight: 700, color: '#0B0619', background: '#fff', borderRadius: '999px', padding: '5px 12px', boxShadow: '0 4px 10px rgba(0,0,0,.1)' }}>
-                      <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#22C55E' }}></span>Live
+                      <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#22C55E' }}></span>{feedHeading.extra ?? ''}
                     </span>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row1 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785731347143-0.png" alt="Amazon" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    {cms.list('automation-feed').map((f, idx) => {
+                      const isStatus = f.label === 'status';
+                      const statusColor = idx === 3 ? '#F59E0B' : '#22C55E';
+                      return (
+                        <div key={idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: `dc-feed-row${idx + 1} 5.8s linear infinite` }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
+                            <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
+                              <img src={f.image ?? ''} alt={f.imageAlt ?? ''} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                            </div>
+                            <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>{f.title ?? ''}</div></div>
+                          </div>
+                          {isStatus ? (
+                            <span style={{ fontSize: '11.5px', color: statusColor, fontWeight: 700, whiteSpace: 'nowrap' }}>{f.extra ?? ''}</span>
+                          ) : (
+                            <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>{f.extra ?? ''}</span>
+                          )}
                         </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>SKU-7721 Stock Replenished</div></div>
-                      </div>
-                      <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>2 sec ago</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row2 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785731537374-0.png" alt="Flipkart" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>RMA #RET-4819 Inspected (Grade A)</div></div>
-                      </div>
-                      <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>5 sec ago</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row3 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785731732420-0.png" alt="Shopify" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Inventory Allocated to Hub-02</div></div>
-                      </div>
-                      <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>8 sec ago</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row4 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785731671522-0.png" alt="Myntra" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>RMA #RET-4822 Quality Check</div></div>
-                      </div>
-                      <span style={{ fontSize: '11.5px', color: '#F59E0B', fontWeight: 700, whiteSpace: 'nowrap' }}>Grading</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row5 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785731892932-0.png" alt="Blinkit" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Re-shelved for Dispatch</div></div>
-                      </div>
-                      <span style={{ fontSize: '11.5px', color: '#22C55E', fontWeight: 700, whiteSpace: 'nowrap' }}>Restocked</span>
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: 'dc-feed-row6 5.8s linear infinite' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
-                        <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                          <img src="/uploads/pasted-1785732016871-0.png" alt="Zepto" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-                        <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>Cycle Count Confirmed 100%</div></div>
-                      </div>
-                      <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>Just now</span>
-                    </div>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -676,51 +628,29 @@ export default function InventoryAndReturnsManagementPage() {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-                    <img src="/assets/warevolt-mark.svg" alt="Warevolt" style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
+                    <img src={panel.image ?? ''} alt={panel.imageAlt ?? ''} style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
                     <span style={{ fontSize: '10px', fontWeight: 600, color: '#0B0619', background: '#F3F1FA', borderRadius: '8px', padding: '4px 8px', whiteSpace: 'nowrap' }}>
-                      Live Network Sync
+                      {panel.title ?? ''}
                     </span>
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '8px', marginBottom: '12px' }}>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
-                        <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#7B5BFB', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Total SKUs</span>
+                    {cms.list('automation-kpis').map((k, idx) => (
+                      <div key={idx} style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
+                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
+                          <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: kpiColors[idx] ?? '#7B5BFB', flexShrink: 0, marginTop: '1px' }}></span>
+                          <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>{k.title ?? ''}</span>
+                        </div>
+                        <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>{k.description ?? ''}</div>
+                        <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>{k.extra ?? ''}</div>
                       </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>14,290</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>↑ Active</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
-                        <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#2F7BF6', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>In-Transit</span>
-                      </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>2,410</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>On Time</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
-                        <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#22C55E', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Restocked</span>
-                      </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>98.4%</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>Same Day</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
-                        <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: '#7B5BFB', flexShrink: 0, marginTop: '1px' }}></span>
-                        <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>Accuracy</span>
-                      </div>
-                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>99.9%</div>
-                      <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>Cycle Count</div>
-                    </div>
+                    ))}
                   </div>
 
                   <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '12px', padding: '12px', marginBottom: '12px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#0B0619' }}>Inventory Velocity &amp; Replenishment</span>
-                      <span style={{ fontSize: '9px', fontWeight: 600, color: '#6B6480', background: '#F3F1FA', borderRadius: '6px', padding: '3px 7px' }}>Weekly Rate</span>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#0B0619' }}>{chart.title ?? ''}</span>
+                      <span style={{ fontSize: '9px', fontWeight: 600, color: '#6B6480', background: '#F3F1FA', borderRadius: '6px', padding: '3px 7px' }}>{chart.extra ?? ''}</span>
                     </div>
                     <svg width="100%" height="70" viewBox="0 0 300 70" preserveAspectRatio="none">
                       <defs>
@@ -743,27 +673,17 @@ export default function InventoryAndReturnsManagementPage() {
                       </circle>
                     </svg>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '8px', color: '#9891AB', marginTop: '2px' }}>
-                      <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                      {cms.list('automation-chart-days').map((d, idx) => (<span key={idx}>{d.title ?? ''}</span>))}
                     </div>
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '8px' }}>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Stock Health</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#22C55E' }}>Optimal</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Restock SLA</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0B0619' }}>&lt; 24 Hrs</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>RTO Rate</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#22C55E' }}>1.4%</div>
-                    </div>
-                    <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
-                      <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>Recovery</div>
-                      <div style={{ fontSize: '11.5px', fontWeight: 800, color: '#4D0DD9' }}>94.2%</div>
-                    </div>
+                    {cms.list('automation-stats').map((s, idx) => (
+                      <div key={idx} style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
+                        <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>{s.title ?? ''}</div>
+                        <div style={{ fontSize: '11.5px', fontWeight: 800, color: statColors[idx] ?? '#0B0619' }}>{s.description ?? ''}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

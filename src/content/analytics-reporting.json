@@ -1,0 +1,471 @@
+[
+  {
+    "section": "hero",
+    "order": 1,
+    "key": "hero-eyebrow",
+    "title": "Solutions / Analytics & Reporting"
+  },
+  {
+    "section": "hero",
+    "order": 2,
+    "key": "hero-title",
+    "title": "Analytics & Reporting"
+  },
+  {
+    "section": "hero",
+    "order": 3,
+    "key": "hero-description",
+    "description": "WareVolt Scale™ brings order, inventory, warehouse, shipping, and returns data into a single operational view — giving leadership the metrics to run the business proactively, not reactively."
+  },
+  {
+    "section": "hero",
+    "order": 4,
+    "key": "hero-cta-primary",
+    "linkLabel": "Get a Quote"
+  },
+  {
+    "section": "hero",
+    "order": 5,
+    "key": "hero-cta-secondary",
+    "linkLabel": "Speak to an expert"
+  },
+  {
+    "section": "intelligence",
+    "order": 1,
+    "key": "intelligence-title",
+    "title": "Real-Time Operational Intelligence. Complete Visibility."
+  },
+  {
+    "section": "intelligence",
+    "order": 2,
+    "key": "intelligence-paragraph-1",
+    "description": "Supply chains generate millions of discrete data points every single day. WareVolt Scale™ aggregates, normalizes, and visualizes this data into unified operational intelligence—giving your team instant clarity over order cycles, carrier SLA delivery, and warehouse throughput."
+  },
+  {
+    "section": "intelligence",
+    "order": 3,
+    "key": "intelligence-paragraph-2",
+    "description": "Identify delivery bottlenecks before they hurt customer reviews, measure true unit fulfillment economics, and streamline cross-facility operations with confidence backed by verifiable real-time analytics."
+  },
+  {
+    "section": "intelligence",
+    "order": 4,
+    "key": "intelligence-diagram",
+    "image": "/uploads/warevolt-scale-diagram-flat.png",
+    "imageAlt": "Warevolt Analytics and Intelligence diagram"
+  },
+  {
+    "section": "key-capabilities-header",
+    "order": 1,
+    "key": "key-capabilities-title",
+    "title": "Key Capabilities"
+  },
+  {
+    "section": "key-capabilities-header",
+    "order": 2,
+    "key": "key-capabilities-description",
+    "description": "Full-spectrum fulfillment analytics engineered for high-growth commerce brands."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 1,
+    "key": "card-1",
+    "title": "Real-Time Executive Dashboards",
+    "description": "Monitor orders dispatched, fulfillment velocity, order aging, and delivery SLA compliance through intuitive visual dashboards."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 2,
+    "key": "card-2",
+    "title": "Multi-Carrier SLA Benchmarking",
+    "description": "Measure carrier transit times, on-time delivery rates, exception rates, and cost per kilogram across zones in real time."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 3,
+    "key": "card-3",
+    "title": "Inventory Health & Aging Reports",
+    "description": "Track SKU turnover ratios, slow-moving items, deadstock risks, and days-of-inventory on hand to optimize capital allocation."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 4,
+    "key": "card-4",
+    "title": "Fulfillment Cost & Unit Economics",
+    "description": "Break down storage, pick-pack, handling, packaging, and freight costs per order to safeguard gross margins."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 5,
+    "key": "card-5",
+    "title": "Reverse Logistics & RTO Analytics",
+    "description": "Uncover return patterns, customer return reasons, non-delivery reports (NDR), and transit damage metrics to minimize returns."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 6,
+    "key": "card-6",
+    "title": "Labor & Warehouse Productivity",
+    "description": "Analyze picks per hour, dock-to-stock turnaround times, packing speed, and shift-level throughput across fulfillment centers."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 7,
+    "key": "card-7",
+    "title": "Demand Forecasting & Velocity",
+    "description": "Utilize historical trends and seasonal velocity forecasting to project reorder quantities and prevent costly stockouts."
+  },
+  {
+    "section": "key-capabilities",
+    "order": 8,
+    "key": "card-8",
+    "title": "Custom Report Builder & Data Feeds",
+    "description": "Export scheduled reports in CSV/Excel, configure automated email alerts, or stream live data via webhooks and BI connectors."
+  },
+  {
+    "section": "enterprise",
+    "order": 1,
+    "key": "enterprise-eyebrow",
+    "label": "Enterprise Intelligence & BI"
+  },
+  {
+    "section": "enterprise",
+    "order": 2,
+    "key": "enterprise-title",
+    "title": "Actionable Insights Across Every Supply Chain Touchpoint."
+  },
+  {
+    "section": "enterprise",
+    "order": 3,
+    "key": "enterprise-description",
+    "description": "From floor-level warehouse supervisors to executive leadership, WareVolt Analytics connects disparate data streams across sales channels, WMS workflows, and last-mile logistics into a single source of truth. Schedule automated reports, configure proactive alerts, and feed clean fulfillment data into your enterprise BI stack effortlessly."
+  },
+  {
+    "section": "enterprise",
+    "order": 4,
+    "key": "enterprise-image",
+    "image": "/uploads/pasted-1787544112877-0.png",
+    "imageAlt": "Warevolt Analytics Control Tower dashboard"
+  },
+  {
+    "section": "reporting-header",
+    "order": 1,
+    "key": "reporting-title",
+    "title": "Key Capabilities"
+  },
+  {
+    "section": "reporting-capabilities",
+    "order": 1,
+    "key": "item-1",
+    "label": "01",
+    "title": "Automated Scheduled Reports",
+    "description": "Daily, weekly, and monthly PDF and Excel executive summaries delivered straight to your team and leadership inbox."
+  },
+  {
+    "section": "reporting-capabilities",
+    "order": 2,
+    "key": "item-2",
+    "label": "02",
+    "title": "Cross-Channel Performance Tracking",
+    "description": "Compare volume, fulfillment speed, and margin contribution across Shopify, Amazon, Flipkart, Blinkit, and B2B channels."
+  },
+  {
+    "section": "reporting-capabilities",
+    "order": 3,
+    "key": "item-3",
+    "label": "03",
+    "title": "Courier NDR Resolution Rates",
+    "description": "Monitor real-time non-delivery attempts, buyer verification response times, and RTO conversion rates to prevent returns."
+  },
+  {
+    "section": "reporting-capabilities",
+    "order": 4,
+    "key": "item-4",
+    "label": "04",
+    "title": "Zone-Wise Transit Analysis",
+    "description": "Identify shipping bottlenecks, lane performance, and transit delays across Metro, Tier-1, Tier-2, and regional zones."
+  },
+  {
+    "section": "reporting-capabilities",
+    "order": 5,
+    "key": "item-5",
+    "label": "05",
+    "title": "Dock-to-Stock Turnaround Monitoring",
+    "description": "Benchmark the exact duration from trailer arrival at the dock to inventory availability on warehouse shelves."
+  },
+  {
+    "section": "reporting-capabilities",
+    "order": 6,
+    "key": "item-6",
+    "label": "06",
+    "title": "SKU Velocity & Fast-Mover Classification",
+    "description": "Automate ABC SKU categorization and receive slotting recommendations to minimize picker travel distance and time."
+  },
+  {
+    "section": "reporting-capabilities",
+    "order": 7,
+    "key": "item-7",
+    "label": "07",
+    "title": "Financial Reconciliation & Freight Audits",
+    "description": "Automated discrepancy detection between carrier freight invoices and actual dimensional weight calculations."
+  },
+  {
+    "section": "reporting-capabilities",
+    "order": 8,
+    "key": "item-8",
+    "label": "08",
+    "title": "Enterprise BI & Data Lake Integration",
+    "description": "Direct sync with Snowflake, BigQuery, Power BI, and Tableau via robust REST APIs and high-throughput webhooks."
+  },
+  {
+    "section": "automation",
+    "order": 1,
+    "key": "streams-label",
+    "title": "DATA STREAMS"
+  },
+  {
+    "section": "automation",
+    "order": 2,
+    "key": "feed-title",
+    "title": "INTELLIGENCE STREAM"
+  },
+  {
+    "section": "automation",
+    "order": 3,
+    "key": "feed-live",
+    "title": "Live"
+  },
+  {
+    "section": "automation",
+    "order": 4,
+    "key": "panel-logo",
+    "image": "/assets/warevolt-mark.svg",
+    "imageAlt": "Warevolt"
+  },
+  {
+    "section": "automation",
+    "order": 5,
+    "key": "panel-badge",
+    "title": "Live Intelligence Stream"
+  },
+  {
+    "section": "automation",
+    "order": 6,
+    "key": "trend-title",
+    "title": "Fulfillment Velocity & Throughput"
+  },
+  {
+    "section": "automation",
+    "order": 7,
+    "key": "trend-badge",
+    "title": "30-Day Trend"
+  },
+  {
+    "section": "channels",
+    "order": 1,
+    "key": "channel-1",
+    "image": "/uploads/pasted-1785731347143-0.png",
+    "imageAlt": "Amazon"
+  },
+  {
+    "section": "channels",
+    "order": 2,
+    "key": "channel-2",
+    "image": "/uploads/pasted-1785731537374-0.png",
+    "imageAlt": "Flipkart"
+  },
+  {
+    "section": "channels",
+    "order": 3,
+    "key": "channel-3",
+    "image": "/uploads/pasted-1785731732420-0.png",
+    "imageAlt": "Shopify"
+  },
+  {
+    "section": "channels",
+    "order": 4,
+    "key": "channel-4",
+    "image": "/uploads/pasted-1785731671522-0.png",
+    "imageAlt": "Myntra"
+  },
+  {
+    "section": "channels",
+    "order": 5,
+    "key": "channel-5",
+    "image": "/uploads/pasted-1785731892932-0.png",
+    "imageAlt": "Blinkit"
+  },
+  {
+    "section": "channels",
+    "order": 6,
+    "key": "channel-6",
+    "image": "/uploads/pasted-1785732016871-0.png",
+    "imageAlt": "Zepto"
+  },
+  {
+    "section": "feed-rows",
+    "order": 1,
+    "key": "row-1",
+    "title": "SLA 99.8% On-Time Dispatch",
+    "description": "1 sec ago",
+    "image": "/uploads/pasted-1785731347143-0.png",
+    "imageAlt": "Amazon"
+  },
+  {
+    "section": "feed-rows",
+    "order": 2,
+    "key": "row-2",
+    "title": "Carrier Benchmark: Zone A 18h",
+    "description": "4 sec ago",
+    "image": "/uploads/pasted-1785731537374-0.png",
+    "imageAlt": "Flipkart"
+  },
+  {
+    "section": "feed-rows",
+    "order": 3,
+    "key": "row-3",
+    "title": "Velocity Alert: SKU-9901 Fast Mover",
+    "description": "7 sec ago",
+    "image": "/uploads/pasted-1785731732420-0.png",
+    "imageAlt": "Shopify"
+  },
+  {
+    "section": "feed-rows",
+    "order": 4,
+    "key": "row-4",
+    "title": "NDR Proactive Verification",
+    "description": "Resolved",
+    "image": "/uploads/pasted-1785731671522-0.png",
+    "imageAlt": "Myntra",
+    "extra": "#F59E0B"
+  },
+  {
+    "section": "feed-rows",
+    "order": 5,
+    "key": "row-5",
+    "title": "Freight Weight Audit Saved ₹4,200",
+    "description": "Audited",
+    "image": "/uploads/pasted-1785731892932-0.png",
+    "imageAlt": "Blinkit",
+    "extra": "#22C55E"
+  },
+  {
+    "section": "feed-rows",
+    "order": 6,
+    "key": "row-6",
+    "title": "Dock-to-Stock Batch Cleared",
+    "description": "Just now",
+    "image": "/uploads/pasted-1785732016871-0.png",
+    "imageAlt": "Zepto"
+  },
+  {
+    "section": "kpi-tiles",
+    "order": 1,
+    "key": "kpi-1",
+    "title": "Dispatch SLA",
+    "description": "99.8%",
+    "label": "#7B5BFB",
+    "extra": "↑ Target Met"
+  },
+  {
+    "section": "kpi-tiles",
+    "order": 2,
+    "key": "kpi-2",
+    "title": "Avg Transit",
+    "description": "26.4h",
+    "label": "#2F7BF6",
+    "extra": "Zone A-C"
+  },
+  {
+    "section": "kpi-tiles",
+    "order": 3,
+    "key": "kpi-3",
+    "title": "Return Rate",
+    "description": "1.2%",
+    "label": "#22C55E",
+    "extra": "↓ Down 0.8%"
+  },
+  {
+    "section": "kpi-tiles",
+    "order": 4,
+    "key": "kpi-4",
+    "title": "Data Sync",
+    "description": "100%",
+    "label": "#7B5BFB",
+    "extra": "Real-Time"
+  },
+  {
+    "section": "trend-days",
+    "order": 1,
+    "key": "day-1",
+    "title": "Mon"
+  },
+  {
+    "section": "trend-days",
+    "order": 2,
+    "key": "day-2",
+    "title": "Tue"
+  },
+  {
+    "section": "trend-days",
+    "order": 3,
+    "key": "day-3",
+    "title": "Wed"
+  },
+  {
+    "section": "trend-days",
+    "order": 4,
+    "key": "day-4",
+    "title": "Thu"
+  },
+  {
+    "section": "trend-days",
+    "order": 5,
+    "key": "day-5",
+    "title": "Fri"
+  },
+  {
+    "section": "trend-days",
+    "order": 6,
+    "key": "day-6",
+    "title": "Sat"
+  },
+  {
+    "section": "trend-days",
+    "order": 7,
+    "key": "day-7",
+    "title": "Sun"
+  },
+  {
+    "section": "mini-stats",
+    "order": 1,
+    "key": "stat-1",
+    "title": "Pick Speed",
+    "description": "38s / item",
+    "extra": "#22C55E"
+  },
+  {
+    "section": "mini-stats",
+    "order": 2,
+    "key": "stat-2",
+    "title": "Freight Audit",
+    "description": "14.2% Saved",
+    "extra": "#0B0619"
+  },
+  {
+    "section": "mini-stats",
+    "order": 3,
+    "key": "stat-3",
+    "title": "Forecast Acc.",
+    "description": "97.6%",
+    "extra": "#22C55E"
+  },
+  {
+    "section": "mini-stats",
+    "order": 4,
+    "key": "stat-4",
+    "title": "Net SLA",
+    "description": "99.4%",
+    "extra": "#4D0DD9"
+  }
+]

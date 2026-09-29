@@ -3,11 +3,22 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
+import { useCms, CmsRow } from '@/lib/cms';
+import defaults from '@/content/quick-ecommerce.json';
 
 export default function QuickEcommerceFulfillmentPage() {
   const [pricingOpen, setPricingOpen] = useState(false);
   const [heroMobileOpen, setHeroMobileOpen] = useState(false);
   const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
+  const cms = useCms('QuickEcommercePage', defaults as CmsRow[]);
+  const hero = (key: string) => cms.one('hero', key);
+  const mf = (key: string) => cms.one('micro-fulfillment', key);
+  const net = (key: string) => cms.one('dark-store-network', key);
+  const cta = (key: string) => cms.one('cta', key);
+  const excellence = cms.list('excellence');
+  const excCard = (i: number) => excellence[i] ?? { section: 'excellence' };
+  const faqHeading = (cms.one('faq-heading').title ?? '').split('\n');
+  const faqContact = cms.one('faq-contact');
 
   const techMegaMenu = [
     { label: 'Order & Warehouse Management', desc: 'From order to dispatch, every fulfillment workflow connected.', href: '/order-and-warehouse-management' },
@@ -15,76 +26,11 @@ export default function QuickEcommerceFulfillmentPage() {
     { label: 'Analytics & Reporting', desc: 'Turn fulfillment data into clear, actionable insights.', href: '/analytics-and-reporting' },
   ];
 
-  const quickServices = [
-    'Micro-Fulfillment Dark Store Setup',
-    'Sub-3 Minute Picking & Staging',
-    'Mother Hub to Dark Store Auto-Replenishment',
-    'Real-Time Rider Staging & Handoff',
-    'Temperature-Controlled Cold Storage Bins',
-    'High-Velocity SKU Density Planning',
-    'Live Available-to-Promise Inventory Sync',
-    'Real-Time Stockout Prevention Alerts',
-    'FIFO & Strict Expiry Management',
-    'Flash Sale & Surge Demand Buffers',
-    'Rapid Inbound Dockside QC Audits',
-    'Hyper-Local Geofenced Inventory Visibility',
-    'Multi-Platform API Integrations',
-    'Shift-Level Productivity & SLA Analytics',
-  ];
+  const quickServices = cms.list('services').map((r) => r.title ?? '');
 
-  const compliancePoints = [
-    'Sub-3 minute order receipt-to-rider handover',
-    '99.9% inventory picking accuracy via scan validation',
-    'Strict FIFO rotation and daily expiry audits',
-    'Continuous temperature logging for cold chain bins',
-    '100% rider handoff tracking with digital signoff',
-    'Automated minimum reorder point triggers',
-    'Real-time dark store stock reconciliation',
-    'Spill, leak, and damage mitigation protocols',
-  ];
+  const compliancePoints = cms.list('standards').map((r) => r.title ?? '');
 
-  const faqs = [
-    {
-      q: 'What is Quick Commerce fulfillment and how does it work?',
-      a: 'Quick Commerce fulfillment utilizes hyper-local micro-fulfillment centers (dark stores) strategically positioned near high-density residential and commercial clusters. When an order is placed on Blinkit, Zepto, Swiggy Instamart, or your brand app, pickers receive instant handheld alerts to pick and pack items in under 3 minutes for immediate rider pickup.',
-    },
-    {
-      q: 'How does Warevolt achieve sub-3 minute order fulfillment?',
-      a: 'We organize dark stores with high-density, ergonomic fast-pick zones. SKUs are slotted based on real-time buying frequency, while pickers use wireless RF scanners with optimal route navigation to locate and scan items in seconds without bottlenecks.',
-    },
-    {
-      q: 'Can Warevolt manage dark store replenishment from a central mother hub?',
-      a: 'Yes. Our integrated fulfillment network links regional mother warehouses to distributed micro-fulfillment dark stores. Automated replenishment triggers monitor daily consumption velocity and initiate transfer dispatches to ensure dark stores never run out of top-selling SKUs.',
-    },
-    {
-      q: 'Does Warevolt support perishable, chilled, and frozen products?',
-      a: 'Yes. Our facilities and dark stores include multi-temperature storage zones—ambient, chilled (2°C to 8°C), and frozen (-18°C). We maintain continuous IoT digital temperature logs and strict FEFO (First Expired, First Out) inventory rotation.',
-    },
-    {
-      q: 'How does Warevolt handle integration with quick commerce platforms?',
-      a: 'Warevolt Scale™ integrates via real-time webhooks and APIs with quick commerce platforms including Blinkit, Zepto, Swiggy Instamart, BigBasket Now, and custom brand storefronts. Inventory availability and order statuses synchronize instantly across all channels.',
-    },
-    {
-      q: 'How do rider handovers work at the dark store dispatch bay?',
-      a: 'Packed orders are staged in color-coded, labeled dispatch bins matching the order ID. Delivery riders scan the parcel barcode upon arrival for digital handoff verification, completing the transfer in under 20 seconds.',
-    },
-    {
-      q: 'How do you handle stockouts and inventory discrepancy in quick commerce?',
-      a: 'Real-time perpetual cycle counting, double-scan picking, and intelligent buffer safety margins ensure that catalog inventory matches physical shelf stock with 99.9% accuracy, virtually eliminating cancellations due to out-of-stock items.',
-    },
-    {
-      q: 'Can brands run flash sales and promotional spikes in quick commerce?',
-      a: 'Yes. We configure dynamic safety stock buffers and deploy flexible shift staffing during festival seasons, IPL matches, and flash promotional campaigns to effortlessly handle 5x to 10x order volume surges without breaching SLAs.',
-    },
-    {
-      q: 'What reporting and operational analytics are provided for dark stores?',
-      a: 'Brands gain real-time visibility into pick-to-pack durations, rider wait times, SKU sales velocity, hourly order volume curves, inventory age, and dark store throughput via centralized live dashboards.',
-    },
-    {
-      q: 'Can Warevolt help a brand launch in new cities with quick commerce?',
-      a: 'Yes. With a ready-to-scale fulfillment network spanning major metros (Mumbai, Delhi NCR, Bangalore, Hyderabad, Kochi, Chennai, Pune), Warevolt enables brands to plug into established micro-fulfillment infrastructure without massive capital expenditure.',
-    },
-  ];
+  const faqs = cms.list('faqs').map((r) => ({ q: r.title ?? '', a: r.description ?? '' }));
 
   useEffect(() => {
     const fadeObserver = new IntersectionObserver(
@@ -399,31 +345,31 @@ export default function QuickEcommerceFulfillmentPage() {
           <div id="d2c-hero-grid" style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: '52px', alignItems: 'center' }}>
             <div>
               <div style={{ fontSize: '13.5px', fontWeight: 600, color: 'rgba(255,255,255,.68)', letterSpacing: '.04em', marginBottom: '14px' }}>
-                Solutions / Quick E-commerce Fulfillment
+                {hero('hero-eyebrow').label ?? ''}
               </div>
               <h1 style={{ fontSize: 'clamp(34px,3.8vw,52px)', fontWeight: 800, lineHeight: 1.14, letterSpacing: '-.03em', color: '#fff', maxWidth: '880px', marginBottom: '20px' }}>
-                Dark-store-ready micro-fulfillment for 10–30 minute delivery promises.
+                {hero('hero-title').title ?? ''}
               </h1>
               <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.85)', lineHeight: 1.68, maxWidth: '740px', marginBottom: '32px' }}>
-                Ultra-fast picking, automated micro-hub replenishment, and hyper-local dispatch operations engineered to power rapid commerce growth.
+                {hero('hero-description').description ?? ''}
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button
                   onClick={() => setPricingOpen(true)}
                   style={{ background: '#4D0DD9', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 700, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
-                  Get a Quote
+                  {hero('hero-cta-primary').linkLabel ?? ''}
                 </button>
                 <button
                   onClick={() => setPricingOpen(true)}
                   style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
                 >
-                  Speak to an expert
+                  {hero('hero-cta-secondary').linkLabel ?? ''}
                 </button>
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src="/assets/quick-commerce.jpg" alt="Quick E-commerce fulfillment illustration" style={{ width: '100%', maxWidth: '470px', maxHeight: '360px', height: 'auto', objectFit: 'contain' }} />
+              <img src={hero('hero-image').image} alt={hero('hero-image').imageAlt ?? ''} style={{ width: '100%', maxWidth: '470px', maxHeight: '360px', height: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
         </div>
@@ -433,22 +379,9 @@ export default function QuickEcommerceFulfillmentPage() {
       <section style={{ padding: '28px 0', background: '#fff', borderBottom: '1px solid #F0EBF8', overflow: 'hidden' }}>
         <div style={{ overflow: 'hidden', WebkitMaskImage: 'linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)', maskImage: 'linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)' }}>
           <div style={{ display: 'flex', gap: '88px', alignItems: 'center', animation: 'marquee 30s linear infinite', whiteSpace: 'nowrap', width: 'max-content' }}>
-            {[
-              { src: '/uploads/pasted-1785731892932-0.png', alt: 'Blinkit' },
-              { src: '/uploads/pasted-1785732016871-0.png', alt: 'Zepto' },
-              { src: '/uploads/pasted-1785731537374-0.png', alt: 'Flipkart Minutes' },
-              { src: '/uploads/pasted-1785731732420-0.png', alt: 'Swiggy Instamart' },
-              { src: '/uploads/pasted-1785731347143-0.png', alt: 'Amazon Now' },
-              { src: '/uploads/pasted-1785731671522-0.png', alt: 'BigBasket Now' },
-              { src: '/uploads/pasted-1785731892932-0.png', alt: 'Blinkit' },
-              { src: '/uploads/pasted-1785732016871-0.png', alt: 'Zepto' },
-              { src: '/uploads/pasted-1785731537374-0.png', alt: 'Flipkart Minutes' },
-              { src: '/uploads/pasted-1785731732420-0.png', alt: 'Swiggy Instamart' },
-              { src: '/uploads/pasted-1785731347143-0.png', alt: 'Amazon Now' },
-              { src: '/uploads/pasted-1785731671522-0.png', alt: 'BigBasket Now' },
-            ].map((logo, idx) => (
+            {[...cms.list('platform-logos'), ...cms.list('platform-logos')].map((logo, idx) => (
               <div key={idx} style={{ width: '160px', height: '42px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <img src={logo.src} alt={logo.alt} style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
+                <img src={logo.image} alt={logo.imageAlt ?? ''} style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
               </div>
             ))}
           </div>
@@ -459,7 +392,7 @@ export default function QuickEcommerceFulfillmentPage() {
       <section style={{ padding: '76px clamp(20px,5%,80px)', background: '#F7F6FB' }}>
         <div data-animate style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(26px,2.6vw,36px)', fontWeight: 800, lineHeight: 1.3, letterSpacing: '-.02em', color: '#0B0619' }}>
-            Power hyper-local 10 to 30 minute delivery networks with high-density dark store fulfillment.
+            {cms.one('intro').title ?? ''}
           </h2>
         </div>
       </section>
@@ -468,36 +401,36 @@ export default function QuickEcommerceFulfillmentPage() {
       <section id="micro-fulfillment" style={{ position: 'relative', overflow: 'hidden', padding: '96px clamp(20px,5%,80px)', background: '#fff' }}>
         <div id="d2c-section-grid" style={{ position: 'relative', maxWidth: '1440px', margin: '0 auto', display: 'grid', gridTemplateColumns: '.9fr 1.1fr', gap: '80px', alignItems: 'stretch' }}>
           <div data-animate style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(20,10,50,.1)', minHeight: '340px' }}>
-            <img src="/uploads/Quick_commerce.jpg" alt="Quick commerce micro-fulfillment dark store" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={mf('image').image} alt={mf('image').imageAlt ?? ''} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           <div>
             <h2 data-animate style={{ fontSize: 'clamp(30px,3vw,42px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', lineHeight: 1.15, marginBottom: '20px' }}>
-              Hyper-Local Micro-Fulfillment
+              {mf('title').title ?? ''}
             </h2>
             <p data-animate data-delay="30" style={{ fontSize: '19px', fontWeight: 600, color: '#fff', background: '#4F1CF7', lineHeight: 1.5, marginBottom: '28px', padding: '16px 20px', borderRadius: '12px' }}>
-              Under 3-minute pick-and-pack times with barcode-guided handheld routing.
+              {mf('highlight').description ?? ''}
             </p>
             <p data-animate data-delay="70" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '22px' }}>
-              Quick commerce demands microsecond responsiveness and near-zero error margins. Warevolt deploys high-density micro-fulfillment centers (dark stores) within key urban delivery radiuses, enabling brands to fulfill on-demand grocery, D2C impulse purchases, consumer electronics, and daily essentials in 10 to 30 minutes.
+              {mf('paragraph-1').description ?? ''}
             </p>
             <p data-animate data-delay="110" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '22px' }}>
-              Each micro-facility is mapped for maximum picking speed. Fast-moving SKUs are slotted in ergonomic forward-pick zones, and incoming orders trigger instant RF scanner audio-visual cues so staff locate, scan, and stage bags in under 180 seconds.
+              {mf('paragraph-2').description ?? ''}
             </p>
             <p data-animate data-delay="150" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '26px' }}>
-              Centralized inventory feeds automatically replenish dark store inventory from regional mother hubs, ensuring consistent high availability across rapid delivery channels without overstocking micro-footprints.
+              {mf('paragraph-3').description ?? ''}
             </p>
             <div data-animate data-delay="180" style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>Sub-3 min pick SLA</span>
+                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>{mf('point-1').title ?? ''}</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>Hyper-local inventory</span>
+                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>{mf('point-2').title ?? ''}</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>Dark store automation</span>
+                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>{mf('point-3').title ?? ''}</span>
               </div>
             </div>
           </div>
@@ -508,7 +441,7 @@ export default function QuickEcommerceFulfillmentPage() {
       <section style={{ padding: '88px clamp(20px,5%,80px)', background: '#F5F3FE' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <h2 data-animate style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '48px', textAlign: 'center' }}>
-            Quick Commerce Fulfillment Capabilities
+            {cms.one('services-heading').title ?? ''}
           </h2>
           <div id="d2c-services-grid" data-animate data-delay="60" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
             {quickServices.map((service, idx) => (
@@ -541,40 +474,40 @@ export default function QuickEcommerceFulfillmentPage() {
 
       {/* ══ DARK STORE NETWORK & PLATFORMS DEEP DIVE ══ */}
       <section id="dark-store-network" style={{ position: 'relative', overflow: 'hidden', background: '#0B0619' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/uploads/pasted-1784525640761-0.png')", backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${net('background').image ?? ''}')`, backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg,rgba(11,6,25,.94) 0%,rgba(11,6,25,.82) 40%,rgba(11,6,25,.55) 65%,rgba(11,6,25,.3) 100%)', zIndex: 1 }}></div>
         <div id="marketplace-section-grid" style={{ position: 'relative', zIndex: 2, maxWidth: '1440px', margin: '0 auto', padding: '110px clamp(20px,5%,80px)', display: 'grid', gridTemplateColumns: '1.1fr .9fr', gap: '48px', alignItems: 'center' }}>
           <div>
             <h2 data-animate style={{ fontSize: 'clamp(34px,4.2vw,58px)', fontWeight: 800, letterSpacing: '-.02em', lineHeight: 1.08, color: '#fff', marginBottom: '24px' }}>
-              Platform Integration &amp; Dark Store Network
+              {net('title').title ?? ''}
             </h2>
             <p data-animate data-delay="60" style={{ fontSize: '17px', fontWeight: 600, color: '#C9B8FF', lineHeight: 1.6, marginBottom: '22px', maxWidth: '460px' }}>
-              Fulfill orders across Blinkit, Zepto, Swiggy Instamart, and brand quick-commerce apps simultaneously.
+              {net('highlight').description ?? ''}
             </p>
             <p data-animate data-delay="100" style={{ fontSize: '15px', color: 'rgba(255,255,255,.72)', lineHeight: 1.85, maxWidth: '460px', marginBottom: '16px' }}>
-              Warevolt centralizes rapid commerce operations. Products are cataloged and allocated dynamically so your brand can participate in multiple rapid delivery networks from shared or dedicated micro-fulfillment dark stores without inventory fragmentation.
+              {net('paragraph-1').description ?? ''}
             </p>
             <p data-animate data-delay="140" style={{ fontSize: '15px', color: 'rgba(255,255,255,.72)', lineHeight: 1.85, maxWidth: '460px' }}>
-              Real-time API handshakes update stock levels across all storefronts instantly upon item pick, while staging bays allow delivery riders to pick up sealed packages seamlessly within seconds of arrival.
+              {net('paragraph-2').description ?? ''}
             </p>
           </div>
           <div id="marketplace-hero-tiles" data-animate data-delay="80" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ background: 'rgba(255,255,255,.08)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '18px', padding: '32px 28px', minHeight: '132px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div style={{ fontSize: '19px', fontWeight: 800, color: '#fff', letterSpacing: '.01em', lineHeight: 1.4 }}>
-                Blinkit · Zepto · Instamart · BB Now · ONDC
+                {cms.one('dark-store-tiles', 'tile-1').title ?? ''}
               </div>
             </div>
             <div style={{ background: 'rgba(255,255,255,.08)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '18px', padding: '32px 28px', minHeight: '132px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Sub-3 Min Assembly</div>
-              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>High-speed pick and pack with digital validation</div>
+              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>{cms.one('dark-store-tiles', 'tile-2').title ?? ''}</div>
+              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>{cms.one('dark-store-tiles', 'tile-2').description ?? ''}</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,.08)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '18px', padding: '32px 28px', minHeight: '132px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Auto-Replenishment</div>
-              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>Mother hub to dark store continuous transfer</div>
+              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>{cms.one('dark-store-tiles', 'tile-3').title ?? ''}</div>
+              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>{cms.one('dark-store-tiles', 'tile-3').description ?? ''}</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,.08)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '18px', padding: '32px 28px', minHeight: '132px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Multi-Temp Storage</div>
-              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>Ambient, chilled &amp; frozen temperature control</div>
+              <div style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>{cms.one('dark-store-tiles', 'tile-4').title ?? ''}</div>
+              <div style={{ fontSize: '14px', color: 'rgba(255,255,255,.65)', lineHeight: 1.5 }}>{cms.one('dark-store-tiles', 'tile-4').description ?? ''}</div>
             </div>
           </div>
         </div>
@@ -585,10 +518,10 @@ export default function QuickEcommerceFulfillmentPage() {
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <div data-animate style={{ maxWidth: '760px', margin: '0 auto 48px', textAlign: 'center' }}>
             <h2 style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '16px' }}>
-              Quick Commerce Operational Standards &amp; SLAs
+              {cms.one('standards-heading').title ?? ''}
             </h2>
             <p style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8 }}>
-              Strict operational metrics engineered to satisfy instant delivery promises:
+              {cms.one('standards-heading').description ?? ''}
             </p>
           </div>
           <div id="compliance-grid" data-animate data-delay="60" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', maxWidth: '1000px', margin: '0 auto' }}>
@@ -619,10 +552,10 @@ export default function QuickEcommerceFulfillmentPage() {
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <div data-animate style={{ maxWidth: '760px', margin: '0 auto 48px', textAlign: 'center' }}>
             <h2 style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '16px' }}>
-              Operational Excellence
+              {cms.one('excellence-heading').title ?? ''}
             </h2>
             <p style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8 }}>
-              Ultra-responsive micro-fulfillment processes designed for lightning-fast execution and zero cancellations.
+              {cms.one('excellence-heading').description ?? ''}
             </p>
           </div>
           <div id="excellence-grid" data-animate data-delay="60" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', marginBottom: '24px' }}>
@@ -631,24 +564,24 @@ export default function QuickEcommerceFulfillmentPage() {
                 <circle cx="12" cy="12" r="9" stroke="#4F1CF7" strokeWidth="1.4" />
                 <path d="M12 7v5l3.5 2" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Sub-3 Min SLA Picking</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Rapid picking, bag assembly, and staging in under 180 seconds from order receipt.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>{excCard(0).title ?? ''}</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>{excCard(0).description ?? ''}</p>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '32px 28px' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '22px' }}>
                 <path d="M6 3h9l3 3v15H6z" stroke="#4F1CF7" strokeWidth="1.4" strokeLinejoin="round" />
                 <path d="M9 10h6M9 13.5h6M9 17h4" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Rapid Handheld SOPs</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Guided scanner navigation minimizes footwork and accelerates bin retrieval.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>{excCard(1).title ?? ''}</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>{excCard(1).description ?? ''}</p>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '32px 28px' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '22px' }}>
                 <path d="M9 12l2 2 4-4" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M7.84 4.7a3.4 3.4 0 001.95-.81 3.4 3.4 0 014.42 0 3.4 3.4 0 001.95.81 3.4 3.4 0 013.13 3.13 3.4 3.4 0 00.81 1.95 3.4 3.4 0 010 4.42 3.4 3.4 0 00-.81 1.95 3.4 3.4 0 01-3.13 3.13 3.4 3.4 0 00-1.95.81 3.4 3.4 0 01-4.42 0 3.4 3.4 0 00-1.95-.81 3.4 3.4 0 01-3.13-3.13 3.4 3.4 0 00-.81-1.95 3.4 3.4 0 010-4.42 3.4 3.4 0 00.81-1.95 3.4 3.4 0 013.13-3.13z" stroke="#4F1CF7" strokeWidth="1.4" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Barcode Staging Checkpoints</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Scan checks at the staging bin ensure exact matching before rider handoff.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>{excCard(2).title ?? ''}</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>{excCard(2).description ?? ''}</p>
             </div>
           </div>
           <div id="excellence-grid-2" data-animate data-delay="80" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '24px' }}>
@@ -659,31 +592,31 @@ export default function QuickEcommerceFulfillmentPage() {
                 <rect x="3" y="16" width="7" height="5" rx="1" stroke="#4F1CF7" strokeWidth="1.4" />
                 <path d="M14 18h7" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Real-Time Stock Sync</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Sub-second catalog deduction prevents overselling and out-of-stock cancellations.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>{excCard(3).title ?? ''}</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>{excCard(3).description ?? ''}</p>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '32px 28px' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '22px' }}>
                 <rect x="3" y="6" width="18" height="12" rx="1.5" stroke="#4F1CF7" strokeWidth="1.4" />
                 <path d="M6.5 6v12M9.5 6v12M13 6v12M17 6v12" stroke="#4F1CF7" strokeWidth="1.4" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>FIFO &amp; Expiry Control</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Continuous shelf-life tracking guards against near-expiry dispatch to customers.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>{excCard(4).title ?? ''}</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>{excCard(4).description ?? ''}</p>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '32px 28px' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '22px' }}>
                 <path d="M4 12a8 8 0 1114 5.5" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" />
                 <path d="M4 12l0 5h5" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Mother Hub Inbound</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Scheduled intra-city replenishment keeps micro-store stock levels optimal.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>{excCard(5).title ?? ''}</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>{excCard(5).description ?? ''}</p>
             </div>
             <div style={{ background: '#fff', borderRadius: '16px', padding: '32px 28px' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ marginBottom: '22px' }}>
                 <path d="M4 20V10M11 20V4M18 20v-7" stroke="#4F1CF7" strokeWidth="1.4" strokeLinecap="round" />
               </svg>
-              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>Rider Handoff Metrics</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>Granular metrics on pickup wait times and dark store throughput speed.</p>
+              <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#0B0619', marginBottom: '8px' }}>{excCard(6).title ?? ''}</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.65 }}>{excCard(6).description ?? ''}</p>
             </div>
           </div>
         </div>
@@ -694,13 +627,19 @@ export default function QuickEcommerceFulfillmentPage() {
         <div id="faq-grid" style={{ maxWidth: '1320px', margin: '0 auto', display: 'grid', gridTemplateColumns: '.85fr 1.15fr', gap: '56px', alignItems: 'start' }}>
           <div style={{ position: 'sticky', top: '120px' }}>
             <h2 data-animate style={{ fontSize: 'clamp(28px,2.8vw,40px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', lineHeight: 1.15, marginBottom: '32px' }}>
-              Frequently<br />Asked Questions
+              {faqHeading[0]}
+              {faqHeading.length > 1 && (
+                <>
+                  <br />
+                  {faqHeading.slice(1).join(' ')}
+                </>
+              )}
             </h2>
             <div data-animate data-delay="60" style={{ background: 'linear-gradient(160deg,#fff,#EDE7FF)', borderRadius: '18px', padding: '28px 26px' }}>
-              <h3 style={{ fontSize: '19px', fontWeight: 800, color: '#0B0619', marginBottom: '8px' }}>Still have questions?</h3>
-              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '20px' }}>Can&apos;t find the answer you&apos;re looking for? Send us an email and we&apos;ll get back to you.</p>
-              <a href="mailto:hello@warevolt.in" style={{ display: 'inline-block', background: '#4F1CF7', color: '#fff', padding: '12px 24px', borderRadius: '10px', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
-                Send email
+              <h3 style={{ fontSize: '19px', fontWeight: 800, color: '#0B0619', marginBottom: '8px' }}>{faqContact.title ?? ''}</h3>
+              <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '20px' }}>{faqContact.description ?? ''}</p>
+              <a href={faqContact.linkUrl ?? '#'} style={{ display: 'inline-block', background: '#4F1CF7', color: '#fff', padding: '12px 24px', borderRadius: '10px', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
+                {faqContact.linkLabel ?? ''}
               </a>
             </div>
           </div>
@@ -739,26 +678,26 @@ export default function QuickEcommerceFulfillmentPage() {
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <div data-animate style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,.15)', backdropFilter: 'blur(8px)', borderRadius: '12px', padding: '7px 18px', marginBottom: '28px', border: '1px solid rgba(255,255,255,.2)' }}>
             <div style={{ width: '8px', height: '8px', background: '#22C55E', borderRadius: '50%', animation: 'pulse-dot 2s infinite' }}></div>
-            <span style={{ fontSize: '13px', fontWeight: 600, color: '#fff', letterSpacing: '.04em' }}>Now onboarding rapid commerce brands</span>
+            <span style={{ fontSize: '13px', fontWeight: 600, color: '#fff', letterSpacing: '.04em' }}>{cta('badge').extra ?? ''}</span>
           </div>
           <h2 data-animate data-delay="60" style={{ fontSize: 'clamp(34px,4vw,56px)', fontWeight: 800, color: '#fff', letterSpacing: '-.03em', lineHeight: 1.12, marginBottom: '20px' }}>
-            Ready to scale your quick commerce operations?
+            {cta('title').title ?? ''}
           </h2>
           <p data-animate data-delay="100" style={{ fontSize: '17px', color: 'rgba(255,255,255,.8)', lineHeight: 1.6, marginBottom: '36px' }}>
-            Connect with our quick-commerce specialists and start delivering 10–30 minute fulfillment nationwide.
+            {cta('description').description ?? ''}
           </p>
           <div data-animate data-delay="140" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button
               onClick={() => setPricingOpen(true)}
               style={{ background: '#fff', color: '#1E0894', padding: '16px 36px', borderRadius: '12px', fontSize: '15px', fontWeight: 800, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap', boxShadow: '0 8px 30px rgba(0,0,0,.25)' }}
             >
-              Get started now
+              {cta('cta-primary').linkLabel ?? ''}
             </button>
             <button
               onClick={() => setPricingOpen(true)}
               style={{ background: 'rgba(255,255,255,.15)', border: '1.5px solid rgba(255,255,255,.3)', color: '#fff', padding: '16px 36px', borderRadius: '12px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
             >
-              Speak to an expert
+              {cta('cta-secondary').linkLabel ?? ''}
             </button>
           </div>
         </div>

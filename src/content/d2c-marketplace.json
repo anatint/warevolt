@@ -1,0 +1,539 @@
+[
+  {
+    "section": "hero",
+    "order": 1,
+    "key": "hero-eyebrow",
+    "title": "Solutions / D2C & Marketplace Fulfillment"
+  },
+  {
+    "section": "hero",
+    "order": 2,
+    "key": "hero-title",
+    "title": "One fulfillment solution for your online store and every major marketplace."
+  },
+  {
+    "section": "hero",
+    "order": 3,
+    "key": "hero-description",
+    "description": "Manage inventory, automate order fulfillment, and ship nationwide through a single platform built for modern e-commerce."
+  },
+  {
+    "section": "hero",
+    "order": 4,
+    "key": "hero-cta-primary",
+    "linkLabel": "Get a Quote"
+  },
+  {
+    "section": "hero",
+    "order": 5,
+    "key": "hero-cta-secondary",
+    "linkLabel": "Speak to an expert"
+  },
+  {
+    "section": "hero",
+    "order": 6,
+    "key": "hero-image",
+    "image": "/uploads/D2C_MarketPlace_v4.png",
+    "imageAlt": "D2C and marketplace platforms illustration"
+  },
+  {
+    "section": "logo-strip",
+    "order": 1,
+    "key": "logo-1",
+    "title": "Shopify",
+    "image": "/uploads/pasted-1784528096970-0.png",
+    "imageAlt": "Shopify"
+  },
+  {
+    "section": "logo-strip",
+    "order": 2,
+    "key": "logo-2",
+    "title": "WooCommerce",
+    "image": "/uploads/pasted-1784528121293-0.png",
+    "imageAlt": "WooCommerce"
+  },
+  {
+    "section": "logo-strip",
+    "order": 3,
+    "key": "logo-3",
+    "title": "Magento",
+    "image": "/uploads/pasted-1784528267724-0.png",
+    "imageAlt": "Magento"
+  },
+  {
+    "section": "logo-strip",
+    "order": 4,
+    "key": "logo-4",
+    "title": "Amazon",
+    "image": "/uploads/pasted-1784528144899-0.png",
+    "imageAlt": "Amazon"
+  },
+  {
+    "section": "logo-strip",
+    "order": 5,
+    "key": "logo-5",
+    "title": "Flipkart",
+    "image": "/uploads/pasted-1784528167652-0.png",
+    "imageAlt": "Flipkart"
+  },
+  {
+    "section": "logo-strip",
+    "order": 6,
+    "key": "logo-6",
+    "title": "Myntra",
+    "image": "/uploads/pasted-1784528198760-0.png",
+    "imageAlt": "Myntra"
+  },
+  {
+    "section": "logo-strip",
+    "order": 7,
+    "key": "logo-7",
+    "title": "Ajio",
+    "image": "/uploads/pasted-1784528221498-0.png",
+    "imageAlt": "Ajio"
+  },
+  {
+    "section": "logo-strip",
+    "order": 8,
+    "key": "logo-8",
+    "title": "Nykaa",
+    "image": "/uploads/pasted-1784528247214-0.png",
+    "imageAlt": "Nykaa"
+  },
+  {
+    "section": "intro",
+    "order": 1,
+    "key": "intro-title",
+    "title": "Connect your online store and marketplaces to a single fulfillment platform."
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 1,
+    "key": "d2c-image",
+    "image": "/uploads/D2C_Fulfillment_illustration.png",
+    "imageAlt": "D2C fulfillment platform illustration"
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 2,
+    "key": "d2c-title",
+    "title": "D2C Fulfillment"
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 3,
+    "key": "d2c-highlight",
+    "description": "Deliver a consistent post-purchase experience for every order placed through your online store."
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 4,
+    "key": "d2c-paragraph-1",
+    "description": "Warevolt supports brands selling through Shopify, WooCommerce, Magento, and custom e-commerce websites by connecting your storefront directly to our fulfillment platform. Orders are automatically imported, inventory is synchronised in real time, and every order moves through a structured fulfillment workflow—from picking and quality checks to packing, shipping, and returns."
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 5,
+    "key": "d2c-paragraph-2",
+    "description": "Whether you're shipping a few hundred orders each month or processing thousands of orders daily, Warevolt provides the operational infrastructure to help you maintain inventory accuracy, reduce manual processing, and dispatch orders on time. Our warehouse operations follow defined Standard Operating Procedures (SOPs) and Service Level Agreements (SLAs) to ensure consistent fulfillment quality and operational performance."
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 6,
+    "key": "d2c-paragraph-3",
+    "description": "Brands can also customize the customer experience with branded packaging, promotional inserts, gift wrapping, and other value-added services while maintaining complete visibility through the Warevolt platform."
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 7,
+    "key": "d2c-badge-1",
+    "title": "Real-time sync"
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 8,
+    "key": "d2c-badge-2",
+    "title": "SOP & SLA driven"
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 9,
+    "key": "d2c-badge-3",
+    "title": "Branded packaging"
+  },
+  {
+    "section": "d2c-services",
+    "order": 1,
+    "key": "services-title",
+    "title": "D2C Fulfillment Services"
+  },
+  {
+    "section": "d2c-services",
+    "order": 2,
+    "key": "service-1",
+    "title": "Shopify Fulfillment"
+  },
+  {
+    "section": "d2c-services",
+    "order": 3,
+    "key": "service-2",
+    "title": "WooCommerce Fulfillment"
+  },
+  {
+    "section": "d2c-services",
+    "order": 4,
+    "key": "service-3",
+    "title": "Magento Fulfillment"
+  },
+  {
+    "section": "d2c-services",
+    "order": 5,
+    "key": "service-4",
+    "title": "Custom Store Integrations"
+  },
+  {
+    "section": "d2c-services",
+    "order": 6,
+    "key": "service-5",
+    "title": "Real-Time Order Synchronisation"
+  },
+  {
+    "section": "d2c-services",
+    "order": 7,
+    "key": "service-6",
+    "title": "Inventory Management"
+  },
+  {
+    "section": "d2c-services",
+    "order": 8,
+    "key": "service-7",
+    "title": "Pick, Pack & Ship"
+  },
+  {
+    "section": "d2c-services",
+    "order": 9,
+    "key": "service-8",
+    "title": "Quality Inspection"
+  },
+  {
+    "section": "d2c-services",
+    "order": 10,
+    "key": "service-9",
+    "title": "Same-Day Dispatch (where applicable)"
+  },
+  {
+    "section": "d2c-services",
+    "order": 11,
+    "key": "service-10",
+    "title": "Custom Packaging"
+  },
+  {
+    "section": "d2c-services",
+    "order": 12,
+    "key": "service-11",
+    "title": "Gift Inserts & Promotional Materials"
+  },
+  {
+    "section": "d2c-services",
+    "order": 13,
+    "key": "service-12",
+    "title": "Returns Management"
+  },
+  {
+    "section": "d2c-services",
+    "order": 14,
+    "key": "service-13",
+    "title": "Order Tracking & Notifications"
+  },
+  {
+    "section": "d2c-services",
+    "order": 15,
+    "key": "service-14",
+    "title": "Performance Reporting"
+  },
+  {
+    "section": "marketplace",
+    "order": 1,
+    "key": "marketplace-background",
+    "image": "/uploads/pasted-1784525640761-0.png",
+    "imageAlt": "Marketplace fulfillment background"
+  },
+  {
+    "section": "marketplace",
+    "order": 2,
+    "key": "marketplace-title",
+    "title": "Marketplace Fulfillment"
+  },
+  {
+    "section": "marketplace",
+    "order": 3,
+    "key": "marketplace-highlight",
+    "description": "Expand your marketplace operations without increasing operational complexity."
+  },
+  {
+    "section": "marketplace",
+    "order": 4,
+    "key": "marketplace-paragraph-1",
+    "description": "Warevolt helps brands fulfill orders across Amazon, Flipkart, Myntra, Ajio, Nykaa, Meesho, and other leading marketplaces from a single fulfillment operation. Inventory is centrally managed while orders are automatically processed according to each marketplace's shipping, packaging, and compliance requirements."
+  },
+  {
+    "section": "marketplace",
+    "order": 5,
+    "key": "marketplace-paragraph-2",
+    "description": "From inbound inventory to outbound dispatch, every shipment follows defined Standard Operating Procedures (SOPs) and Service Level Agreements (SLAs) to help maintain marketplace performance and seller metrics."
+  },
+  {
+    "section": "marketplace",
+    "order": 6,
+    "key": "tile-1",
+    "title": "Amazon · Flipkart · Myntra · Ajio · Nykaa · Meesho"
+  },
+  {
+    "section": "marketplace",
+    "order": 7,
+    "key": "tile-2",
+    "title": "Single Operation",
+    "description": "Centrally managed inventory across every channel"
+  },
+  {
+    "section": "marketplace",
+    "order": 8,
+    "key": "tile-3",
+    "title": "SOPs & SLAs",
+    "description": "Defined processes from inbound to dispatch"
+  },
+  {
+    "section": "marketplace",
+    "order": 9,
+    "key": "tile-4",
+    "title": "Compliance-Ready",
+    "description": "Built to each marketplace's requirements"
+  },
+  {
+    "section": "compliance",
+    "order": 1,
+    "key": "compliance-title",
+    "title": "Marketplace Compliance",
+    "description": "Every marketplace has its own operational standards. Warevolt helps brands maintain compliance through:"
+  },
+  {
+    "section": "compliance",
+    "order": 2,
+    "key": "point-1",
+    "title": "Marketplace-specific packaging standards"
+  },
+  {
+    "section": "compliance",
+    "order": 3,
+    "key": "point-2",
+    "title": "Barcode and product label verification"
+  },
+  {
+    "section": "compliance",
+    "order": 4,
+    "key": "point-3",
+    "title": "SKU and inventory validation"
+  },
+  {
+    "section": "compliance",
+    "order": 5,
+    "key": "point-4",
+    "title": "Quality inspection before dispatch"
+  },
+  {
+    "section": "compliance",
+    "order": 6,
+    "key": "point-5",
+    "title": "Shipment documentation"
+  },
+  {
+    "section": "compliance",
+    "order": 7,
+    "key": "point-6",
+    "title": "Carton and pallet compliance"
+  },
+  {
+    "section": "compliance",
+    "order": 8,
+    "key": "point-7",
+    "title": "SLA-based order processing"
+  },
+  {
+    "section": "compliance",
+    "order": 9,
+    "key": "point-8",
+    "title": "Marketplace-ready shipment preparation"
+  },
+  {
+    "section": "excellence",
+    "order": 1,
+    "key": "excellence-title",
+    "title": "Operational Excellence",
+    "description": "Warevolt follows structured warehouse processes designed to support consistent marketplace performance."
+  },
+  {
+    "section": "excellence",
+    "order": 2,
+    "key": "card-1",
+    "title": "SLA-Driven Order Processing",
+    "description": "Defined turnaround times govern every order from receipt to dispatch."
+  },
+  {
+    "section": "excellence",
+    "order": 3,
+    "key": "card-2",
+    "title": "Standard Operating Procedures",
+    "description": "Documented SOPs keep every warehouse process consistent and repeatable."
+  },
+  {
+    "section": "excellence",
+    "order": 4,
+    "key": "card-3",
+    "title": "Quality Control Checkpoints",
+    "description": "Inspection points throughout the workflow catch errors before dispatch."
+  },
+  {
+    "section": "excellence",
+    "order": 5,
+    "key": "card-4",
+    "title": "Inventory Reconciliation",
+    "description": "Regular counts keep recorded and physical stock levels aligned."
+  },
+  {
+    "section": "excellence",
+    "order": 6,
+    "key": "card-5",
+    "title": "Batch & Serial Tracking",
+    "description": "Traceability down to batch and serial level, where applicable."
+  },
+  {
+    "section": "excellence",
+    "order": 7,
+    "key": "card-6",
+    "title": "Returns Inspection & Restocking",
+    "description": "Returned items are inspected and restocked accurately and quickly."
+  },
+  {
+    "section": "excellence",
+    "order": 8,
+    "key": "card-7",
+    "title": "Performance Reporting",
+    "description": "Ongoing visibility into operations to support informed decisions."
+  },
+  {
+    "section": "faq",
+    "order": 1,
+    "key": "faq-title",
+    "title": "Frequently\nAsked Questions"
+  },
+  {
+    "section": "faq",
+    "order": 2,
+    "key": "faq-help",
+    "title": "Still have questions?",
+    "description": "Can't find the answer you're looking for? Send us an email and we'll get back to you.",
+    "linkLabel": "Send email",
+    "linkUrl": "mailto:hello@warevolt.in"
+  },
+  {
+    "section": "faq",
+    "order": 3,
+    "key": "faq-1",
+    "title": "Is Warevolt suitable for high-growth and enterprise e-commerce brands?",
+    "description": "Yes. Warevolt is designed to support fast-growing brands managing increasing order volumes across multiple sales channels. Our fulfillment infrastructure, warehouse operations, and technology platform are built to help businesses scale without adding operational complexity."
+  },
+  {
+    "section": "faq",
+    "order": 4,
+    "key": "faq-2",
+    "title": "Can Warevolt manage fulfillment across multiple online stores and marketplaces?",
+    "description": "Yes. Warevolt centralizes fulfillment for Shopify, WooCommerce, Magento, Amazon, Flipkart, Myntra, Ajio, Nykaa, Meesho, and custom sales channels through a single operational platform. Orders, inventory, shipping, and returns are managed from one connected system, providing complete operational visibility."
+  },
+  {
+    "section": "faq",
+    "order": 5,
+    "key": "faq-3",
+    "title": "How does Warevolt help businesses maintain fulfillment accuracy at scale?",
+    "description": "Warevolt combines barcode-driven warehouse operations, standardized picking and packing workflows, quality control checkpoints, and real-time inventory synchronization to support consistent fulfillment performance. Warehouse operations follow documented Standard Operating Procedures (SOPs) and defined Service Level Agreements (SLAs) to ensure operational consistency as order volumes grow."
+  },
+  {
+    "section": "faq",
+    "order": 6,
+    "key": "faq-4",
+    "title": "Can Warevolt support enterprise fulfillment requirements?",
+    "description": "Yes. Warevolt supports enterprise fulfillment through structured warehouse processes, pallet and carton handling, scheduled dispatches, compliance-driven operations, and technology integrations. Our platform is designed to adapt to complex operational requirements while providing real-time visibility across inventory, orders, and shipments."
+  },
+  {
+    "section": "faq",
+    "order": 7,
+    "key": "faq-5",
+    "title": "How does Warevolt integrate with existing business systems?",
+    "description": "Warevolt integrates with leading e-commerce platforms, marketplaces, courier partners, and business applications through APIs and pre-built integrations. This enables automated order imports, inventory synchronization, shipment updates, and operational reporting without manual intervention."
+  },
+  {
+    "section": "faq",
+    "order": 8,
+    "key": "faq-6",
+    "title": "Does Warevolt support marketplace compliance and preparation services?",
+    "description": "Yes. Warevolt provides Amazon FBA preparation, Amazon Seller Flex support, Flipkart marketplace preparation, product labelling, quality inspections, packaging compliance, shipment preparation, and inventory reconciliation in accordance with marketplace operational requirements."
+  },
+  {
+    "section": "faq",
+    "order": 9,
+    "key": "faq-7",
+    "title": "Can Warevolt accommodate seasonal demand and promotional peaks?",
+    "description": "Yes. Our fulfillment operations are designed to support fluctuations in order volumes during product launches, festive sales, marketplace events, and promotional campaigns. Standardized warehouse workflows help maintain service levels during periods of increased demand."
+  },
+  {
+    "section": "faq",
+    "order": 10,
+    "key": "faq-8",
+    "title": "What operational visibility does the Warevolt platform provide?",
+    "description": "Warevolt Scale™ provides real-time visibility into inventory availability, order status, warehouse operations, shipping performance, returns, and operational KPIs through a centralized dashboard. Teams can monitor fulfillment activity and make informed operational decisions from a single platform."
+  },
+  {
+    "section": "faq",
+    "order": 11,
+    "key": "faq-9",
+    "title": "How does Warevolt support business growth?",
+    "description": "As businesses expand into new marketplaces, increase SKU counts, or experience higher order volumes, Warevolt provides scalable warehousing, fulfillment operations, and technology to support that growth. This allows brands to expand their sales channels without rebuilding their fulfillment processes."
+  },
+  {
+    "section": "faq",
+    "order": 12,
+    "key": "faq-10",
+    "title": "Can Warevolt support custom operational requirements?",
+    "description": "Yes. We work with businesses that require custom packaging, kitting, bundling, product labelling, quality inspections, marketplace-specific preparation, and tailored fulfillment workflows. Operational processes can be configured to align with your business requirements and service level expectations."
+  },
+  {
+    "section": "cta",
+    "order": 1,
+    "key": "cta-badge",
+    "title": "Now onboarding new brands"
+  },
+  {
+    "section": "cta",
+    "order": 2,
+    "key": "cta-title",
+    "title": "Ready to unify your D2C and marketplace fulfillment?"
+  },
+  {
+    "section": "cta",
+    "order": 3,
+    "key": "cta-description",
+    "description": "Share your sales channels and order volumes, and our team will get back to you within 24 hours with a fulfillment plan."
+  },
+  {
+    "section": "cta",
+    "order": 4,
+    "key": "cta-primary",
+    "linkLabel": "Get a Quote"
+  },
+  {
+    "section": "cta",
+    "order": 5,
+    "key": "cta-call",
+    "linkLabel": "Call Us Now",
+    "linkUrl": "tel:+919876543210"
+  }
+]
