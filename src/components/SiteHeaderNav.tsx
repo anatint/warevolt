@@ -29,12 +29,14 @@ const mobileLinkStyle: React.CSSProperties = {
 /** Internal hrefs use next/link, everything else (#, mailto:, tel:, external) a plain anchor. */
 function SmartLink({
   href,
+  id,
   style,
   className,
   onClick,
   children,
 }: {
   href: string;
+  id?: string;
   style?: React.CSSProperties;
   className?: string;
   onClick?: () => void;
@@ -42,13 +44,13 @@ function SmartLink({
 }) {
   if (href.startsWith('/')) {
     return (
-      <Link href={href} style={style} className={className} onClick={onClick}>
+      <Link id={id} href={href} style={style} className={className} onClick={onClick}>
         {children}
       </Link>
     );
   }
   return (
-    <a href={href} style={style} className={className} onClick={onClick}>
+    <a id={id} href={href} style={style} className={className} onClick={onClick}>
       {children}
     </a>
   );
@@ -265,24 +267,27 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
           >
             {login.linkLabel ?? ''}
           </button>
-          <button
+          <SmartLink
             id="hero-cta"
-            onClick={onOpenPricing}
+            href={cta.linkUrl || '/contact'}
             style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               background: '#4D0DD9',
               color: '#fff',
               padding: '13px 28px',
               borderRadius: '12px',
               fontSize: '14.5px',
               fontWeight: 700,
-              border: 'none',
+              textDecoration: 'none',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
               transition: 'background .2s, transform .2s',
             }}
           >
-            {cta.linkLabel ?? ''}
-          </button>
+            {cta.linkLabel || 'Speak to an expert'}
+          </SmartLink>
         </div>
 
         <button
@@ -318,15 +323,27 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
                 {phone.linkLabel}
               </a>
             )}
-            <button
-              onClick={() => {
-                onOpenPricing();
-                setHeroMobileOpen(false);
+            <SmartLink
+              href={cta.linkUrl || '/contact'}
+              onClick={() => setHeroMobileOpen(false)}
+              style={{
+                marginTop: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: '#4D0DD9',
+                color: '#fff',
+                padding: '13px 20px',
+                borderRadius: '12px',
+                fontSize: '14px',
+                fontWeight: 700,
+                textDecoration: 'none',
+                cursor: 'pointer',
+                textAlign: 'center',
               }}
-              style={{ marginTop: '12px', background: '#4D0DD9', color: '#fff', padding: '13px 20px', borderRadius: '12px', fontSize: '14px', fontWeight: 700, border: 'none', cursor: 'pointer', textAlign: 'center' }}
             >
-              {cta.linkLabel ?? ''}
-            </button>
+              {cta.linkLabel || 'Speak to an expert'}
+            </SmartLink>
           </div>
         )}
       </nav>

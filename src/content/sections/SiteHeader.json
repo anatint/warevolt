@@ -86,7 +86,7 @@
   "order": 2,
   "key": "cta",
   "linkLabel": "Speak to an expert",
-  "extra": "opens-pricing-modal"
+  "linkUrl": "/contact"
  },
  {
   "section": "actions",
