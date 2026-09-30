@@ -7,6 +7,7 @@ import SiteHeaderNav from '@/components/SiteHeaderNav';
 import SiteFooter from '@/components/SiteFooter';
 import { usePageCms, type CmsRow } from '@/lib/cms';
 import contactDefaults from '@/content/contact.json';
+import { saveSubmission } from '@/lib/submissions';
 
 export default function ContactPage() {
   const [pricingOpen, setPricingOpen] = useState(false);
@@ -34,6 +35,7 @@ export default function ContactPage() {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
+  const [formError, setFormError] = useState('');
 
   useEffect(() => {
     // ── Fade-up on scroll ──
@@ -79,13 +81,30 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (formLoading) return;
     setFormLoading(true);
-    setTimeout(() => {
-      setFormLoading(false);
+    setFormError('');
+    try {
+      // Saved as a new item in the "Form Submissions" Wix collection.
+      await saveSubmission({
+        formSource: 'Contact Page Form',
+        fullName: formData.fullName,
+        workEmail: formData.workEmail,
+        phone: formData.phone,
+        companyName: formData.companyName,
+        serviceInterestedIn: formData.service,
+        monthlyOrderVolume: formData.volume,
+        message: formData.message,
+      });
       setFormSubmitted(true);
-    }, 800);
+    } catch (err) {
+      console.error('Contact form submission failed', err);
+      setFormError('Sorry, we could not send your enquiry. Please try again.');
+    } finally {
+      setFormLoading(false);
+    }
   };
 
   const handlePricingSubmit = (data: PricingFormData) => {
@@ -671,6 +690,12 @@ export default function ContactPage() {
                       }}
                     />
                   </div>
+
+                  {formError && (
+                    <p role="alert" style={{ margin: '0 0 12px', fontSize: '13px', color: '#DC2626' }}>
+                      {formError}
+                    </p>
+                  )}
 
                   {/* Submit Button */}
                   <button

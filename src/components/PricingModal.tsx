@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useSitePopup } from '@/lib/site';
+import { saveSubmission } from '@/lib/submissions';
 
 export interface PricingFormData {
   name: string;
@@ -30,6 +31,8 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
     company: '',
   });
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<string>('');
   const popup = useSitePopup();
   const intro = popup.one('intro', 'intro');
   const field = (key: string) => popup.one('fields', key);
@@ -38,14 +41,34 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setPricingSubmitted(true);
-    if (onSubmitSuccess) {
-      onSubmitSuccess(pricingForm);
-    }
-    if (onSubmit) {
-      onSubmit(pricingForm);
+    if (submitting) return;
+    setSubmitting(true);
+    setSubmitError('');
+    try {
+      // Saved as a new item in the "Form Submissions" Wix collection.
+      await saveSubmission({
+        formSource: 'Popup Form',
+        fullName: pricingForm.name,
+        workEmail: pricingForm.email,
+        phone: pricingForm.phone,
+        companyName: pricingForm.company,
+        orders: pricingForm.orders,
+        orderCount: pricingForm.count,
+      });
+      setPricingSubmitted(true);
+      if (onSubmitSuccess) {
+        onSubmitSuccess(pricingForm);
+      }
+      if (onSubmit) {
+        onSubmit(pricingForm);
+      }
+    } catch (err) {
+      console.error('Popup form submission failed', err);
+      setSubmitError('Sorry, we could not send your request. Please try again.');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -513,9 +536,16 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                     />
                   </div>
 
+                  {submitError && (
+                    <p role="alert" style={{ gridColumn: '1 / -1', margin: 0, fontSize: '13px', color: '#DC2626' }}>
+                      {submitError}
+                    </p>
+                  )}
+
                   {/* Submit button */}
                   <button
                     type="submit"
+                    disabled={submitting}
                     style={{
                       gridColumn: '1 / -1',
                       marginTop: '6px',
