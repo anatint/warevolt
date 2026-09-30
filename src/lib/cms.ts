@@ -2,15 +2,15 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { wixClient } from '@/lib/wixClient';
-import { toInternalRows, type InternalRow, type Templates } from '@/lib/cmsAdapter';
+import { convertItem, type Entry, type InternalRow, type Templates } from '@/lib/cmsAdapter';
 import templatesJson from '@/content/cms-templates.json';
 
 const templates = templatesJson as unknown as Templates;
 
 /**
  * One piece of content as the page components read it. The website owner never sees this shape:
- * in the Wix dashboard they edit the friendly collections (Hero Section, Cards & Lists, Header ...),
- * and src/lib/cmsAdapter.ts converts those rows into this flat form.
+ * in the Wix dashboard each page has ONE collection (e.g. "Home Page") whose fields are grouped by section
+ * (heroHeading, aboutParagraph1 ...), and src/lib/cmsAdapter.ts converts that item into this flat form.
  */
 export type CmsRow = InternalRow;
 
@@ -32,18 +32,6 @@ export type CmsContent = {
   one: (section: string, key?: string) => CmsRow;
 };
 
-/** Wix collections that hold the content of the individual pages (each row has a "Page Name"). */
-export const PAGE_COLLECTIONS = [
-  'HeroSection',
-  'TextImageSections',
-  'CardsAndLists',
-  'FaqSection',
-  'LogoSection',
-  'CtaSection',
-  'TestimonialsSection',
-  'DashboardDemoSection',
-] as const;
-
 function toContent(rows: CmsRow[]): CmsContent {
   const list = (section: string) =>
     rows.filter((r) => r.section === section).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
@@ -52,44 +40,40 @@ function toContent(rows: CmsRow[]): CmsContent {
   return { rows, list, one };
 }
 
+/** Reads the single item of a collection and converts its fields into rows. */
+async function loadItem(collectionId: string, entries: Entry[], page?: string) {
+  const res = await wixClient.items.query(collectionId).limit(1).find();
+  const item = res.items[0] as Record<string, any> | undefined;
+  if (!item) return null;
+  const { rows, managed } = convertItem(entries, item, page);
+  return { rows: rows.map((r) => ({ ...r, image: wixImageUrl(r.image) })), managed };
+}
+
 /**
- * Overlays live CMS rows on top of bundled defaults, section by section:
- * a section present in the CMS replaces the bundled version, everything else keeps the defaults.
+ * Everything the CMS controls replaces the bundled default; anything the CMS does not manage keeps its default.
+ * Content the owner clears in Wix disappears instead of falling back.
  */
-function mergeBySection(defaults: CmsRow[], live: CmsRow[]): CmsRow[] {
-  const liveSections = new Set(live.map((r) => r.section));
-  return [...defaults.filter((r) => !liveSections.has(r.section)), ...live];
-}
-
-/** Reads a friendly collection from Wix (optionally only one page's rows) and converts it for the pages. */
-async function loadCollection(collectionId: string, pageName?: string): Promise<CmsRow[]> {
-  let q = wixClient.items.query(collectionId);
-  if (pageName) q = q.eq('pageName', pageName);
-  const res = await q.limit(1000).find();
-  return toInternalRows(collectionId, res.items as any[], templates).map((r) => ({ ...r, image: wixImageUrl(r.image) }));
+function mergeManaged(defaults: CmsRow[], live: { rows: CmsRow[]; managed: Set<string> }): CmsRow[] {
+  return [...defaults.filter((r) => !live.managed.has(`${r.section}|${r.key}`)), ...live.rows];
 }
 
 /**
- * Loads all of one page's content from the section-wise Wix CMS collections
- * (Hero Section, Text & Image Sections, Cards & Lists, FAQ, Logos, Call To Action, Testimonials, Dashboard Demo),
- * filtered by the page's name. The bundled `defaults` render first (the static HTML is complete and SEO-friendly),
- * then live CMS content replaces them section by section as soon as it arrives.
- * If Wix is unreachable, the defaults simply stay on screen.
+ * Loads a page's content from its one Wix collection (Home Page, Platform Page ...).
+ * The bundled `defaults` render first (the static HTML is complete and SEO-friendly), then live CMS content
+ * replaces them as soon as it arrives. If Wix is unreachable, the defaults stay on screen.
  */
 export function usePageCms(page: string, defaults: CmsRow[]): CmsContent {
   const [rows, setRows] = useState<CmsRow[]>(defaults);
 
   useEffect(() => {
     let cancelled = false;
-    const pageName = templates.pages[page];
-    Promise.allSettled(PAGE_COLLECTIONS.map((id) => loadCollection(id, pageName))).then((results) => {
-      if (cancelled) return;
-      const live = results.flatMap((r) => (r.status === 'fulfilled' ? r.value : []));
-      results.forEach((r, i) => {
-        if (r.status === 'rejected') console.warn(`CMS "${PAGE_COLLECTIONS[i]}" unavailable, using bundled content`, r.reason);
-      });
-      if (live.length > 0) setRows(mergeBySection(defaults, live));
-    });
+    const def = templates.pages[page];
+    if (!def) return;
+    loadItem(def.id, def.entries, page)
+      .then((live) => {
+        if (!cancelled && live) setRows(mergeManaged(defaults, live));
+      })
+      .catch((err) => console.warn(`CMS "${def.id}" unavailable, using bundled content`, err));
     return () => {
       cancelled = true;
     };
@@ -99,17 +83,18 @@ export function usePageCms(page: string, defaults: CmsRow[]): CmsContent {
   return useMemo(() => toContent(rows), [rows]);
 }
 
-/** Loads a whole common (all pages) collection: "Header" or "Footer". */
-export function useCommonCms(collectionId: string, defaults: CmsRow[]): CmsContent {
+/** Loads a common (all pages) collection: "Header" or "Footer". */
+export function useCommonCms(collectionId: 'Header' | 'Footer', defaults: CmsRow[]): CmsContent {
   const [rows, setRows] = useState<CmsRow[]>(defaults);
 
   useEffect(() => {
     let cancelled = false;
-    loadCollection(collectionId)
+    const def = collectionId === 'Header' ? templates.header : templates.footer;
+    loadItem(def.id, def.entries)
       .then((live) => {
-        if (!cancelled && live.length > 0) setRows(mergeBySection(defaults, live));
+        if (!cancelled && live) setRows(mergeManaged(defaults, live));
       })
-      .catch((err) => console.warn(`CMS "${collectionId}" unavailable, using bundled content`, err));
+      .catch((err) => console.warn(`CMS "${def.id}" unavailable, using bundled content`, err));
     return () => {
       cancelled = true;
     };
