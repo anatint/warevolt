@@ -30,36 +30,30 @@
   "section": "quick-links",
   "order": 2,
   "key": "quick-2",
-  "linkLabel": "About Us",
-  "linkUrl": "/#about"
- },
- {
-  "section": "quick-links",
-  "order": 3,
-  "key": "quick-3",
   "linkLabel": "Solutions",
   "linkUrl": "/#solutions"
  },
  {
   "section": "quick-links",
+  "order": 3,
+  "key": "quick-3",
+  "linkLabel": "Sectors",
+  "linkUrl": "/#industries"
+ },
+ {
+  "section": "quick-links",
   "order": 4,
   "key": "quick-4",
-  "linkLabel": "Projects",
-  "linkUrl": "/#projects"
+  "linkLabel": "Pricing",
+  "linkUrl": "#pricing",
+  "extra": "opens-pricing-modal"
  },
  {
   "section": "quick-links",
   "order": 5,
   "key": "quick-5",
-  "linkLabel": "Industries",
-  "linkUrl": "/#industries"
- },
- {
-  "section": "quick-links",
-  "order": 6,
-  "key": "quick-6",
-  "linkLabel": "Blog",
-  "linkUrl": "#"
+  "linkLabel": "Contact",
+  "linkUrl": "/contact"
  },
  {
   "section": "solution-links",

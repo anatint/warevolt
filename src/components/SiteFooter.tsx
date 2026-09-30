@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useSiteFooter } from '@/lib/site';
+import PricingModal from '@/components/PricingModal';
 
 const linkStyle: React.CSSProperties = { fontSize: '14.5px', color: 'rgba(255,255,255,.55)', textDecoration: 'none' };
 const legalLinkStyle: React.CSSProperties = { fontSize: '13.5px', color: 'rgba(255,255,255,.35)', textDecoration: 'none' };
@@ -28,21 +29,45 @@ const socialStyle: React.CSSProperties = {
 /** Internal hrefs use next/link, everything else (#, mailto:, tel:, external) a plain anchor. */
 function SmartLink({ href, style, children }: { href?: string; style?: React.CSSProperties; children: React.ReactNode }) {
   const h = href || '#';
+  const [hovered, setHovered] = useState(false);
+  const combinedStyle = {
+    ...style,
+    color: hovered ? '#fff' : (style?.color || 'rgba(255,255,255,.55)'),
+    transition: 'color .2s',
+  };
+
   if (h.startsWith('/')) {
     return (
-      <Link href={h} style={style}>
+      <Link
+        href={h}
+        style={combinedStyle}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
         {children}
       </Link>
     );
   }
   return (
-    <a href={h} style={style}>
+    <a
+      href={h}
+      style={combinedStyle}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       {children}
     </a>
   );
 }
 
-export default function SiteFooter({ onSubscribe }: { onSubscribe?: () => void } = {}) {
+export default function SiteFooter({
+  onSubscribe,
+  onOpenPricing,
+}: {
+  onSubscribe?: () => void;
+  onOpenPricing?: () => void;
+} = {}) {
+  const [internalPricingOpen, setInternalPricingOpen] = useState(false);
   const footer = useSiteFooter();
 
   const logo = footer.one('brand', 'logo');
@@ -93,11 +118,42 @@ export default function SiteFooter({ onSubscribe }: { onSubscribe?: () => void }
           <div>
             <h4 style={headingStyle}>{headingOf(quickLinks)}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {linksOf(quickLinks).map((r, i) => (
-                <SmartLink key={r.key ?? i} href={r.linkUrl} style={linkStyle}>
-                  {r.linkLabel ?? ''}
-                </SmartLink>
-              ))}
+              {linksOf(quickLinks).map((r, i) => {
+                if (r.extra === 'opens-pricing-modal') {
+                  return (
+                    <button
+                      key={r.key ?? i}
+                      type="button"
+                      onClick={() => {
+                        if (onOpenPricing) {
+                          onOpenPricing();
+                        } else {
+                          setInternalPricingOpen(true);
+                        }
+                      }}
+                      style={{
+                        ...linkStyle,
+                        background: 'none',
+                        border: 'none',
+                        padding: 0,
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                        fontFamily: 'inherit',
+                        transition: 'color .2s',
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.55)')}
+                    >
+                      {r.linkLabel ?? ''}
+                    </button>
+                  );
+                }
+                return (
+                  <SmartLink key={r.key ?? i} href={r.linkUrl} style={linkStyle}>
+                    {r.linkLabel ?? ''}
+                  </SmartLink>
+                );
+              })}
             </div>
           </div>
 
@@ -153,6 +209,10 @@ export default function SiteFooter({ onSubscribe }: { onSubscribe?: () => void }
           </div>
         </div>
       </div>
+      <PricingModal
+        isOpen={internalPricingOpen}
+        onClose={() => setInternalPricingOpen(false)}
+      />
     </footer>
   );
 }
