@@ -1,0 +1,290 @@
+[
+ {
+  "section": "hero",
+  "key": "hero",
+  "order": 1,
+  "label": "CONTACT WAREVOLT",
+  "title": "Let’s Talk About Your",
+  "extra": "Fulfillment",
+  "description": "From fulfillment and warehousing to shipping, we help you streamline operations and scale across India — faster, smarter and more efficiently."
+ },
+ {
+  "section": "strip",
+  "key": "phone",
+  "order": 1,
+  "label": "Talk to our team",
+  "title": "+91 98765 43210",
+  "linkUrl": "tel:+919876543210"
+ },
+ {
+  "section": "strip",
+  "key": "email",
+  "order": 2,
+  "label": "Email us",
+  "title": "hello@warevolt.in",
+  "linkUrl": "mailto:hello@warevolt.in"
+ },
+ {
+  "section": "strip",
+  "key": "address",
+  "order": 3,
+  "label": "Visit us",
+  "title": "123 Industrial Zone, Navi Mumbai, Maharashtra 400708"
+ },
+ {
+  "section": "strip",
+  "key": "response",
+  "order": 4,
+  "label": "Response time",
+  "title": "Within 24 hours"
+ },
+ {
+  "section": "intro",
+  "key": "intro",
+  "order": 1,
+  "title": "Tell Us What You’re",
+  "extra": "Building",
+  "description": "Whether you’re launching a new brand or scaling an existing one, we’re here to help. Share your goals and our team will get back to you with the right solution for your fulfillment needs."
+ },
+ {
+  "section": "intro-points",
+  "key": "p1",
+  "order": 1,
+  "title": "Expert guidance from fulfillment specialists"
+ },
+ {
+  "section": "intro-points",
+  "key": "p2",
+  "order": 2,
+  "title": "Flexible and scalable solutions"
+ },
+ {
+  "section": "intro-points",
+  "key": "p3",
+  "order": 3,
+  "title": "Fast response and dedicated support"
+ },
+ {
+  "section": "form-fields",
+  "key": "fullName",
+  "order": 1,
+  "label": "Full Name",
+  "description": "Your full name"
+ },
+ {
+  "section": "form-fields",
+  "key": "workEmail",
+  "order": 2,
+  "label": "Work Email",
+  "description": "you@company.com"
+ },
+ {
+  "section": "form-fields",
+  "key": "phone",
+  "order": 3,
+  "label": "Phone Number",
+  "description": "+91 98765 43210"
+ },
+ {
+  "section": "form-fields",
+  "key": "company",
+  "order": 4,
+  "label": "Company Name",
+  "description": "Your company name"
+ },
+ {
+  "section": "form-fields",
+  "key": "service",
+  "order": 5,
+  "label": "Service You’re Interested In",
+  "description": "Select a service"
+ },
+ {
+  "section": "form-fields",
+  "key": "volume",
+  "order": 6,
+  "label": "Monthly Order Volume",
+  "description": "Select volume"
+ },
+ {
+  "section": "form-fields",
+  "key": "message",
+  "order": 7,
+  "label": "Message",
+  "description": "Tell us more about your requirements..."
+ },
+ {
+  "section": "service-options",
+  "key": "p1",
+  "order": 1,
+  "title": "D2C & Marketplace Fulfillment"
+ },
+ {
+  "section": "service-options",
+  "key": "p2",
+  "order": 2,
+  "title": "Order & Warehouse Management"
+ },
+ {
+  "section": "service-options",
+  "key": "p3",
+  "order": 3,
+  "title": "Inventory & Returns Management"
+ },
+ {
+  "section": "service-options",
+  "key": "p4",
+  "order": 4,
+  "title": "Technology & Analytics"
+ },
+ {
+  "section": "service-options",
+  "key": "p5",
+  "order": 5,
+  "title": "Cold Storage & Custom Logistics"
+ },
+ {
+  "section": "volume-options",
+  "key": "p1",
+  "order": 1,
+  "title": "Less than 1,000 orders"
+ },
+ {
+  "section": "volume-options",
+  "key": "p2",
+  "order": 2,
+  "title": "1,000 - 5,000 orders"
+ },
+ {
+  "section": "volume-options",
+  "key": "p3",
+  "order": 3,
+  "title": "5,000 - 20,000 orders"
+ },
+ {
+  "section": "volume-options",
+  "key": "p4",
+  "order": 4,
+  "title": "20,000+ orders"
+ },
+ {
+  "section": "form",
+  "key": "submit",
+  "order": 1,
+  "label": "Send Enquiry",
+  "title": "Submitting...",
+  "description": "Your information is safe with us. We respect your privacy."
+ },
+ {
+  "section": "form",
+  "key": "success",
+  "order": 2,
+  "title": "Enquiry Received!",
+  "description": "Thank you for reaching out. One of our fulfillment specialists will contact you within 24 hours.",
+  "linkLabel": "Send Another Message"
+ },
+ {
+  "section": "services-heading",
+  "key": "heading",
+  "order": 1,
+  "title": "How can we help?"
+ },
+ {
+  "section": "services",
+  "key": "s1",
+  "order": 1,
+  "title": "D2C & Marketplace Fulfillment",
+  "description": "Fast, accurate and reliable fulfillment for your online business.",
+  "linkUrl": "/d2c-marketplace-fulfillment"
+ },
+ {
+  "section": "services",
+  "key": "s2",
+  "order": 2,
+  "title": "Order & Warehouse Management",
+  "description": "Real-time inventory and seamless warehouse operations.",
+  "linkUrl": "/order-and-warehouse-management"
+ },
+ {
+  "section": "services",
+  "key": "s3",
+  "order": 3,
+  "title": "Shipping & Distribution",
+  "description": "Optimized shipping with multi-carrier support and wider reach.",
+  "linkUrl": "/d2c-marketplace-fulfillment"
+ },
+ {
+  "section": "services",
+  "key": "s4",
+  "order": 4,
+  "title": "Technology & Analytics",
+  "description": "Smarter decisions with real-time data and actionable insights.",
+  "linkUrl": "/analytics-and-reporting"
+ },
+ {
+  "section": "india",
+  "key": "main",
+  "order": 1,
+  "title": "Warevolt Across India",
+  "label": "Pan-India fulfillment network",
+  "description": "Connected operations. Local expertise. Nationwide reach."
+ },
+ {
+  "section": "india-points",
+  "key": "p1",
+  "order": 1,
+  "title": "Multiple fulfillment centers"
+ },
+ {
+  "section": "india-points",
+  "key": "p2",
+  "order": 2,
+  "title": "Faster last-mile delivery"
+ },
+ {
+  "section": "india-points",
+  "key": "p3",
+  "order": 3,
+  "title": "Stronger regional presence"
+ },
+ {
+  "section": "india-points",
+  "key": "p4",
+  "order": 4,
+  "title": "Seamless operations"
+ },
+ {
+  "section": "faq-heading",
+  "key": "heading",
+  "order": 1,
+  "title": "Frequently Asked Questions"
+ },
+ {
+  "section": "faqs",
+  "key": "f1",
+  "order": 1,
+  "title": "What is the typical onboarding timeline?",
+  "description": "Most brands go live in under 7 to 14 days. Our onboarding team manages catalog syncing, ERP/channel integrations, inventory receiving protocols, and packaging standardization seamlessly."
+ },
+ {
+  "section": "faqs",
+  "key": "f2",
+  "order": 2,
+  "title": "Do you support integrations with my existing systems?",
+  "description": "Yes, WareVolt Scale™ natively integrates with Shopify, WooCommerce, Amazon, Flipkart, Myntra, Unicommerce, custom ERPs, and all leading Indian carrier aggregators."
+ },
+ {
+  "section": "faqs",
+  "key": "f3",
+  "order": 3,
+  "title": "What are the minimum order volumes?",
+  "description": "We work with high-growth brands starting from 500 orders per month up to established enterprise brands processing over 100,000 monthly shipments."
+ },
+ {
+  "section": "faqs",
+  "key": "f4",
+  "order": 4,
+  "title": "How do I get a quote for my business?",
+  "description": "Simply fill out our contact form or click \"Get a Quote\". Our fulfillment specialists will analyze your SKU profile, volume, and storage requirements to deliver a customized proposal within 24 hours."
+ }
+]

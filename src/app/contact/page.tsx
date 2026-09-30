@@ -5,10 +5,22 @@ import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import SiteHeaderNav from '@/components/SiteHeaderNav';
 import SiteFooter from '@/components/SiteFooter';
+import { usePageCms, type CmsRow } from '@/lib/cms';
+import contactDefaults from '@/content/contact.json';
 
 export default function ContactPage() {
   const [pricingOpen, setPricingOpen] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  // All wording on this page comes from the "Contact Page" collection in Wix (bundled copy shows first).
+  const cms = usePageCms('contact', contactDefaults as CmsRow[]);
+  const hero = cms.one('hero', 'hero');
+  const strip = (key: string) => cms.one('strip', key);
+  const intro = cms.one('intro', 'intro');
+  const field = (key: string) => cms.one('form-fields', key);
+  const submitText = cms.one('form', 'submit');
+  const success = cms.one('form', 'success');
+  const india = cms.one('india', 'main');
 
   // Form State
   const [formData, setFormData] = useState({
@@ -80,30 +92,10 @@ export default function ContactPage() {
     console.log('Pricing lead received from Contact Page:', data);
   };
 
-  const faqs = [
-    {
-      q: 'What is the typical onboarding timeline?',
-      a: 'Most brands go live in under 7 to 14 days. Our onboarding team manages catalog syncing, ERP/channel integrations, inventory receiving protocols, and packaging standardization seamlessly.',
-    },
-    {
-      q: 'Do you support integrations with my existing systems?',
-      a: 'Yes, WareVolt Scale™ natively integrates with Shopify, WooCommerce, Amazon, Flipkart, Myntra, Unicommerce, custom ERPs, and all leading Indian carrier aggregators.',
-    },
-    {
-      q: 'What are the minimum order volumes?',
-      a: 'We work with high-growth brands starting from 500 orders per month up to established enterprise brands processing over 100,000 monthly shipments.',
-    },
-    {
-      q: 'How do I get a quote for my business?',
-      a: 'Simply fill out our contact form or click "Get a Quote". Our fulfillment specialists will analyze your SKU profile, volume, and storage requirements to deliver a customized proposal within 24 hours.',
-    },
-  ];
+  const faqs = cms.list('faqs').map((row) => ({ q: row.title ?? '', a: row.description ?? '' }));
 
-  const services = [
+  const serviceIcons = [
     {
-      title: 'D2C & Marketplace Fulfillment',
-      desc: 'Fast, accurate and reliable fulfillment for your online business.',
-      href: '/d2c-marketplace-fulfillment',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -113,9 +105,6 @@ export default function ContactPage() {
       ),
     },
     {
-      title: 'Order & Warehouse Management',
-      desc: 'Real-time inventory and seamless warehouse operations.',
-      href: '/order-and-warehouse-management',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M3 21h18"></path>
@@ -129,9 +118,6 @@ export default function ContactPage() {
       ),
     },
     {
-      title: 'Shipping & Distribution',
-      desc: 'Optimized shipping with multi-carrier support and wider reach.',
-      href: '/d2c-marketplace-fulfillment',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="1" y="3" width="15" height="13"></rect>
@@ -142,9 +128,6 @@ export default function ContactPage() {
       ),
     },
     {
-      title: 'Technology & Analytics',
-      desc: 'Smarter decisions with real-time data and actionable insights.',
-      href: '/analytics-and-reporting',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="18" y1="20" x2="18" y2="10"></line>
@@ -185,16 +168,16 @@ export default function ContactPage() {
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '12.5px', fontWeight: 800, color: '#A78BFA', letterSpacing: '.09em', textTransform: 'uppercase', marginBottom: '16px' }}>
                 <span style={{ width: '18px', height: '2px', background: '#A78BFA', borderRadius: '2px' }}></span>
-                CONTACT WAREVOLT
+                {hero.label}
               </div>
               <h1 style={{ fontSize: 'clamp(36px,4.2vw,58px)', fontWeight: 800, lineHeight: 1.12, letterSpacing: '-.03em', color: '#fff', maxWidth: '640px', marginBottom: '22px' }}>
-                Let’s Talk About Your{' '}
+                {hero.title}{' '}
                 <span style={{ background: 'linear-gradient(135deg, #A78BFA 0%, #C4B5FD 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  Fulfillment
+                  {hero.extra}
                 </span>
               </h1>
               <p style={{ fontSize: '17px', color: 'rgba(255,255,255,.84)', lineHeight: 1.7, maxWidth: '560px', margin: 0 }}>
-                From fulfillment and warehousing to shipping, we help you streamline operations and scale across India — faster, smarter and more efficiently.
+                {hero.description}
               </p>
             </div>
 
@@ -338,9 +321,9 @@ export default function ContactPage() {
                 </svg>
               </div>
               <div>
-                <div style={{ fontSize: '12.5px', color: '#6B6480', fontWeight: 600, marginBottom: '2px' }}>Talk to our team</div>
-                <a href="tel:+919876543210" style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619', textDecoration: 'none' }}>
-                  +91 98765 43210
+                <div style={{ fontSize: '12.5px', color: '#6B6480', fontWeight: 600, marginBottom: '2px' }}>{strip('phone').label}</div>
+                <a href={strip('phone').linkUrl} style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619', textDecoration: 'none' }}>
+                  {strip('phone').title}
                 </a>
               </div>
             </div>
@@ -354,9 +337,9 @@ export default function ContactPage() {
                 </svg>
               </div>
               <div>
-                <div style={{ fontSize: '12.5px', color: '#6B6480', fontWeight: 600, marginBottom: '2px' }}>Email us</div>
-                <a href="mailto:hello@warevolt.in" style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619', textDecoration: 'none' }}>
-                  hello@warevolt.in
+                <div style={{ fontSize: '12.5px', color: '#6B6480', fontWeight: 600, marginBottom: '2px' }}>{strip('email').label}</div>
+                <a href={strip('email').linkUrl} style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619', textDecoration: 'none' }}>
+                  {strip('email').title}
                 </a>
               </div>
             </div>
@@ -370,9 +353,9 @@ export default function ContactPage() {
                 </svg>
               </div>
               <div>
-                <div style={{ fontSize: '12.5px', color: '#6B6480', fontWeight: 600, marginBottom: '2px' }}>Visit us</div>
+                <div style={{ fontSize: '12.5px', color: '#6B6480', fontWeight: 600, marginBottom: '2px' }}>{strip('address').label}</div>
                 <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#0B0619', lineHeight: 1.4 }}>
-                  123 Industrial Zone, Navi Mumbai, Maharashtra 400708
+                  {strip('address').title}
                 </div>
               </div>
             </div>
@@ -386,9 +369,9 @@ export default function ContactPage() {
                 </svg>
               </div>
               <div>
-                <div style={{ fontSize: '12.5px', color: '#6B6480', fontWeight: 600, marginBottom: '2px' }}>Response time</div>
+                <div style={{ fontSize: '12.5px', color: '#6B6480', fontWeight: 600, marginBottom: '2px' }}>{strip('response').label}</div>
                 <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>
-                  Within 24 hours
+                  {strip('response').title}
                 </div>
               </div>
             </div>
@@ -401,19 +384,15 @@ export default function ContactPage() {
             <div data-animate>
               <div style={{ width: '42px', height: '3px', background: '#4D0DD9', marginBottom: '20px', borderRadius: '2px' }}></div>
               <h2 style={{ fontSize: 'clamp(32px,3.5vw,46px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '20px' }}>
-                Tell Us What You’re{' '}
-                <span style={{ color: '#4D0DD9' }}>Building</span>
+                {intro.title}{' '}
+                <span style={{ color: '#4D0DD9' }}>{intro.extra}</span>
               </h2>
               <p style={{ fontSize: '16px', color: '#524B66', lineHeight: 1.75, marginBottom: '32px' }}>
-                Whether you’re launching a new brand or scaling an existing one, we’re here to help. Share your goals and our team will get back to you with the right solution for your fulfillment needs.
+                {intro.description}
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                {[
-                  'Expert guidance from fulfillment specialists',
-                  'Flexible and scalable solutions',
-                  'Fast response and dedicated support',
-                ].map((text, idx) => (
+                {cms.list('intro-points').map((row) => row.title).map((text, idx) => (
                   <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                     <div style={{ width: '26px', height: '26px', borderRadius: '50%', background: '#4D0DD9', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#fff' }}>
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -446,9 +425,9 @@ export default function ContactPage() {
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                   </div>
-                  <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#0B0619', marginBottom: '10px' }}>Enquiry Received!</h3>
+                  <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#0B0619', marginBottom: '10px' }}>{success.title}</h3>
                   <p style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.6, maxWidth: '420px', margin: '0 auto 24px' }}>
-                    Thank you for reaching out. One of our fulfillment specialists will contact you within 24 hours.
+                    {success.description}
                   </p>
                   <button
                     onClick={() => {
@@ -457,7 +436,7 @@ export default function ContactPage() {
                     }}
                     style={{ background: '#4D0DD9', color: '#fff', border: 'none', borderRadius: '12px', padding: '12px 28px', fontSize: '14.5px', fontWeight: 700, cursor: 'pointer' }}
                   >
-                    Send Another Message
+                    {success.linkLabel}
                   </button>
                 </div>
               ) : (
@@ -466,7 +445,7 @@ export default function ContactPage() {
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }} id="form-row-1">
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#2B2538', marginBottom: '8px' }}>
-                        Full Name <span style={{ color: '#EF4444' }}>*</span>
+                        {field('fullName').label} <span style={{ color: '#EF4444' }}>*</span>
                       </label>
                       <input
                         type="text"
@@ -474,7 +453,7 @@ export default function ContactPage() {
                         required
                         value={formData.fullName}
                         onChange={handleFormChange}
-                        placeholder="Your full name"
+                        placeholder={field('fullName').description}
                         style={{
                           width: '100%',
                           padding: '13px 16px',
@@ -498,7 +477,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#2B2538', marginBottom: '8px' }}>
-                        Work Email <span style={{ color: '#EF4444' }}>*</span>
+                        {field('workEmail').label} <span style={{ color: '#EF4444' }}>*</span>
                       </label>
                       <input
                         type="email"
@@ -506,7 +485,7 @@ export default function ContactPage() {
                         required
                         value={formData.workEmail}
                         onChange={handleFormChange}
-                        placeholder="you@company.com"
+                        placeholder={field('workEmail').description}
                         style={{
                           width: '100%',
                           padding: '13px 16px',
@@ -534,7 +513,7 @@ export default function ContactPage() {
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }} id="form-row-2">
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#2B2538', marginBottom: '8px' }}>
-                        Phone Number <span style={{ color: '#EF4444' }}>*</span>
+                        {field('phone').label} <span style={{ color: '#EF4444' }}>*</span>
                       </label>
                       <input
                         type="tel"
@@ -542,7 +521,7 @@ export default function ContactPage() {
                         required
                         value={formData.phone}
                         onChange={handleFormChange}
-                        placeholder="+91 98765 43210"
+                        placeholder={field('phone').description}
                         style={{
                           width: '100%',
                           padding: '13px 16px',
@@ -566,7 +545,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#2B2538', marginBottom: '8px' }}>
-                        Company Name <span style={{ color: '#EF4444' }}>*</span>
+                        {field('company').label} <span style={{ color: '#EF4444' }}>*</span>
                       </label>
                       <input
                         type="text"
@@ -574,7 +553,7 @@ export default function ContactPage() {
                         required
                         value={formData.companyName}
                         onChange={handleFormChange}
-                        placeholder="Your company name"
+                        placeholder={field('company').description}
                         style={{
                           width: '100%',
                           padding: '13px 16px',
@@ -602,7 +581,7 @@ export default function ContactPage() {
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }} id="form-row-3">
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#2B2538', marginBottom: '8px' }}>
-                        Service You’re Interested In <span style={{ color: '#EF4444' }}>*</span>
+                        {field('service').label} <span style={{ color: '#EF4444' }}>*</span>
                       </label>
                       <select
                         name="service"
@@ -622,17 +601,15 @@ export default function ContactPage() {
                           cursor: 'pointer',
                         }}
                       >
-                        <option value="">Select a service</option>
-                        <option value="D2C & Marketplace Fulfillment">D2C & Marketplace Fulfillment</option>
-                        <option value="Order & Warehouse Management">Order & Warehouse Management</option>
-                        <option value="Inventory & Returns Management">Inventory & Returns Management</option>
-                        <option value="Technology & Analytics">Technology & Analytics</option>
-                        <option value="Cold Storage & Custom Logistics">Cold Storage & Custom Logistics</option>
+                        <option value="">{field('service').description}</option>
+                        {cms.list('service-options').map((o) => (
+                          <option key={o.key} value={o.title}>{o.title}</option>
+                        ))}
                       </select>
                     </div>
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#2B2538', marginBottom: '8px' }}>
-                        Monthly Order Volume <span style={{ color: '#EF4444' }}>*</span>
+                        {field('volume').label} <span style={{ color: '#EF4444' }}>*</span>
                       </label>
                       <select
                         name="volume"
@@ -652,11 +629,10 @@ export default function ContactPage() {
                           cursor: 'pointer',
                         }}
                       >
-                        <option value="">Select volume</option>
-                        <option value="< 1,000 orders/month">Less than 1,000 orders</option>
-                        <option value="1,000 - 5,000 orders/month">1,000 - 5,000 orders</option>
-                        <option value="5,000 - 20,000 orders/month">5,000 - 20,000 orders</option>
-                        <option value="20,000+ orders/month">20,000+ orders</option>
+                        <option value="">{field('volume').description}</option>
+                        {cms.list('volume-options').map((o, i) => (
+                          <option key={o.key} value={['< 1,000 orders/month', '1,000 - 5,000 orders/month', '5,000 - 20,000 orders/month', '20,000+ orders/month'][i] ?? o.title}>{o.title}</option>
+                        ))}
                       </select>
                     </div>
                   </div>
@@ -664,7 +640,7 @@ export default function ContactPage() {
                   {/* Row 4: Message */}
                   <div style={{ marginBottom: '26px' }}>
                     <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#2B2538', marginBottom: '8px' }}>
-                      Message <span style={{ color: '#EF4444' }}>*</span>
+                      {field('message').label} <span style={{ color: '#EF4444' }}>*</span>
                     </label>
                     <textarea
                       name="message"
@@ -672,7 +648,7 @@ export default function ContactPage() {
                       rows={4}
                       value={formData.message}
                       onChange={handleFormChange}
-                      placeholder="Tell us more about your requirements..."
+                      placeholder={field('message').description}
                       style={{
                         width: '100%',
                         padding: '14px 16px',
@@ -724,7 +700,7 @@ export default function ContactPage() {
                       if (!formLoading) e.currentTarget.style.background = '#4D0DD9';
                     }}
                   >
-                    {formLoading ? 'Submitting...' : 'Send Enquiry'}
+                    {formLoading ? submitText.title : submitText.label}
                     {!formLoading && (
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -739,7 +715,7 @@ export default function ContactPage() {
                       <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                       <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                     </svg>
-                    Your information is safe with us. We respect your privacy.
+                    {submitText.description}
                   </div>
                 </form>
               )}
@@ -755,7 +731,7 @@ export default function ContactPage() {
           <div data-animate style={{ display: 'inline-flex', alignItems: 'center', gap: '16px', marginBottom: '44px' }}>
             <span style={{ width: '40px', height: '2px', background: '#7C3AED', borderRadius: '2px' }}></span>
             <h2 style={{ fontSize: 'clamp(28px,3vw,38px)', fontWeight: 800, color: '#0B0619', letterSpacing: '-.02em', margin: 0 }}>
-              How can we help?
+              {cms.one('services-heading', 'heading').title}
             </h2>
             <span style={{ width: '40px', height: '2px', background: '#7C3AED', borderRadius: '2px' }}></span>
           </div>
@@ -770,7 +746,7 @@ export default function ContactPage() {
               textAlign: 'left',
             }}
           >
-            {services.map((item, idx) => (
+            {cms.list('services').map((row, idx) => ({ title: row.title, desc: row.description, href: row.linkUrl || '#', icon: serviceIcons[idx]?.icon })).map((item, idx) => (
               <Link
                 key={idx}
                 href={item.href}
@@ -844,13 +820,13 @@ export default function ContactPage() {
             <div>
               <div style={{ width: '36px', height: '3px', background: '#A78BFA', marginBottom: '18px', borderRadius: '2px' }}></div>
               <h2 style={{ fontSize: 'clamp(28px,3vw,40px)', fontWeight: 800, color: '#fff', letterSpacing: '-.03em', lineHeight: 1.18, marginBottom: '14px' }}>
-                Warevolt Across India
+                {india.title}
               </h2>
               <div style={{ fontSize: '16px', fontWeight: 700, color: '#C4B5FD', marginBottom: '12px' }}>
-                Pan-India fulfillment network
+                {india.label}
               </div>
               <p style={{ fontSize: '14.5px', color: 'rgba(255,255,255,.75)', lineHeight: 1.7, margin: 0 }}>
-                Connected operations. Local expertise. Nationwide reach.
+                {india.description}
               </p>
             </div>
 
@@ -915,7 +891,6 @@ export default function ContactPage() {
             <div id="india-network-pills" style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               {[
                 {
-                  title: 'Multiple fulfillment centers',
                   icon: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3" />
@@ -923,7 +898,6 @@ export default function ContactPage() {
                   ),
                 },
                 {
-                  title: 'Faster last-mile delivery',
                   icon: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="1" y="3" width="15" height="13" />
@@ -934,7 +908,6 @@ export default function ContactPage() {
                   ),
                 },
                 {
-                  title: 'Stronger regional presence',
                   icon: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -943,7 +916,6 @@ export default function ContactPage() {
                   ),
                 },
                 {
-                  title: 'Seamless operations',
                   icon: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="23 4 23 10 17 10" />
@@ -952,7 +924,7 @@ export default function ContactPage() {
                     </svg>
                   ),
                 },
-              ].map((item, idx) => (
+              ].map((item, idx) => ({ ...item, title: cms.list('india-points')[idx]?.title })).filter((item) => item.title).map((item, idx) => (
                 <div
                   key={idx}
                   style={{
@@ -986,7 +958,7 @@ export default function ContactPage() {
           <div data-animate style={{ display: 'inline-flex', alignItems: 'center', gap: '16px', marginBottom: '44px' }}>
             <span style={{ width: '40px', height: '2px', background: '#7C3AED', borderRadius: '2px' }}></span>
             <h2 style={{ fontSize: 'clamp(28px,3vw,38px)', fontWeight: 800, color: '#0B0619', letterSpacing: '-.02em', margin: 0 }}>
-              Frequently Asked Questions
+              {cms.one('faq-heading', 'heading').title}
             </h2>
             <span style={{ width: '40px', height: '2px', background: '#7C3AED', borderRadius: '2px' }}></span>
           </div>
