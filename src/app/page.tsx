@@ -1092,7 +1092,7 @@ export default function HomePage() {
       {/* ══ EMBEDDED TRACKING & CONTROL TOWER ══ */}
       <section style={{ padding: '100px clamp(20px,5%,80px)', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))', gap: '64px', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%, 300px),1fr))', gap: '64px', alignItems: 'center' }}>
             <div data-animate data-delay="60">
               <h2 style={{ fontSize: 'clamp(30px,3vw,44px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '20px' }}>
                 {c('control-tower','tower-title','title').split('\n').map((line, i) => (
@@ -1268,7 +1268,7 @@ export default function HomePage() {
       {/* ══ REAL-TIME VISIBILITY ══ */}
       <section style={{ padding: '32px clamp(20px,5%,80px) 24px', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '55%', backgroundImage: 'radial-gradient(circle,rgba(77,13,217,.22) 1.5px,transparent 1.5px)', backgroundSize: '16px 16px', pointerEvents: 'none' }} />
-        <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '64px', alignItems: 'center' }}>
+        <div id="visibility-grid" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '64px', alignItems: 'center' }}>
           <div data-animate>
             <h2 style={{ fontSize: 'clamp(30px,3.6vw,44px)', fontWeight: 800, color: '#0B0619', lineHeight: 1.15, letterSpacing: '-.02em', marginBottom: '20px' }}>
               {c('visibility','visibility-title','title')}
@@ -1290,7 +1290,7 @@ export default function HomePage() {
               </div>
               <img src={c('visibility','dashboard-image','image')} alt={c('visibility','dashboard-image','imageAlt')} style={{ width: '100%', display: 'block' }} />
             </div>
-            <div style={{ position: 'absolute', top: 0, left: '-210px', width: '360px', height: '360px', borderRadius: '14px', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'float-a 4s ease-in-out infinite' }}>
+            <div id="visibility-floating-img" style={{ position: 'absolute', top: 0, left: '-210px', width: '360px', height: '360px', borderRadius: '14px', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'float-a 4s ease-in-out infinite' }}>
               <img src={c('visibility','journey-image','image')} alt={c('visibility','journey-image','imageAlt')} style={{ width: '100%', height: 'auto', display: 'block', animation: 'dc-card-scroll 16s ease-in-out infinite' }} />
             </div>
           </div>
@@ -1303,8 +1303,8 @@ export default function HomePage() {
           <h2 data-animate style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '56px', textAlign: 'center', lineHeight: 1.1 }}>
             {c('how-it-works','how-title','title')}
           </h2>
-          <div data-animate data-delay="60" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 0, position: 'relative' }}>
-            <div style={{ position: 'absolute', top: '19px', left: '38px', right: '38px', height: '2px', background: '#DCD5F5', zIndex: 0 }} />
+          <div id="how-it-works-grid" data-animate data-delay="60" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 0, position: 'relative' }}>
+            <div id="how-it-works-line" style={{ position: 'absolute', top: '19px', left: '38px', right: '38px', height: '2px', background: '#DCD5F5', zIndex: 0 }} />
             {cms.list('how-it-works').filter((r) => r.key?.startsWith('step-')).map((r, idx, arr) => (
               <div key={r.key ?? idx} style={{ position: 'relative', zIndex: 1, ...(idx < arr.length - 1 ? { paddingRight: '16px' } : {}) }}>
                 <span style={{ display: 'flex', width: '38px', height: '38px', borderRadius: '50%', background: '#4D0DD9', color: '#fff', fontSize: '15px', fontWeight: 800, alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>{r.label ?? ''}</span>
@@ -1418,7 +1418,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div data-animate data-delay="60" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '56px' }}>
+          <div id="why-brands-grid" data-animate data-delay="60" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '56px' }}>
             {cms.list('why-brands-items').map((r, idx, arr) => (
               <div key={r.key ?? idx} style={{ display: 'flex', gap: '18px', padding: '24px 0', ...(idx < 6 ? { borderBottom: '1px solid rgba(255,255,255,.1)' } : {}) }}>
                 <span style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'rgba(123,91,251,.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>

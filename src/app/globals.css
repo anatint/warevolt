@@ -445,6 +445,11 @@ body::before {
   #why-visual svg { width: 80% !important; height: auto !important; max-width: 380px !important; }
   #hero-logo { height: 90px !important; }
   #about-badges { gap: 16px !important; }
+  #visibility-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  #visibility-floating-img { display: none !important; }
+  #how-it-works-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 32px 24px !important; }
+  #how-it-works-line { display: none !important; }
+  #why-brands-grid { grid-template-columns: 1fr !important; column-gap: 0 !important; }
 
   /* Order & Warehouse page responsive additions */
   #order-cap-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -501,8 +506,10 @@ body::before {
 
   /* Platform */
   #platform-cap-grid { grid-template-columns: 1fr !important; }
+  #modern-commerce-corners > svg { display: none !important; }
   #modern-commerce-corners > div[style*="width:150px"] { position: static !important; width: 100% !important; margin-bottom: 16px; }
   #modern-commerce-corners { display: flex !important; flex-direction: column; align-items: center; }
+  #how-it-works-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
 }
 
 @media (max-width: 540px) {
