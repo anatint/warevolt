@@ -1325,18 +1325,30 @@ export default function HomePage() {
             </h2>
           </div>
           <div id="fulfillment-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '24px' }}>
-            {cms.list('fulfillment').filter((r) => r.key?.startsWith('card-')).map((r, idx) => (
-              <a key={r.key ?? idx} data-animate data-delay={['0', '80', '160'][idx] ?? String(idx * 80)} href={r.linkUrl ?? '#'} style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
-                <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '20px', borderRadius: '14px', overflow: 'hidden' }}>
-                  <img src={r.image ?? ''} alt={r.imageAlt ?? ''} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animation: `card-zoom ${['9s', '10s', '8.5s'][idx] ?? '9s'} ease-in-out infinite` }} />
-                  <div style={{ position: 'absolute', top: '14px', right: '14px', width: '34px', height: '34px', borderRadius: '50%', background: '#1A3ADB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            {cms.list('fulfillment').filter((r) => r.key?.startsWith('card-')).map((r, idx) => {
+              const cardHref =
+                r.key === 'card-2' || (r.title && r.title.toLowerCase().includes('b2b isometric'))
+                  ? '/b2b-isometric/'
+                  : (r.linkUrl ?? '#');
+              return (
+                <Link
+                  key={r.key ?? idx}
+                  data-animate
+                  data-delay={['0', '80', '160'][idx] ?? String(idx * 80)}
+                  href={cardHref}
+                  style={{ display: 'block', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                >
+                  <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', marginBottom: '20px', borderRadius: '14px', overflow: 'hidden' }}>
+                    <img src={r.image ?? ''} alt={r.imageAlt ?? ''} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', animation: `card-zoom ${['9s', '10s', '8.5s'][idx] ?? '9s'} ease-in-out infinite` }} />
+                    <div style={{ position: 'absolute', top: '14px', right: '14px', width: '34px', height: '34px', borderRadius: '50%', background: '#1A3ADB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M6 4h6v6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </div>
                   </div>
-                </div>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0B0619', marginBottom: '10px' }}>{r.title ?? ''}</h3>
-                <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '14px' }}>{r.description ?? ''}</p>
-              </a>
-            ))}
+                  <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0B0619', marginBottom: '10px' }}>{r.title ?? ''}</h3>
+                  <p style={{ fontSize: '13.5px', color: '#6B6480', lineHeight: 1.7, marginBottom: '14px' }}>{r.description ?? ''}</p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
