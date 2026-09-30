@@ -199,10 +199,10 @@ export default function ContactPage() {
             </div>
 
             {/* Right Visual: 3D Isometric Connected Warehouse & Orbiting Nodes */}
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '440px' }}>
+            <div id="hero-visual-wrap" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '440px' }}>
               <div style={{ position: 'absolute', width: '90%', height: '90%', background: 'radial-gradient(circle, rgba(124,58,237,.4) 0%, transparent 65%)', filter: 'blur(32px)' }}></div>
               
-              <svg width="100%" height="420" viewBox="0 0 540 420" fill="none" style={{ maxWidth: '520px', overflow: 'visible' }}>
+              <svg id="hero-visual-svg" width="100%" height="420" viewBox="0 0 540 420" fill="none" style={{ maxWidth: '520px', overflow: 'visible' }}>
                 <defs>
                   <linearGradient id="whGradRoof" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0%" stopColor="#8B5CF6" />
@@ -312,7 +312,7 @@ export default function ContactPage() {
       </section>
 
       {/* ══ TOP CONTACT INFO STRIP & "TELL US WHAT YOU'RE BUILDING" ══ */}
-      <section style={{ background: '#F7F6FB', padding: '0 clamp(20px,5%,80px) 90px', position: 'relative' }}>
+      <section id="contact-form-section" style={{ background: '#F7F6FB', padding: '0 clamp(20px,5%,80px) 90px', position: 'relative' }}>
         {/* Floating Contact Info Strip overlapping the hero */}
         <div id="contact-strip-wrapper" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 20, transform: 'translateY(-50%)', marginBottom: '-10px' }}>
           <div
@@ -428,6 +428,7 @@ export default function ContactPage() {
 
             {/* Right Column: Contact Form */}
             <div
+              id="contact-form-card"
               data-animate
               data-delay="80"
               style={{
@@ -748,7 +749,7 @@ export default function ContactPage() {
       </section>
 
       {/* ══ "HOW CAN WE HELP?" SERVICE CARDS ══ */}
-      <section style={{ padding: '80px clamp(20px,5%,80px)', background: '#fff' }}>
+      <section id="services-section" style={{ padding: '80px clamp(20px,5%,80px)', background: '#fff' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto', textAlign: 'center' }}>
           {/* Section Header with Accent Lines */}
           <div data-animate style={{ display: 'inline-flex', alignItems: 'center', gap: '16px', marginBottom: '44px' }}>
@@ -821,8 +822,9 @@ export default function ContactPage() {
       </section>
 
       {/* ══ "WAREVOLT ACROSS INDIA" NETWORK BANNER ══ */}
-      <section style={{ padding: '0 clamp(20px,5%,80px) 80px', background: '#fff' }}>
+      <section id="india-section" style={{ padding: '0 clamp(20px,5%,80px) 80px', background: '#fff' }}>
         <div
+          id="india-network-card"
           data-animate
           style={{
             maxWidth: '1440px',
@@ -853,7 +855,7 @@ export default function ContactPage() {
             </div>
 
             {/* Center: Glowing India Map with Connected Hubs */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div id="india-network-map-wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="100%" height="280" viewBox="0 0 340 320" fill="none" style={{ maxWidth: '320px', overflow: 'visible' }}>
                 <defs>
                   <filter id="mapGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -910,7 +912,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right Column: 4 Feature Pills */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <div id="india-network-pills" style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               {[
                 {
                   title: 'Multiple fulfillment centers',
@@ -978,7 +980,7 @@ export default function ContactPage() {
       </section>
 
       {/* ══ "FREQUENTLY ASKED QUESTIONS" ══ */}
-      <section style={{ padding: '40px clamp(20px,5%,80px) 90px', background: '#fff' }}>
+      <section id="faq-section" style={{ padding: '40px clamp(20px,5%,80px) 90px', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           {/* Section Header with Accent Lines */}
           <div data-animate style={{ display: 'inline-flex', alignItems: 'center', gap: '16px', marginBottom: '44px' }}>
@@ -1079,45 +1081,174 @@ export default function ContactPage() {
 
       {/* Responsive Inline Media Queries */}
       <style>{`
+        /* ── 1280px and below (Small laptops & screens) ── */
+        @media (max-width: 1280px) {
+          #hero-grid {
+            gap: 36px !important;
+          }
+          #contact-main-grid {
+            gap: 48px !important;
+          }
+          #india-network-grid {
+            gap: 28px !important;
+          }
+        }
+
+        /* ── 1024px and below (Tablets landscape) ── */
         @media (max-width: 1024px) {
+          #contact-strip-wrapper {
+            transform: translateY(-36px) !important;
+            margin-bottom: 8px !important;
+          }
           #contact-strip-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 18px 24px !important;
+            padding: 22px 24px !important;
+          }
+          #how-we-help-grid {
             grid-template-columns: repeat(2, 1fr) !important;
             gap: 20px !important;
           }
-          #how-we-help-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
           #india-network-grid {
             grid-template-columns: 1fr !important;
-            text-align: center;
+            text-align: center !important;
+            gap: 32px !important;
+          }
+          #india-network-grid > div:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          #india-network-grid > div:first-child p {
+            max-width: 520px;
+          }
+          #india-network-pills {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 12px !important;
+            text-align: left !important;
           }
         }
+
+        /* ── 840px and below (Tablets portrait & large phones) ── */
         @media (max-width: 840px) {
-          #contact-strip-wrapper {
-            transform: translateY(-28px) !important;
-            margin-bottom: 0 !important;
+          #hero-section {
+            min-height: auto !important;
+          }
+          #hero-body {
+            padding: 24px clamp(16px, 4%, 32px) 56px !important;
           }
           #hero-grid {
             grid-template-columns: 1fr !important;
+            gap: 28px !important;
+            text-align: center;
+          }
+          #hero-grid > div:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          #hero-visual-wrap {
+            min-height: 320px !important;
+            width: 100% !important;
+          }
+          #hero-visual-svg {
+            height: 320px !important;
+            max-width: 440px !important;
+          }
+          #contact-strip-wrapper {
+            transform: translateY(-28px) !important;
+            margin-bottom: 12px !important;
           }
           #contact-main-grid {
             grid-template-columns: 1fr !important;
-            gap: 40px !important;
+            gap: 36px !important;
+          }
+          #contact-form-section {
+            padding-bottom: 60px !important;
+          }
+          #services-section {
+            padding: 60px clamp(16px, 4%, 32px) !important;
+          }
+          #india-section {
+            padding: 0 clamp(16px, 4%, 32px) 60px !important;
+          }
+          #faq-section {
+            padding: 30px clamp(16px, 4%, 32px) 70px !important;
           }
           #faq-grid {
             grid-template-columns: 1fr !important;
+            gap: 14px !important;
           }
         }
-        @media (max-width: 600px) {
+
+        /* ── 640px and below (Standard mobile) ── */
+        @media (max-width: 640px) {
+          #contact-strip-wrapper {
+            transform: translateY(-22px) !important;
+            margin-bottom: 16px !important;
+          }
           #contact-strip-grid {
             grid-template-columns: 1fr !important;
+            padding: 18px 18px !important;
+            gap: 16px !important;
+            border-radius: 16px !important;
           }
           #form-row-1, #form-row-2, #form-row-3 {
             grid-template-columns: 1fr !important;
-            gap: 16px !important;
+            gap: 14px !important;
+          }
+          #contact-form-card {
+            padding: 24px 18px !important;
+            border-radius: 18px !important;
+          }
+          #contact-form-card input,
+          #contact-form-card select,
+          #contact-form-card textarea {
+            font-size: 16px !important;
+            padding: 12px 14px !important;
           }
           #how-we-help-grid {
             grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+          #india-network-card {
+            padding: 36px 18px !important;
+            border-radius: 20px !important;
+          }
+          #india-network-pills {
+            grid-template-columns: 1fr !important;
+          }
+          #hero-visual-wrap {
+            min-height: 250px !important;
+          }
+          #hero-visual-svg {
+            height: 250px !important;
+          }
+          #faq-grid button {
+            padding: 16px 18px !important;
+          }
+          #faq-grid > div > div:last-child {
+            padding: 0 18px 16px !important;
+          }
+        }
+
+        /* ── 420px and below (Compact mobile) ── */
+        @media (max-width: 420px) {
+          #hero-body h1 {
+            font-size: 32px !important;
+          }
+          #hero-visual-wrap {
+            min-height: 210px !important;
+          }
+          #hero-visual-svg {
+            height: 210px !important;
+          }
+          #contact-form-card {
+            padding: 20px 14px !important;
+          }
+          #contact-strip-grid {
+            padding: 16px 14px !important;
           }
         }
       `}</style>
