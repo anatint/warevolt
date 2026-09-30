@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import defaults from '@/content/home.json';
 import { usePageCms, CmsRow } from '@/lib/cms';
@@ -433,9 +434,9 @@ export default function HomePage() {
               </svg>
               {phone.linkLabel ?? ''}
             </a>
-            <button
+            <Link
               id="nav-cta"
-              onClick={() => setPricingOpen(true)}
+              href="/contact"
               style={{
                 background: '#4D0DD9',
                 color: '#fff',
@@ -445,6 +446,7 @@ export default function HomePage() {
                 fontWeight: 600,
                 cursor: 'pointer',
                 border: 'none',
+                textDecoration: 'none',
                 fontFamily: 'inherit',
                 whiteSpace: 'nowrap',
                 display: 'inline-flex',
@@ -461,11 +463,11 @@ export default function HomePage() {
                 e.currentTarget.style.transform = 'none';
               }}
             >
-              {cta.linkLabel ?? ''}{' '}
+              {cta.linkLabel || 'Speak to an expert'}{' '}
               <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
                 <path d="M1 1l5 5-5 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
 
           <button
@@ -732,16 +734,20 @@ export default function HomePage() {
               >
                 {login.linkLabel ?? ''}
               </button>
-              <button
+              <Link
                 id="hero-cta"
-                onClick={() => setPricingOpen(true)}
+                href="/contact"
                 style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   background: '#4D0DD9',
                   color: '#fff',
                   padding: '13px 28px',
                   borderRadius: '12px',
                   fontSize: '14px',
                   fontWeight: 700,
+                  textDecoration: 'none',
                   cursor: 'pointer',
                   border: 'none',
                   fontFamily: 'inherit',
@@ -757,8 +763,8 @@ export default function HomePage() {
                   e.currentTarget.style.transform = 'none';
                 }}
               >
-                {cta.linkLabel ?? ''}
-              </button>
+                {cta.linkLabel || 'Speak to an expert'}
+              </Link>
             </div>
 
             <button
@@ -821,12 +827,25 @@ export default function HomePage() {
                 <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
                   {phone.linkLabel ?? ''}
                 </a>
-                <button
-                  onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
-                  style={{ marginTop: '12px', background: '#4D0DD9', color: '#fff', padding: '13px 20px', borderRadius: '12px', fontSize: '14px', fontWeight: 700, border: 'none', cursor: 'pointer', fontFamily: 'inherit', textAlign: 'center' }}
+                <Link
+                  href="/contact"
+                  onClick={() => setHeroMobileOpen(false)}
+                  style={{
+                    marginTop: '12px',
+                    background: '#4D0DD9',
+                    color: '#fff',
+                    padding: '13px 20px',
+                    borderRadius: '12px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    textDecoration: 'none',
+                    display: 'block',
+                    textAlign: 'center',
+                    fontFamily: 'inherit',
+                  }}
                 >
-                  {cta.linkLabel ?? ''}
-                </button>
+                  {cta.linkLabel || 'Speak to an expert'}
+                </Link>
               </div>
             )}
           </nav>

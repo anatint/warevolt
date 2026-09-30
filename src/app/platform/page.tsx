@@ -265,24 +265,28 @@ export default function PlatformPage() {
               >
                 {headerLogin.linkLabel ?? ''}
               </button>
-              <button
+              <Link
                 id="hero-cta"
-                onClick={() => setPricingOpen(true)}
+                href="/contact"
                 style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   background: '#4D0DD9',
                   color: '#fff',
                   padding: '13px 28px',
                   borderRadius: '12px',
                   fontSize: '14px',
                   fontWeight: 700,
+                  textDecoration: 'none',
                   border: 'none',
                   cursor: 'pointer',
                   whiteSpace: 'nowrap',
                   transition: 'background .2s, transform .2s',
                 }}
               >
-                {headerCta.linkLabel ?? ''}
-              </button>
+                {headerCta.linkLabel || 'Speak to an expert'}
+              </Link>
             </div>
 
             <button
@@ -335,12 +339,25 @@ export default function PlatformPage() {
                     {phone.linkLabel}
                   </a>
                 )}
-                <button
-                  onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
-                  style={{ marginTop: '12px', background: '#4D0DD9', color: '#fff', padding: '13px 20px', borderRadius: '12px', fontSize: '14px', fontWeight: 700, border: 'none', cursor: 'pointer', textAlign: 'center' }}
+                <Link
+                  href="/contact"
+                  onClick={() => setHeroMobileOpen(false)}
+                  style={{
+                    marginTop: '12px',
+                    background: '#4D0DD9',
+                    color: '#fff',
+                    padding: '13px 20px',
+                    borderRadius: '12px',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    textDecoration: 'none',
+                    display: 'block',
+                    textAlign: 'center',
+                    cursor: 'pointer',
+                  }}
                 >
-                  {headerCta.linkLabel ?? ''}
-                </button>
+                  {headerCta.linkLabel || 'Speak to an expert'}
+                </Link>
               </div>
             )}
           </nav>

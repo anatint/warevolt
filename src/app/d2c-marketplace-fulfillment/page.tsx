@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import { usePageCms, CmsRow } from '@/lib/cms';
 import SiteHeaderNav from '@/components/SiteHeaderNav';
@@ -127,12 +128,12 @@ export default function D2CMarketplaceFulfillmentPage() {
                 >
                   {cms.one('hero', 'hero-cta-primary').linkLabel ?? ''}
                 </button>
-                <button
-                  onClick={() => setPricingOpen(true)}
-                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
+                <Link
+                  href="/contact"
+                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
                 >
                   {cms.one('hero', 'hero-cta-secondary').linkLabel ?? ''}
-                </button>
+                </Link>
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>

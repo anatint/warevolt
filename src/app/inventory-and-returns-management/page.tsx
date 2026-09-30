@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import { usePageCms, CmsRow } from '@/lib/cms';
 import SiteHeaderNav from '@/components/SiteHeaderNav';
@@ -163,12 +164,12 @@ export default function InventoryAndReturnsManagementPage() {
                 >
                   {hero.cta1.linkLabel ?? ''}
                 </button>
-                <button
-                  onClick={() => setPricingOpen(true)}
-                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}
+                <Link
+                  href="/contact"
+                  style={{ background: 'rgba(255,255,255,.1)', border: '1.5px solid rgba(255,255,255,.28)', color: '#fff', padding: '14px 30px', borderRadius: '12px', fontSize: '14.5px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
                 >
                   {hero.cta2.linkLabel ?? ''}
-                </button>
+                </Link>
               </div>
             </div>
             <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '360px' }}>
