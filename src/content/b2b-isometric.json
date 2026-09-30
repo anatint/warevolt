@@ -1,0 +1,539 @@
+[
+  {
+    "section": "hero",
+    "order": 1,
+    "key": "hero-eyebrow",
+    "title": "Solutions / B2B Isometric"
+  },
+  {
+    "section": "hero",
+    "order": 2,
+    "key": "hero-title",
+    "title": "End-to-end B2B and wholesale fulfillment engineered for precision and scale."
+  },
+  {
+    "section": "hero",
+    "order": 3,
+    "key": "hero-description",
+    "description": "Manage bulk orders, automate pallet and carton-level dispatch, maintain EDI compliance, and distribute nationwide through a unified warehouse infrastructure."
+  },
+  {
+    "section": "hero",
+    "order": 4,
+    "key": "hero-cta-primary",
+    "linkLabel": "Get a Quote"
+  },
+  {
+    "section": "hero",
+    "order": 5,
+    "key": "hero-cta-secondary",
+    "linkLabel": "Speak to an expert"
+  },
+  {
+    "section": "hero",
+    "order": 6,
+    "key": "hero-image",
+    "image": "/uploads/Isometric_Warehouse.svg",
+    "imageAlt": "B2B isometric warehouse fulfillment illustration"
+  },
+  {
+    "section": "logo-strip",
+    "order": 1,
+    "key": "logo-1",
+    "title": "Shopify",
+    "image": "/uploads/pasted-1784528096970-0.png",
+    "imageAlt": "Shopify"
+  },
+  {
+    "section": "logo-strip",
+    "order": 2,
+    "key": "logo-2",
+    "title": "WooCommerce",
+    "image": "/uploads/pasted-1784528121293-0.png",
+    "imageAlt": "WooCommerce"
+  },
+  {
+    "section": "logo-strip",
+    "order": 3,
+    "key": "logo-3",
+    "title": "Magento",
+    "image": "/uploads/pasted-1784528267724-0.png",
+    "imageAlt": "Magento"
+  },
+  {
+    "section": "logo-strip",
+    "order": 4,
+    "key": "logo-4",
+    "title": "Amazon",
+    "image": "/uploads/pasted-1784528144899-0.png",
+    "imageAlt": "Amazon"
+  },
+  {
+    "section": "logo-strip",
+    "order": 5,
+    "key": "logo-5",
+    "title": "Flipkart",
+    "image": "/uploads/pasted-1784528167652-0.png",
+    "imageAlt": "Flipkart"
+  },
+  {
+    "section": "logo-strip",
+    "order": 6,
+    "key": "logo-6",
+    "title": "Myntra",
+    "image": "/uploads/pasted-1784528198760-0.png",
+    "imageAlt": "Myntra"
+  },
+  {
+    "section": "logo-strip",
+    "order": 7,
+    "key": "logo-7",
+    "title": "Ajio",
+    "image": "/uploads/pasted-1784528221498-0.png",
+    "imageAlt": "Ajio"
+  },
+  {
+    "section": "logo-strip",
+    "order": 8,
+    "key": "logo-8",
+    "title": "Nykaa",
+    "image": "/uploads/pasted-1784528247214-0.png",
+    "imageAlt": "Nykaa"
+  },
+  {
+    "section": "intro",
+    "order": 1,
+    "key": "intro-title",
+    "title": "Connect your wholesale distribution, retail supply chains, and B2B channels to a single fulfillment platform."
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 1,
+    "key": "d2c-image",
+    "image": "/assets/b2b-fulfillment.jpg",
+    "imageAlt": "B2B warehouse fulfillment operations"
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 2,
+    "key": "d2c-title",
+    "title": "B2B Fulfillment & Bulk Distribution"
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 3,
+    "key": "d2c-highlight",
+    "description": "Deliver consistent operational accuracy for wholesale, distributor, and retail store replenishment."
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 4,
+    "key": "d2c-paragraph-1",
+    "description": "Warevolt supports enterprise brands selling through modern retail chains, wholesale networks, distributors, and institutional buyers by connecting your supply chain directly to our fulfillment platform. Bulk purchase orders are automatically imported, inventory is synchronised in real time, and every shipment moves through a structured fulfillment workflow—from pallet staging and quality checks to ASN generation and dispatch."
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 5,
+    "key": "d2c-paragraph-2",
+    "description": "Whether you're shipping consolidated carton dispatches or processing full-truckload (FTL) and less-than-truckload (LTL) consignments daily, Warevolt provides the dedicated warehouse infrastructure to help you maintain 99.8%+ inventory accuracy, prevent stockouts, and dispatch orders on time. Our warehouse operations follow defined Standard Operating Procedures (SOPs) and Service Level Agreements (SLAs) to ensure flawless vendor compliance and zero penalty chargebacks."
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 6,
+    "key": "d2c-paragraph-3",
+    "description": "Brands can also tailor vendor packing requirements with UCC/GS1-128 barcode labeling, custom pallet configurations, shrink wrapping, and specialized kitting while maintaining end-to-end visibility through the Warevolt Scale™ platform."
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 7,
+    "key": "d2c-badge-1",
+    "title": "Pallet & Carton Tracking"
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 8,
+    "key": "d2c-badge-2",
+    "title": "EDI & ASN Compliant"
+  },
+  {
+    "section": "d2c-fulfillment",
+    "order": 9,
+    "key": "d2c-badge-3",
+    "title": "Routing Guide Precision"
+  },
+  {
+    "section": "d2c-services",
+    "order": 1,
+    "key": "services-title",
+    "title": "B2B Fulfillment Services"
+  },
+  {
+    "section": "d2c-services",
+    "order": 2,
+    "key": "service-1",
+    "title": "Retail Store Replenishment"
+  },
+  {
+    "section": "d2c-services",
+    "order": 3,
+    "key": "service-2",
+    "title": "Distributor & Wholesale Fulfillment"
+  },
+  {
+    "section": "d2c-services",
+    "order": 4,
+    "key": "service-3",
+    "title": "Cross-Docking & Transshipment"
+  },
+  {
+    "section": "d2c-services",
+    "order": 5,
+    "key": "service-4",
+    "title": "Palletization & Shrink Wrapping"
+  },
+  {
+    "section": "d2c-services",
+    "order": 6,
+    "key": "service-5",
+    "title": "Carton & Inner-Pack Barcoding"
+  },
+  {
+    "section": "d2c-services",
+    "order": 7,
+    "key": "service-6",
+    "title": "Batch, Lot & Expiry Tracking"
+  },
+  {
+    "section": "d2c-services",
+    "order": 8,
+    "key": "service-7",
+    "title": "EDI & Automated ASN Generation"
+  },
+  {
+    "section": "d2c-services",
+    "order": 9,
+    "key": "service-8",
+    "title": "LTL & FTL Freight Coordination"
+  },
+  {
+    "section": "d2c-services",
+    "order": 10,
+    "key": "service-9",
+    "title": "Vendor Routing Guide Compliance"
+  },
+  {
+    "section": "d2c-services",
+    "order": 11,
+    "key": "service-10",
+    "title": "Dock Appointment Scheduling"
+  },
+  {
+    "section": "d2c-services",
+    "order": 12,
+    "key": "service-11",
+    "title": "Custom Kitting & Bundling"
+  },
+  {
+    "section": "d2c-services",
+    "order": 13,
+    "key": "service-12",
+    "title": "Reverse Logistics & RTV Handling"
+  },
+  {
+    "section": "d2c-services",
+    "order": 14,
+    "key": "service-13",
+    "title": "Serial & Gatepass Management"
+  },
+  {
+    "section": "d2c-services",
+    "order": 15,
+    "key": "service-14",
+    "title": "Real-Time B2B Inventory Analytics"
+  },
+  {
+    "section": "marketplace",
+    "order": 1,
+    "key": "marketplace-background",
+    "image": "/uploads/pasted-1784525640761-0.png",
+    "imageAlt": "B2B distribution warehouse background"
+  },
+  {
+    "section": "marketplace",
+    "order": 2,
+    "key": "marketplace-title",
+    "title": "Enterprise B2B Distribution"
+  },
+  {
+    "section": "marketplace",
+    "order": 3,
+    "key": "marketplace-highlight",
+    "description": "Scale bulk distribution operations without increasing operational overhead or compliance risk."
+  },
+  {
+    "section": "marketplace",
+    "order": 4,
+    "key": "marketplace-paragraph-1",
+    "description": "Warevolt helps brands fulfill purchase orders across national modern trade supermarkets, regional wholesale distributors, general trade stockists, and B2B marketplaces from a centralized fulfillment operation. Multi-facility inventory is centrally controlled while orders are processed in strict compliance with each retailer's routing and receiving mandates."
+  },
+  {
+    "section": "marketplace",
+    "order": 5,
+    "key": "marketplace-paragraph-2",
+    "description": "From dock-to-stock inbound receiving to final outbound bill of lading signoff, every shipment adheres to documented Standard Operating Procedures (SOPs) and Service Level Agreements (SLAs) to maintain top-tier vendor scorecards."
+  },
+  {
+    "section": "marketplace",
+    "order": 6,
+    "key": "tile-1",
+    "title": "Modern Trade · General Trade · Regional Depots · Corporate B2B"
+  },
+  {
+    "section": "marketplace",
+    "order": 7,
+    "key": "tile-2",
+    "title": "Grade-A Hubs",
+    "description": "Strategically located multi-dock warehouse network across India"
+  },
+  {
+    "section": "marketplace",
+    "order": 8,
+    "key": "tile-3",
+    "title": "SOPs & SLAs",
+    "description": "Standardized palletizing, QC checks, and dock turnaround protocols"
+  },
+  {
+    "section": "marketplace",
+    "order": 9,
+    "key": "tile-4",
+    "title": "Zero Chargebacks",
+    "description": "100% adherence to retailer vendor compliance and routing manuals"
+  },
+  {
+    "section": "compliance",
+    "order": 1,
+    "key": "compliance-title",
+    "title": "Retailer & Vendor Compliance",
+    "description": "Enterprise retailers and large distributors enforce exacting receiving standards. Warevolt protects your brand against penalties through:"
+  },
+  {
+    "section": "compliance",
+    "order": 2,
+    "key": "point-1",
+    "title": "Retailer-specific vendor routing guide compliance"
+  },
+  {
+    "section": "compliance",
+    "order": 3,
+    "key": "point-2",
+    "title": "UCC/GS1-128 serial shipping container code (SSCC) labeling"
+  },
+  {
+    "section": "compliance",
+    "order": 4,
+    "key": "point-3",
+    "title": "Automated Advanced Shipping Notice (ASN) & EDI exchange"
+  },
+  {
+    "section": "compliance",
+    "order": 5,
+    "key": "point-4",
+    "title": "Lot number, batch code, and expiration validation"
+  },
+  {
+    "section": "compliance",
+    "order": 6,
+    "key": "point-5",
+    "title": "Standardized pallet tie-high stacking & shrink wrapping"
+  },
+  {
+    "section": "compliance",
+    "order": 7,
+    "key": "point-6",
+    "title": "Dock appointment scheduling and timed gate-in coordination"
+  },
+  {
+    "section": "compliance",
+    "order": 8,
+    "key": "point-7",
+    "title": "Digitized Proof of Delivery (POD) and bill of lading (BOL)"
+  },
+  {
+    "section": "compliance",
+    "order": 9,
+    "key": "point-8",
+    "title": "Rigorous pre-dispatch inspection to eliminate retailer chargebacks"
+  },
+  {
+    "section": "excellence",
+    "order": 1,
+    "key": "excellence-title",
+    "title": "Operational Excellence",
+    "description": "Warevolt applies structured, ISO-certified warehouse processes engineered for high-volume B2B logistics."
+  },
+  {
+    "section": "excellence",
+    "order": 2,
+    "key": "card-1",
+    "title": "SLA-Driven Dock Turnaround",
+    "description": "Guaranteed dock-to-stock receiving and outbound dispatch timelines."
+  },
+  {
+    "section": "excellence",
+    "order": 3,
+    "key": "card-2",
+    "title": "Standard Operating Procedures",
+    "description": "Documented SOPs keep every bulk material handling process repeatable."
+  },
+  {
+    "section": "excellence",
+    "order": 4,
+    "key": "card-3",
+    "title": "Multi-Stage Quality Checkpoints",
+    "description": "Barcode scanning and physical verification eliminate SKU mismatch."
+  },
+  {
+    "section": "excellence",
+    "order": 5,
+    "key": "card-4",
+    "title": "Inventory Cycle Audits",
+    "description": "Continuous cycle counts keep physical and recorded inventory 99.8%+ aligned."
+  },
+  {
+    "section": "excellence",
+    "order": 6,
+    "key": "card-5",
+    "title": "Batch & FIFO/FEFO Control",
+    "description": "Strict shelf-life management ensures first-expiry products ship first."
+  },
+  {
+    "section": "excellence",
+    "order": 7,
+    "key": "card-6",
+    "title": "Reverse Logistics & RTV",
+    "description": "Returned consignments inspected, graded, and restocked or reconciled quickly."
+  },
+  {
+    "section": "excellence",
+    "order": 8,
+    "key": "card-7",
+    "title": "Supply Chain Reporting",
+    "description": "Granular visibility into fill rates, on-time in-full (OTIF), and order velocity."
+  },
+  {
+    "section": "faq",
+    "order": 1,
+    "key": "faq-title",
+    "title": "Frequently\nAsked Questions"
+  },
+  {
+    "section": "faq",
+    "order": 2,
+    "key": "faq-help",
+    "title": "Still have questions?",
+    "description": "Can't find the answer you're looking for? Send us an email and we'll get back to you.",
+    "linkLabel": "Send email",
+    "linkUrl": "mailto:hello@warevolt.in"
+  },
+  {
+    "section": "faq",
+    "order": 3,
+    "key": "faq-1",
+    "title": "Is Warevolt equipped to handle large-scale B2B and wholesale distribution?",
+    "description": "Yes. Warevolt is purpose-built to handle high-volume B2B, wholesale, and modern trade fulfillment. Our facilities feature dedicated high-bay pallet racking, wide dock bays, heavy-duty material handling equipment, and specialized workflows for carton picking, palletization, and full container staging."
+  },
+  {
+    "section": "faq",
+    "order": 4,
+    "key": "faq-2",
+    "title": "How does Warevolt ensure compliance with major retail chain routing guides?",
+    "description": "Every major modern trade retailer (such as Reliance Retail, DMart, Metro, or Spencer's) maintains rigorous vendor routing guides specifying carton dimensions, labeling formats, pallet heights, and shrink-wrap criteria. Warevolt embeds these specific requirements into our standard operating procedures and verifies every consignment before loading to eliminate vendor chargebacks."
+  },
+  {
+    "section": "faq",
+    "order": 5,
+    "key": "faq-3",
+    "title": "What EDI and automated data integration capabilities does Warevolt offer?",
+    "description": "Warevolt integrates with enterprise ERP systems (SAP, Oracle, NetSuite, Tally) and EDI protocols (EDI 850 Purchase Order, EDI 856 ASN, EDI 810 Invoice). This ensures purchase orders flow directly into our warehouse management system and Advanced Shipping Notices are automatically transmitted upon dispatch."
+  },
+  {
+    "section": "faq",
+    "order": 6,
+    "key": "faq-4",
+    "title": "Can Warevolt support both palletized (FTL/LTL) and loose carton dispatches?",
+    "description": "Yes. Our operations are fully flexible to accommodate Full-Truckload (FTL), Less-Than-Truckload (LTL), dedicated container loads, and parcel consolidations. We coordinate with both brand-contracted freight carriers and our integrated logistics partners."
+  },
+  {
+    "section": "faq",
+    "order": 7,
+    "key": "faq-5",
+    "title": "How does Warevolt manage batch, lot numbers, and expiry dates (FIFO/FEFO)?",
+    "description": "Warevolt Scale™ captures batch numbers, lot IDs, manufacturing dates, and expiration dates during inbound receiving. Outbound pick paths automatically enforce FIFO (First-In, First-Out) or FEFO (First-Expired, First-Out) rules, ensuring compliance with strict FMCG, pharmaceutical, and retail shelf-life thresholds."
+  },
+  {
+    "section": "faq",
+    "order": 8,
+    "key": "faq-6",
+    "title": "Does Warevolt offer cross-docking and value-added kitting services?",
+    "description": "Yes. We offer rapid cross-docking to transship inbound shipments directly to outbound vehicles with minimal dwell time. We also provide value-added services including promotional bundling, custom labeling, re-packaging, and warranty card insertion."
+  },
+  {
+    "section": "faq",
+    "order": 9,
+    "key": "faq-7",
+    "title": "How are dock appointments and carrier dispatch schedules coordinated?",
+    "description": "Warevolt manages carrier dock scheduling through appointment booking windows. This prevents dock congestion, ensures vehicles are loaded and turnaround times are minimized, and guarantees delivery within designated receiver appointment slots."
+  },
+  {
+    "section": "faq",
+    "order": 10,
+    "key": "faq-8",
+    "title": "What real-time visibility does the Warevolt platform provide for bulk orders?",
+    "description": "Through Warevolt Scale™, supply chain managers have 24/7 visibility into purchase order fulfillment status, stock on hand across pallet and carton levels, dock turnaround times, carrier dispatch tracking, and digital Proof of Delivery records."
+  },
+  {
+    "section": "faq",
+    "order": 11,
+    "key": "faq-9",
+    "title": "How does Warevolt handle seasonal demand spikes and festive bulk purchasing?",
+    "description": "Our grade-A infrastructure and flexible workforce models allow us to scale throughput rapidly during festive seasons, quarterly stock pushes, and new product launches without compromising dock SLAs or accuracy."
+  },
+  {
+    "section": "faq",
+    "order": 12,
+    "key": "faq-10",
+    "title": "Can Warevolt customize warehouse SOPs for specific vendor agreements?",
+    "description": "Yes. We collaborate closely with your supply chain team to establish customized Standard Operating Procedures (SOPs) reflecting your specific vendor contracts, quality audit parameters, and dispatch criteria."
+  },
+  {
+    "section": "cta",
+    "order": 1,
+    "key": "cta-badge",
+    "title": "Now onboarding enterprise brands"
+  },
+  {
+    "section": "cta",
+    "order": 2,
+    "key": "cta-title",
+    "title": "Ready to streamline your B2B and wholesale distribution?"
+  },
+  {
+    "section": "cta",
+    "order": 3,
+    "key": "cta-description",
+    "description": "Share your consignment volume and delivery channels, and our team will get back to you within 24 hours with a customized fulfillment plan."
+  },
+  {
+    "section": "cta",
+    "order": 4,
+    "key": "cta-primary",
+    "linkLabel": "Get a Quote"
+  },
+  {
+    "section": "cta",
+    "order": 5,
+    "key": "cta-call",
+    "linkLabel": "Call Us Now",
+    "linkUrl": "tel:+919876543210"
+  }
+]
