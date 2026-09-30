@@ -28,6 +28,7 @@ export type Templates = {
   pages: Record<string, { name: string; id: string; entries: Entry[] }>;
   header: { id: string; entries: Entry[] };
   footer: { id: string; entries: Entry[] };
+  popup: { id: string; entries: Entry[] };
 };
 
 const has = (v: unknown) => v !== undefined && v !== null && String(v).trim() !== '';

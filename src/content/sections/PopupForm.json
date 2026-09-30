@@ -1,0 +1,67 @@
+[
+ {
+  "section": "intro",
+  "key": "intro",
+  "order": 1,
+  "label": "Custom pricing",
+  "title": "Get",
+  "extra": "pricing",
+  "description": "Share a few details and our team will send tailored pricing for your fulfillment volume."
+ },
+ {
+  "section": "fields",
+  "key": "name",
+  "order": 1,
+  "label": "Full name",
+  "description": "Enter your full name"
+ },
+ {
+  "section": "fields",
+  "key": "email",
+  "order": 2,
+  "label": "Work email address",
+  "description": "you@company.com"
+ },
+ {
+  "section": "fields",
+  "key": "phone",
+  "order": 3,
+  "label": "Phone number",
+  "description": "+91 98765 43210"
+ },
+ {
+  "section": "fields",
+  "key": "orders",
+  "order": 4,
+  "label": "Orders",
+  "description": "e.g. Amazon, Flipkart"
+ },
+ {
+  "section": "fields",
+  "key": "count",
+  "order": 5,
+  "label": "Count",
+  "description": "e.g. 5,000 / month"
+ },
+ {
+  "section": "fields",
+  "key": "company",
+  "order": 6,
+  "label": "Company name",
+  "description": "Your company"
+ },
+ {
+  "section": "submit",
+  "key": "submit",
+  "order": 1,
+  "label": "Submit request",
+  "description": "Your information is secure and will only be used to provide you with a quote."
+ },
+ {
+  "section": "success",
+  "key": "success",
+  "order": 1,
+  "title": "Thanks — we’ll be in touch",
+  "description": "Our team will reach out with pricing details shortly."
+ }
+]

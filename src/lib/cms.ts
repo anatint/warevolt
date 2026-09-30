@@ -41,9 +41,25 @@ function toContent(rows: CmsRow[]): CmsContent {
 }
 
 /** Reads the single item of a collection and converts its fields into rows. */
+const itemCache = new Map<string, Promise<Record<string, any> | undefined>>();
+
 async function loadItem(collectionId: string, entries: Entry[], page?: string) {
-  const res = await wixClient.items.query(collectionId).limit(1).find();
-  const item = res.items[0] as Record<string, any> | undefined;
+  // One request per collection, even when several components on the page need it (e.g. the pricing pop-up).
+  if (!itemCache.has(collectionId)) {
+    itemCache.set(
+      collectionId,
+      wixClient.items
+        .query(collectionId)
+        .limit(1)
+        .find()
+        .then((res) => res.items[0] as Record<string, any> | undefined)
+        .catch((err) => {
+          itemCache.delete(collectionId);
+          throw err;
+        }),
+    );
+  }
+  const item = await itemCache.get(collectionId);
   if (!item) return null;
   const { rows, managed } = convertItem(entries, item, page);
   return { rows: rows.map((r) => ({ ...r, image: wixImageUrl(r.image) })), managed };
@@ -83,13 +99,13 @@ export function usePageCms(page: string, defaults: CmsRow[]): CmsContent {
   return useMemo(() => toContent(rows), [rows]);
 }
 
-/** Loads a common (all pages) collection: "Header" or "Footer". */
-export function useCommonCms(collectionId: 'Header' | 'Footer', defaults: CmsRow[]): CmsContent {
+/** Loads a common (all pages) collection: "Header", "Footer" or "PopupForm". */
+export function useCommonCms(collectionId: 'Header' | 'Footer' | 'PopupForm', defaults: CmsRow[]): CmsContent {
   const [rows, setRows] = useState<CmsRow[]>(defaults);
 
   useEffect(() => {
     let cancelled = false;
-    const def = collectionId === 'Header' ? templates.header : templates.footer;
+    const def = collectionId === 'Header' ? templates.header : collectionId === 'Footer' ? templates.footer : templates.popup;
     loadItem(def.id, def.entries)
       .then((live) => {
         if (!cancelled && live) setRows(mergeManaged(defaults, live));

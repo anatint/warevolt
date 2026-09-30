@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useSitePopup } from '@/lib/site';
 
 export interface PricingFormData {
   name: string;
@@ -29,6 +30,11 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
     company: '',
   });
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const popup = useSitePopup();
+  const intro = popup.one('intro', 'intro');
+  const field = (key: string) => popup.one('fields', key);
+  const submit = popup.one('submit', 'submit');
+  const success = popup.one('success', 'success');
 
   if (!isOpen) return null;
 
@@ -224,10 +230,10 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                     marginBottom: '8px',
                   }}
                 >
-                  Thanks &mdash; we&apos;ll be in touch
+                  {success.title}
                 </h3>
                 <p style={{ fontSize: '14.5px', color: '#6B6480', lineHeight: 1.6 }}>
-                  Our team will reach out with pricing details shortly.
+                  {success.description}
                 </p>
               </div>
             ) : (
@@ -259,7 +265,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                     />
                     <circle cx="7" cy="7" r="1.4" fill="#4D0DD9" />
                   </svg>
-                  Custom pricing
+                  {intro.label}
                 </span>
 
                 {/* Heading */}
@@ -272,7 +278,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                     letterSpacing: '-.4px',
                   }}
                 >
-                  Get <span style={{ color: '#4D0DD9' }}>pricing</span>
+                  {intro.title} <span style={{ color: '#4D0DD9' }}>{intro.extra}</span>
                 </h3>
                 <p
                   style={{
@@ -282,7 +288,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                     lineHeight: 1.55,
                   }}
                 >
-                  Share a few details and our team will send tailored pricing for your fulfillment volume.
+                  {intro.description}
                 </p>
 
                 {/* Form Fields */}
@@ -317,7 +323,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                         />
                         <circle cx="12" cy="7" r="4" stroke="#4D0DD9" strokeWidth="2" />
                       </svg>
-                      Full name<span style={{ color: '#4D0DD9' }}>*</span>
+                      {field('name').label}<span style={{ color: '#4D0DD9' }}>*</span>
                     </label>
                     <input
                       required
@@ -326,7 +332,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                       onChange={(e) => handleFieldChange('name', e.target.value)}
                       onFocus={() => setFocusedField('name')}
                       onBlur={() => setFocusedField(null)}
-                      placeholder="Enter your full name"
+                      placeholder={field('name').description}
                       style={getInputStyle('name')}
                     />
                   </div>
@@ -354,7 +360,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                           strokeLinejoin="round"
                         />
                       </svg>
-                      Work email address<span style={{ color: '#4D0DD9' }}>*</span>
+                      {field('email').label}<span style={{ color: '#4D0DD9' }}>*</span>
                     </label>
                     <input
                       required
@@ -363,7 +369,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                       onChange={(e) => handleFieldChange('email', e.target.value)}
                       onFocus={() => setFocusedField('email')}
                       onBlur={() => setFocusedField(null)}
-                      placeholder="you@company.com"
+                      placeholder={field('email').description}
                       style={getInputStyle('email')}
                     />
                   </div>
@@ -389,7 +395,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                           strokeLinejoin="round"
                         />
                       </svg>
-                      Phone number<span style={{ color: '#4D0DD9' }}>*</span>
+                      {field('phone').label}<span style={{ color: '#4D0DD9' }}>*</span>
                     </label>
                     <input
                       required
@@ -398,7 +404,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                       onChange={(e) => handleFieldChange('phone', e.target.value)}
                       onFocus={() => setFocusedField('phone')}
                       onBlur={() => setFocusedField(null)}
-                      placeholder="+91 98765 43210"
+                      placeholder={field('phone').description}
                       style={getInputStyle('phone')}
                     />
                   </div>
@@ -430,7 +436,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                           strokeLinejoin="round"
                         />
                       </svg>
-                      Orders
+                      {field('orders').label}
                     </label>
                     <input
                       type="text"
@@ -438,7 +444,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                       onChange={(e) => handleFieldChange('orders', e.target.value)}
                       onFocus={() => setFocusedField('orders')}
                       onBlur={() => setFocusedField(null)}
-                      placeholder="e.g. Amazon, Flipkart"
+                      placeholder={field('orders').description}
                       style={getInputStyle('orders')}
                     />
                   </div>
@@ -462,7 +468,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                         <line x1="10" y1="3" x2="8" y2="21" stroke="#4D0DD9" strokeWidth="2" />
                         <line x1="16" y1="3" x2="14" y2="21" stroke="#4D0DD9" strokeWidth="2" />
                       </svg>
-                      Count<span style={{ color: '#4D0DD9' }}>*</span>
+                      {field('count').label}<span style={{ color: '#4D0DD9' }}>*</span>
                     </label>
                     <input
                       required
@@ -471,7 +477,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                       onChange={(e) => handleFieldChange('count', e.target.value)}
                       onFocus={() => setFocusedField('count')}
                       onBlur={() => setFocusedField(null)}
-                      placeholder="e.g. 5,000 / month"
+                      placeholder={field('count').description}
                       style={getInputStyle('count')}
                     />
                   </div>
@@ -493,7 +499,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                         <rect x="3" y="7" width="18" height="14" rx="2" stroke="#4D0DD9" strokeWidth="2" />
                         <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" stroke="#4D0DD9" strokeWidth="2" />
                       </svg>
-                      Company name<span style={{ color: '#4D0DD9' }}>*</span>
+                      {field('company').label}<span style={{ color: '#4D0DD9' }}>*</span>
                     </label>
                     <input
                       required
@@ -502,7 +508,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                       onChange={(e) => handleFieldChange('company', e.target.value)}
                       onFocus={() => setFocusedField('company')}
                       onBlur={() => setFocusedField(null)}
-                      placeholder="Your company"
+                      placeholder={field('company').description}
                       style={getInputStyle('company')}
                     />
                   </div>
@@ -547,7 +553,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                         strokeLinejoin="round"
                       />
                     </svg>
-                    Submit request
+                    {submit.label}
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                       <path
                         d="M5 12h14M13 6l6 6-6 6"
@@ -576,7 +582,7 @@ export default function PricingModal({ isOpen, onClose, onSubmitSuccess, onSubmi
                     <rect x="5" y="11" width="14" height="10" rx="2" stroke="#9B94AC" strokeWidth="1.8" />
                     <path d="M8 11V7a4 4 0 018 0v4" stroke="#9B94AC" strokeWidth="1.8" />
                   </svg>
-                  Your information is secure and will only be used to provide you with a quote.
+                  {submit.description}
                 </p>
               </div>
             )}

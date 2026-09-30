@@ -2,6 +2,7 @@
 
 import headerDefaults from '@/content/sections/SiteHeader.json';
 import footerDefaults from '@/content/sections/SiteFooter.json';
+import popupDefaults from '@/content/sections/PopupForm.json';
 import { useCommonCms, type CmsContent, type CmsRow } from '@/lib/cms';
 
 /**
@@ -18,4 +19,12 @@ export function useSiteHeader(): CmsContent {
  */
 export function useSiteFooter(): CmsContent {
   return useCommonCms('Footer', footerDefaults as CmsRow[]);
+}
+
+/**
+ * The pricing pop-up form, loaded from the common "Popup Form (All Pages)" Wix collection.
+ * Groups (section): intro, fields (labels + placeholders), submit, success.
+ */
+export function useSitePopup(): CmsContent {
+  return useCommonCms('PopupForm', popupDefaults as CmsRow[]);
 }
