@@ -242,7 +242,7 @@ export default function D2CMarketplaceFulfillmentPage() {
 
       {/* ══ MARKETPLACE FULFILLMENT ══ */}
       <section id="marketplace" style={{ position: 'relative', overflow: 'hidden', background: '#0B0619' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${cms.one('marketplace', 'marketplace-background').image ?? ''}')`, backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>
+        <div role="img" aria-label={cms.one('marketplace', 'marketplace-background').imageAlt} style={{ position: 'absolute', inset: 0, backgroundImage: `url('${cms.one('marketplace', 'marketplace-background').image ?? ''}')`, backgroundSize: 'cover', backgroundPosition: 'center', zIndex: 0 }}></div>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg,rgba(11,6,25,.94) 0%,rgba(11,6,25,.82) 40%,rgba(11,6,25,.55) 65%,rgba(11,6,25,.3) 100%)', zIndex: 1 }}></div>
         <div id="marketplace-section-grid" style={{ position: 'relative', zIndex: 2, maxWidth: '1440px', margin: '0 auto', padding: '110px clamp(20px,5%,80px)', display: 'grid', gridTemplateColumns: '1.1fr .9fr', gap: '48px', alignItems: 'center' }}>
           <div>
