@@ -1511,7 +1511,7 @@ export default function HomePage() {
             {cms.list('industries').filter((r) => r.key?.startsWith('industry-')).map((r, idx) => (
               <div key={r.key ?? idx} data-animate data-delay={String((idx % 3) * 80)}>
                 <div className="industry-tile" style={{ position: 'relative', width: '100%', aspectRatio: '1.55 / 1', borderRadius: '14px', overflow: 'hidden', background: '#2A2433', boxShadow: '0 8px 22px rgba(20,10,40,.10)' }}>
-                  {r.image && <img src={r.image} alt={r.imageAlt ?? ''} loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />}
+                  {r.image && <img src={r.image} alt={r.imageAlt ?? ''} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />}
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20,16,26,.66) 0%, rgba(20,16,26,.38) 36%, rgba(20,16,26,0) 62%)' }} />
                   <div style={{ position: 'absolute', left: '24px', right: '24px', bottom: '22px', color: '#fff' }}>
                     <h3 style={{ fontSize: 'clamp(18px,1.7vw,22px)', fontWeight: 700, letterSpacing: '-.01em', marginBottom: '4px', lineHeight: 1.2 }}>{r.title ?? ''}</h3>
