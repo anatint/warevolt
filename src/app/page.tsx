@@ -1327,10 +1327,7 @@ export default function HomePage() {
           </div>
           <div id="fulfillment-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '24px' }}>
             {cms.list('fulfillment').filter((r) => r.key?.startsWith('card-')).map((r, idx) => {
-              const cardHref =
-                r.key === 'card-2' || (r.title && r.title.toLowerCase().includes('b2b isometric'))
-                  ? '/b2b-isometric/'
-                  : (r.linkUrl ?? '#');
+              const cardHref = r.linkUrl ?? '#';
               return (
                 <Link
                   key={r.key ?? idx}
