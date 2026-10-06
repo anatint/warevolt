@@ -79,7 +79,8 @@
   "order": 4,
   "key": "shipping-distribution",
   "title": "Shipping & Distribution",
-  "description": "Flexible courier and freight shipping across India."
+  "description": "Flexible courier and freight shipping across India.",
+  "linkUrl": "/"
  },
  {
   "section": "mega-menu",
