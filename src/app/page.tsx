@@ -1493,7 +1493,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ INDUSTRIES WE SERVE ══ */}
-      <section id="industries" style={{ padding: '80px clamp(20px,5%,80px)', background: '#fff' }}>
+      <section id="industries" style={{ padding: '80px clamp(20px,5%,80px)', background: '#fff', scrollMarginTop: '40px' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <div data-animate style={{ textAlign: 'center', marginBottom: '48px' }}>
             <span style={{ display: 'inline-block', fontSize: '13px', fontWeight: 800, letterSpacing: '.08em', color: '#4D0DD9', marginBottom: '14px', textTransform: 'uppercase' }}>
