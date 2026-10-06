@@ -1492,6 +1492,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ══ INDUSTRIES WE SERVE ══ */}
+      <section id="industries" style={{ padding: '80px clamp(20px,5%,80px)', background: '#fff' }}>
+        <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
+          <div data-animate style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <span style={{ display: 'inline-block', fontSize: '13px', fontWeight: 600, letterSpacing: '.22em', color: '#4D0DD9', marginBottom: '14px', textTransform: 'uppercase' }}>
+              {c('industries', 'industries-heading', 'label')}
+            </span>
+            <h2 style={{ fontSize: 'clamp(30px,3.5vw,54px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '16px', lineHeight: 1.12 }}>
+              {c('industries', 'industries-heading', 'title')}
+            </h2>
+            <p style={{ fontSize: '15.5px', color: '#4A4560', lineHeight: 1.75, maxWidth: '780px', margin: '0 auto' }}>
+              {c('industries', 'industries-heading', 'description')}
+            </p>
+          </div>
+
+          <div id="industries-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '12px' }}>
+            {cms.list('industries').filter((r) => r.key?.startsWith('industry-')).map((r, idx) => (
+              <div key={r.key ?? idx} data-animate data-delay={String((idx % 3) * 80)}>
+                <div className="industry-tile" style={{ position: 'relative', width: '100%', aspectRatio: '1.55 / 1', borderRadius: '14px', overflow: 'hidden', background: '#2A2433', boxShadow: '0 8px 22px rgba(20,10,40,.10)' }}>
+                  {r.image && <img src={r.image} alt={r.imageAlt ?? ''} loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />}
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20,16,26,.66) 0%, rgba(20,16,26,.38) 36%, rgba(20,16,26,0) 62%)' }} />
+                  <div style={{ position: 'absolute', left: '24px', right: '24px', bottom: '22px', color: '#fff' }}>
+                    <h3 style={{ fontSize: 'clamp(18px,1.7vw,22px)', fontWeight: 700, letterSpacing: '-.01em', marginBottom: '4px', lineHeight: 1.2 }}>{r.title ?? ''}</h3>
+                    <p style={{ fontSize: 'clamp(13px,1.15vw,15px)', fontWeight: 400, color: 'rgba(255,255,255,.92)', lineHeight: 1.45, margin: 0 }}>{r.description ?? ''}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {c('industries', 'industries-cta', 'linkLabel') && (
+            <div data-animate style={{ textAlign: 'center', marginTop: '40px' }}>
+              <Link
+                href={c('industries', 'industries-cta', 'linkUrl') || '/contact'}
+                className="industries-cta"
+                style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: '#4D0DD9', color: '#fff', padding: '15px 36px', borderRadius: '10px', fontSize: '14.5px', fontWeight: 700, textDecoration: 'none', transition: 'background .2s, transform .2s' }}
+              >
+                {c('industries', 'industries-cta', 'linkLabel')}
+              </Link>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* ══ CTA BANNER ══ */}
       <section id="contact" style={{ padding: '80px clamp(20px,5%,80px)', background: 'linear-gradient(120deg,#1E0894 0%,#4F1CF7 20%,#9D7BFF 45%,#4F1CF7 70%,#1E0894 100%)', backgroundSize: '300% 300%', animation: 'cta-gradient 6s ease-in-out infinite', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-80px', left: '-80px', width: '400px', height: '400px', background: 'radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%)', pointerEvents: 'none' }} />

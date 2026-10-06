@@ -718,5 +718,74 @@
   "key": "cta-call",
   "linkLabel": "Call Us Now",
   "linkUrl": "tel:+91-9876543210"
+ },
+ {
+  "section": "industries",
+  "order": 1,
+  "key": "industries-heading",
+  "label": "Industries We Serve",
+  "title": "Fulfillment built for modern consumer brands.",
+  "description": "From fast-moving consumer goods to fashion and beauty, WareVolt provides the warehousing, fulfillment, and distribution infrastructure brands need to scale."
+ },
+ {
+  "section": "industries",
+  "order": 2,
+  "key": "industry-1",
+  "title": "Fashion & Apparel",
+  "description": "Clothing, footwear & accessories",
+  "image": "/assets/industries/fashion-apparel.jpg",
+  "imageAlt": "Folded knitwear, a white sneaker and a tan leather handbag"
+ },
+ {
+  "section": "industries",
+  "order": 3,
+  "key": "industry-2",
+  "title": "Beauty & Personal Care",
+  "description": "Skincare, cosmetics & grooming",
+  "image": "/assets/industries/beauty-personal-care.jpg",
+  "imageAlt": "Skincare bottles, a lavender tube and a makeup brush"
+ },
+ {
+  "section": "industries",
+  "order": 4,
+  "key": "industry-3",
+  "title": "FMCG",
+  "description": "Everyday consumer & household products",
+  "image": "/assets/industries/fmcg.jpg",
+  "imageAlt": "Packaged foods, cooking oil and household essentials"
+ },
+ {
+  "section": "industries",
+  "order": 5,
+  "key": "industry-4",
+  "title": "Consumer Electronics",
+  "description": "Devices, accessories & gadgets",
+  "image": "/assets/industries/consumer-electronics.jpg",
+  "imageAlt": "Headphones, a smartphone, a smartwatch and a smart speaker"
+ },
+ {
+  "section": "industries",
+  "order": 6,
+  "key": "industry-5",
+  "title": "Home & Lifestyle",
+  "description": "Homeware, décor & lifestyle products",
+  "image": "/assets/industries/home-lifestyle.jpg",
+  "imageAlt": "A plant, candles, a mug and cosy home décor"
+ },
+ {
+  "section": "industries",
+  "order": 7,
+  "key": "industry-6",
+  "title": "Sports & Fitness",
+  "description": "Sportswear, equipment & accessories",
+  "image": "/assets/industries/sports-fitness.jpg",
+  "imageAlt": "A yoga mat, shaker bottle, dumbbell and gym bag"
+ },
+ {
+  "section": "industries",
+  "order": 8,
+  "key": "industries-cta",
+  "linkLabel": "Contact Us",
+  "linkUrl": "/contact"
  }
 ]
