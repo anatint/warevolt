@@ -1496,13 +1496,13 @@ export default function HomePage() {
       <section id="industries" style={{ padding: '80px clamp(20px,5%,80px)', background: '#fff' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <div data-animate style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <span style={{ display: 'inline-block', fontSize: '13px', fontWeight: 600, letterSpacing: '.22em', color: '#4D0DD9', marginBottom: '14px', textTransform: 'uppercase' }}>
+            <span style={{ display: 'inline-block', fontSize: '13px', fontWeight: 800, letterSpacing: '.08em', color: '#4D0DD9', marginBottom: '14px', textTransform: 'uppercase' }}>
               {c('industries', 'industries-heading', 'label')}
             </span>
-            <h2 style={{ fontSize: 'clamp(30px,3.5vw,54px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '16px', lineHeight: 1.12 }}>
+            <h2 style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '22px' }}>
               {c('industries', 'industries-heading', 'title')}
             </h2>
-            <p style={{ fontSize: '15.5px', color: '#4A4560', lineHeight: 1.75, maxWidth: '780px', margin: '0 auto' }}>
+            <p style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8, maxWidth: '780px', margin: '0 auto' }}>
               {c('industries', 'industries-heading', 'description')}
             </p>
           </div>
