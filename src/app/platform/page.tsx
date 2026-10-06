@@ -5,6 +5,7 @@ import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import { usePageCms, CmsRow } from '@/lib/cms';
 import { useSiteHeader } from '@/lib/site';
+import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 import SiteFooter from '@/components/SiteFooter';
 import defaults from '@/content/platform.json';
 
@@ -17,6 +18,8 @@ export default function PlatformPage() {
   const headerLogin = header.one('actions', 'login');
   const headerCta = header.one('actions', 'cta');
   const phone = header.one('actions', 'phone');
+  const solutions = solutionsItems(header);
+  const solutionsLabel = header.one('nav', 'solutions').linkLabel ?? 'Solutions';
   // Shared nav (minus the Technology mega-menu) with this page's own bold 'Platform' link after Solutions.
   const navItems: CmsRow[] = [];
   header.list('nav').forEach((item) => {
@@ -143,9 +146,13 @@ export default function PlatformPage() {
             <Link href="/" style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', transition: 'color .3s' }}>
               Home
             </Link>
-            <Link href="/#solutions" style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color .3s' }}>
-              Solutions
-            </Link>
+            <SolutionsDropdown
+              label={solutionsLabel}
+              items={solutions}
+              wrapId="solutions-menu-wrap"
+              menuId="solutions-mega-menu"
+              labelStyle={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', transition: 'color .3s' }}
+            />
             <Link href="#platform" style={{ fontSize: '14.5px', fontWeight: 700, color: '#fff', textDecoration: 'none', transition: 'color .3s' }}>
               Platform
             </Link>
@@ -212,6 +219,18 @@ export default function PlatformPage() {
 
             <div id="ph-nav-links" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '32px', flex: 1 }}>
               {navItems.map((item, idx) => {
+                if (item.extra === 'solutions-menu') {
+                  return (
+                    <SolutionsDropdown
+                      key={item.key ?? idx}
+                      label={item.linkLabel ?? ''}
+                      items={solutions}
+                      wrapId="hero-solutions-menu-wrap"
+                      menuId="hero-solutions-mega-menu"
+                      labelStyle={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)' }}
+                    />
+                  );
+                }
                 if (item.extra === 'opens-pricing-modal') {
                   return (
                     <button
@@ -317,6 +336,9 @@ export default function PlatformPage() {
                 }}
               >
                 {navItems.map((item, idx) => {
+                  if (item.extra === 'solutions-menu') {
+                    return <SolutionsMobileList key={item.key ?? idx} label={item.linkLabel ?? ''} items={solutions} onNavigate={() => setHeroMobileOpen(false)} />;
+                  }
                   if (item.extra === 'opens-pricing-modal') {
                     return (
                       <button

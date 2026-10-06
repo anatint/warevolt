@@ -6,6 +6,7 @@ import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import defaults from '@/content/home.json';
 import { usePageCms, CmsRow } from '@/lib/cms';
 import { useSiteHeader } from '@/lib/site';
+import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 import SiteFooter from '@/components/SiteFooter';
 
 export default function HomePage() {
@@ -54,6 +55,7 @@ export default function HomePage() {
     returns: 1.2,
   });
 
+  const solutions = solutionsItems(header);
   const techMegaMenu = header.list('mega-menu').map((r) => ({ label: r.title ?? '', desc: r.description ?? '', href: r.linkUrl ?? '#' }));
 
   const testimonialGradients = [
@@ -264,14 +266,13 @@ export default function HomePage() {
             >
               {nav('home').linkLabel ?? ''}
             </a>
-            <a
-              href={nav('solutions').linkUrl ?? '#solutions'}
-              style={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', textDecoration: 'none', transition: 'color .3s' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.85)')}
-            >
-              {nav('solutions').linkLabel ?? ''}
-            </a>
+            <SolutionsDropdown
+              label={nav('solutions').linkLabel ?? ''}
+              items={solutions}
+              wrapId="solutions-menu-wrap"
+              menuId="solutions-mega-menu"
+              labelStyle={{ fontSize: '14.5px', fontWeight: 500, color: 'rgba(255,255,255,.85)', transition: 'color .3s' }}
+            />
 
             <div
               id="tech-menu-wrap"
@@ -510,9 +511,7 @@ export default function HomePage() {
               <a href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
                 {nav('home').linkLabel ?? ''}
               </a>
-              <a href="#solutions" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-                {nav('solutions').linkLabel ?? ''}
-              </a>
+              <SolutionsMobileList label={nav('solutions').linkLabel ?? ''} items={solutions} borderColor="rgba(255,255,255,.1)" onNavigate={() => setMobileNavOpen(false)} />
               <a href="#technology" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
                 Technology
               </a>
@@ -572,9 +571,13 @@ export default function HomePage() {
               <a href="/" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
                 {nav('home').linkLabel ?? ''}
               </a>
-              <a href="#solutions" style={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)', textDecoration: 'none', transition: 'color .2s', whiteSpace: 'nowrap' }}>
-                {nav('solutions').linkLabel ?? ''}
-              </a>
+              <SolutionsDropdown
+                label={nav('solutions').linkLabel ?? ''}
+                items={solutions}
+                wrapId="hero-solutions-menu-wrap"
+                menuId="hero-solutions-mega-menu"
+                labelStyle={{ fontSize: '16px', fontWeight: 400, color: 'rgba(255,255,255,.92)' }}
+              />
 
               <div
                 id="hero-tech-menu-wrap"
@@ -809,9 +812,7 @@ export default function HomePage() {
                 <a href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
                   {nav('home').linkLabel ?? ''}
                 </a>
-                <a href="#solutions" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  {nav('solutions').linkLabel ?? ''}
-                </a>
+                <SolutionsMobileList label={nav('solutions').linkLabel ?? ''} items={solutions} borderColor="rgba(255,255,255,.08)" onNavigate={() => setHeroMobileOpen(false)} />
                 <a href="#technology" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
                   Technology
                 </a>

@@ -27,7 +27,7 @@
   "order": 2,
   "key": "solutions",
   "linkLabel": "Solutions",
-  "linkUrl": "/#solutions"
+  "extra": "solutions-menu"
  },
  {
   "section": "nav",
@@ -49,6 +49,33 @@
   "key": "pricing",
   "linkLabel": "Pricing",
   "extra": "opens-pricing-modal"
+ },
+ {
+  "section": "solutions-menu",
+  "order": 1,
+  "key": "d2c-marketplace",
+  "title": "D2C & Marketplace Fulfilment",
+  "linkUrl": "/d2c-marketplace-fulfillment/"
+ },
+ {
+  "section": "solutions-menu",
+  "order": 2,
+  "key": "b2b",
+  "title": "B2B Fulfilment",
+  "linkUrl": "/b2b-isometric/"
+ },
+ {
+  "section": "solutions-menu",
+  "order": 3,
+  "key": "quick-commerce",
+  "title": "Quick Commerce Fulfilment",
+  "linkUrl": "/quick-ecommerce-fulfillment/"
+ },
+ {
+  "section": "solutions-menu",
+  "order": 4,
+  "key": "shipping-distribution",
+  "title": "Shipping & Distribution"
  },
  {
   "section": "mega-menu",

@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useSiteHeader } from '@/lib/site';
 import type { CmsRow } from '@/lib/cms';
+import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 
 const OPENS_PRICING = 'opens-pricing-modal';
 const MEGA_MENU = 'mega-menu';
+const SOLUTIONS_MENU = 'solutions-menu';
 
 const navLinkStyle: React.CSSProperties = {
   fontSize: '15px',
@@ -64,6 +66,7 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
   const logo = header.one('brand', 'logo-light');
   const navItems = header.list('nav');
   const megaMenu = header.list('mega-menu');
+  const solutions = solutionsItems(header);
   const login = header.one('actions', 'login');
   const cta = header.one('actions', 'cta');
   const phone = header.one('actions', 'phone');
@@ -72,6 +75,18 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
   const logoHref = logo.linkUrl || '/';
 
   const renderDesktopItem = (item: CmsRow, idx: number) => {
+    if (item.extra === SOLUTIONS_MENU) {
+      return (
+        <SolutionsDropdown
+          key={item.key ?? idx}
+          label={item.linkLabel ?? ''}
+          items={solutions}
+          wrapId="hero-solutions-menu-wrap"
+          menuId="hero-solutions-mega-menu"
+          labelStyle={{ fontSize: '15px', fontWeight: 400, color: 'rgba(255,255,255,.92)' }}
+        />
+      );
+    }
     if (item.extra === MEGA_MENU) {
       return (
         <div
@@ -201,6 +216,9 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
   };
 
   const renderMobileItem = (item: CmsRow, idx: number) => {
+    if (item.extra === SOLUTIONS_MENU) {
+      return <SolutionsMobileList key={item.key ?? idx} label={item.linkLabel ?? ''} items={solutions} onNavigate={() => setHeroMobileOpen(false)} />;
+    }
     if (item.extra === MEGA_MENU) {
       return (
         <React.Fragment key={item.key ?? idx}>
