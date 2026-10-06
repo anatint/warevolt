@@ -55,27 +55,31 @@
   "order": 1,
   "key": "d2c-marketplace",
   "title": "D2C & Marketplace Fulfilment",
-  "linkUrl": "/d2c-marketplace-fulfillment/"
+  "linkUrl": "/d2c-marketplace-fulfillment/",
+  "description": "One fulfilment solution for your online store and every major marketplace."
  },
  {
   "section": "solutions-menu",
   "order": 2,
   "key": "b2b",
   "title": "B2B Fulfilment",
-  "linkUrl": "/b2b-isometric/"
+  "linkUrl": "/b2b-isometric/",
+  "description": "Bulk, wholesale and retail replenishment with compliance built in."
  },
  {
   "section": "solutions-menu",
   "order": 3,
   "key": "quick-commerce",
   "title": "Quick Commerce Fulfilment",
-  "linkUrl": "/quick-ecommerce-fulfillment/"
+  "linkUrl": "/quick-ecommerce-fulfillment/",
+  "description": "Dark-store-ready micro-fulfilment for 10–30 minute delivery promises."
  },
  {
   "section": "solutions-menu",
   "order": 4,
   "key": "shipping-distribution",
-  "title": "Shipping & Distribution"
+  "title": "Shipping & Distribution",
+  "description": "Flexible courier and freight shipping across India."
  },
  {
   "section": "mega-menu",
