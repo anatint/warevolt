@@ -9,9 +9,6 @@ import { useSiteHeader } from '@/lib/site';
 import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 import SiteFooter from '@/components/SiteFooter';
 
-// Testimonials section is hidden for now; set to true to bring it back.
-const SHOW_TESTIMONIALS = false;
-
 export default function HomePage() {
   const [pricingOpen, setPricingOpen] = useState(false);
   const [testiIndex, setTestiIndex] = useState(0);
@@ -21,6 +18,8 @@ export default function HomePage() {
   const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
 
   const cms = usePageCms('home', defaults as CmsRow[]);
+  // Testimonials section is switched on/off in the Wix CMS (HomePage > "Show Testimonials Section"); hidden unless set to true.
+  const showTestimonials = cms.one('testimonials', 'visibility-toggle').extra === 'true';
   const header = useSiteHeader();
   const nav = (key: string) => header.one('nav', key);
   const login = header.one('actions', 'login');
@@ -1436,7 +1435,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ TESTIMONIALS ══ */}
-      {SHOW_TESTIMONIALS && (
+      {showTestimonials && (
       <section style={{ padding: '80px clamp(20px,5%,80px)', background: '#F7F6FB', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <h2 data-animate data-delay="60" style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, letterSpacing: '-.03em', color: '#0B0619', marginBottom: '64px' }}>
