@@ -1038,18 +1038,6 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-
-            <a
-              data-animate
-              data-delay="220"
-              href={c('about','about-link','linkUrl')}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#4F1CF7', fontSize: '15px', fontWeight: 600, textDecoration: 'none', transition: 'gap .2s' }}
-            >
-              {c('about','about-link','linkLabel')}{' '}
-              <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
-                <path d="M1 1l5 5-5 5" stroke="#4F1CF7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
           </div>
         </div>
       </section>
