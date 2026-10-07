@@ -1258,7 +1258,7 @@ export default function HomePage() {
       <section style={{ padding: '32px clamp(20px,5%,80px) 24px', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '55%', backgroundImage: 'radial-gradient(circle,rgba(77,13,217,.22) 1.5px,transparent 1.5px)', backgroundSize: '16px 16px', pointerEvents: 'none' }} />
         <div id="visibility-grid" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '64px', alignItems: 'center' }}>
-          <div data-animate>
+          <div id="visibility-text" data-animate style={{ paddingRight: '100px' }}>
             <h2 style={{ fontSize: 'clamp(30px,3.6vw,44px)', fontWeight: 800, color: '#0B0619', lineHeight: 1.15, letterSpacing: '-.02em', marginBottom: '20px' }}>
               {c('visibility','visibility-title','title')}
             </h2>
@@ -1279,7 +1279,7 @@ export default function HomePage() {
               </div>
               <img src={c('visibility','dashboard-image','image')} alt={c('visibility','dashboard-image','imageAlt')} style={{ width: '100%', display: 'block' }} />
             </div>
-            <div id="visibility-floating-img" style={{ position: 'absolute', top: 0, left: '-210px', width: '360px', height: '360px', borderRadius: '14px', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'float-a 4s ease-in-out infinite' }}>
+            <div id="visibility-floating-img" style={{ position: 'absolute', top: 0, left: '-160px', width: '360px', height: '360px', borderRadius: '14px', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'float-a 4s ease-in-out infinite' }}>
               <img src={c('visibility','journey-image','image')} alt={c('visibility','journey-image','imageAlt')} style={{ width: '100%', height: 'auto', display: 'block', animation: 'dc-card-scroll 16s ease-in-out infinite' }} />
             </div>
           </div>

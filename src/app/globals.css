@@ -447,6 +447,7 @@ body::before {
   #about-badges { gap: 16px !important; }
   #visibility-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
   #visibility-floating-img { display: none !important; }
+  #visibility-text { padding-right: 0 !important; }
   #how-it-works-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 32px 24px !important; }
   #how-it-works-line { display: none !important; }
   #why-brands-grid { grid-template-columns: 1fr !important; column-gap: 0 !important; }
