@@ -264,7 +264,7 @@ export default function PlatformPage() {
               })}
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0, marginLeft: 'auto' }}>
+            <div style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', gap: '28px', flexShrink: 0, marginLeft: 'auto' }}>
               <button
                 onClick={() => setPricingOpen(true)}
                 style={{

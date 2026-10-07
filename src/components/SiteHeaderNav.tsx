@@ -265,7 +265,7 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
           {navItems.map(renderDesktopItem)}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '26px', flexShrink: 0, marginLeft: 'auto' }}>
+        <div style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', gap: '26px', flexShrink: 0, marginLeft: 'auto' }}>
           <button
             onClick={onOpenPricing}
             style={{
