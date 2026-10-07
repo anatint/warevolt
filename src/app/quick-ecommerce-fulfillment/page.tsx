@@ -183,18 +183,18 @@ export default function QuickEcommerceFulfillmentPage() {
             <p data-animate data-delay="150" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.85, marginBottom: '26px' }}>
               {mf('paragraph-3').description ?? ''}
             </p>
-            <div data-animate data-delay="180" style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>{mf('point-1').title ?? ''}</span>
+            <div data-animate data-delay="180" className="point-tiles" style={{ display: 'flex', gap: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', flex: '1 1 auto', minWidth: 0, gap: '6px', padding: '16px clamp(10px, .9vw, 14px)', background: 'linear-gradient(135deg,#FFFFFF 0%,#F6F3FF 100%)', border: '1px solid #E6E0F8', borderRadius: '16px', boxShadow: '0 8px 24px rgba(79,28,247,.07)' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <span style={{ fontSize: 'clamp(12px, 1vw, 14px)', fontWeight: 500, color: '#0B0619', lineHeight: 1.3 }}>{mf('point-1').title ?? ''}</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>{mf('point-2').title ?? ''}</span>
+              <div style={{ display: 'flex', alignItems: 'center', flex: '1 1 auto', minWidth: 0, gap: '6px', padding: '16px clamp(10px, .9vw, 14px)', background: 'linear-gradient(135deg,#FFFFFF 0%,#F6F3FF 100%)', border: '1px solid #E6E0F8', borderRadius: '16px', boxShadow: '0 8px 24px rgba(79,28,247,.07)' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <span style={{ fontSize: 'clamp(12px, 1vw, 14px)', fontWeight: 500, color: '#0B0619', lineHeight: 1.3 }}>{mf('point-2').title ?? ''}</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <span style={{ fontSize: '13.5px', fontWeight: 600, color: '#0B0619' }}>{mf('point-3').title ?? ''}</span>
+              <div style={{ display: 'flex', alignItems: 'center', flex: '1 1 auto', minWidth: 0, gap: '6px', padding: '16px clamp(10px, .9vw, 14px)', background: 'linear-gradient(135deg,#FFFFFF 0%,#F6F3FF 100%)', border: '1px solid #E6E0F8', borderRadius: '16px', boxShadow: '0 8px 24px rgba(79,28,247,.07)' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M20 6L9 17l-5-5" stroke="#4F1CF7" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <span style={{ fontSize: 'clamp(12px, 1vw, 14px)', fontWeight: 500, color: '#0B0619', lineHeight: 1.3 }}>{mf('point-3').title ?? ''}</span>
               </div>
             </div>
           </div>
