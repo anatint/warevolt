@@ -172,7 +172,8 @@ export default function ShippingAndDistributionPage() {
     <div style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif", color: '#1C1030', background: '#fff', overflowX: 'hidden' }}>
       <style>{`
         .sd-split { display: grid; gap: 56px; align-items: center; }
-        .sd-hero-grid { grid-template-columns: 1fr 1fr; }
+        .sd-hero-grid { grid-template-columns: 1fr; }
+        .sd-hero-grid > div { max-width: 520px; }
         .sd-partner-grid { grid-template-columns: .9fr 1.1fr; }
         .sd-byoa-grid { grid-template-columns: 1fr 1fr; }
         .sd-freight-grid { grid-template-columns: .95fr 1.05fr; }
@@ -191,7 +192,8 @@ export default function ShippingAndDistributionPage() {
           .sd-hero-grid, .sd-partner-grid, .sd-byoa-grid, .sd-freight-grid { grid-template-columns: 1fr; gap: 36px; }
           .sd-why-grid { grid-template-columns: 1fr 1fr; }
           .sd-guidance, .sd-banner { flex-direction: column; align-items: flex-start; }
-          #hero-section { height: auto !important; min-height: 0 !important; }
+          #hero-section { height: auto !important; min-height: 0 !important; background-size: 170% auto !important; background-position: 88% 100% !important; }
+          .sd-hero-body { padding-bottom: 270px !important; }
         }
         @media (max-width: 640px) {
           .sd-why-grid, .sd-steps, .sd-svc-grid { grid-template-columns: 1fr; }
@@ -201,21 +203,20 @@ export default function ShippingAndDistributionPage() {
       {/* ══ HERO ══ */}
       <section
         id="hero-section"
+        className="sd-hero"
         style={{
           position: 'relative',
           overflow: 'hidden',
-          background: 'linear-gradient(120deg,#0B0619 0%,#1D0F4D 45%,#160A38 75%,#0B0619 100%)',
+          background: `url(${one('hero', 'image').image}) right center / cover no-repeat, #0B0637`,
           minHeight: '680px',
           display: 'flex',
           flexDirection: 'column',
         }}
       >
-        <div style={{ position: 'absolute', top: '-120px', right: '-4%', width: '560px', height: '560px', background: 'radial-gradient(circle,rgba(99,60,255,.35) 0%,transparent 65%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: '-160px', left: '-6%', width: '460px', height: '460px', background: 'radial-gradient(circle,rgba(124,91,251,.22) 0%,transparent 65%)', pointerEvents: 'none' }} />
 
         <SiteHeaderNav onOpenPricing={() => setPricingOpen(true)} />
 
-        <div style={{ position: 'relative', zIndex: 10, flex: 1, display: 'flex', alignItems: 'center', padding: '24px clamp(20px,5%,80px) 56px' }}>
+        <div className="sd-hero-body" style={{ position: 'relative', zIndex: 10, flex: 1, display: 'flex', alignItems: 'center', padding: '24px clamp(20px,5%,80px) 56px' }}>
           <div className="sd-split sd-hero-grid" style={{ width: '100%', maxWidth: '1280px', margin: '0 auto' }}>
             <div>
               <Eyebrow color="#A78BFA">{one('hero', 'eyebrow').title}</Eyebrow>
@@ -223,8 +224,8 @@ export default function ShippingAndDistributionPage() {
                 <span style={{ color: '#fff', display: 'block' }}>{one('hero', 'title-1').title}</span>
                 <span style={{ color: '#B9A6FF', display: 'block' }}>{one('hero', 'title-2').title}</span>
               </h1>
-              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,.82)', lineHeight: 1.7, maxWidth: '560px', marginBottom: '16px' }}>{one('hero', 'p1').description}</p>
-              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,.82)', lineHeight: 1.7, maxWidth: '560px', marginBottom: '32px' }}>{one('hero', 'p2').description}</p>
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,.82)', lineHeight: 1.7, maxWidth: '500px', marginBottom: '16px' }}>{one('hero', 'p1').description}</p>
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,.82)', lineHeight: 1.7, maxWidth: '500px', marginBottom: '32px' }}>{one('hero', 'p2').description}</p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button onClick={() => setPricingOpen(true)} style={primaryBtn}>
                   {one('hero', 'btn-primary').linkLabel} <Arrow />
@@ -236,13 +237,6 @@ export default function ShippingAndDistributionPage() {
                   {one('hero', 'btn-secondary').linkLabel}
                 </a>
               </div>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <img
-                src={one('hero', 'image').image}
-                alt={one('hero', 'image').imageAlt ?? ''}
-                style={{ width: '100%', maxWidth: '620px', height: 'auto', display: 'block', WebkitMaskImage: 'radial-gradient(ellipse at center,#000 55%,transparent 98%)', maskImage: 'radial-gradient(ellipse at center,#000 55%,transparent 98%)' }}
-              />
             </div>
           </div>
         </div>
