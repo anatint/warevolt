@@ -1406,7 +1406,6 @@ export default function HomePage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <div data-animate style={{ maxWidth: '760px', marginBottom: '56px' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: 800, letterSpacing: '.08em', color: '#B49CFC', marginBottom: '14px', textTransform: 'uppercase' }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#B49CFC' }} />
               {c('why-brands','why-heading','label')}
             </span>
             <h2 style={{ fontSize: 'clamp(34px,3.5vw,54px)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-.03em', color: '#fff', marginBottom: '22px' }}>
