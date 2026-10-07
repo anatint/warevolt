@@ -993,8 +993,9 @@ export default function HomePage() {
             <div data-animate data-delay="180" id="about-badges" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '22px', marginBottom: '44px' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '13px' }}>
                 <div style={{ width: '38px', height: '38px', background: '#F0EEFF', borderRadius: '11px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="#4F1CF7" strokeWidth="2" />
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M3.5 20.5V9.5L12 3.8l8.5 5.7v11" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M8 20.5v-5h3.2v-3.2h4.3v8.2" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <div>
@@ -1005,8 +1006,12 @@ export default function HomePage() {
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '13px' }}>
                 <div style={{ width: '38px', height: '38px', background: '#F0EEFF', borderRadius: '11px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="#4F1CF7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="3.5" width="18" height="12.5" rx="2" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12 16v3.5M8.5 20h7" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <rect x="7" y="10.5" width="2" height="3.2" rx=".6" fill="#3D1FF0" />
+                    <rect x="11" y="8.2" width="2" height="5.5" rx=".6" fill="#3D1FF0" />
+                    <rect x="15" y="6" width="2" height="7.7" rx=".6" fill="#3D1FF0" />
                   </svg>
                 </div>
                 <div>
@@ -1017,8 +1022,8 @@ export default function HomePage() {
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '13px' }}>
                 <div style={{ width: '38px', height: '38px', background: '#F0EEFF', borderRadius: '11px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#4F1CF7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3l7.5 2.6v6.2c0 4.5-3.1 7.7-7.5 9.2-4.4-1.5-7.5-4.7-7.5-9.2V5.6z" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <div>
@@ -1029,9 +1034,11 @@ export default function HomePage() {
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '13px' }}>
                 <div style={{ width: '38px', height: '38px', background: '#F0EEFF', borderRadius: '11px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 6V12l4 2" stroke="#4F1CF7" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="12" cy="12" r="10" stroke="#4F1CF7" strokeWidth="2" />
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <rect x="4" y="16" width="4" height="5" rx=".8" fill="#3D1FF0" />
+                    <rect x="10" y="13" width="4" height="8" rx=".8" fill="#3D1FF0" />
+                    <rect x="16" y="10" width="4" height="11" rx=".8" fill="#3D1FF0" />
+                    <path d="M4 12C9 11.5 14 8.5 19 4M15.5 3.5h4v4" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <div>
