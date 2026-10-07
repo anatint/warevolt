@@ -179,9 +179,29 @@ export default function PlatformPage() {
             </button>
           </div>
 
-          <button
-            onClick={() => setPricingOpen(true)}
-            style={{
+          <div style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
+            <button
+              onClick={() => setPricingOpen(true)}
+              style={{
+                background: 'none',
+                border: 'none',
+                fontSize: '15px',
+                fontWeight: 500,
+                color: 'rgba(255,255,255,.9)',
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+                padding: '8px 0',
+                transition: 'color .2s',
+                whiteSpace: 'nowrap',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
+            >
+              {headerLogin.linkLabel ?? ''}
+            </button>
+            <Link
+              href="/contact"
+              style={{
               background: '#4D0DD9',
               color: '#fff',
               padding: '11px 24px',
@@ -195,13 +215,15 @@ export default function PlatformPage() {
               alignItems: 'center',
               gap: '8px',
               transition: 'background .2s, transform .2s',
-            }}
-          >
-            Get a Quote{' '}
-            <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
-              <path d="M1 1l5 5-5 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
+              textDecoration: 'none',
+              }}
+            >
+              {headerCta.linkLabel || 'Speak to an expert'}{' '}
+              <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
+                <path d="M1 1l5 5-5 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </nav>
 

@@ -412,31 +412,27 @@ export default function HomePage() {
 
           </div>
 
-          <div id="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
-            <a
-              id="nav-phone-link"
-              href={phone.linkUrl ?? '#'}
+          <div id="nav-actions" style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
+            <button
+              id="nav-login"
+              onClick={() => setPricingOpen(true)}
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                color: 'rgba(255,255,255,.85)',
-                textDecoration: 'none',
-                fontSize: '14px',
-                fontWeight: 400,
-                whiteSpace: 'nowrap',
+                background: 'none',
+                border: 'none',
+                fontSize: '15px',
+                fontWeight: 500,
+                color: 'rgba(255,255,255,.9)',
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+                padding: '8px 0',
                 transition: 'color .2s',
+                whiteSpace: 'nowrap',
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
             >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.16 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.19 6.19l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                />
-              </svg>
-              {phone.linkLabel ?? ''}
-            </a>
+              {login.linkLabel ?? ''}
+            </button>
             <Link
               id="nav-cta"
               href="/contact"
