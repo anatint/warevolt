@@ -1,0 +1,337 @@
+[
+  {
+    "section": "hero",
+    "order": 1,
+    "key": "eyebrow",
+    "title": "SHIPPING & DISTRIBUTION"
+  },
+  {
+    "section": "hero",
+    "order": 2,
+    "key": "title-1",
+    "title": "Flexible Shipping."
+  },
+  {
+    "section": "hero",
+    "order": 3,
+    "key": "title-2",
+    "title": "Built Around Your Business."
+  },
+  {
+    "section": "hero",
+    "order": 4,
+    "key": "p1",
+    "description": "Every business ships differently. Some fulfil thousands of eCommerce orders every day, while others move pallets of inventory between factories, distributors, retail stores and warehouses."
+  },
+  {
+    "section": "hero",
+    "order": 5,
+    "key": "p2",
+    "description": "For eCommerce shipments, use our BYOA model. For larger inventory movements, our managed freight network connects you with trusted partners across India for FTL, PTL and LTL shipments."
+  },
+  {
+    "section": "hero",
+    "order": 6,
+    "key": "btn-primary",
+    "linkLabel": "Get Started"
+  },
+  {
+    "section": "hero",
+    "order": 7,
+    "key": "btn-secondary",
+    "linkLabel": "Learn More"
+  },
+  {
+    "section": "hero",
+    "order": 8,
+    "key": "image",
+    "image": "/assets/shipping/hero.webp",
+    "imageAlt": "Isometric illustration of warehouses, a truck and a parcel over a map of India"
+  },
+  {
+    "section": "partner",
+    "order": 1,
+    "key": "eyebrow",
+    "title": "ONE FULFILLMENT PARTNER"
+  },
+  {
+    "section": "partner",
+    "order": 2,
+    "key": "title",
+    "title": "Parcel Shipments &\nBulk Freight."
+  },
+  {
+    "section": "partner",
+    "order": 3,
+    "key": "title-accent",
+    "title": "One Partner."
+  },
+  {
+    "section": "partner",
+    "order": 4,
+    "key": "description",
+    "description": "Whether you're shipping a single parcel or an entire truckload, WareVolt gives you the flexibility to manage both through a single fulfilment partner — with the technology, operational expertise and nationwide logistics network to move your inventory efficiently, accurately and at scale."
+  },
+  {
+    "section": "partner",
+    "order": 5,
+    "key": "item-1",
+    "title": "eCommerce Parcels"
+  },
+  {
+    "section": "partner",
+    "order": 6,
+    "key": "item-2",
+    "title": "Bulk Shipments",
+    "description": "(FTL / PTL / LTL)"
+  },
+  {
+    "section": "partner",
+    "order": 7,
+    "key": "image",
+    "image": "/assets/shipping/dashboard.webp",
+    "imageAlt": "WareVolt shipments dashboard"
+  },
+  {
+    "section": "byoa",
+    "order": 1,
+    "key": "eyebrow",
+    "title": "BYOA FOR ECOMMERCE SHIPPING"
+  },
+  {
+    "section": "byoa",
+    "order": 2,
+    "key": "title",
+    "title": "Bring Your Own Account (BYOA)\nfor Ecommerce Shipping"
+  },
+  {
+    "section": "byoa",
+    "order": 3,
+    "key": "subtitle",
+    "title": "Keep Your Shipping. Upgrade Your Fulfilment."
+  },
+  {
+    "section": "byoa",
+    "order": 4,
+    "key": "description",
+    "description": "WareVolt integrates with your existing shipping platform or courier accounts. Our warehouse automatically generates shipping labels, AWB numbers, synchronises tracking updates and dispatch documentation, while we manage inventory, picking, packing and dispatch."
+  },
+  {
+    "section": "byoa",
+    "order": 5,
+    "key": "logo-1",
+    "title": "shiprocket"
+  },
+  {
+    "section": "byoa",
+    "order": 6,
+    "key": "logo-2",
+    "title": "DELHIVERY"
+  },
+  {
+    "section": "byoa",
+    "order": 7,
+    "key": "logo-3",
+    "title": "BLUE DART"
+  },
+  {
+    "section": "byoa",
+    "order": 8,
+    "key": "logo-4",
+    "title": "Ecom Express"
+  },
+  {
+    "section": "byoa",
+    "order": 9,
+    "key": "logo-5",
+    "title": "+ More"
+  },
+  {
+    "section": "byoa",
+    "order": 10,
+    "key": "image",
+    "image": "/assets/shipping/byoa.webp",
+    "imageAlt": "Your shipping platform or courier accounts connected to automated shipping"
+  },
+  {
+    "section": "why",
+    "order": 1,
+    "key": "heading",
+    "title": "Why Businesses Choose BYOA"
+  },
+  {
+    "section": "why",
+    "order": 2,
+    "key": "card-1",
+    "title": "Keep Your Negotiated Shipping Rates",
+    "description": "Continue using your existing courier contracts or shipping platform without mandatory markups or hidden fees."
+  },
+  {
+    "section": "why",
+    "order": 3,
+    "key": "card-2",
+    "title": "Complete Ownership",
+    "description": "Your shipping accounts, courier relationships, negotiated rates, contracts and shipment history remain yours."
+  },
+  {
+    "section": "why",
+    "order": 4,
+    "key": "card-3",
+    "title": "No Migration. No Disruption.",
+    "description": "Avoid rebuilding shipping workflows or opening new courier accounts. Connect your existing platform and continue fulfilling orders without interruption."
+  },
+  {
+    "section": "why",
+    "order": 5,
+    "key": "card-4",
+    "title": "Multi-Carrier Flexibility",
+    "description": "Choose the right carrier for every shipment. Use express couriers, economical services, regional carriers or specialised providers—all through your existing account."
+  },
+  {
+    "section": "why",
+    "order": 6,
+    "key": "card-5",
+    "title": "Automated Shipping Operations",
+    "description": "WareVolt automatically generates labels, AWB numbers, manifests and dispatch documentation while synchronising information across your systems."
+  },
+  {
+    "section": "why",
+    "order": 7,
+    "key": "card-6",
+    "title": "Real-Time Shipment Synchronisation",
+    "description": "Tracking numbers, delivery milestones and shipment status updates are synchronised across your shipping platform, sales channels and WareVolt dashboard."
+  },
+  {
+    "section": "how",
+    "order": 1,
+    "key": "heading",
+    "title": "How BYOA Works"
+  },
+  {
+    "section": "how",
+    "order": 2,
+    "key": "step-1",
+    "title": "Connect Your Sales Channels",
+    "description": "Integrate your online stores, marketplaces, ERP or OMS with WareVolt."
+  },
+  {
+    "section": "how",
+    "order": 3,
+    "key": "step-2",
+    "title": "Connect Your Shipping Account",
+    "description": "Link your preferred shipping platform or direct courier accounts."
+  },
+  {
+    "section": "how",
+    "order": 4,
+    "key": "step-3",
+    "title": "We Fulfil Every Order",
+    "description": "Orders are automatically picked, packed, labelled and dispatched using your shipping account."
+  },
+  {
+    "section": "how",
+    "order": 5,
+    "key": "step-4",
+    "title": "Customers Receive Real-Time Updates",
+    "description": "Tracking information and delivery milestones are automatically synchronised back to your channels and customers."
+  },
+  {
+    "section": "guidance",
+    "order": 1,
+    "key": "block",
+    "title": "Shipping Partner Guidance",
+    "description": "Don't have a shipping account yet? Our logistics specialists can help you evaluate shipping platforms, connect with trusted courier partners, and develop a shipping strategy tailored to your products, order volume and delivery regions.",
+    "linkLabel": "Talk to Our Logistics Experts",
+    "linkUrl": "/contact"
+  },
+  {
+    "section": "freight",
+    "order": 1,
+    "key": "eyebrow",
+    "title": "MANAGED FREIGHT NETWORK"
+  },
+  {
+    "section": "freight",
+    "order": 2,
+    "key": "title",
+    "title": "Nationwide Freight for\nBulk Distribution"
+  },
+  {
+    "section": "freight",
+    "order": 3,
+    "key": "p1",
+    "description": "Not every shipment is a parcel. Moving pallets, wholesale inventory, retail replenishment stock, manufacturing goods or inter-warehouse transfers requires a dedicated freight solution."
+  },
+  {
+    "section": "freight",
+    "order": 4,
+    "key": "p2",
+    "description": "WareVolt's Managed Freight Network connects you with trusted transport partners across India, providing reliable FTL, PTL and LTL services. From booking and documentation to carrier coordination and delivery, we manage every stage of the freight journey so your inventory moves efficiently and on schedule."
+  },
+  {
+    "section": "freight",
+    "order": 5,
+    "key": "image",
+    "image": "/assets/shipping/freight.webp",
+    "imageAlt": "Map of India with a freight truck and warehouses"
+  },
+  {
+    "section": "services",
+    "order": 1,
+    "key": "heading",
+    "title": "Freight Services"
+  },
+  {
+    "section": "services",
+    "order": 2,
+    "key": "card-1",
+    "title": "Full Truckload (FTL)",
+    "description": "Dedicated vehicles for high-volume shipments, manufacturing dispatches and warehouse-to-warehouse transfers."
+  },
+  {
+    "section": "services",
+    "order": 3,
+    "key": "card-2",
+    "title": "Part Truckload (PTL)",
+    "description": "Cost-effective medium shipments with shared vehicle space."
+  },
+  {
+    "section": "services",
+    "order": 4,
+    "key": "card-3",
+    "title": "Less Than Truckload (LTL)",
+    "description": "Shared freight for smaller pallet shipments."
+  },
+  {
+    "section": "services",
+    "order": 5,
+    "key": "card-4",
+    "title": "Retail & Wholesale Distribution",
+    "description": "Scheduled deliveries to distributors, retail stores, dealers, franchise locations and regional distribution centres."
+  },
+  {
+    "section": "services",
+    "order": 6,
+    "key": "card-5",
+    "title": "Inter-Warehouse Transfers",
+    "description": "Inventory movement between fulfilment centres, warehouses, dark stores and regional manufacturing facilities."
+  },
+  {
+    "section": "cta-dark",
+    "order": 1,
+    "key": "block",
+    "label": "YOUR LOGISTICS. OUR EXPERTISE.",
+    "title": "SELL ANYWHERE. FULFILL EVERYWHERE.",
+    "description": "WareVolt combines fulfilment operations, shipping technology and managed freight coordination so businesses can scale distribution without building multiple logistics networks.",
+    "linkLabel": "Get Started"
+  },
+  {
+    "section": "cta-light",
+    "order": 1,
+    "key": "block",
+    "title": "Let's Build Your Next Logistics Network Together.",
+    "description": "Simpler operations. Faster deliveries. Greater reach.",
+    "linkLabel": "Speak to an expert",
+    "linkUrl": "/contact"
+  }
+]
