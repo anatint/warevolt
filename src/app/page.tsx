@@ -1362,7 +1362,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ SHIPPING & DISTRIBUTION ══ */}
-      <section style={{ padding: '80px clamp(20px,5%,80px)', background: '#fff', position: 'relative', overflow: 'hidden' }}>
+      <section id="shipping" style={{ scrollMarginTop: '40px', padding: '80px clamp(20px,5%,80px)', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div id="why-grid" style={{ maxWidth: '1440px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
           <div id="why-visual" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '620px' }}>
             <svg width="620" height="620" viewBox="0 0 480 480" style={{ position: 'absolute', zIndex: 0, pointerEvents: 'none' }}>

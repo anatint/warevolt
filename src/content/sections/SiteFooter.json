@@ -65,29 +65,29 @@
   "section": "solution-links",
   "order": 1,
   "key": "solution-1",
-  "linkLabel": "Order & Warehouse Management",
-  "linkUrl": "/order-and-warehouse-management/"
+  "linkLabel": "D2C & Marketplace Fulfilment",
+  "linkUrl": "/d2c-marketplace-fulfillment/"
  },
  {
   "section": "solution-links",
   "order": 2,
   "key": "solution-2",
-  "linkLabel": "D2C & Marketplace Fulfillment",
-  "linkUrl": "/d2c-marketplace-fulfillment/"
+  "linkLabel": "B2B Fulfilment",
+  "linkUrl": "/b2b-fulfillment/"
  },
  {
   "section": "solution-links",
   "order": 3,
   "key": "solution-3",
-  "linkLabel": "Inventory & Returns Management",
-  "linkUrl": "/inventory-and-returns-management/"
+  "linkLabel": "Quick Commerce Fulfilment",
+  "linkUrl": "/quick-ecommerce-fulfillment/"
  },
  {
   "section": "solution-links",
   "order": 4,
   "key": "solution-4",
-  "linkLabel": "Analytics & Reporting",
-  "linkUrl": "/analytics-and-reporting/"
+  "linkLabel": "Shipping & Distribution",
+  "linkUrl": "/#shipping"
  },
  {
   "section": "contact",
