@@ -186,14 +186,14 @@ export default function ShippingAndDistributionPage() {
         @media (max-width: 1100px) {
           .sd-svc-grid { grid-template-columns: repeat(3, 1fr); }
           .sd-steps { grid-template-columns: 1fr 1fr; gap: 16px; }
-          .sd-steps > .sd-step-arrow { display: none; }
+          .sd-steps > .sd-step-arrow { display: none !important; }
         }
         @media (max-width: 900px) {
           .sd-hero-grid, .sd-partner-grid, .sd-byoa-grid, .sd-freight-grid { grid-template-columns: 1fr; gap: 36px; }
           .sd-why-grid { grid-template-columns: 1fr 1fr; }
           .sd-guidance, .sd-banner { flex-direction: column; align-items: flex-start; }
-          #hero-section { height: auto !important; min-height: 0 !important; background-size: 170% auto !important; background-position: 88% 100% !important; }
-          .sd-hero-body { padding-bottom: 270px !important; }
+          #hero-section { height: auto !important; min-height: 0 !important; background-size: 135% auto !important; background-position: 85% 100% !important; }
+          .sd-hero-body { padding-bottom: calc(55vw + 16px) !important; }
         }
         @media (max-width: 640px) {
           .sd-why-grid, .sd-steps, .sd-svc-grid { grid-template-columns: 1fr; }
