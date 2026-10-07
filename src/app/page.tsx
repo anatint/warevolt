@@ -1023,7 +1023,12 @@ export default function HomePage() {
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '13px' }}>
                 <div style={{ width: '38px', height: '38px', background: '#F0EEFF', borderRadius: '11px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 3l7.5 2.6v6.2c0 4.5-3.1 7.7-7.5 9.2-4.4-1.5-7.5-4.7-7.5-9.2V5.6z" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M2 9.5h4.5M1 12.5h5.5M3 15.5h3.5" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M8 16.5V7h7.2v9.5" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M15.2 10h3.3l2.5 3.2v3.3h-1.4" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M15.2 16.5H11.4" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <circle cx="9.6" cy="17.6" r="1.7" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <circle cx="18.4" cy="17.6" r="1.7" stroke="#3D1FF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <div>
