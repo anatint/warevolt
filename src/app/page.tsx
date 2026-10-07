@@ -1259,10 +1259,10 @@ export default function HomePage() {
         <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '55%', backgroundImage: 'radial-gradient(circle,rgba(77,13,217,.22) 1.5px,transparent 1.5px)', backgroundSize: '16px 16px', pointerEvents: 'none' }} />
         <div id="visibility-grid" style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '64px', alignItems: 'center' }}>
           <div id="visibility-text" data-animate style={{ paddingRight: '100px' }}>
-            <h2 style={{ fontSize: 'clamp(30px,3.6vw,44px)', fontWeight: 800, color: '#0B0619', lineHeight: 1.15, letterSpacing: '-.02em', marginBottom: '20px' }}>
+            <h2 style={{ fontSize: 'clamp(30px,3.6vw,44px)', fontWeight: 800, color: '#0B0619', lineHeight: 1.15, letterSpacing: '-.02em', marginBottom: '20px', maxWidth: '9.6em' }}>
               {c('visibility','visibility-title','title')}
             </h2>
-            <p style={{ fontSize: '16px', color: '#6B6480', lineHeight: 1.7, maxWidth: '440px', marginBottom: '32px' }}>
+            <p style={{ fontSize: '16px', color: '#6B6480', lineHeight: 1.7, maxWidth: '420px', marginBottom: '32px' }}>
               {c('visibility','visibility-description','description')}
             </p>
           </div>
