@@ -448,6 +448,7 @@ body::before {
   #visibility-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
   #visibility-floating-img { display: none !important; }
   #visibility-text { padding-right: 0 !important; }
+  #visibility-grid > div:last-child { margin-left: auto !important; margin-right: auto !important; }
   #how-it-works-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 32px 24px !important; }
   #how-it-works-line { display: none !important; }
   #why-brands-grid { grid-template-columns: 1fr !important; column-gap: 0 !important; }
@@ -537,7 +538,7 @@ body::before {
 @media (max-width: 560px) { #industries-grid { grid-template-columns: 1fr !important; } }
 @media (prefers-reduced-motion: reduce) { .industry-tile, .industries-cta { transition: none; } .industry-tile:hover, .industries-cta:hover { transform: none; } }
 
-/* Highlight tiles (B2B page): one row on desktop/tablet, stacked on phones */
+/* Highlight tiles (B2B, D2C, Quick Commerce pages): one row on desktop/tablet, stacked on phones */
 @media (max-width: 640px) {
   .point-tiles { flex-direction: column !important; }
 }
