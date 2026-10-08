@@ -543,3 +543,67 @@ body::before {
 @media (max-width: 640px) {
   .point-tiles { flex-direction: column !important; }
 }
+
+/* ── Mobile / tablet header: Login becomes a user icon, menu gets a premium look ── */
+.wv-login-icon { display: none; }
+.wv-login-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.wv-login-menu-ic {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(124, 91, 251, .22);
+  color: #CDBEFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.wv-menu-anim {
+  animation: wvMenuIn .25s ease both;
+  border-radius: 0 0 20px 20px;
+  border-top: 1px solid rgba(124, 91, 251, .28);
+}
+@keyframes wvMenuIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+@media (max-width: 1120px) {
+  .wv-login-icon { display: block; }
+  .wv-login-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  button:has(> .wv-login-icon) {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  button:has(> .wv-login-icon):hover { background: rgba(124, 91, 251, .25); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wv-menu-anim { animation: none; }
+}

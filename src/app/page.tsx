@@ -8,6 +8,7 @@ import { usePageCms, CmsRow } from '@/lib/cms';
 import { useSiteHeader } from '@/lib/site';
 import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 import SiteFooter from '@/components/SiteFooter';
+import { LoginLabel, LoginMenuItem, HamburgerIcon } from '@/components/MobileMenuBits';
 
 export default function HomePage() {
   const [pricingOpen, setPricingOpen] = useState(false);
@@ -431,7 +432,7 @@ export default function HomePage() {
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
             >
-              {login.linkLabel ?? ''}
+              <LoginLabel text={login.linkLabel ?? ''} />
             </button>
             <Link
               id="nav-cta"
@@ -485,14 +486,12 @@ export default function HomePage() {
               border: 'none',
             }}
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-            </svg>
+            <HamburgerIcon open={mobileNavOpen} />
           </button>
 
           {mobileNavOpen && (
             <div
-              id="nav-mobile-panel"
+              id="nav-mobile-panel" className="wv-menu-anim"
               style={{
                 display: 'flex',
                 position: 'absolute',
@@ -522,6 +521,7 @@ export default function HomePage() {
               >
                 {nav('pricing').linkLabel ?? ''}
               </button>
+              <LoginMenuItem label={login.linkLabel ?? ''} onClick={() => { setPricingOpen(true); setMobileNavOpen(false); }} />
             </div>
           )}
         </div>
@@ -733,7 +733,7 @@ export default function HomePage() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
               >
-                {login.linkLabel ?? ''}
+                <LoginLabel text={login.linkLabel ?? ''} />
               </button>
               <Link
                 id="hero-cta"
@@ -785,14 +785,12 @@ export default function HomePage() {
                 border: 'none',
               }}
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-              </svg>
+              <HamburgerIcon open={heroMobileOpen} />
             </button>
 
             {heroMobileOpen && (
               <div
-                id="hero-mobile-panel"
+                id="hero-mobile-panel" className="wv-menu-anim"
                 style={{
                   display: 'flex',
                   position: 'absolute',
@@ -823,6 +821,7 @@ export default function HomePage() {
                 >
                   {nav('pricing').linkLabel ?? ''}
                 </button>
+                <LoginMenuItem label={login.linkLabel ?? ''} onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }} />
                 <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
                   {phone.linkLabel ?? ''}
                 </a>

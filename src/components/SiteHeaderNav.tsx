@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useSiteHeader } from '@/lib/site';
 import type { CmsRow } from '@/lib/cms';
 import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
+import { LoginLabel, LoginMenuItem, HamburgerIcon } from '@/components/MobileMenuBits';
 
 const OPENS_PRICING = 'opens-pricing-modal';
 const MEGA_MENU = 'mega-menu';
@@ -322,7 +323,7 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
             onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
           >
-            {login.linkLabel ?? ''}
+            <LoginLabel text={login.linkLabel ?? ''} />
           </button>
           <SmartLink
             id="hero-cta"
@@ -352,14 +353,12 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
           id="hero-hamburger"
           style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', width: '40px', height: '40px', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginLeft: '8px' }}
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-          </svg>
+          <HamburgerIcon open={heroMobileOpen} />
         </button>
 
         {heroMobileOpen && (
           <div
-            id="hero-mobile-panel"
+            id="hero-mobile-panel" className="wv-menu-anim"
             style={{
               position: 'absolute',
               top: '100%',
@@ -375,6 +374,7 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
             }}
           >
             {navItems.map(renderMobileItem)}
+            <LoginMenuItem label={login.linkLabel ?? ''} onClick={() => { setHeroMobileOpen(false); onOpenPricing(); }} />
             {phone.linkLabel && (
               <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
                 {phone.linkLabel}
@@ -450,7 +450,7 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
             onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
           >
-            {login.linkLabel ?? ''}
+            <LoginLabel text={login.linkLabel ?? ''} />
           </button>
           <SmartLink
             id="sticky-cta"
@@ -484,14 +484,13 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
           onClick={() => setStickyMobileOpen(!stickyMobileOpen)}
           style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', width: '40px', height: '40px', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginLeft: '8px' }}
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-          </svg>
+          <HamburgerIcon open={stickyMobileOpen} />
         </button>
       </div>
 
       {stickyMobileOpen && (
         <div
+          className="wv-menu-anim"
           onClick={() => setStickyMobileOpen(false)}
           style={{
             position: 'absolute',
@@ -508,6 +507,7 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
           }}
         >
           {navItems.map(renderMobileItem)}
+          <LoginMenuItem label={login.linkLabel ?? ''} onClick={() => { setStickyMobileOpen(false); onOpenPricing(); }} />
           {phone.linkLabel && (
             <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
               {phone.linkLabel}

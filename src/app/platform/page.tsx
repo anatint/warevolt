@@ -7,6 +7,7 @@ import { usePageCms, CmsRow } from '@/lib/cms';
 import { useSiteHeader } from '@/lib/site';
 import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 import SiteFooter from '@/components/SiteFooter';
+import { LoginLabel, LoginMenuItem, HamburgerIcon } from '@/components/MobileMenuBits';
 import defaults from '@/content/platform.json';
 
 export default function PlatformPage() {
@@ -197,7 +198,7 @@ export default function PlatformPage() {
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
             >
-              {headerLogin.linkLabel ?? ''}
+              <LoginLabel text={headerLogin.linkLabel ?? ''} />
             </button>
             <Link
               href="/contact"
@@ -304,7 +305,7 @@ export default function PlatformPage() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,.9)')}
               >
-                {headerLogin.linkLabel ?? ''}
+                <LoginLabel text={headerLogin.linkLabel ?? ''} />
               </button>
               <Link
                 id="hero-cta"
@@ -335,14 +336,12 @@ export default function PlatformPage() {
               id="ph-hamburger"
               style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', width: '40px', height: '40px', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginLeft: '8px' }}
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-              </svg>
+              <HamburgerIcon open={heroMobileOpen} />
             </button>
 
             {heroMobileOpen && (
               <div
-                id="ph-mobile-panel"
+                id="ph-mobile-panel" className="wv-menu-anim"
                 style={{
                   position: 'absolute',
                   top: '100%',
@@ -378,6 +377,7 @@ export default function PlatformPage() {
                     </Link>
                   );
                 })}
+                <LoginMenuItem label={headerLogin.linkLabel ?? ''} onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }} />
                 {phone.linkLabel && (
                   <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
                     {phone.linkLabel}
