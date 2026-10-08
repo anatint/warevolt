@@ -673,11 +673,13 @@ body::before {
   #hero-logo, .wv-sticky-wlogo { margin-left: -16px; }
 }
 
-/* Control Tower panel: stack feed card under the dashboard and use 2-column grids on phones */
+/* Control Tower panel: keep the 4 KPI tabs in one row on phones, with smaller text so labels do not overlap */
 @media (max-width: 640px) {
-  #embed-tower-panel { flex-direction: column !important; padding: 0 0 8px 0 !important; }
-  #embed-tower-panel > div:nth-child(1) { position: relative !important; left: auto !important; bottom: auto !important; order: 2; width: 100% !important; margin-top: 20px !important; }
-  #embed-tower-panel > div:nth-child(2) { order: 1; width: 100%; }
-  #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"],
-  #embed-tower-panel div[style*="repeat(4,1fr)"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"] { gap: 6px !important; }
+  #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"] > div { padding: 8px 6px !important; }
+  #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"] > div > div:first-child { flex-direction: column !important; align-items: flex-start !important; gap: 4px !important; margin-bottom: 8px !important; }
+  #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"] > div > div:first-child > span:first-child { width: 12px !important; height: 12px !important; border-radius: 4px !important; }
+  #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"] > div > div:first-child > span:last-child { white-space: normal !important; font-size: 9px !important; line-height: 1.15 !important; }
+  #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"] > div > div:nth-child(2) { font-size: 14px !important; }
+  #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"] > div > div:nth-child(3) { font-size: 8.5px !important; }
 }
