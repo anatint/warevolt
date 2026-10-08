@@ -683,3 +683,7 @@ body::before {
   #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"] > div > div:nth-child(2) { font-size: 14px !important; }
   #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"] > div > div:nth-child(3) { font-size: 8.5px !important; }
 }
+
+/* Mobile menu button: grey "Menu / Close" pill */
+.wv-menu-pill { display: inline-flex; align-items: center; gap: 8px; background: #efefef; color: #111; border-radius: 999px; padding: 8px 12px; font-size: 13px; font-weight: 500; line-height: 1; white-space: nowrap; }
+#hero-hamburger, #sticky-hamburger, #nav-hamburger, #ph-hamburger { width: auto !important; height: auto !important; margin-left: -24px !important; }

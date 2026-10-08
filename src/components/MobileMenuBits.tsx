@@ -40,7 +40,7 @@ export function LoginMenuItem({ label, onClick }: { label: string; onClick: () =
   );
 }
 
-/** Hamburger that morphs into an X while the menu is open. */
+/** Grey "Menu ≡" pill that turns into "Close ×" while the menu is open. */
 export function HamburgerIcon({ open }: { open: boolean }) {
   const line: React.CSSProperties = {
     transformBox: 'fill-box',
@@ -48,11 +48,14 @@ export function HamburgerIcon({ open }: { open: boolean }) {
     transition: 'transform .25s ease, opacity .2s ease',
   };
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-      <line x1="3" y1="6" x2="21" y2="6" style={{ ...line, transform: open ? 'translateY(6px) rotate(45deg)' : 'none' }} />
-      <line x1="3" y1="12" x2="21" y2="12" style={{ ...line, opacity: open ? 0 : 1 }} />
-      <line x1="3" y1="18" x2="21" y2="18" style={{ ...line, transform: open ? 'translateY(-6px) rotate(-45deg)' : 'none' }} />
-    </svg>
+    <span className="wv-menu-pill">
+      <span>{open ? 'Close' : 'Menu'}</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6" style={{ ...line, transform: open ? 'translateY(6px) rotate(45deg)' : 'none' }} />
+        <line x1="3" y1="12" x2="21" y2="12" style={{ ...line, opacity: open ? 0 : 1 }} />
+        <line x1="3" y1="18" x2="21" y2="18" style={{ ...line, transform: open ? 'translateY(-6px) rotate(-45deg)' : 'none' }} />
+      </svg>
+    </span>
   );
 }
 
