@@ -21,6 +21,10 @@ export function wixImageUrl(src?: string): string | undefined {
     const id = src.slice('wix:image://v1/'.length).split('/')[0].split('#')[0];
     return `https://static.wixstatic.com/media/${id}`;
   }
+  if (src.startsWith('wix:video://v1/')) {
+    const id = src.slice('wix:video://v1/'.length).split('/')[0].split('#')[0];
+    return `https://video.wixstatic.com/video/${id}/720p/mp4/file.mp4`;
+  }
   return src;
 }
 
