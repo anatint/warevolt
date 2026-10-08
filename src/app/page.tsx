@@ -30,14 +30,6 @@ export default function HomePage() {
   const logoDark = header.one('brand', 'logo-dark');
   const c = (section: string, key: string, field: keyof CmsRow): string => (cms.one(section, key)[field] as string | undefined) ?? '';
 
-  const feedStatus: { color: string; bold?: boolean }[] = [
-    { color: '#4B4460' },
-    { color: '#4B4460' },
-    { color: '#4B4460' },
-    { color: '#7B5BFB', bold: true },
-    { color: '#22C55E', bold: true },
-  ];
-
   const whyIcons = [
     <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><circle cx="7.5" cy="18.5" r="1.6" stroke="#C9B8F5" strokeWidth="1.6" /><circle cx="17.5" cy="18.5" r="1.6" stroke="#C9B8F5" strokeWidth="1.6" /></svg>,
     <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="#C9B8F5" strokeWidth="1.8" /><path d="M4.5 20c0-4 3.5-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" /></svg>,
@@ -48,16 +40,6 @@ export default function HomePage() {
     <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 20l6-6M14 4h6v6M20 4L10 14" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>,
     <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-8" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><path d="M15 8h5v5" stroke="#C9B8F5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>,
   ];
-  const [ctVals, setCtVals] = useState({
-    orders: 2857,
-    processing: 1482,
-    shipped: 1103,
-    delivered: 2012,
-    sla: 96.4,
-    dispatch: 97.8,
-    returns: 1.2,
-  });
-
   const solutions = solutionsItems(header);
   const techMegaMenu = header.list('mega-menu').map((r) => ({ label: r.title ?? '', desc: r.description ?? '', href: r.linkUrl ?? '#' }));
 
@@ -178,49 +160,8 @@ export default function HomePage() {
 
     document.querySelectorAll('[data-counter]').forEach((el) => counterObserver.observe(el));
 
-    // ── Control Tower animation trigger ──
-    let ctStarted = false;
-    const animateControlTower = () => {
-      const targets = { orders: 2857, processing: 1482, shipped: 1103, delivered: 2012, sla: 96.4, dispatch: 97.8, returns: 1.2 };
-      const start = performance.now();
-      const duration = 1400;
-
-      const step = (now: number) => {
-        const p = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        setCtVals({
-          orders: Math.round(targets.orders * eased),
-          processing: Math.round(targets.processing * eased),
-          shipped: Math.round(targets.shipped * eased),
-          delivered: Math.round(targets.delivered * eased),
-          sla: +(targets.sla * eased).toFixed(1),
-          dispatch: +(targets.dispatch * eased).toFixed(1),
-          returns: +(targets.returns * eased).toFixed(1),
-        });
-        if (p < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    };
-
-    const ctCheck = () => {
-      if (ctStarted) return;
-      const panel = document.getElementById('embed-tower-panel');
-      if (panel) {
-        const r = panel.getBoundingClientRect();
-        if (r.height > 0 && r.top < window.innerHeight * 0.9 && r.bottom > 0) {
-          ctStarted = true;
-          animateControlTower();
-          window.removeEventListener('scroll', ctCheck);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', ctCheck, { passive: true });
-    ctCheck();
-
     return () => {
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('scroll', ctCheck);
     };
   }, []);
 
@@ -1059,126 +1000,12 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div id="embed-tower-panel" data-animate data-delay="110" style={{ position: 'relative', display: 'flex', minWidth: 0, padding: '20px 0 20px 60px' }}>
-              {/* Floating order feed */}
-              <div
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  bottom: '20px',
-                  width: '280px',
-                  background: 'rgba(255,255,255,.12)',
-                  backdropFilter: 'blur(45px) saturate(180%) brightness(1.1)',
-                  WebkitBackdropFilter: 'blur(45px) saturate(180%) brightness(1.1)',
-                  border: '1px solid rgba(255,255,255,.45)',
-                  borderRadius: '22px',
-                  padding: '16px',
-                  boxShadow: '0 30px 80px rgba(20,20,40,.15),0 8px 24px rgba(255,255,255,.12),inset 0 1px 0 rgba(255,255,255,.5)',
-                  zIndex: 2,
-                  overflow: 'hidden',
-                  animation: 'float-b 4.5s ease-in-out infinite',
-                }}
-              >
-                <div style={{ position: 'absolute', top: 0, left: 0, width: '70%', height: '55%', background: 'radial-gradient(circle at 25% 20%,rgba(255,255,255,.12),transparent 60%)', pointerEvents: 'none', zIndex: 0 }} />
-                <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-                  <span style={{ fontSize: '12px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>{c('control-tower','feed-title','title')}</span>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 700, color: '#22C55E' }}>
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22C55E', boxShadow: '0 0 8px rgba(34,197,94,.55)', animation: 'dc-live-pulse 1.6s ease-out infinite' }} />
-                    {c('control-tower','feed-title','extra')}
-                  </span>
-                </div>
-
-                <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column' }}>
-                  {cms.list('tower-feed').map((r, idx) => {
-                    const st = feedStatus[Math.min(idx, feedStatus.length - 1)];
-                    return (
-                      <div key={r.key ?? idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', ...(idx < 4 ? { marginBottom: '8px' } : {}), background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,.35)', borderRadius: '14px', animation: `dc-feed5-row${idx + 1} 4.8s linear infinite` }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                          <div style={{ width: '32px', height: '32px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, background: 'rgba(255,255,255,.5)', border: '1px solid rgba(255,255,255,.6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <img src={r.image ?? ''} alt={r.imageAlt ?? ''} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                          </div>
-                          <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#0B0619' }}>{r.title ?? ''}</div>
-                        </div>
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '10.5px', color: st.color, ...(st.bold ? { fontWeight: 700 } : {}), whiteSpace: 'nowrap' }}>
-                          <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: idx < 3 ? '#7B5BFB' : st.color }} />{r.extra ?? ''}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Main Control Tower Panel */}
-              <div
-                style={{
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  background: 'rgba(255,255,255,.08)',
-                  backdropFilter: 'blur(28px)',
-                  WebkitBackdropFilter: 'blur(28px)',
-                  borderRadius: '20px',
-                  border: '1px solid rgba(255,255,255,.35)',
-                  boxShadow: '0 30px 80px rgba(20,10,40,.35),inset 0 1px 0 rgba(255,255,255,.4)',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  zIndex: 1,
-                }}
-              >
-                <div style={{ flex: 1, padding: '22px 24px', minWidth: 0 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-                    <img src={c('control-tower','panel-logo','image')} alt={c('control-tower','panel-logo','imageAlt')} style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
-                    <span style={{ fontSize: '11px', fontWeight: 600, color: '#0B0619', background: 'rgba(255,255,255,.5)', borderRadius: '8px', padding: '5px 10px', whiteSpace: 'nowrap' }}>
-                      {c('control-tower','panel-logo','extra')}
-                    </span>
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '12px', marginBottom: '16px' }}>
-                    {cms.list('tower-kpis').map((r, idx) => (
-                      <div key={r.key ?? idx} style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '14px', minWidth: 0 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '7px', marginBottom: '14px' }}>
-                          <span style={{ width: '16px', height: '16px', borderRadius: '5px', background: r.extra, flexShrink: 0 }} />
-                          <span style={{ fontSize: '10.5px', fontWeight: 700, color: '#3A3550', whiteSpace: 'nowrap' }}>{r.title ?? ''}</span>
-                        </div>
-                        <div style={{ fontSize: '19px', fontWeight: 800, color: '#0B0619' }}>{[ctVals.orders, ctVals.processing, ctVals.shipped, ctVals.delivered][idx]?.toLocaleString()}</div>
-                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#22C55E' }}>{r.description ?? ''}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Volume Trend Graph */}
-                  <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '14px', padding: '16px', marginBottom: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-                      <span style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>{c('control-tower','chart-title','title')}</span>
-                      <span style={{ fontSize: '10.5px', fontWeight: 600, color: '#3A3550', background: 'rgba(255,255,255,.5)', borderRadius: '6px', padding: '4px 9px' }}>
-                        {c('control-tower','chart-title','extra')}
-                      </span>
-                    </div>
-                    <svg width="100%" height="110" viewBox="0 0 460 110" preserveAspectRatio="none">
-                      <defs>
-                        <linearGradient id="towerAreaFill" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#7B5BFB" stopOpacity="0.35" />
-                          <stop offset="100%" stopColor="#7B5BFB" stopOpacity="0" />
-                        </linearGradient>
-                      </defs>
-                      <path d="M0 68 L66 58 L132 76 L198 42 L264 18 L330 60 L396 36 L460 46 L460 110 L0 110 Z" fill="url(#towerAreaFill)" />
-                      <path id="towerTrendLine" d="M0 68 L66 58 L132 76 L198 42 L264 18 L330 60 L396 36 L460 46" fill="none" stroke="#7B5BFB" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '10px', color: '#9891AB', marginTop: '4px' }}>
-                      {cms.list('tower-days').map((r, i) => (<span key={i}>{r.title ?? ''}</span>))}
-                    </div>
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '12px' }}>
-                    {cms.list('tower-metrics').map((r, idx) => (
-                      <div key={r.key ?? idx} style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '12px' }}>
-                        <div style={{ fontSize: '10px', fontWeight: 600, color: '#3A3550', marginBottom: '6px' }}>{r.title ?? ''}</div>
-                        <div style={{ fontSize: '13px', fontWeight: 800, color: r.extra }}>{[r.description ?? '', `${ctVals.sla}%`, `${ctVals.dispatch}%`, `${ctVals.returns}%`][idx]}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            <div data-animate data-delay="110" style={{ display: 'flex', justifyContent: 'center', minWidth: 0 }}>
+              <img
+                src="/assets/control-tower-live.gif"
+                alt="Control Tower live dashboard — unified order feed with real-time order tracking"
+                style={{ width: '100%', maxWidth: '676px', height: 'auto', display: 'block', borderRadius: '16px' }}
+              />
             </div>
           </div>
         </div>
