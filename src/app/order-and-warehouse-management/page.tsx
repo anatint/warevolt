@@ -258,8 +258,199 @@ export default function InventoryAndReturnsManagementPage() {
 
       {/* ══ AUTOMATION ══ */}
       <section id="automation-section" style={{ padding: '0 clamp(20px,5%,80px) 72px', background: '#fff', position: 'relative', overflow: 'hidden' }}>
-        <div data-animate data-delay="100" style={{ maxWidth: '1291px', margin: '0 auto' }}>
-          <img src="/assets/cms/order-automation.webp" alt="Order &amp; Warehouse automation — unified inventory feed and order routing panel" style={{ width: '100%', height: 'auto', display: 'block' }} />
+        <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <div
+            data-animate
+            data-delay="100"
+            style={{
+              position: 'relative',
+              width: '100%',
+              borderRadius: '28px',
+              overflow: 'hidden',
+              background: 'linear-gradient(120deg,#0B0619 0%,#3A1A8F 25%,#0B0619 50%,#4D0DD9 75%,#0B0619 100%)',
+              backgroundSize: '300% 300%',
+              animation: 'cta-gradient 12s ease infinite',
+              boxShadow: '0 40px 90px rgba(10,5,25,.5)',
+              padding: '56px clamp(24px,5%,72px)',
+            }}
+          >
+            <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 15% 90%,rgba(20,180,140,.2) 0%,transparent 45%),radial-gradient(circle at 85% 15%,rgba(30,140,210,.2) 0%,transparent 45%)', pointerEvents: 'none' }}></div>
+            <div id="mc-automation-row-wrap" style={{ position: 'relative', zIndex: 1, width: '100%' }}>
+              <div id="mc-automation-row" style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center', gap: 0, width: 'fit-content', margin: '0 auto', transformOrigin: 'top left' }}>
+                {/* Sales Channels Column */}
+                <div style={{ flex: '0 0 87px' }}>
+                  <div style={{ fontSize: '13px', fontWeight: 800, letterSpacing: '.1em', color: '#fff', marginBottom: '22px', display: 'inline-block', whiteSpace: 'nowrap' }}>
+                    {channelsHeading.title ?? ''}
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {cms.list('automation-channels').map((c) => ({ src: c.image ?? '', alt: c.imageAlt ?? '' })).map((ch, idx) => (
+                      <div key={idx} style={{ width: '63px', height: '63px', background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.14)', borderRadius: '13px', padding: '8px', backdropFilter: 'blur(16px)', boxShadow: '0 10px 26px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.1)', boxSizing: 'border-box' }}>
+                        <div style={{ width: '47px', height: '47px', borderRadius: '10px', overflow: 'hidden', margin: '0 auto' }}>
+                          <img src={ch.src} alt={ch.alt} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* SVG Flow lines */}
+                <div style={{ flex: '0 0 130px', position: 'relative' }}>
+                  <svg width="100%" height="100%" viewBox="0 0 130 496" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', overflow: 'visible' }}>
+                    <defs>
+                      <filter id="wvGlowInv" x="-200%" y="-200%" width="500%" height="500%">
+                        <feGaussianBlur stdDeviation="3.5" result="b" />
+                        <feMerge>
+                          <feMergeNode in="b" />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                    </defs>
+                    <circle cx="65" cy="248" r="48" stroke="rgba(255,255,255,.07)" strokeWidth="1" fill="none" />
+                    <circle cx="65" cy="248" r="76" stroke="rgba(255,255,255,.06)" strokeWidth="1" fill="none" />
+                    <circle cx="65" cy="248" r="104" stroke="rgba(255,255,255,.05)" strokeWidth="1" fill="none" />
+                    <path id="wvlineInv1" d="M-70 73.5 C 45 73.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path d="M-70 73.5 C 45 73.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
+                    <path id="wvlineInv2" d="M-70 146.5 C 45 146.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path d="M-70 146.5 C 45 146.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
+                    <path id="wvlineInv3" d="M-70 219.5 C 45 219.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path d="M-70 219.5 C 45 219.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
+                    <path id="wvlineInv4" d="M-70 292.5 C 45 292.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path d="M-70 292.5 C 45 292.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
+                    <path id="wvlineInv5" d="M-70 365.5 C 45 365.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path d="M-70 365.5 C 45 365.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
+                    <path id="wvlineInv6" d="M-70 438.5 C 45 438.5, 55 248, 130 248" stroke="#7D6CFF" strokeWidth="6" fill="none" opacity=".12" />
+                    <path d="M-70 438.5 C 45 438.5, 55 248, 130 248" stroke="#EFEBFF" strokeWidth="2" fill="none" opacity=".7" />
+                    <g filter="url(#wvGlowInv)">
+                      <rect x="126" y="244" width="8" height="8" fill="#fff" transform="rotate(45 130 248)" />
+                    </g>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0s"><mpath href="#wvlineInv1" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin=".4s"><mpath href="#wvlineInv2" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin=".8s"><mpath href="#wvlineInv3" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="1.2s"><mpath href="#wvlineInv4" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="1.6s"><mpath href="#wvlineInv5" /></animateMotion></circle>
+                    <circle r="3" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite" begin="2s"><mpath href="#wvlineInv6" /></animateMotion></circle>
+                  </svg>
+                </div>
+
+                {/* Unified Inventory Feed Card */}
+                <div style={{ flex: '0 0 360px', alignSelf: 'center', height: '420px', boxSizing: 'border-box', background: 'linear-gradient(160deg,rgba(205,185,235,.45),rgba(255,255,255,.92))', borderRadius: '20px', padding: '22px', boxShadow: '0 24px 60px rgba(0,0,0,.35),0 0 40px rgba(167,139,250,.4)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '18px' }}>
+                    <span style={{ fontSize: '14px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>{feedHeading.title ?? ''}</span>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11.5px', fontWeight: 700, color: '#0B0619', background: '#fff', borderRadius: '999px', padding: '5px 12px', boxShadow: '0 4px 10px rgba(0,0,0,.1)' }}>
+                      <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#22C55E' }}></span>{feedHeading.extra ?? ''}
+                    </span>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}>
+                    {cms.list('automation-feed').map((f, idx) => {
+                      const isStatus = f.label === 'status';
+                      const statusColor = idx === 3 ? '#F59E0B' : '#22C55E';
+                      return (
+                        <div key={idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(255,255,255,.55)', borderRadius: '12px', padding: '10px 13px', opacity: 0, animation: `dc-feed-row${idx + 1} 5.8s linear infinite` }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '11px' }}>
+                            <div style={{ width: '30px', height: '30px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
+                              <img src={f.image ?? ''} alt={f.imageAlt ?? ''} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                            </div>
+                            <div><div style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>{f.title ?? ''}</div></div>
+                          </div>
+                          {isStatus ? (
+                            <span style={{ fontSize: '11.5px', color: statusColor, fontWeight: 700, whiteSpace: 'nowrap' }}>{f.extra ?? ''}</span>
+                          ) : (
+                            <span style={{ fontSize: '11px', color: '#6B6480', whiteSpace: 'nowrap' }}>{f.extra ?? ''}</span>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Connecting arrow line */}
+                <div style={{ flex: '0 0 70px', alignSelf: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <svg width="48" height="16" viewBox="0 0 48 16" style={{ filter: 'drop-shadow(0 0 6px #7D6CFF)' }}>
+                    <line x1="0" y1="8" x2="48" y2="8" stroke="#7D6CFF" strokeWidth="3" strokeLinecap="round" opacity=".4" />
+                    <line x1="0" y1="8" x2="48" y2="8" stroke="#EFEBFF" strokeWidth="2" strokeLinecap="round" />
+                    <circle cy="8" r="3.5" fill="#fff">
+                      <animate attributeName="cx" values="0;48;0" dur="2.2s" repeatCount="indefinite" />
+                    </circle>
+                  </svg>
+                </div>
+
+                {/* Control Tower Panel */}
+                <div
+                  id="mc-control-tower-panel"
+                  style={{
+                    flex: '0 0 400px',
+                    alignSelf: 'center',
+                    background: 'linear-gradient(160deg,#E3DCFB,#D9D0F7)',
+                    borderRadius: '20px',
+                    padding: '20px',
+                    boxShadow: '0 20px 50px rgba(0,0,0,.3),0 0 60px rgba(167,139,250,.6)',
+                    animation: 'dc-panel-glow 3s ease-in-out infinite, dc-panel-float 4s ease-in-out infinite',
+                    position: 'relative',
+                    zIndex: 1,
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+                    <img src={panel.image ?? ''} alt={panel.imageAlt ?? ''} style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
+                    <span style={{ fontSize: '10px', fontWeight: 600, color: '#0B0619', background: '#F3F1FA', borderRadius: '8px', padding: '4px 8px', whiteSpace: 'nowrap' }}>
+                      {panel.title ?? ''}
+                    </span>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '8px', marginBottom: '12px' }}>
+                    {cms.list('automation-kpis').map((k, idx) => (
+                      <div key={idx} style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '10px', minWidth: 0 }}>
+                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', marginBottom: '8px', minHeight: '22px' }}>
+                          <span style={{ width: '14px', height: '14px', borderRadius: '4px', background: kpiColors[idx] ?? '#7B5BFB', flexShrink: 0, marginTop: '1px' }}></span>
+                          <span style={{ fontSize: '9px', fontWeight: 700, color: '#3A3550', lineHeight: 1.3 }}>{k.title ?? ''}</span>
+                        </div>
+                        <div style={{ fontSize: '15px', fontWeight: 800, color: '#0B0619' }}>{k.description ?? ''}</div>
+                        <div style={{ fontSize: '8.5px', fontWeight: 700, color: '#22C55E' }}>{k.extra ?? ''}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '12px', padding: '12px', marginBottom: '12px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#0B0619' }}>{chart.title ?? ''}</span>
+                      <span style={{ fontSize: '9px', fontWeight: 600, color: '#6B6480', background: '#F3F1FA', borderRadius: '6px', padding: '3px 7px' }}>{chart.extra ?? ''}</span>
+                    </div>
+                    <svg width="100%" height="70" viewBox="0 0 300 70" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="feedAreaFillInv" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="#7B5BFB" stopOpacity=".35" />
+                          <stop offset="100%" stopColor="#7B5BFB" stopOpacity="0" />
+                        </linearGradient>
+                      </defs>
+                      <path d="M0 45 L43 38 L86 50 L129 28 L172 12 L215 40 L258 24 L300 30 L300 70 L0 70 Z" fill="url(#feedAreaFillInv)" />
+                      <path id="feedTrendLineInv" d="M0 45 L43 38 L86 50 L129 28 L172 12 L215 40 L258 24 L300 30" fill="none" stroke="#7B5BFB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle r="4" fill="#7B5BFB">
+                        <animateMotion dur="3.5s" repeatCount="indefinite">
+                          <mpath href="#feedTrendLineInv" />
+                        </animateMotion>
+                      </circle>
+                      <circle r="7" fill="#7B5BFB" opacity=".35">
+                        <animateMotion dur="3.5s" repeatCount="indefinite">
+                          <mpath href="#feedTrendLineInv" />
+                        </animateMotion>
+                      </circle>
+                    </svg>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '8px', color: '#9891AB', marginTop: '2px' }}>
+                      {cms.list('automation-chart-days').map((d, idx) => (<span key={idx}>{d.title ?? ''}</span>))}
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '8px' }}>
+                    {cms.list('automation-stats').map((s, idx) => (
+                      <div key={idx} style={{ background: '#fff', boxShadow: '0 4px 14px rgba(80,50,150,.08)', borderRadius: '10px', padding: '9px', minWidth: 0 }}>
+                        <div style={{ fontSize: '8.5px', fontWeight: 600, color: '#3A3550', marginBottom: '4px', whiteSpace: 'nowrap' }}>{s.title ?? ''}</div>
+                        <div style={{ fontSize: '11.5px', fontWeight: 800, color: statColors[idx] ?? '#0B0619' }}>{s.description ?? ''}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
