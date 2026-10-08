@@ -7,7 +7,7 @@ import { usePageCms, CmsRow } from '@/lib/cms';
 import { useSiteHeader } from '@/lib/site';
 import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 import SiteFooter from '@/components/SiteFooter';
-import { LoginLabel, LoginMenuItem, HamburgerIcon } from '@/components/MobileMenuBits';
+import { LoginLabel, HamburgerIcon, MobileNavMenu } from '@/components/MobileMenuBits';
 import defaults from '@/content/platform.json';
 
 export default function PlatformPage() {
@@ -356,52 +356,7 @@ export default function PlatformPage() {
                   zIndex: 40,
                 }}
               >
-                {navItems.map((item, idx) => {
-                  if (item.extra === 'solutions-menu') {
-                    return <SolutionsMobileList key={item.key ?? idx} label={item.linkLabel ?? ''} items={solutions} onNavigate={() => setHeroMobileOpen(false)} />;
-                  }
-                  if (item.extra === 'opens-pricing-modal') {
-                    return (
-                      <button
-                        key={item.key ?? idx}
-                        onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
-                        style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: '14px 0', color: '#fff', fontSize: '16px', fontWeight: 500, fontFamily: 'inherit' }}
-                      >
-                        {item.linkLabel ?? ''}
-                      </button>
-                    );
-                  }
-                  return (
-                    <Link key={item.key ?? idx} href={item.linkUrl ?? '#'} style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                      {item.linkLabel ?? ''}
-                    </Link>
-                  );
-                })}
-                <LoginMenuItem label={headerLogin.linkLabel ?? ''} onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }} />
-                {phone.linkLabel && (
-                  <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
-                    {phone.linkLabel}
-                  </a>
-                )}
-                <Link
-                  href="/contact"
-                  onClick={() => setHeroMobileOpen(false)}
-                  style={{
-                    marginTop: '12px',
-                    background: '#4D0DD9',
-                    color: '#fff',
-                    padding: '13px 20px',
-                    borderRadius: '12px',
-                    fontSize: '14px',
-                    fontWeight: 700,
-                    textDecoration: 'none',
-                    display: 'block',
-                    textAlign: 'center',
-                    cursor: 'pointer',
-                  }}
-                >
-                  {headerCta.linkLabel || 'Speak to an expert'}
-                </Link>
+                <MobileNavMenu header={header} items={navItems} onOpenPricing={() => setPricingOpen(true)} onNavigate={() => setHeroMobileOpen(false)} />
               </div>
             )}
           </nav>

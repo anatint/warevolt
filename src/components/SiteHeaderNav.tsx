@@ -4,8 +4,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useSiteHeader } from '@/lib/site';
 import type { CmsRow } from '@/lib/cms';
-import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
-import { LoginLabel, LoginMenuItem, HamburgerIcon } from '@/components/MobileMenuBits';
+import { SolutionsDropdown, solutionsItems } from '@/components/SolutionsMenu';
+import { LoginLabel, HamburgerIcon, MobileNavMenu } from '@/components/MobileMenuBits';
 
 const OPENS_PRICING = 'opens-pricing-modal';
 const MEGA_MENU = 'mega-menu';
@@ -18,15 +18,6 @@ const navLinkStyle: React.CSSProperties = {
   textDecoration: 'none',
   transition: 'color .2s',
   whiteSpace: 'nowrap',
-};
-
-const mobileLinkStyle: React.CSSProperties = {
-  padding: '14px 0',
-  color: '#fff',
-  textDecoration: 'none',
-  fontSize: '16px',
-  fontWeight: 500,
-  borderBottom: '1px solid rgba(255,255,255,.08)',
 };
 
 /** Internal hrefs use next/link, everything else (#, mailto:, tel:, external) a plain anchor. */
@@ -226,45 +217,6 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
     );
   };
 
-  const renderMobileItem = (item: CmsRow, idx: number) => {
-    if (item.extra === SOLUTIONS_MENU) {
-      return <SolutionsMobileList key={item.key ?? idx} label={item.linkLabel ?? ''} items={solutions} onNavigate={() => setHeroMobileOpen(false)} />;
-    }
-    if (item.extra === MEGA_MENU) {
-      return (
-        <React.Fragment key={item.key ?? idx}>
-          <div style={{ padding: '14px 0 8px', color: '#fff', fontSize: '16px', fontWeight: 500 }}>{item.linkLabel ?? ''}</div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', padding: '0 0 12px 14px', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-            {megaMenu.map((m, i) => (
-              <SmartLink key={m.key ?? i} href={m.linkUrl ?? '#'} style={{ padding: '9px 0', color: 'rgba(255,255,255,.72)', textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}>
-                {m.title ?? ''}
-              </SmartLink>
-            ))}
-          </div>
-        </React.Fragment>
-      );
-    }
-    if (item.extra === OPENS_PRICING) {
-      return (
-        <button
-          key={item.key ?? idx}
-          onClick={() => {
-            onOpenPricing();
-            setHeroMobileOpen(false);
-          }}
-          style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', padding: '14px 0', color: '#fff', fontSize: '16px', fontWeight: 500, fontFamily: 'inherit' }}
-        >
-          {item.linkLabel ?? ''}
-        </button>
-      );
-    }
-    return (
-      <SmartLink key={item.key ?? idx} href={item.linkUrl ?? '#'} style={mobileLinkStyle}>
-        {item.linkLabel ?? ''}
-      </SmartLink>
-    );
-  };
-
   // Floating header: appears when scrolling back up after the hero has scrolled out of view (same behaviour as the home page).
   useEffect(() => {
     const nav = stickyRef.current;
@@ -373,34 +325,7 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
               zIndex: 40,
             }}
           >
-            {navItems.map(renderMobileItem)}
-            <LoginMenuItem label={login.linkLabel ?? ''} onClick={() => { setHeroMobileOpen(false); onOpenPricing(); }} />
-            {phone.linkLabel && (
-              <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
-                {phone.linkLabel}
-              </a>
-            )}
-            <SmartLink
-              href={cta.linkUrl || '/contact'}
-              onClick={() => setHeroMobileOpen(false)}
-              style={{
-                marginTop: '12px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: '#4D0DD9',
-                color: '#fff',
-                padding: '13px 20px',
-                borderRadius: '12px',
-                fontSize: '14px',
-                fontWeight: 700,
-                textDecoration: 'none',
-                cursor: 'pointer',
-                textAlign: 'center',
-              }}
-            >
-              {cta.linkLabel || 'Speak to an expert'}
-            </SmartLink>
+            <MobileNavMenu header={header} onOpenPricing={onOpenPricing} onNavigate={() => setHeroMobileOpen(false)} />
           </div>
         )}
       </nav>
@@ -491,7 +416,6 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
       {stickyMobileOpen && (
         <div
           className="wv-menu-anim"
-          onClick={() => setStickyMobileOpen(false)}
           style={{
             position: 'absolute',
             top: '100%',
@@ -506,33 +430,7 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
             zIndex: 40,
           }}
         >
-          {navItems.map(renderMobileItem)}
-          <LoginMenuItem label={login.linkLabel ?? ''} onClick={() => { setStickyMobileOpen(false); onOpenPricing(); }} />
-          {phone.linkLabel && (
-            <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
-              {phone.linkLabel}
-            </a>
-          )}
-          <SmartLink
-            href={cta.linkUrl || '/contact'}
-            style={{
-              marginTop: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: '#4D0DD9',
-              color: '#fff',
-              padding: '13px 20px',
-              borderRadius: '12px',
-              fontSize: '14px',
-              fontWeight: 700,
-              textDecoration: 'none',
-              cursor: 'pointer',
-              textAlign: 'center',
-            }}
-          >
-            {cta.linkLabel || 'Speak to an expert'}
-          </SmartLink>
+          <MobileNavMenu header={header} onOpenPricing={onOpenPricing} onNavigate={() => setStickyMobileOpen(false)} />
         </div>
       )}
     </nav>

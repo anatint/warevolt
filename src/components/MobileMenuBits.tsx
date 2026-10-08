@@ -1,6 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import type { CmsContent, CmsRow } from '@/lib/cms';
+import { solutionsItems } from '@/components/SolutionsMenu';
 
 /** Clean outline user/account icon (used for Login on mobile/tablet). */
 export function UserIcon({ size = 22, className }: { size?: number; className?: string }) {
@@ -50,5 +53,146 @@ export function HamburgerIcon({ open }: { open: boolean }) {
       <line x1="3" y1="12" x2="21" y2="12" style={{ ...line, opacity: open ? 0 : 1 }} />
       <line x1="3" y1="18" x2="21" y2="18" style={{ ...line, transform: open ? 'translateY(-6px) rotate(-45deg)' : 'none' }} />
     </svg>
+  );
+}
+
+type Sub = { key: string; title: string; href: string };
+
+function NavLink({ href, className, style, onClick, children }: { href: string; className?: string; style?: React.CSSProperties; onClick?: () => void; children: React.ReactNode }) {
+  if (href.startsWith('/')) {
+    return (
+      <Link href={href} className={className} style={style} onClick={onClick}>
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <a href={href} className={className} style={style} onClick={onClick}>
+      {children}
+    </a>
+  );
+}
+
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg className="wv-mnav-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ transform: open ? 'rotate(180deg)' : 'none' }} aria-hidden="true">
+      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function Accordion({ label, subs, open, onToggle, onNavigate }: { label: string; subs: Sub[]; open: boolean; onToggle: () => void; onNavigate: () => void }) {
+  return (
+    <div>
+      <button type="button" className="wv-mnav-row" aria-expanded={open} onClick={onToggle}>
+        <span>{label}</span>
+        <Chevron open={open} />
+      </button>
+      <div className="wv-mnav-body" style={{ gridTemplateRows: open ? '1fr' : '0fr' }}>
+        <div style={{ overflow: 'hidden' }}>
+          <div className="wv-mnav-sub-list">
+            {subs.map((sub) =>
+              sub.href ? (
+                <NavLink key={sub.key} href={sub.href} className="wv-mnav-sub" onClick={onNavigate}>
+                  {sub.title}
+                </NavLink>
+              ) : (
+                <span key={sub.key} className="wv-mnav-sub" style={{ cursor: 'default' }}>
+                  {sub.title}
+                </span>
+              ),
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * The mobile / tablet menu. It is built from the SAME header data as the desktop navbar
+ * (Wix "Header (All Pages)" collection), so a change to the desktop menu shows up here automatically:
+ * Solutions and Technology become accordions with their existing sub-items, the rest are plain links.
+ * Order: nav items, the "Speak to an expert" button, then Login.
+ */
+export function MobileNavMenu({
+  header,
+  items,
+  onOpenPricing,
+  onNavigate,
+}: {
+  header: CmsContent;
+  items?: CmsRow[];
+  onOpenPricing: () => void;
+  onNavigate: () => void;
+}) {
+  const [openKeys, setOpenKeys] = useState<Record<string, boolean>>({});
+  const toggle = (k: string) => setOpenKeys((o) => ({ ...o, [k]: !o[k] }));
+  const navItems = items ?? header.list('nav');
+  const solutions = solutionsItems(header);
+  const mega = header.list('mega-menu');
+  const login = header.one('actions', 'login');
+  const cta = header.one('actions', 'cta');
+
+  return (
+    <>
+      {navItems.map((item, idx) => {
+        const key = item.key ?? String(idx);
+        if (item.extra === 'solutions-menu') {
+          return (
+            <Accordion
+              key={key}
+              label={item.linkLabel ?? ''}
+              subs={solutions.map((s) => ({ key: s.key, title: s.title, href: s.href }))}
+              open={!!openKeys[key]}
+              onToggle={() => toggle(key)}
+              onNavigate={onNavigate}
+            />
+          );
+        }
+        if (item.extra === 'mega-menu') {
+          return (
+            <Accordion
+              key={key}
+              label={item.linkLabel ?? ''}
+              subs={mega.map((m, i) => ({ key: m.key ?? String(i), title: m.title ?? '', href: m.linkUrl ?? '' }))}
+              open={!!openKeys[key]}
+              onToggle={() => toggle(key)}
+              onNavigate={onNavigate}
+            />
+          );
+        }
+        if (item.extra === 'opens-pricing-modal') {
+          return (
+            <button
+              key={key}
+              type="button"
+              className="wv-mnav-row"
+              onClick={() => {
+                onNavigate();
+                onOpenPricing();
+              }}
+            >
+              <span>{item.linkLabel ?? ''}</span>
+            </button>
+          );
+        }
+        return (
+          <NavLink key={key} href={item.linkUrl ?? '#'} className="wv-mnav-row" style={item.extra === 'current-page' ? { fontWeight: 700 } : undefined} onClick={onNavigate}>
+            <span>{item.linkLabel ?? ''}</span>
+          </NavLink>
+        );
+      })}
+      <NavLink href={cta.linkUrl || '/contact'} className="wv-mnav-cta" onClick={onNavigate}>
+        {cta.linkLabel || 'Speak to an expert'}
+      </NavLink>
+      <LoginMenuItem
+        label={login.linkLabel ?? ''}
+        onClick={() => {
+          onNavigate();
+          onOpenPricing();
+        }}
+      />
+    </>
   );
 }

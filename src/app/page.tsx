@@ -8,7 +8,7 @@ import { usePageCms, CmsRow } from '@/lib/cms';
 import { useSiteHeader } from '@/lib/site';
 import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 import SiteFooter from '@/components/SiteFooter';
-import { LoginLabel, LoginMenuItem, HamburgerIcon } from '@/components/MobileMenuBits';
+import { LoginLabel, HamburgerIcon, MobileNavMenu } from '@/components/MobileMenuBits';
 
 export default function HomePage() {
   const [pricingOpen, setPricingOpen] = useState(false);
@@ -505,23 +505,7 @@ export default function HomePage() {
                 boxShadow: '0 12px 30px rgba(0,0,0,.3)',
               }}
             >
-              <a href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-                {nav('home').linkLabel ?? ''}
-              </a>
-              <SolutionsMobileList label={nav('solutions').linkLabel ?? ''} items={solutions} borderColor="rgba(255,255,255,.1)" onNavigate={() => setMobileNavOpen(false)} />
-              <a href="#technology" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-                Technology
-              </a>
-              <a href="#industries" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
-                {nav('sectors').linkLabel ?? ''}
-              </a>
-              <button
-                onClick={() => { setPricingOpen(true); setMobileNavOpen(false); }}
-                style={{ padding: '14px 0', color: '#fff', textAlign: 'left', background: 'none', border: 'none', fontSize: '16px', fontWeight: 500, cursor: 'pointer', fontFamily: 'inherit' }}
-              >
-                {nav('pricing').linkLabel ?? ''}
-              </button>
-              <LoginMenuItem label={login.linkLabel ?? ''} onClick={() => { setPricingOpen(true); setMobileNavOpen(false); }} />
+              <MobileNavMenu header={header} onOpenPricing={() => setPricingOpen(true)} onNavigate={() => setMobileNavOpen(false)} />
             </div>
           )}
         </div>
@@ -805,45 +789,7 @@ export default function HomePage() {
                   zIndex: 40,
                 }}
               >
-                <a href="/" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  {nav('home').linkLabel ?? ''}
-                </a>
-                <SolutionsMobileList label={nav('solutions').linkLabel ?? ''} items={solutions} borderColor="rgba(255,255,255,.08)" onNavigate={() => setHeroMobileOpen(false)} />
-                <a href="#technology" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  Technology
-                </a>
-                <a href="#industries" style={{ padding: '14px 0', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-                  {nav('sectors').linkLabel ?? ''}
-                </a>
-                <button
-                  onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }}
-                  style={{ padding: '14px 0', color: '#fff', textAlign: 'left', background: 'none', border: 'none', fontSize: '16px', fontWeight: 500, cursor: 'pointer', fontFamily: 'inherit' }}
-                >
-                  {nav('pricing').linkLabel ?? ''}
-                </button>
-                <LoginMenuItem label={login.linkLabel ?? ''} onClick={() => { setPricingOpen(true); setHeroMobileOpen(false); }} />
-                <a href={phone.linkUrl ?? '#'} style={{ marginTop: '8px', color: '#fff', textDecoration: 'none', fontSize: '14.5px', fontWeight: 500, opacity: 0.8 }}>
-                  {phone.linkLabel ?? ''}
-                </a>
-                <Link
-                  href="/contact"
-                  onClick={() => setHeroMobileOpen(false)}
-                  style={{
-                    marginTop: '12px',
-                    background: '#4D0DD9',
-                    color: '#fff',
-                    padding: '13px 20px',
-                    borderRadius: '12px',
-                    fontSize: '14px',
-                    fontWeight: 700,
-                    textDecoration: 'none',
-                    display: 'block',
-                    textAlign: 'center',
-                    fontFamily: 'inherit',
-                  }}
-                >
-                  {cta.linkLabel || 'Speak to an expert'}
-                </Link>
+                <MobileNavMenu header={header} onOpenPricing={() => setPricingOpen(true)} onNavigate={() => setHeroMobileOpen(false)} />
               </div>
             )}
           </nav>
