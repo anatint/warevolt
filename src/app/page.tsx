@@ -1002,9 +1002,9 @@ export default function HomePage() {
 
             <div data-animate data-delay="110" style={{ display: 'flex', justifyContent: 'center', minWidth: 0 }}>
               <img
-                src="/assets/control-tower-live.gif"
+                src="/assets/cms/control-tower.webp"
                 alt="Control Tower live dashboard — unified order feed with real-time order tracking"
-                style={{ width: '100%', maxWidth: '676px', height: 'auto', display: 'block', borderRadius: '16px' }}
+                style={{ width: '100%', maxWidth: '716px', height: 'auto', display: 'block' }}
               />
             </div>
           </div>
