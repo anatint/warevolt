@@ -1059,12 +1059,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            {cms.one('control-tower', 'tower-image').image ? (
-              <div data-animate data-delay="110" style={{ display: 'flex', justifyContent: 'center', minWidth: 0 }}>
-                <img src={cms.one('control-tower', 'tower-image').image} alt={cms.one('control-tower', 'tower-image').imageAlt ?? ''} style={{ width: '100%', maxWidth: '716px', height: 'auto', display: 'block' }} />
-              </div>
-            ) : (
-              <div id="embed-tower-panel" data-animate data-delay="110" style={{ position: 'relative', display: 'flex', minWidth: 0, padding: '20px 0 20px 60px' }}>
+            <div id="embed-tower-panel" data-animate data-delay="110" style={{ position: 'relative', display: 'flex', minWidth: 0, padding: '20px 0 20px 60px' }}>
               {/* Floating order feed */}
               <div
                 style={{
@@ -1185,7 +1180,6 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            )}
           </div>
         </div>
       </section>
