@@ -1219,7 +1219,22 @@ export default function HomePage() {
               <img src={c('visibility','dashboard-image','image')} alt={c('visibility','dashboard-image','imageAlt')} style={{ width: '100%', display: 'block' }} />
             </div>
             <div id="visibility-floating-img" style={{ position: 'absolute', top: 0, left: '-160px', width: '360px', height: '360px', borderRadius: '14px', background: '#fff', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'float-a 4s ease-in-out infinite' }}>
-              <img src={c('visibility','journey-image','image')} alt={c('visibility','journey-image','imageAlt')} style={{ width: '100%', height: 'auto', display: 'block', animation: 'dc-card-scroll 16s ease-in-out infinite' }} />
+              {c('visibility','journey-video','image') ? (
+                <video
+                  key={c('visibility','journey-video','image')}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  disablePictureInPicture
+                  onPause={(e) => { const v = e.currentTarget; if (!v.ended) v.play().catch(() => {}); }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  src={c('visibility','journey-video','image')}
+                />
+              ) : (
+                <img src={c('visibility','journey-image','image')} alt={c('visibility','journey-image','imageAlt')} style={{ width: '100%', height: 'auto', display: 'block', animation: 'dc-card-scroll 16s ease-in-out infinite' }} />
+              )}
             </div>
           </div>
         </div>
