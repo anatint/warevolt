@@ -6,6 +6,7 @@ import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import { usePageCms, CmsRow } from '@/lib/cms';
 import SiteHeaderNav from '@/components/SiteHeaderNav';
 import SiteFooter from '@/components/SiteFooter';
+import TrimmedLogo from '@/components/TrimmedLogo';
 import defaults from '@/content/quick-ecommerce.json';
 
 export default function QuickEcommerceFulfillmentPage() {
@@ -145,7 +146,7 @@ export default function QuickEcommerceFulfillmentPage() {
           <div style={{ display: 'flex', gap: '88px', alignItems: 'center', animation: 'marquee 30s linear infinite', whiteSpace: 'nowrap', width: 'max-content' }}>
             {[...cms.list('platform-logos'), ...cms.list('platform-logos')].map((logo, idx) => (
               <div key={idx} style={{ width: '160px', height: '42px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <img src={logo.image} alt={logo.imageAlt ?? ''} style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
+                <TrimmedLogo src={logo.image ?? ''} alt={logo.imageAlt ?? ''} />
               </div>
             ))}
           </div>
