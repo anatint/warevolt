@@ -492,7 +492,7 @@ body::before {
   #platform-grid { gap: 40px !important; }
   #why-visual { min-height: 280px !important; }
   #why-visual svg { max-width: 260px !important; }
-  #hero-logo { height: 70px !important; }
+  #hero-logo { height: 105px !important; }
   #stats-bar-grid > div { padding: 0 12px !important; }
 
   /* Order & Warehouse */
