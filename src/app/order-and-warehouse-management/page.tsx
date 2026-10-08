@@ -257,6 +257,13 @@ export default function InventoryAndReturnsManagementPage() {
       </section>
 
       {/* ══ AUTOMATION ══ */}
+      {cms.one('automation', 'live-panel-image').image ? (
+        <section id="automation-section" style={{ padding: '0 clamp(20px,5%,80px) 72px', background: '#fff', position: 'relative', overflow: 'hidden' }}>
+          <div data-animate data-delay="100" style={{ maxWidth: '1291px', margin: '0 auto' }}>
+            <img src={cms.one('automation', 'live-panel-image').image} alt={cms.one('automation', 'live-panel-image').imageAlt ?? ''} style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+        </section>
+      ) : (
       <section id="automation-section" style={{ padding: '0 clamp(20px,5%,80px) 72px', background: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <div
@@ -453,6 +460,7 @@ export default function InventoryAndReturnsManagementPage() {
           </div>
         </div>
       </section>
+      )}
 
       <SiteFooter />
 
