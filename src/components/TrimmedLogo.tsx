@@ -53,7 +53,7 @@ function measure(src: string): Promise<Box | null> {
 }
 
 /** Renders a logo so its visible artwork fits the same boxW x boxH area as every other logo in the strip. */
-export default function TrimmedLogo({ src, alt, boxW = 140, boxH = 38 }: { src: string; alt: string; boxW?: number; boxH?: number }) {
+export default function TrimmedLogo({ src, alt, boxW = 120, boxH = 32 }: { src: string; alt: string; boxW?: number; boxH?: number }) {
   const [box, setBox] = useState<Box | null>(null);
 
   useEffect(() => {
