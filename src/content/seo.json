@@ -1,0 +1,82 @@
+{
+  "home": {
+    "path": "/",
+    "name": "Home",
+    "collection": "HomePage",
+    "keyword": "eCommerce fulfillment 3PL India",
+    "title": "Warevolt | Pan-India eCommerce Fulfillment & 3PL Kochi",
+    "description": "Warevolt is a Kochi-based 3PL for D2C, B2B, marketplace and quick commerce brands: inventory, warehousing, order fulfillment and nationwide shipping."
+  },
+  "platform": {
+    "path": "/platform/",
+    "name": "Platform",
+    "collection": "PlatformPage",
+    "keyword": "fulfillment management platform",
+    "title": "Fulfillment Management Platform | WareVolt Scale™",
+    "description": "WareVolt Scale™ unifies order management, inventory, warehouse execution and shipping in one intelligent platform, giving brands full control of fulfillment."
+  },
+  "order-warehouse": {
+    "path": "/order-and-warehouse-management/",
+    "name": "Order & Warehouse Management",
+    "collection": "OrderWarehousePage",
+    "keyword": "order and warehouse management software",
+    "title": "Order & Warehouse Management Software | Warevolt",
+    "description": "Centralize orders from every sales channel, automate warehouse workflows and track each order from pick to delivery in real time with WareVolt Scale™."
+  },
+  "inventory-returns": {
+    "path": "/inventory-and-returns-management/",
+    "name": "Inventory & Returns Management",
+    "collection": "InventoryReturnsPage",
+    "keyword": "inventory and returns management",
+    "title": "Inventory & Returns Management Software | Warevolt",
+    "description": "Get real-time SKU visibility across every warehouse, sync stock across channels and streamline returns with WareVolt Scale™ inventory management."
+  },
+  "analytics-reporting": {
+    "path": "/analytics-and-reporting/",
+    "name": "Analytics & Reporting",
+    "collection": "AnalyticsReportingPage",
+    "keyword": "fulfillment analytics and reporting",
+    "title": "Fulfillment Analytics & Reporting Dashboards | Warevolt",
+    "description": "Track dispatch velocity, carrier SLA, inventory aging and fulfillment costs with real-time dashboards and operational reports from WareVolt Scale™."
+  },
+  "d2c-marketplace": {
+    "path": "/d2c-marketplace-fulfillment/",
+    "name": "D2C & Marketplace Fulfillment",
+    "collection": "D2CMarketplacePage",
+    "keyword": "D2C and marketplace fulfillment",
+    "title": "D2C & Marketplace Fulfillment Services India | Warevolt",
+    "description": "One fulfillment solution for your online store and Amazon, Flipkart, Myntra, Shopify and WooCommerce. Manage inventory and ship nationwide with Warevolt."
+  },
+  "quick-ecommerce": {
+    "path": "/quick-ecommerce-fulfillment/",
+    "name": "Quick eCommerce Fulfillment",
+    "collection": "QuickEcommercePage",
+    "keyword": "quick commerce fulfillment",
+    "title": "Quick Commerce Fulfillment & Dark Store Services | Warevolt",
+    "description": "Dark-store-ready micro-fulfillment for Blinkit, Zepto, Swiggy Instamart and more: fast picking, hub replenishment and hyper-local 10–30 minute dispatch."
+  },
+  "b2b-isometric": {
+    "path": "/b2b-fulfillment/",
+    "name": "B2B Fulfillment (B2B Isometric)",
+    "collection": "B2BIsometricPage",
+    "keyword": "B2B wholesale fulfillment",
+    "title": "B2B & Wholesale Fulfillment Services India | Warevolt",
+    "description": "Handle bulk orders with pallet and carton-level dispatch, EDI compliance and nationwide distribution through Warevolt's unified B2B warehouse network."
+  },
+  "shipping-distribution": {
+    "path": "/shipping-and-distribution/",
+    "name": "Shipping & Distribution",
+    "collection": "ShippingDistributionPage",
+    "keyword": "shipping and distribution India",
+    "title": "Shipping & Distribution: BYOA Parcel & Freight | Warevolt",
+    "description": "Ship eCommerce parcels with your own carrier accounts (BYOA) or move bulk freight through our managed FTL, PTL and LTL network across India."
+  },
+  "contact": {
+    "path": "/contact/",
+    "name": "Contact",
+    "collection": "ContactPage",
+    "keyword": "contact Warevolt fulfillment",
+    "title": "Contact Warevolt | Talk to Our Fulfillment Experts",
+    "description": "Contact Warevolt to plan fulfillment, warehousing and shipping across India. Share your goals and our team will get back to you within 24 hours."
+  }
+}

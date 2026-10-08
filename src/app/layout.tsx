@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { seoMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Warevolt - Pan-India eCommerce Fulfillment & 3PL',
-  description: 'Headquartered in Kochi, Warevolt powers inventory management, warehousing, order fulfillment, shipping, and nationwide distribution.',
-};
+export const metadata: Metadata = seoMetadata('home');
 
 export default function RootLayout({
   children,

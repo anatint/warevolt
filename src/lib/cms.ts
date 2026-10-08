@@ -100,6 +100,17 @@ export function usePageCms(page: string, defaults: CmsRow[]): CmsContent {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
+  // SEO fields from the page's Wix collection override the built-in <title> and meta description.
+  useEffect(() => {
+    const title = rows.find((r) => r.section === 'seo' && r.key === 'meta-title')?.title?.trim();
+    const description = rows.find((r) => r.section === 'seo' && r.key === 'meta-description')?.description?.trim();
+    if (title) document.title = title;
+    if (description) {
+      const el = document.querySelector('meta[name="description"]');
+      if (el) el.setAttribute('content', description);
+    }
+  }, [rows]);
+
   return useMemo(() => toContent(rows), [rows]);
 }
 
