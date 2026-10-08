@@ -6,6 +6,7 @@ import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import { usePageCms, CmsRow } from '@/lib/cms';
 import SiteHeaderNav from '@/components/SiteHeaderNav';
 import SiteFooter from '@/components/SiteFooter';
+import TrimmedLogo from '@/components/TrimmedLogo';
 import defaults from '@/content/d2c-marketplace.json';
 
 export default function D2CMarketplaceFulfillmentPage() {
@@ -149,7 +150,7 @@ export default function D2CMarketplaceFulfillmentPage() {
           <div style={{ display: 'flex', gap: '88px', alignItems: 'center', animation: 'marquee 30s linear infinite', whiteSpace: 'nowrap', width: 'max-content' }}>
             {[...cms.list('logo-strip'), ...cms.list('logo-strip')].map((r) => ({ src: r.image, alt: r.imageAlt ?? r.title ?? '' })).map((logo, idx) => (
               <div key={idx} style={{ width: '160px', height: '42px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <img src={logo.src} alt={logo.alt} style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
+                <TrimmedLogo src={logo.src ?? ''} alt={logo.alt} />
               </div>
             ))}
           </div>

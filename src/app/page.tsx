@@ -8,6 +8,7 @@ import { usePageCms, CmsRow } from '@/lib/cms';
 import { useSiteHeader } from '@/lib/site';
 import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 import SiteFooter from '@/components/SiteFooter';
+import TrimmedLogo from '@/components/TrimmedLogo';
 import { LoginLabel, HamburgerIcon, MobileNavMenu } from '@/components/MobileMenuBits';
 
 export default function HomePage() {
@@ -1010,7 +1011,7 @@ export default function HomePage() {
         <div style={{ overflow: 'hidden', WebkitMaskImage: 'linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)', maskImage: 'linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)' }}>
           <div style={{ display: 'flex', gap: '88px', alignItems: 'center', animation: 'marquee 30s linear infinite', whiteSpace: 'nowrap', width: 'max-content' }}>
             {[...cms.list('integrations'), ...cms.list('integrations')].map((r, i) => (
-              <div key={i} style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><img src={r.image ?? ''} alt={r.imageAlt ?? ''} style={{ height: '100%', width: 'auto', objectFit: 'contain' }} /></div>
+              <div key={i} style={{ width: '170px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><TrimmedLogo src={r.image ?? ''} alt={r.imageAlt ?? ''} /></div>
             ))}
           </div>
         </div>
