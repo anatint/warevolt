@@ -1218,7 +1218,7 @@ export default function HomePage() {
               </div>
               <img src={c('visibility','dashboard-image','image')} alt={c('visibility','dashboard-image','imageAlt')} style={{ width: '100%', display: 'block' }} />
             </div>
-            <div id="visibility-floating-img" style={{ position: 'absolute', top: 0, left: '-160px', width: '360px', height: '360px', borderRadius: '14px', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'float-a 4s ease-in-out infinite' }}>
+            <div id="visibility-floating-img" style={{ position: 'absolute', top: 0, left: '-160px', width: '360px', height: '360px', borderRadius: '14px', background: '#fff', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'float-a 4s ease-in-out infinite' }}>
               <img src={c('visibility','journey-image','image')} alt={c('visibility','journey-image','imageAlt')} style={{ width: '100%', height: 'auto', display: 'block', animation: 'dc-card-scroll 16s ease-in-out infinite' }} />
             </div>
           </div>
