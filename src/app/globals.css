@@ -672,3 +672,12 @@ body::before {
   /* the logo file has ~11% transparent padding on its left: pull it left so the visible mark lines up with the page content */
   #hero-logo, .wv-sticky-wlogo { margin-left: -16px; }
 }
+
+/* Control Tower panel: stack feed card under the dashboard and use 2-column grids on phones */
+@media (max-width: 640px) {
+  #embed-tower-panel { flex-direction: column !important; padding: 0 0 8px 0 !important; }
+  #embed-tower-panel > div:nth-child(1) { position: relative !important; left: auto !important; bottom: auto !important; order: 2; width: 100% !important; margin-top: 20px !important; }
+  #embed-tower-panel > div:nth-child(2) { order: 1; width: 100%; }
+  #embed-tower-panel div[style*="repeat(4,minmax(0,1fr))"],
+  #embed-tower-panel div[style*="repeat(4,1fr)"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
