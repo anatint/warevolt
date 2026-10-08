@@ -1060,52 +1060,28 @@ export default function HomePage() {
             </div>
 
             <div id="embed-tower-panel" data-animate data-delay="110" style={{ position: 'relative', display: 'flex', minWidth: 0, padding: '20px 0 20px 60px' }}>
-              {/* Floating order feed */}
+              {/* Floating order feed — video asset */}
               <div
                 style={{
                   position: 'absolute',
                   left: 0,
                   bottom: '20px',
                   width: '280px',
-                  background: 'rgba(255,255,255,.12)',
-                  backdropFilter: 'blur(45px) saturate(180%) brightness(1.1)',
-                  WebkitBackdropFilter: 'blur(45px) saturate(180%) brightness(1.1)',
-                  border: '1px solid rgba(255,255,255,.45)',
                   borderRadius: '22px',
-                  padding: '16px',
-                  boxShadow: '0 30px 80px rgba(20,20,40,.15),0 8px 24px rgba(255,255,255,.12),inset 0 1px 0 rgba(255,255,255,.5)',
-                  zIndex: 2,
                   overflow: 'hidden',
+                  boxShadow: '0 30px 80px rgba(20,20,40,.15),0 8px 24px rgba(255,255,255,.12)',
+                  zIndex: 2,
                   animation: 'float-b 4.5s ease-in-out infinite',
                 }}
               >
-                <div style={{ position: 'absolute', top: 0, left: 0, width: '70%', height: '55%', background: 'radial-gradient(circle at 25% 20%,rgba(255,255,255,.12),transparent 60%)', pointerEvents: 'none', zIndex: 0 }} />
-                <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-                  <span style={{ fontSize: '12px', fontWeight: 800, letterSpacing: '.02em', color: '#0B0619' }}>{c('control-tower','feed-title','title')}</span>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 700, color: '#22C55E' }}>
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22C55E', boxShadow: '0 0 8px rgba(34,197,94,.55)', animation: 'dc-live-pulse 1.6s ease-out infinite' }} />
-                    {c('control-tower','feed-title','extra')}
-                  </span>
-                </div>
-
-                <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column' }}>
-                  {cms.list('tower-feed').map((r, idx) => {
-                    const st = feedStatus[Math.min(idx, feedStatus.length - 1)];
-                    return (
-                      <div key={r.key ?? idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', ...(idx < 4 ? { marginBottom: '8px' } : {}), background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,.35)', borderRadius: '14px', animation: `dc-feed5-row${idx + 1} 4.8s linear infinite` }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                          <div style={{ width: '32px', height: '32px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, background: 'rgba(255,255,255,.5)', border: '1px solid rgba(255,255,255,.6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <img src={r.image ?? ''} alt={r.imageAlt ?? ''} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                          </div>
-                          <div style={{ fontSize: '12.5px', fontWeight: 700, color: '#0B0619' }}>{r.title ?? ''}</div>
-                        </div>
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '10.5px', color: st.color, ...(st.bold ? { fontWeight: 700 } : {}), whiteSpace: 'nowrap' }}>
-                          <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: idx < 3 ? '#7B5BFB' : st.color }} />{r.extra ?? ''}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: '100%', display: 'block' }}
+                  src={c('control-tower','order-feed-video','image') || '/assets/order-feed.mp4'}
+                />
               </div>
 
               {/* Main Control Tower Panel */}
@@ -1349,17 +1325,17 @@ export default function HomePage() {
             <p data-animate data-delay="180" style={{ fontSize: '15.5px', color: '#6B6480', lineHeight: 1.8, marginBottom: '28px', maxWidth: '520px' }}>
               {c('shipping','shipping-p3','description')}
             </p>
-            <button
+            <Link
               data-animate
               data-delay="220"
-              onClick={() => setPricingOpen(true)}
+              href={c('shipping', 'shipping-cta', 'linkUrl') || '/shipping-and-distribution/'}
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#4D0DD9', fontSize: '15px', fontWeight: 600, textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', padding: 0 }}
             >
-              {c('shipping','shipping-cta','linkLabel')}{' '}
+              {c('shipping', 'shipping-cta', 'linkLabel') || 'Learn More'}{' '}
               <svg width="7" height="12" viewBox="0 0 7 12" fill="none" style={{ display: 'block', flexShrink: 0 }}>
                 <path d="M1 1l5 5-5 5" stroke="#4D0DD9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

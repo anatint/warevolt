@@ -213,6 +213,13 @@
   "extra": "This Week"
  },
  {
+  "section": "control-tower",
+  "order": 6,
+  "key": "order-feed-video",
+  "image": "/assets/order-feed.mp4",
+  "imageAlt": "Unified Order Feed"
+ },
+ {
   "section": "tower-feed",
   "order": 1,
   "key": "feed-1",
@@ -562,7 +569,8 @@
   "section": "shipping",
   "order": 7,
   "key": "shipping-cta",
-  "linkLabel": "Learn More"
+  "linkLabel": "Learn More",
+  "linkUrl": "/shipping-and-distribution/"
  },
  {
   "section": "why-brands",
