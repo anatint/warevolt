@@ -669,4 +669,6 @@ body::before {
 }
 @media (max-width: 640px) {
   .wv-sticky-wlogo { height: 105px !important; }
+  /* the logo file has ~11% transparent padding on its left: pull it left so the visible mark lines up with the page content */
+  #hero-logo, .wv-sticky-wlogo { margin-left: -16px; }
 }
