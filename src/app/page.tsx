@@ -229,6 +229,7 @@ export default function HomePage() {
       {/* ══ STICKY FLOATING NAV ══ */}
       <nav
         id="wv-nav"
+        className="wv-sticky-h110"
         style={{
           position: 'fixed',
           top: 0,
@@ -254,9 +255,16 @@ export default function HomePage() {
         >
           <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
             <img
+              className="wv-logo-d"
               src={logoDark.image || '/assets/warevolt-logo-transparent.png'}
               alt="Warevolt"
               style={{ height: '120px', width: 'auto', objectFit: 'contain', display: 'block' }}
+            />
+            <img
+              className="wv-sticky-wlogo"
+              src={logoLight.image || '/assets/warevolt-logo-white.png'}
+              alt="Warevolt"
+              style={{ height: '140px', width: 'auto', objectFit: 'contain', display: 'none' }}
             />
           </a>
 
@@ -413,7 +421,7 @@ export default function HomePage() {
 
           </div>
 
-          <div id="nav-actions" style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
+          <div id="nav-actions" className="wv-sticky-actions" style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
             <button
               id="nav-login"
               onClick={() => setPricingOpen(true)}

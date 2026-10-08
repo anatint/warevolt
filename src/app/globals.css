@@ -477,7 +477,6 @@ body::before {
 @media (max-width: 768px) {
   #hero-cta, #sticky-cta { display: none !important; }
   #nav-cta { display: none !important; }
-  #nav-actions { display: none !important; }
   #hero-actions { gap: 12px !important; }
   #industries-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
@@ -651,4 +650,23 @@ body::before {
 }
 @media (prefers-reduced-motion: reduce) {
   .wv-mnav-chev, .wv-mnav-body { transition: none; }
+}
+
+/* ── Floating (scrolled) header = same look as the top header on mobile / tablet ── */
+.wv-sticky-wlogo { display: none; }
+@media (max-width: 1120px) {
+  .wv-logo-d { display: none !important; }
+  .wv-sticky-wlogo { display: block !important; }
+  #wv-nav.wv-sticky-h92 { height: 92px !important; }
+  #wv-nav.wv-sticky-h110 { height: 110px !important; }
+  .wv-sticky-actions { margin-left: auto; }
+  #wv-nav > div:first-child { gap: 40px; }
+  #nav-links { display: none !important; }
+  #nav-hamburger { display: flex !important; margin-left: 8px; }
+}
+@media (max-width: 900px) {
+  .wv-sticky-wlogo { height: 90px !important; }
+}
+@media (max-width: 640px) {
+  .wv-sticky-wlogo { height: 105px !important; }
 }

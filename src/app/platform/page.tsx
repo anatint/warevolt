@@ -31,6 +31,7 @@ export default function PlatformPage() {
   const [pricingOpen, setPricingOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [heroMobileOpen, setHeroMobileOpen] = useState(false);
+  const [stickyMenuOpen, setStickyMenuOpen] = useState(false);
   const [techMenuOpen, setTechMenuOpen] = useState(false);
   const [heroTechMenuOpen, setHeroTechMenuOpen] = useState(false);
 
@@ -125,6 +126,7 @@ export default function PlatformPage() {
       {/* ══ FIXED SCROLL NAV ══ */}
       <nav
         id="wv-nav"
+        className="wv-sticky-h110"
         style={{
           position: 'fixed',
           top: 0,
@@ -140,7 +142,8 @@ export default function PlatformPage() {
       >
         <div style={{ maxWidth: '1440px', margin: '0 auto', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-            <img src="/assets/warevolt-logo-transparent.png" alt="Warevolt" style={{ height: '120px', width: 'auto', objectFit: 'contain', display: 'block' }} />
+            <img className="wv-logo-d" src="/assets/warevolt-logo-transparent.png" alt="Warevolt" style={{ height: '120px', width: 'auto', objectFit: 'contain', display: 'block' }} />
+            <img className="wv-sticky-wlogo" src={headerLogo.image || '/assets/warevolt-logo-white.png'} alt={headerLogo.imageAlt || 'Warevolt'} style={{ height: '140px', width: 'auto', objectFit: 'contain', display: 'none' }} />
           </Link>
 
           <div id="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>
@@ -180,7 +183,7 @@ export default function PlatformPage() {
             </button>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
+          <div className="wv-sticky-actions" style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
             <button
               onClick={() => setPricingOpen(true)}
               style={{
@@ -201,6 +204,7 @@ export default function PlatformPage() {
               <LoginLabel text={headerLogin.linkLabel ?? ''} />
             </button>
             <Link
+              id="sticky-cta"
               href="/contact"
               style={{
               background: '#4D0DD9',
@@ -225,7 +229,37 @@ export default function PlatformPage() {
               </svg>
             </Link>
           </div>
+
+          <button
+            id="sticky-hamburger"
+            aria-label="Toggle menu"
+            onClick={() => setStickyMenuOpen(!stickyMenuOpen)}
+            style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', width: '40px', height: '40px', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginLeft: '8px' }}
+          >
+            <HamburgerIcon open={stickyMenuOpen} />
+          </button>
         </div>
+
+        {stickyMenuOpen && (
+          <div
+            className="wv-menu-anim"
+            style={{
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              right: 0,
+              background: '#0B0619',
+              display: 'flex',
+              flexDirection: 'column',
+              padding: '8px clamp(20px,5%,80px) 24px',
+              gap: '2px',
+              boxShadow: '0 12px 30px rgba(0,0,0,.4)',
+              zIndex: 40,
+            }}
+          >
+            <MobileNavMenu header={header} items={navItems} onOpenPricing={() => setPricingOpen(true)} onNavigate={() => setStickyMenuOpen(false)} />
+          </div>
+        )}
       </nav>
 
       {/* ══ HERO ══ */}

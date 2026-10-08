@@ -334,6 +334,7 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
     <nav
       ref={stickyRef}
       id="wv-nav"
+      className="wv-sticky-h92"
       style={{
         position: 'fixed',
         top: 0,
@@ -349,14 +350,15 @@ export default function SiteHeaderNav({ onOpenPricing }: { onOpenPricing: () => 
     >
       <div style={{ maxWidth: '1440px', margin: '0 auto', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <SmartLink href={logoHref} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-          <img src={logoDark.image || '/assets/warevolt-logo-transparent.png'} alt={logoDark.imageAlt || 'Warevolt'} style={{ height: '120px', width: 'auto', objectFit: 'contain', display: 'block' }} />
+          <img className="wv-logo-d" src={logoDark.image || '/assets/warevolt-logo-transparent.png'} alt={logoDark.imageAlt || 'Warevolt'} style={{ height: '120px', width: 'auto', objectFit: 'contain', display: 'block' }} />
+          <img className="wv-sticky-wlogo" src={logoSrc} alt={logo.imageAlt || 'Warevolt'} style={{ height: '110px', width: 'auto', objectFit: 'contain', display: 'none' }} />
         </SmartLink>
 
         <div id="sticky-nav-links" style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>
           {navItems.map((item, idx) => renderDesktopItem(item, idx, 'sticky'))}
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
+        <div className="wv-sticky-actions" style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
           <button
             id="sticky-login"
             onClick={onOpenPricing}
