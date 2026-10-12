@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import defaults from '@/content/home.json';
-import { usePageCms, CmsRow } from '@/lib/cms';
+import { usePageCms, CmsRow, isVideoUrl } from '@/lib/cms';
 import { useSiteHeader } from '@/lib/site';
 import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 import SiteFooter from '@/components/SiteFooter';
@@ -1060,102 +1060,28 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div id="embed-tower-panel" data-animate data-delay="110" style={{ position: 'relative', display: 'flex', minWidth: 0, padding: '20px 0 20px 60px' }}>
-              {/* Floating order feed — video asset */}
-              <div
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  bottom: '20px',
-                  width: '280px',
-                  borderRadius: '22px',
-                  overflow: 'hidden',
-                  boxShadow: '0 30px 80px rgba(20,20,40,.15),0 8px 24px rgba(255,255,255,.12)',
-                  zIndex: 2,
-                  animation: 'float-b 4.5s ease-in-out infinite',
-                }}
-              >
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{ width: '100%', display: 'block' }}
-                  src={c('control-tower','order-feed-video','image') || '/assets/order-feed.mp4'}
-                />
-              </div>
-
-              {/* Main Control Tower Panel */}
-              <div
-                style={{
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  background: 'rgba(255,255,255,.08)',
-                  backdropFilter: 'blur(28px)',
-                  WebkitBackdropFilter: 'blur(28px)',
-                  borderRadius: '20px',
-                  border: '1px solid rgba(255,255,255,.35)',
-                  boxShadow: '0 30px 80px rgba(20,10,40,.35),inset 0 1px 0 rgba(255,255,255,.4)',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  zIndex: 1,
-                }}
-              >
-                <div style={{ flex: 1, padding: '22px 24px', minWidth: 0 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-                    <img src={c('control-tower','panel-logo','image')} alt={c('control-tower','panel-logo','imageAlt')} style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
-                    <span style={{ fontSize: '11px', fontWeight: 600, color: '#0B0619', background: 'rgba(255,255,255,.5)', borderRadius: '8px', padding: '5px 10px', whiteSpace: 'nowrap' }}>
-                      {c('control-tower','panel-logo','extra')}
-                    </span>
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,minmax(0,1fr))', gap: '12px', marginBottom: '16px' }}>
-                    {cms.list('tower-kpis').map((r, idx) => (
-                      <div key={r.key ?? idx} style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '14px', minWidth: 0 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '7px', marginBottom: '14px' }}>
-                          <span style={{ width: '16px', height: '16px', borderRadius: '5px', background: r.extra, flexShrink: 0 }} />
-                          <span style={{ fontSize: '10.5px', fontWeight: 700, color: '#3A3550', whiteSpace: 'nowrap' }}>{r.title ?? ''}</span>
-                        </div>
-                        <div style={{ fontSize: '19px', fontWeight: 800, color: '#0B0619' }}>{[ctVals.orders, ctVals.processing, ctVals.shipped, ctVals.delivered][idx]?.toLocaleString()}</div>
-                        <div style={{ fontSize: '10px', fontWeight: 700, color: '#22C55E' }}>{r.description ?? ''}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Volume Trend Graph */}
-                  <div style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '14px', padding: '16px', marginBottom: '16px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-                      <span style={{ fontSize: '13px', fontWeight: 700, color: '#0B0619' }}>{c('control-tower','chart-title','title')}</span>
-                      <span style={{ fontSize: '10.5px', fontWeight: 600, color: '#3A3550', background: 'rgba(255,255,255,.5)', borderRadius: '6px', padding: '4px 9px' }}>
-                        {c('control-tower','chart-title','extra')}
-                      </span>
-                    </div>
-                    <svg width="100%" height="110" viewBox="0 0 460 110" preserveAspectRatio="none">
-                      <defs>
-                        <linearGradient id="towerAreaFill" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#7B5BFB" stopOpacity="0.35" />
-                          <stop offset="100%" stopColor="#7B5BFB" stopOpacity="0" />
-                        </linearGradient>
-                      </defs>
-                      <path d="M0 68 L66 58 L132 76 L198 42 L264 18 L330 60 L396 36 L460 46 L460 110 L0 110 Z" fill="url(#towerAreaFill)" />
-                      <path id="towerTrendLine" d="M0 68 L66 58 L132 76 L198 42 L264 18 L330 60 L396 36 L460 46" fill="none" stroke="#7B5BFB" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '10px', color: '#9891AB', marginTop: '4px' }}>
-                      {cms.list('tower-days').map((r, i) => (<span key={i}>{r.title ?? ''}</span>))}
-                    </div>
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '12px' }}>
-                    {cms.list('tower-metrics').map((r, idx) => (
-                      <div key={r.key ?? idx} style={{ background: 'rgba(255,255,255,.16)', border: '1px solid rgba(255,255,255,.32)', borderRadius: '12px', padding: '12px' }}>
-                        <div style={{ fontSize: '10px', fontWeight: 600, color: '#3A3550', marginBottom: '6px' }}>{r.title ?? ''}</div>
-                        <div style={{ fontSize: '13px', fontWeight: 800, color: r.extra }}>{[r.description ?? '', `${ctVals.sla}%`, `${ctVals.dispatch}%`, `${ctVals.returns}%`][idx]}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            {/* Full Control Tower scene video — exact match to reference */}
+            <div id="embed-tower-panel" data-animate data-delay="110" style={{ width: '100%', minWidth: 0 }}>
+              {(() => {
+                const media = c('control-tower','order-feed-video','image') || '/assets/order-feed.mp4';
+                return isVideoUrl(media) ? (
+                  <video
+                    key={media}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    disablePictureInPicture
+                    onPause={(e) => { const v = e.currentTarget; if (!v.ended) v.play().catch(() => {}); }}
+                    onStalled={(e) => { e.currentTarget.play().catch(() => {}); }}
+                    style={{ width: '100%', display: 'block', borderRadius: '16px' }}
+                    src={media}
+                  />
+                ) : (
+                  <img src={media} alt={c('control-tower','order-feed-video','imageAlt')} style={{ width: '100%', display: 'block', borderRadius: '16px' }} />
+                );
+              })()}
             </div>
           </div>
         </div>
@@ -1219,10 +1145,16 @@ export default function HomePage() {
               </div>
               <img src={c('visibility','dashboard-image','image')} alt={c('visibility','dashboard-image','imageAlt')} style={{ width: '100%', display: 'block' }} />
             </div>
+            {(() => {
+              const vid = c('visibility','journey-video','image');
+              const img = c('visibility','journey-image','image');
+              const hasVideo = !!vid && isVideoUrl(vid);
+              if (!hasVideo && !img) return null;
+              return (
             <div id="visibility-floating-img" style={{ position: 'absolute', top: 0, left: '-160px', width: '360px', height: '360px', borderRadius: '14px', background: '#fff', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'float-a 4s ease-in-out infinite' }}>
-              {c('visibility','journey-video','image') ? (
+              {hasVideo ? (
                 <video
-                  key={c('visibility','journey-video','image')}
+                  key={vid}
                   autoPlay
                   muted
                   loop
@@ -1231,12 +1163,14 @@ export default function HomePage() {
                   disablePictureInPicture
                   onPause={(e) => { const v = e.currentTarget; if (!v.ended) v.play().catch(() => {}); }}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  src={c('visibility','journey-video','image')}
+                  src={vid}
                 />
               ) : (
-                <img src={c('visibility','journey-image','image')} alt={c('visibility','journey-image','imageAlt')} style={{ width: '100%', height: 'auto', display: 'block', animation: 'dc-card-scroll 16s ease-in-out infinite' }} />
+                <img src={img} alt={c('visibility','journey-image','imageAlt')} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
               )}
             </div>
+              );
+            })()}
           </div>
         </div>
       </section>

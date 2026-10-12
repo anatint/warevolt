@@ -14,7 +14,7 @@ const templates = templatesJson as unknown as Templates;
  */
 export type CmsRow = InternalRow;
 
-/** Converts a Wix media reference (wix:image://v1/<id>/<name>) into a browser-loadable URL. */
+/** Converts a Wix media reference (wix:image:// or wix:video://) into a browser-loadable URL. */
 export function wixImageUrl(src?: string): string | undefined {
   if (!src) return undefined;
   if (src.startsWith('wix:image://v1/')) {
@@ -26,6 +26,12 @@ export function wixImageUrl(src?: string): string | undefined {
     return `https://video.wixstatic.com/video/${id}/720p/mp4/file.mp4`;
   }
   return src;
+}
+
+/** True when a media URL (from an Image/Video/Media Gallery field) points to a video. */
+export function isVideoUrl(src?: string): boolean {
+  if (!src) return false;
+  return src.startsWith('wix:video://') || /\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(src) || src.includes('video.wixstatic.com');
 }
 
 export type CmsContent = {

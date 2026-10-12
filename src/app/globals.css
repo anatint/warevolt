@@ -605,6 +605,7 @@ body::before {
 }
 @media (prefers-reduced-motion: reduce) {
   .wv-menu-anim { animation: none; }
+  #visibility-floating-img { animation: none !important; }
 }
 
 /* ── Mobile navigation (built from the desktop header data) ── */

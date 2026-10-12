@@ -32,6 +32,18 @@ export type Templates = {
 };
 
 const has = (v: unknown) => v !== undefined && v !== null && String(v).trim() !== '';
+
+/** A Wix Image/Video field is a string; a Media Gallery field is a list of { src } items (first one is used). */
+function mediaToString(v: any): string {
+  if (typeof v === 'string') return v;
+  if (Array.isArray(v)) {
+    const first = v[0];
+    if (typeof first === 'string') return first;
+    if (first && typeof first.src === 'string') return first.src;
+    return '';
+  }
+  return String(v);
+}
 const CONTENT_FIELDS = ['label', 'title', 'description', 'image', 'imageAlt', 'linkLabel', 'linkUrl', 'extra'];
 
 /**
@@ -55,7 +67,7 @@ export function convertItem(
       if (!consts.has(id)) consts.set(id, []);
       consts.get(id)!.push([target, constant as string]);
     } else if (item && has(item[field])) {
-      rows.get(id)![target] = typeof item[field] === 'string' ? item[field] : String(item[field]);
+      rows.get(id)![target] = mediaToString(item[field]);
     }
   }
   const out: InternalRow[] = [];
