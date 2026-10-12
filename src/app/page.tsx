@@ -1133,7 +1133,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div data-animate data-delay="80" style={{ position: 'relative', paddingTop: '20px', marginLeft: 'auto', maxWidth: '520px' }}>
+          <div style={{ position: 'relative', paddingTop: '20px', marginLeft: 'auto', maxWidth: '520px' }}>
             <div style={{ position: 'relative', background: '#F4F1FB', borderRadius: '16px', boxShadow: '0 30px 70px rgba(20,10,50,.14)', overflow: 'hidden' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '14px 18px', background: '#fff', borderBottom: '1px solid #EFEAFC' }}>
                 <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#E4DEF5' }} />
@@ -1151,7 +1151,7 @@ export default function HomePage() {
               const hasVideo = !!vid && isVideoUrl(vid);
               if (!hasVideo && !img) return null;
               return (
-            <div id="visibility-floating-img" style={{ position: 'absolute', top: 0, left: '-160px', width: '360px', height: '360px', borderRadius: '14px', background: '#fff', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'float-a 4s ease-in-out infinite' }}>
+            <div id="visibility-floating-img" style={{ position: 'absolute', top: 0, left: '-160px', width: '360px', height: '360px', borderRadius: '14px', background: '#fff', boxShadow: '0 24px 50px rgba(20,10,50,.2)', overflow: 'hidden', animation: 'visibility-float 3.5s ease-in-out infinite' }}>
               {hasVideo ? (
                 <video
                   key={vid}
