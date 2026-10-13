@@ -51,6 +51,7 @@ function SmartLink({ href, style, children }: { href?: string; style?: React.CSS
   return (
     <a
       href={h}
+      {...(h.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       style={combinedStyle}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -173,15 +174,24 @@ export default function SiteFooter({
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '28px' }}>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0, marginTop: '2px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /><circle cx="12" cy="10" r="3" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                <span style={{ fontSize: '14px', lineHeight: 1.6 }}>{contactByKey('address')}</span>
+                <SmartLink
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactByKey('address'))}`}
+                  style={{ ...linkStyle, fontSize: '14px', lineHeight: 1.6 }}
+                >
+                  {contactByKey('address')}
+                </SmartLink>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 1.16 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.19 6.19l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                <span style={{ fontSize: '14px' }}>{contactByKey('phone')}</span>
+                <SmartLink href={`tel:${contactByKey('phone').replace(/[^\d+]/g, '')}`} style={{ ...linkStyle, fontSize: '14px' }}>
+                  {contactByKey('phone')}
+                </SmartLink>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /><polyline points="22,6 12,13 2,6" stroke="rgba(255,255,255,.4)" strokeWidth="1.5" /></svg>
-                <span style={{ fontSize: '14px' }}>{contactByKey('email')}</span>
+                <SmartLink href={`mailto:${contactByKey('email').trim()}`} style={{ ...linkStyle, fontSize: '14px' }}>
+                  {contactByKey('email')}
+                </SmartLink>
               </div>
             </div>
 
