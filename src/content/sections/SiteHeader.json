@@ -16,6 +16,13 @@
   "linkUrl": "/"
  },
  {
+  "section": "brand",
+  "order": 3,
+  "key": "favicon",
+  "image": "/assets/warevolt-mark.png",
+  "imageAlt": "Warevolt"
+ },
+ {
   "section": "nav",
   "order": 1,
   "key": "home",
