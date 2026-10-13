@@ -12,13 +12,23 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Organization',
+      '@type': ['Organization', 'LocalBusiness'],
       '@id': `${SITE_URL}/#organization`,
       name: SITE_NAME,
       url: SITE_URL,
       logo: `${SITE_URL}${OG_IMAGE}`,
       description: 'Kochi-based 3PL for D2C, B2B, marketplace and quick commerce brands: inventory, warehousing, order fulfillment and nationwide shipping across India.',
       areaServed: 'IN',
+      telephone: '+91 99954 50330',
+      email: 'hello@warevolt.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Building No: 384 & 385, Airapuram',
+        addressLocality: 'Kochi',
+        addressRegion: 'Kerala',
+        postalCode: '683556',
+        addressCountry: 'IN',
+      },
     },
     {
       '@type': 'WebSite',
