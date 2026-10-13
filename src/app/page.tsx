@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import PricingModal, { PricingFormData } from '@/components/PricingModal';
 import defaults from '@/content/home.json';
-import { usePageCms, CmsRow, isVideoUrl } from '@/lib/cms';
+import { usePageCms, CmsRow, isVideoUrl, wixVideoFallback } from '@/lib/cms';
 import { useSiteHeader } from '@/lib/site';
 import { SolutionsDropdown, SolutionsMobileList, solutionsItems } from '@/components/SolutionsMenu';
 import SiteFooter from '@/components/SiteFooter';
@@ -1077,6 +1077,7 @@ export default function HomePage() {
                     onStalled={(e) => { e.currentTarget.play().catch(() => {}); }}
                     style={{ width: '100%', display: 'block', borderRadius: '16px' }}
                     src={media}
+                    onError={wixVideoFallback}
                   />
                 ) : (
                   <img src={media} alt={c('control-tower','order-feed-video','imageAlt')} style={{ width: '100%', display: 'block', borderRadius: '16px' }} />
@@ -1164,6 +1165,7 @@ export default function HomePage() {
                   onPause={(e) => { const v = e.currentTarget; if (!v.ended) v.play().catch(() => {}); }}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                   src={vid}
+                  onError={wixVideoFallback}
                 />
               ) : (
                 <img src={img} alt={c('visibility','journey-image','imageAlt')} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />

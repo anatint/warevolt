@@ -28,6 +28,22 @@ export function wixImageUrl(src?: string): string | undefined {
   return src;
 }
 
+/**
+ * Wix only renders the video qualities up to the uploaded resolution (a 918px recording has no 720p file and
+ * answers 403). On a load error, step down to the next quality until one plays.
+ */
+export function wixVideoFallback(e: { currentTarget: HTMLVideoElement }) {
+  const v = e.currentTarget;
+  const m = v.src.match(/^(https:\/\/video\.wixstatic\.com\/video\/[^/]+\/)(\d+p)(\/mp4\/file\.mp4)$/);
+  if (!m) return;
+  const order = ['1080p', '720p', '480p', '360p'];
+  const next = order[order.indexOf(m[2]) + 1];
+  if (next) {
+    v.src = m[1] + next + m[3];
+    v.play().catch(() => {});
+  }
+}
+
 /** True when a media URL (from an Image/Video/Media Gallery field) points to a video. */
 export function isVideoUrl(src?: string): boolean {
   if (!src) return false;
