@@ -1,142 +1,142 @@
 [
  {
   "section": "brand",
-  "order": 1,
   "key": "logo",
-  "image": "https://static.wixstatic.com/media/db6928_92b5efdb04694bb89142ea45fda47b55~mv2.png",
+  "order": 1,
+  "image": "https://static.wixstatic.com/media/db6928_1e06bc6dba8344e49bcd98a75431cc5e~mv2.png",
   "imageAlt": "Warevolt",
   "linkUrl": "/"
  },
  {
   "section": "brand",
-  "order": 2,
   "key": "description",
-  "description": "Premium industrial infrastructure company specializing in warehouses, PEB structures, and cold storage solutions across India."
+  "order": 2,
+  "description": "Warevolt provides integrated warehousing, 3PL fulfilment, inventory management and distribution solutions for e-commerce brands, D2C businesses and growing enterprises across India."
  },
  {
   "section": "quick-links",
-  "order": 0,
   "key": "heading",
+  "order": 0,
   "title": "Quick Links"
  },
  {
   "section": "quick-links",
-  "order": 1,
   "key": "quick-1",
+  "order": 1,
   "linkLabel": "Home",
   "linkUrl": "/"
  },
  {
   "section": "quick-links",
-  "order": 2,
   "key": "quick-2",
+  "order": 2,
   "linkLabel": "Solutions",
   "linkUrl": "/#solutions"
  },
  {
   "section": "quick-links",
-  "order": 3,
   "key": "quick-3",
+  "order": 3,
   "linkLabel": "Sectors",
   "linkUrl": "/#industries"
  },
  {
   "section": "quick-links",
-  "order": 4,
   "key": "quick-4",
+  "order": 4,
   "linkLabel": "Pricing",
   "linkUrl": "#pricing",
   "extra": "opens-pricing-modal"
  },
  {
   "section": "quick-links",
-  "order": 5,
   "key": "quick-5",
+  "order": 5,
   "linkLabel": "Contact",
   "linkUrl": "/contact"
  },
  {
   "section": "solution-links",
-  "order": 0,
   "key": "heading",
+  "order": 0,
   "title": "Solutions"
  },
  {
   "section": "solution-links",
-  "order": 1,
   "key": "solution-1",
+  "order": 1,
   "linkLabel": "D2C & Marketplace Fulfilment",
   "linkUrl": "/d2c-marketplace-fulfillment/"
  },
  {
   "section": "solution-links",
-  "order": 2,
   "key": "solution-2",
+  "order": 2,
   "linkLabel": "B2B Fulfilment",
   "linkUrl": "/b2b-fulfillment/"
  },
  {
   "section": "solution-links",
-  "order": 3,
   "key": "solution-3",
+  "order": 3,
   "linkLabel": "Quick Commerce Fulfilment",
   "linkUrl": "/quick-ecommerce-fulfillment/"
  },
  {
   "section": "solution-links",
-  "order": 4,
   "key": "solution-4",
+  "order": 4,
   "linkLabel": "Shipping & Distribution",
   "linkUrl": "/shipping-and-distribution/"
  },
  {
   "section": "contact",
-  "order": 0,
   "key": "heading",
+  "order": 0,
   "title": "Contact"
  },
  {
   "section": "contact",
-  "order": 1,
   "key": "address",
-  "description": "123 Industrial Zone, Navi Mumbai, Maharashtra 400708"
+  "order": 1,
+  "description": "Building No: 384&385 Airapuram, Kochi 683556"
  },
  {
   "section": "contact",
-  "order": 2,
   "key": "phone",
-  "description": "+91 98765 43210"
+  "order": 2,
+  "description": "+91 9995450330"
  },
  {
   "section": "contact",
-  "order": 3,
   "key": "email",
-  "description": "hello@warevolt.in"
+  "order": 3,
+  "description": "hello@warevolt.com"
  },
  {
   "section": "newsletter",
-  "order": 1,
   "key": "newsletter",
+  "order": 1,
   "label": "Enter your email",
   "linkLabel": "Subscribe"
  },
  {
   "section": "legal",
-  "order": 1,
   "key": "copyright",
+  "order": 1,
   "description": "© 2026 Warevolt. All rights reserved."
  },
  {
   "section": "legal",
-  "order": 2,
   "key": "privacy",
+  "order": 2,
   "linkLabel": "Privacy Policy",
   "linkUrl": "#"
  },
  {
   "section": "legal",
-  "order": 3,
   "key": "terms",
+  "order": 3,
   "linkLabel": "Terms of Service",
   "linkUrl": "#"
  }

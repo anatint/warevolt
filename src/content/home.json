@@ -1,196 +1,5 @@
 [
  {
-  "section": "hero",
-  "order": 1,
-  "key": "hero-title",
-  "title": "Scale Faster with Pan-India eCommerce Fulfillment & 3PL"
- },
- {
-  "section": "hero",
-  "order": 2,
-  "key": "hero-description",
-  "description": "Headquartered in Kochi, Warevolt powers inventory management, warehousing, order fulfillment, shipping, and nationwide distribution for modern D2C, B2B, retail, marketplace, and quick commerce businesses."
- },
- {
-  "section": "hero",
-  "order": 3,
-  "key": "hero-cta",
-  "linkLabel": "Get Started"
- },
- {
-  "section": "hero",
-  "order": 4,
-  "key": "hero-bg",
-  "image": "/uploads/pasted-1784525640761-0.png"
- },
- {
-  "section": "about",
-  "order": 1,
-  "key": "about-photo",
-  "image": "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80",
-  "imageAlt": "Warehouse photo"
- },
- {
-  "section": "about",
-  "order": 2,
-  "key": "about-watermark",
-  "image": "/uploads/pasted-1784523250294-0_1-removebg-preview 1-7ae9daee.png",
-  "imageAlt": ""
- },
- {
-  "section": "about",
-  "order": 3,
-  "key": "about-years",
-  "title": "25+",
-  "description": "Years of Excellence"
- },
- {
-  "section": "about",
-  "order": 4,
-  "key": "about-iso",
-  "label": "ISO Certified",
-  "title": "Verified Quality"
- },
- {
-  "section": "about",
-  "order": 5,
-  "key": "about-title",
-  "title": "About"
- },
- {
-  "section": "about",
-  "order": 6,
-  "key": "about-p1",
-  "description": "We build reliable fulfillment solutions that help businesses move products efficiently, safely, and on time. With 25+ years of industry experience, we combine proven processes, quality materials, and technology-driven execution to deliver consistent results for Indian and global brands."
- },
- {
-  "section": "about",
-  "order": 7,
-  "key": "about-p2",
-  "description": "Our commitment goes beyond completing an order. From planning and production to quality checks and delivery, every stage is managed with precision and accountability. We follow international standards, prioritize safety, and ensure every project is delivered according to agreed timelines."
- },
- {
-  "section": "about",
-  "order": 8,
-  "key": "about-badge-1",
-  "title": "International Standards",
-  "description": "ISO certified materials and processes"
- },
- {
-  "section": "about",
-  "order": 9,
-  "key": "about-badge-2",
-  "title": "On-Time Delivery",
-  "description": "Milestone-driven project execution"
- },
- {
-  "section": "about",
-  "order": 10,
-  "key": "about-badge-3",
-  "title": "Safety First",
-  "description": "Zero-incident site management"
- },
- {
-  "section": "about",
-  "order": 11,
-  "key": "about-badge-4",
-  "title": "25+ Years",
-  "description": "Deep domain expertise"
- },
- {
-  "section": "about",
-  "order": 12,
-  "key": "about-link",
-  "linkLabel": "Learn More About Us",
-  "linkUrl": "#"
- },
- {
-  "section": "integrations",
-  "order": 1,
-  "key": "logo-1",
-  "image": "/uploads/pasted-1784528096970-0.png",
-  "imageAlt": "Shopify"
- },
- {
-  "section": "integrations",
-  "order": 2,
-  "key": "logo-2",
-  "image": "/uploads/pasted-1784528121293-0.png",
-  "imageAlt": "WooCommerce"
- },
- {
-  "section": "integrations",
-  "order": 3,
-  "key": "logo-3",
-  "image": "/uploads/pasted-1784528144899-0.png",
-  "imageAlt": "Amazon"
- },
- {
-  "section": "integrations",
-  "order": 4,
-  "key": "logo-4",
-  "image": "/uploads/pasted-1784528167652-0.png",
-  "imageAlt": "Flipkart"
- },
- {
-  "section": "integrations",
-  "order": 5,
-  "key": "logo-5",
-  "image": "/uploads/pasted-1784528198760-0.png",
-  "imageAlt": "Myntra"
- },
- {
-  "section": "integrations",
-  "order": 6,
-  "key": "logo-6",
-  "image": "/uploads/pasted-1784528221498-0.png",
-  "imageAlt": "Ajio"
- },
- {
-  "section": "integrations",
-  "order": 7,
-  "key": "logo-7",
-  "image": "/uploads/pasted-1784528247214-0.png",
-  "imageAlt": "Nykaa"
- },
- {
-  "section": "integrations",
-  "order": 8,
-  "key": "logo-8",
-  "image": "/uploads/pasted-1784528267724-0.png",
-  "imageAlt": "Magento"
- },
- {
-  "section": "channels",
-  "order": 1,
-  "key": "channels-title",
-  "title": "Sell Anywhere. Fulfill Everywhere."
- },
- {
-  "section": "channels",
-  "order": 2,
-  "key": "channels-description",
-  "description": "Connect your e-commerce, marketplaces, retail, B2B, and quick commerce channels into a single, automated fulfillment network."
- },
- {
-  "section": "channels",
-  "order": 3,
-  "key": "channels-video",
-  "image": "/uploads/warehouse loop.mp4"
- },
- {
-  "section": "control-tower",
-  "order": 1,
-  "key": "tower-title",
-  "title": "Every order is a promise.\nWe keep it."
- },
- {
-  "section": "control-tower",
-  "order": 2,
-  "key": "tower-description",
-  "description": "Every order represents a commitment to your customer. Warevolt powers the journey from checkout to doorstep by combining intelligent software, efficient warehouse operations, and seamless shipping integrations - ensuring every shipment is accurate, fast, and dependable."
- },
- {
   "section": "control-tower",
   "order": 3,
   "key": "feed-title",
@@ -211,13 +20,6 @@
   "key": "chart-title",
   "title": "Order Volume Trend",
   "extra": "This Week"
- },
- {
-  "section": "control-tower",
-  "order": 6,
-  "key": "order-feed-video",
-  "image": "/assets/order-feed.mp4",
-  "imageAlt": "Unified Order Feed"
  },
  {
   "section": "tower-feed",
@@ -368,432 +170,729 @@
   "extra": "#F59E0B"
  },
  {
-  "section": "stats",
+  "page": "home",
+  "section": "hero",
+  "key": "hero-title",
   "order": 1,
+  "title": "Scale Faster with Pan-India E-Commerce Fulfillment & 3PL"
+ },
+ {
+  "page": "home",
+  "section": "hero",
+  "key": "hero-description",
+  "order": 2,
+  "description": "Headquartered in Kochi, Warevolt powers inventory management, warehousing, order fulfillment, shipping, and nationwide distribution for modern D2C, B2B, retail, Marketplace, and Quick Commerce businesses."
+ },
+ {
+  "page": "home",
+  "section": "hero",
+  "key": "hero-cta",
+  "order": 3,
+  "linkLabel": "Get Started"
+ },
+ {
+  "page": "home",
+  "section": "hero",
+  "key": "hero-bg",
+  "order": 4,
+  "image": "https://static.wixstatic.com/media/db6928_b4c631fe71f949d9abbbaa2f437d5bb4~mv2.png"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-photo",
+  "order": 1,
+  "image": "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80",
+  "imageAlt": "Warehouse photo"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-watermark",
+  "order": 2,
+  "image": "https://static.wixstatic.com/media/db6928_b1cd35348df640fc8a8abbf8214db8d5~mv2.png"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-title",
+  "order": 5,
+  "title": "About Warevolt"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-p1",
+  "order": 6,
+  "description": "Warevolt is a technology-enabled 3PL logistics and warehousing company providing end-to-end supply chain solutions for businesses of all sizes. We help businesses store, manage, fulfill and move inventory through integrated B2B and B2C logistics infrastructure."
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-p2",
+  "order": 7,
+  "description": "From inbound receiving and inventory management to storage, order fulfillment, pick & pack, B2B distribution, e-commerce fulfillment, dispatch and returns, our operations combine technology, structured processes and real-time visibility to deliver accurate, scalable logistics."
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-years",
+  "order": 3,
+  "title": "3PL",
+  "description": "Fulfillment & Warehousing"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-iso",
+  "order": 4,
+  "label": "Smart Logistics",
+  "title": "Tech-Enabled"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-badge-1",
+  "order": 8,
+  "title": " Integrated Infrastructure",
+  "description": "Built for both B2B and B2C operations"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-badge-2",
+  "order": 9,
+  "title": "Real-Time Visibility",
+  "description": "WMS-enabled inventory tracking and analytics"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-badge-3",
+  "order": 10,
+  "title": " End-to-End Execution",
+  "description": "From inbound receiving to returns management"
+ },
+ {
+  "page": "home",
+  "section": "about",
+  "key": "about-badge-4",
+  "order": 11,
+  "title": "Scalable Framework",
+  "description": "Flexible solutions that grow with your business"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "key": "logo-1",
+  "order": 1,
+  "image": "https://static.wixstatic.com/media/db6928_388c785bd7294681a65cf5635255a2f8~mv2.png",
+  "imageAlt": "Shopify"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "key": "logo-2",
+  "order": 2,
+  "image": "https://static.wixstatic.com/media/db6928_84c071bf9cdb4759996b185d955affc1~mv2.png",
+  "imageAlt": "WooCommerce"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "key": "logo-3",
+  "order": 3,
+  "image": "https://static.wixstatic.com/media/db6928_1337cdaf9aa84e32b9fc240f25ff92cc~mv2.png",
+  "imageAlt": "Amazon"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "key": "logo-4",
+  "order": 4,
+  "image": "https://static.wixstatic.com/media/db6928_1aa522f0fd174fb6951baa769115aad1~mv2.png",
+  "imageAlt": "Flipkart"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "key": "logo-5",
+  "order": 5,
+  "image": "https://static.wixstatic.com/media/db6928_36ba5f061b384865bf00d3109ff7db37~mv2.png",
+  "imageAlt": "Myntra"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "key": "logo-6",
+  "order": 6,
+  "image": "https://static.wixstatic.com/media/db6928_161d3f0963db472a84a965f8a2c0fb51~mv2.png",
+  "imageAlt": "Ajio"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "key": "logo-7",
+  "order": 7,
+  "image": "https://static.wixstatic.com/media/db6928_2d08d8c37a794a4f86794659b44cbd65~mv2.png",
+  "imageAlt": "Nykaa"
+ },
+ {
+  "page": "home",
+  "section": "integrations",
+  "key": "logo-8",
+  "order": 8,
+  "image": "https://static.wixstatic.com/media/db6928_8c523b78e5dc4f05a76441cf06da8f83~mv2.png",
+  "imageAlt": "Magento"
+ },
+ {
+  "page": "home",
+  "section": "channels",
+  "key": "channels-title",
+  "order": 1,
+  "title": "Sell Anywhere. Fulfill Everywhere."
+ },
+ {
+  "page": "home",
+  "section": "channels",
+  "key": "channels-description",
+  "order": 2,
+  "description": "Connect your e-commerce, marketplaces, retail, B2B, and quick commerce channels into a single, automated fulfillment network."
+ },
+ {
+  "page": "home",
+  "section": "channels",
+  "key": "channels-video",
+  "order": 3,
+  "image": "/uploads/warehouse loop.mp4"
+ },
+ {
+  "page": "home",
+  "section": "control-tower",
+  "key": "tower-title",
+  "order": 1,
+  "title": "Every order is a promise.\nWe keep it."
+ },
+ {
+  "page": "home",
+  "section": "control-tower",
+  "key": "tower-description",
+  "order": 2,
+  "description": "Every order represents a commitment to your customer. Warevolt powers the journey from checkout to doorstep by combining intelligent software, efficient warehouse operations, and seamless shipping integrations - ensuring every shipment is accurate, fast, and dependable."
+ },
+ {
+  "page": "home",
+  "section": "stats",
   "key": "stat-1",
+  "order": 1,
   "title": "99.5%",
   "description": "Inventory Accuracy"
  },
  {
+  "page": "home",
   "section": "stats",
-  "order": 2,
   "key": "stat-2",
+  "order": 2,
   "title": "99.8%",
   "description": "Order Accuracy"
  },
  {
+  "page": "home",
   "section": "stats",
-  "order": 3,
   "key": "stat-3",
+  "order": 3,
   "title": "45+",
   "description": "Channel Integrations"
  },
  {
+  "page": "home",
   "section": "stats",
-  "order": 4,
   "key": "stat-4",
+  "order": 4,
   "title": "100%",
   "description": "Same-Day Dispatch"
  },
  {
+  "page": "home",
   "section": "visibility",
-  "order": 1,
   "key": "visibility-title",
-  "title": "Real-time visibility across every warehouse"
+  "order": 1,
+  "title": "Real-time visibility across every stage"
  },
  {
+  "page": "home",
   "section": "visibility",
-  "order": 2,
   "key": "visibility-description",
-  "description": "Track stock levels, order status and dispatch progress from a single dashboard — updated the moment it happens on the floor."
+  "order": 2,
+  "description": "Track inventory levels, stock movements and dispatch progress through a centralised view, helping you stay informed at every stage of your supply chain."
  },
  {
+  "page": "home",
   "section": "visibility",
-  "order": 3,
   "key": "browser-url",
-  "label": "🔒 dashboard.warevolt.in"
+  "order": 3,
+  "label": "🔒 dashboard.warevolt.com"
  },
  {
+  "page": "home",
   "section": "visibility",
-  "order": 4,
   "key": "dashboard-image",
-  "image": "/assets/control-tower-dashboard.png",
+  "order": 4,
+  "image": "https://static.wixstatic.com/media/db6928_32302d5429764ee5bd809d7be1824d76~mv2.png",
   "imageAlt": "Warevolt Control Tower dashboard"
  },
  {
+  "page": "home",
   "section": "visibility",
-  "order": 5,
   "key": "journey-image",
-  "image": "/assets/order-journey-screenshot.png",
+  "order": 5,
+  "image": "https://static.wixstatic.com/media/48a00e_0ad163fe624b47478efff9eab3a23252~mv2.jpg",
   "imageAlt": "Order journey steps"
  },
  {
+  "page": "home",
   "section": "how-it-works",
-  "order": 1,
   "key": "how-title",
+  "order": 1,
   "title": "How It Works"
  },
  {
+  "page": "home",
   "section": "how-it-works",
-  "order": 2,
   "key": "step-1",
+  "order": 2,
   "label": "1",
   "title": "Connect Your Sales Channels",
   "description": "Integrate your D2C store, online marketplaces, ERP, or custom platforms. Orders and inventory synchronize automatically in real time."
  },
  {
+  "page": "home",
   "section": "how-it-works",
-  "order": 3,
   "key": "step-2",
+  "order": 3,
   "label": "2",
   "title": "Send Us Your Inventory",
   "description": "We receive, inspect, and store your inventory using standardized warehouse processes, ensuring accurate tracking."
  },
  {
+  "page": "home",
   "section": "how-it-works",
-  "order": 4,
   "key": "step-3",
+  "order": 4,
   "label": "3",
   "title": "Automate Order Flow",
   "description": "Orders from every connected sales channel are automatically routed to our fulfillment platform."
  },
  {
+  "page": "home",
   "section": "how-it-works",
-  "order": 5,
   "key": "step-4",
+  "order": 5,
   "label": "4",
   "title": "Pick, Pack & Dispatch",
   "description": "Barcode verification, standardized SOPs, and quality checks, shipped through your preferred carrier."
  },
  {
+  "page": "home",
   "section": "how-it-works",
-  "order": 6,
   "key": "step-5",
+  "order": 6,
   "label": "5",
   "title": "Monitor & Scale",
   "description": "Track inventory, orders, shipments, returns, and performance in real time as your business grows."
  },
  {
+  "page": "home",
   "section": "fulfillment",
-  "order": 1,
   "key": "fulfillment-title",
+  "order": 1,
   "title": "Our Fulfillment Services"
  },
  {
+  "page": "home",
   "section": "fulfillment",
-  "order": 2,
   "key": "card-1",
-  "image": "/assets/d2c-marketplace.jpg",
-  "imageAlt": "D2C & Marketplace Fulfillment",
+  "order": 2,
   "title": "D2C & Marketplace Fulfillment",
   "description": "One fulfillment solution for your online store and every major marketplace.",
+  "image": "https://static.wixstatic.com/media/db6928_86057c1027634628b9d2dd2bbc2248b1~mv2.jpg",
+  "imageAlt": "D2C & Marketplace Fulfillment",
   "linkUrl": "/d2c-marketplace-fulfillment"
  },
  {
+  "page": "home",
   "section": "fulfillment",
-  "order": 3,
   "key": "card-2",
-  "image": "/assets/b2b-fulfillment.jpg",
-  "imageAlt": "B2B Isometric",
-  "title": "B2B Isometric",
+  "order": 3,
+  "title": "B2B Fulfillment",
   "description": "From order creation to final dispatch, every fulfillment workflow connected in one intelligent platform.",
+  "image": "https://static.wixstatic.com/media/db6928_cc08754644ef49d39b07e102148ae3b8~mv2.jpg",
+  "imageAlt": "B2B Isometric",
   "linkUrl": "/b2b-fulfillment/"
  },
  {
+  "page": "home",
   "section": "fulfillment",
-  "order": 4,
   "key": "card-3",
-  "image": "/assets/quick-commerce.jpg",
-  "imageAlt": "Quickcommerce Fulfillment",
-  "title": "Quickcommerce Fulfillment",
+  "order": 4,
+  "title": "Quick Commerce Fulfillment",
   "description": "Dark-store-ready micro-fulfillment for 10-30 minute delivery promises.",
+  "image": "https://static.wixstatic.com/media/db6928_b5f9c054300940ca8d479fa87247fe75~mv2.jpg",
+  "imageAlt": "Quickcommerce Fulfillment",
   "linkUrl": "/quick-ecommerce-fulfillment"
  },
  {
+  "page": "home",
   "section": "platform",
-  "order": 1,
   "key": "platform-title",
+  "order": 1,
   "title": "One Platform. Absolute Control."
  },
  {
+  "page": "home",
   "section": "platform",
-  "order": 2,
   "key": "platform-description",
+  "order": 2,
   "description": "Warevolt Scale™ is the intelligent fulfillment platform that powers every Warevolt operation. It brings together order management, inventory management, warehouse operations, shipping, returns, and analytics into a single connected platform—giving your business complete visibility and control over every stage of fulfillment."
  },
  {
+  "page": "home",
   "section": "platform",
-  "order": 3,
   "key": "platform-diagram",
-  "image": "/uploads/warevolt-scale-ecosystem-diagram-v2.png",
+  "order": 3,
+  "image": "https://static.wixstatic.com/media/db6928_ac16497fbb184ab5aff02b75882e9873~mv2.png",
   "imageAlt": "Warevolt Scale ecosystem diagram"
  },
  {
+  "page": "home",
   "section": "shipping",
-  "order": 1,
   "key": "shipping-image",
-  "image": "/uploads/Group 9.png",
+  "order": 1,
+  "image": "https://static.wixstatic.com/media/db6928_bfd1f2ccfc434f4281dc28e5481fe419~mv2.png",
   "imageAlt": "Warevolt operations dashboard"
  },
  {
+  "page": "home",
   "section": "shipping",
-  "order": 2,
   "key": "shipping-eyebrow",
+  "order": 2,
   "label": "Shipping & Distribution"
  },
  {
+  "page": "home",
   "section": "shipping",
-  "order": 3,
   "key": "shipping-title",
+  "order": 3,
   "title": "Flexible Shipping. Built Around Your Business."
  },
  {
+  "page": "home",
   "section": "shipping",
-  "order": 4,
   "key": "shipping-p1",
+  "order": 4,
   "description": "Every business ships differently. Some fulfill thousands of eCommerce orders every day, while others move pallets of inventory between factories, distributors, retail stores, and warehouses. Warevolt gives you the flexibility to manage both through a single fulfillment partner."
  },
  {
+  "page": "home",
   "section": "shipping",
-  "order": 5,
   "key": "shipping-p2",
+  "order": 5,
   "description": "For Ecommerce shipments, our Bring Your Own Account (BYOA) model lets you continue using your preferred shipping platform or courier accounts. For larger inventory movements, our managed freight network connects you with trusted transport partners across India for Full Truckload (FTL), Part Truckload (PTL), and Less Than Truckload (LTL) shipments."
  },
  {
+  "page": "home",
   "section": "shipping",
-  "order": 6,
   "key": "shipping-p3",
+  "order": 6,
   "description": "Whether you're shipping a single parcel or an entire truckload, Warevolt provides the technology, operational expertise, and nationwide logistics network to move your inventory efficiently, accurately, and at scale."
  },
  {
+  "page": "home",
   "section": "shipping",
-  "order": 7,
   "key": "shipping-cta",
+  "order": 7,
   "linkLabel": "Learn More",
   "linkUrl": "/shipping-and-distribution/"
  },
  {
+  "page": "home",
   "section": "why-brands",
-  "order": 1,
   "key": "why-heading",
+  "order": 1,
   "label": "Why Brands Choose Warevolt",
   "title": "Logistics Built for Control, Visibility, and Scale",
   "description": "Warevolt combines intelligent fulfillment, flexible shipping, nationwide distribution, and connected technology into one scalable logistics platform—helping your business grow without operational complexity."
  },
  {
+  "page": "home",
   "section": "why-brands-items",
-  "order": 1,
   "key": "item-1",
+  "order": 1,
   "title": "Flexible Shipping (BYOA)",
   "description": "Keep your preferred shipping platform, courier partners, and negotiated rates with our Bring Your Own Account (BYOA) model. Enjoy complete flexibility without platform lock-in."
  },
  {
+  "page": "home",
   "section": "why-brands-items",
-  "order": 2,
   "key": "item-2",
+  "order": 2,
   "title": "Dedicated Account Manager",
   "description": "Work with a dedicated logistics expert who understands your products, fulfillment requirements, and growth goals—from onboarding through long-term expansion."
  },
  {
+  "page": "home",
   "section": "why-brands-items",
-  "order": 3,
   "key": "item-3",
+  "order": 3,
   "title": "Inventory Accuracy",
   "description": "Protect your inventory with barcode-driven operations, real-time stock visibility, cycle counting, and multi-point quality checks."
  },
  {
+  "page": "home",
   "section": "why-brands-items",
-  "order": 4,
   "key": "item-4",
+  "order": 4,
   "title": "Accurate Weight & Dimensions",
   "description": "Every shipment is verified for weight and volumetric dimensions before dispatch to reduce billing discrepancies and improve shipping cost accuracy."
  },
  {
+  "page": "home",
   "section": "why-brands-items",
-  "order": 5,
   "key": "item-5",
+  "order": 5,
   "title": "Connected Technology",
   "description": "Integrate your eCommerce stores, marketplaces, ERP, and shipping platforms into one centralized fulfillment ecosystem."
  },
  {
+  "page": "home",
   "section": "why-brands-items",
-  "order": 6,
   "key": "item-6",
+  "order": 6,
   "title": "Nationwide Distribution",
   "description": "Manage everything from eCommerce parcel fulfillment to FTL, PTL, and LTL freight through a single logistics partner."
  },
  {
+  "page": "home",
   "section": "why-brands-items",
-  "order": 7,
   "key": "item-7",
+  "order": 7,
   "title": "Operational Excellence",
   "description": "Standardized SOPs, barcode verification, and automated warehouse workflows ensure faster, more consistent, and highly accurate fulfillment."
  },
  {
+  "page": "home",
   "section": "why-brands-items",
-  "order": 8,
   "key": "item-8",
+  "order": 8,
   "title": "Built to Scale",
   "description": "Whether you're growing your D2C business, expanding into marketplaces, or supplying retail channels, Warevolt scales alongside your business."
  },
  {
+  "page": "home",
   "section": "testimonials",
-  "order": 1,
   "key": "testimonials-title",
+  "order": 1,
   "title": "What Our Clients Say"
  },
  {
+  "page": "home",
+  "section": "testimonials",
+  "key": "visibility-toggle",
+  "order": 0,
+  "extra": "false"
+ },
+ {
+  "page": "home",
   "section": "testimonials-items",
-  "order": 1,
   "key": "testimonial-1",
+  "order": 1,
+  "label": "Rahul Kumar",
   "title": "Reliance Retail",
   "description": "Warevolt delivered our 200,000 sq ft distribution center two weeks ahead of schedule with flawless execution.",
-  "label": "Rahul Kumar",
   "extra": "Los Angeles"
  },
  {
+  "page": "home",
   "section": "testimonials-items",
-  "order": 2,
   "key": "testimonial-2",
+  "order": 2,
+  "label": "Priya Sharma",
   "title": "Mahindra Components",
   "description": "The PEB structure for our plant was engineered to perfection — workmanship and support were world-class.",
-  "label": "Priya Sharma",
   "extra": "California"
  },
  {
+  "page": "home",
   "section": "testimonials-items",
-  "order": 3,
   "key": "testimonial-3",
+  "order": 3,
+  "label": "Arun Menon",
   "title": "Sun Pharma",
   "description": "Warevolt understood our compliance needs and delivered a state-of-the-art facility that passed every inspection.",
-  "label": "Arun Menon",
   "extra": "California"
  },
  {
+  "page": "home",
   "section": "testimonials-items",
-  "order": 4,
   "key": "testimonial-4",
+  "order": 4,
+  "label": "Sanjay Kapoor",
   "title": "Tata Logistics",
   "description": "Their team scaled our cold storage capacity in record time without a single day of downtime.",
-  "label": "Sanjay Kapoor",
   "extra": "Mumbai"
  },
  {
+  "page": "home",
   "section": "testimonials-items",
-  "order": 5,
   "key": "testimonial-5",
+  "order": 5,
+  "label": "Neha Verma",
   "title": "Godrej Industries",
   "description": "Precision engineering and transparent communication throughout — exactly what we needed for our expansion.",
-  "label": "Neha Verma",
   "extra": "Pune"
  },
  {
+  "page": "home",
   "section": "testimonials-items",
-  "order": 6,
   "key": "testimonial-6",
+  "order": 6,
+  "label": "Ravi Patel",
   "title": "Adani Wilmar",
   "description": "From design to handover, Warevolt made a complex warehouse project feel effortless.",
-  "label": "Ravi Patel",
   "extra": "Ahmedabad"
  },
  {
-  "section": "cta",
-  "order": 1,
-  "key": "cta-badge",
-  "label": "Now taking new projects"
- },
- {
-  "section": "cta",
-  "order": 2,
-  "key": "cta-title",
-  "title": "Let's Build Your Next Warehouse Together."
- },
- {
-  "section": "cta",
-  "order": 3,
-  "key": "cta-description",
-  "description": "Share your project requirements and our team will get back to you within 24 hours with a detailed plan."
- },
- {
-  "section": "cta",
-  "order": 4,
-  "key": "cta-quote",
-  "linkLabel": "Get a Quote"
- },
- {
-  "section": "cta",
-  "order": 5,
-  "key": "cta-call",
-  "linkLabel": "Call Us Now",
-  "linkUrl": "tel:+91-9876543210"
- },
- {
+  "page": "home",
   "section": "industries",
-  "order": 1,
   "key": "industries-heading",
+  "order": 1,
   "label": "Industries We Serve",
   "title": "Fulfillment built for modern consumer brands.",
   "description": "From fast-moving consumer goods to fashion and beauty, WareVolt provides the warehousing, fulfillment, and distribution infrastructure brands need to scale."
  },
  {
+  "page": "home",
   "section": "industries",
-  "order": 2,
   "key": "industry-1",
+  "order": 2,
   "title": "Fashion & Apparel",
   "description": "Clothing, footwear & accessories",
-  "image": "/assets/industries/fashion-apparel.jpg",
+  "image": "https://static.wixstatic.com/media/db6928_493298c557664ca58a4020e967359ae8~mv2.jpg",
   "imageAlt": "Folded knitwear, a white sneaker and a tan leather handbag"
  },
  {
+  "page": "home",
   "section": "industries",
-  "order": 3,
   "key": "industry-2",
+  "order": 3,
   "title": "Beauty & Personal Care",
   "description": "Skincare, cosmetics & grooming",
-  "image": "/assets/industries/beauty-personal-care.jpg",
+  "image": "https://static.wixstatic.com/media/db6928_1b0b103c745b4b669e44a12ed04c316c~mv2.jpg",
   "imageAlt": "Skincare bottles, a lavender tube and a makeup brush"
  },
  {
+  "page": "home",
   "section": "industries",
-  "order": 4,
   "key": "industry-3",
+  "order": 4,
   "title": "FMCG",
   "description": "Everyday consumer & household products",
-  "image": "/assets/industries/fmcg.jpg",
+  "image": "https://static.wixstatic.com/media/db6928_c327c97976e64fe5b17e045244ae34dd~mv2.jpg",
   "imageAlt": "Packaged foods, cooking oil and household essentials"
  },
  {
+  "page": "home",
   "section": "industries",
-  "order": 5,
   "key": "industry-4",
+  "order": 5,
   "title": "Consumer Electronics",
   "description": "Devices, accessories & gadgets",
-  "image": "/assets/industries/consumer-electronics.jpg",
+  "image": "https://static.wixstatic.com/media/db6928_bf9287b758654548a90eb8da180598b6~mv2.jpg",
   "imageAlt": "Headphones, a smartphone, a smartwatch and a smart speaker"
  },
  {
+  "page": "home",
   "section": "industries",
-  "order": 6,
   "key": "industry-5",
+  "order": 6,
   "title": "Home & Lifestyle",
   "description": "Homeware, décor & lifestyle products",
-  "image": "/assets/industries/home-lifestyle.jpg",
+  "image": "https://static.wixstatic.com/media/db6928_37c0222249ae4b5ba0e178472799b279~mv2.jpg",
   "imageAlt": "A plant, candles, a mug and cosy home décor"
  },
  {
+  "page": "home",
   "section": "industries",
-  "order": 7,
   "key": "industry-6",
+  "order": 7,
   "title": "Sports & Fitness",
   "description": "Sportswear, equipment & accessories",
-  "image": "/assets/industries/sports-fitness.jpg",
+  "image": "https://static.wixstatic.com/media/db6928_09cf0d2b65bf414eb0a0e7932dc352f0~mv2.jpg",
   "imageAlt": "A yoga mat, shaker bottle, dumbbell and gym bag"
  },
  {
+  "page": "home",
   "section": "industries",
-  "order": 8,
   "key": "industries-cta",
+  "order": 8,
   "linkLabel": "Contact Us",
   "linkUrl": "/contact"
+ },
+ {
+  "page": "home",
+  "section": "cta",
+  "key": "cta-badge",
+  "order": 1,
+  "label": "Now taking new projects"
+ },
+ {
+  "page": "home",
+  "section": "cta",
+  "key": "cta-title",
+  "order": 2,
+  "title": "Let's Build Your Brand Together."
+ },
+ {
+  "page": "home",
+  "section": "cta",
+  "key": "cta-description",
+  "order": 3,
+  "description": "Share your project requirements and our team will get back to you within 24 hours with a detailed plan."
+ },
+ {
+  "page": "home",
+  "section": "cta",
+  "key": "cta-quote",
+  "order": 4,
+  "linkLabel": "Get a Quote"
+ },
+ {
+  "page": "home",
+  "section": "cta",
+  "key": "cta-call",
+  "order": 5,
+  "linkLabel": "Call Us Now",
+  "linkUrl": "tel:+91-9995450330"
+ },
+ {
+  "page": "home",
+  "section": "control-tower",
+  "key": "order-feed-video",
+  "order": 6,
+  "image": "https://video.wixstatic.com/video/0840ea_7fbe6b7b2e4947d184a36d76869e7fc5/720p/mp4/file.mp4"
+ },
+ {
+  "page": "home",
+  "section": "seo",
+  "key": "meta-title",
+  "order": 900,
+  "title": "Warevolt | Pan-India E-Commerce Fulfillment & 3PL Kochi"
+ },
+ {
+  "page": "home",
+  "section": "seo",
+  "key": "meta-description",
+  "order": 901,
+  "description": "Warevolt is a Kochi-based 3PL for D2C, B2B, Marketplace and Quick Commerce brands: inventory, warehousing, order fulfillment and nationwide shipping."
  }
 ]

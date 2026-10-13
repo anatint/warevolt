@@ -5,7 +5,7 @@
   "order": 1,
   "label": "Custom pricing",
   "title": "Get",
-  "extra": "pricing",
+  "extra": "Pricing",
   "description": "Share a few details and our team will send tailored pricing for your fulfillment volume."
  },
  {
@@ -40,7 +40,7 @@
   "section": "fields",
   "key": "count",
   "order": 5,
-  "label": "Count",
+  "label": "Monthly order volume",
   "description": "e.g. 5,000 / month"
  },
  {

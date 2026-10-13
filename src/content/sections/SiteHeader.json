@@ -1,137 +1,136 @@
 [
  {
   "section": "brand",
-  "order": 1,
   "key": "logo-light",
+  "order": 1,
   "image": "https://static.wixstatic.com/media/db6928_19adcd38a546456e974c0d08ff840f8d~mv2.png",
   "imageAlt": "Warevolt",
   "linkUrl": "/"
  },
  {
   "section": "brand",
-  "order": 2,
   "key": "logo-dark",
+  "order": 2,
   "image": "https://static.wixstatic.com/media/db6928_aee8ad6c93394b0a90e92a755ca473cc~mv2.png",
   "imageAlt": "Warevolt",
   "linkUrl": "/"
  },
  {
-  "section": "brand",
-  "order": 3,
-  "key": "favicon",
-  "image": "/assets/warevolt-mark.png",
-  "imageAlt": "Warevolt"
- },
- {
   "section": "nav",
-  "order": 1,
   "key": "home",
+  "order": 1,
   "linkLabel": "Home",
   "linkUrl": "/"
  },
  {
   "section": "nav",
-  "order": 2,
   "key": "solutions",
+  "order": 2,
   "linkLabel": "Solutions",
   "extra": "solutions-menu"
  },
  {
   "section": "nav",
-  "order": 3,
   "key": "technology",
+  "order": 3,
   "linkLabel": "Technology",
   "extra": "mega-menu"
  },
  {
   "section": "nav",
-  "order": 4,
   "key": "sectors",
+  "order": 4,
   "linkLabel": "Sectors",
   "linkUrl": "/#industries"
  },
  {
   "section": "nav",
-  "order": 5,
   "key": "pricing",
+  "order": 5,
   "linkLabel": "Pricing",
   "extra": "opens-pricing-modal"
  },
  {
   "section": "solutions-menu",
-  "order": 1,
   "key": "d2c-marketplace",
+  "order": 1,
   "title": "D2C & Marketplace Fulfilment",
-  "linkUrl": "/d2c-marketplace-fulfillment/",
-  "description": "One fulfilment solution for your online store and every major marketplace."
+  "description": "One fulfilment solution for your online store and every major marketplace.",
+  "linkUrl": "/d2c-marketplace-fulfillment/"
  },
  {
   "section": "solutions-menu",
-  "order": 2,
   "key": "b2b",
+  "order": 2,
   "title": "B2B Fulfilment",
-  "linkUrl": "/b2b-fulfillment/",
-  "description": "Bulk, wholesale and retail replenishment with compliance built in."
+  "description": "Bulk, wholesale and retail replenishment with compliance built in.",
+  "linkUrl": "/b2b-fulfillment/"
  },
  {
   "section": "solutions-menu",
-  "order": 3,
   "key": "quick-commerce",
+  "order": 3,
   "title": "Quick Commerce Fulfilment",
-  "linkUrl": "/quick-ecommerce-fulfillment/",
-  "description": "Dark-store-ready micro-fulfilment for 10–30 minute delivery promises."
+  "description": "Support rapid replenishment with strategically placed inventory.",
+  "linkUrl": "/quick-ecommerce-fulfillment/"
  },
  {
   "section": "solutions-menu",
-  "order": 4,
   "key": "shipping-distribution",
+  "order": 4,
   "title": "Shipping & Distribution",
   "description": "Flexible courier and freight shipping across India.",
   "linkUrl": "/shipping-and-distribution/"
  },
  {
   "section": "mega-menu",
-  "order": 1,
   "key": "order-warehouse",
+  "order": 1,
   "title": "Order & Warehouse Management",
   "description": "From order to dispatch, every fulfillment workflow connected.",
   "linkUrl": "/order-and-warehouse-management"
  },
  {
   "section": "mega-menu",
-  "order": 2,
   "key": "inventory-returns",
+  "order": 2,
   "title": "Inventory & Returns Management",
   "description": "Complete control of stock, movements, and returns across your network.",
   "linkUrl": "/inventory-and-returns-management"
  },
  {
   "section": "mega-menu",
-  "order": 3,
   "key": "analytics",
+  "order": 3,
   "title": "Analytics & Reporting",
   "description": "Turn fulfillment data into clear, actionable insights.",
   "linkUrl": "/analytics-and-reporting"
  },
  {
   "section": "actions",
-  "order": 1,
   "key": "login",
+  "order": 1,
   "linkLabel": "Login",
   "extra": "opens-pricing-modal"
  },
  {
   "section": "actions",
-  "order": 2,
   "key": "cta",
+  "order": 2,
   "linkLabel": "Speak to an expert",
   "linkUrl": "/contact"
  },
  {
   "section": "actions",
-  "order": 3,
   "key": "phone",
-  "linkLabel": "+91 98765 43210",
-  "linkUrl": "tel:+919876543210"
+  "order": 3,
+  "linkLabel": "+91 9995450330",
+  "linkUrl": "tel:+919995450330"
+ },
+ {
+  "section": "brand",
+  "key": "favicon",
+  "order": 3,
+  "image": "https://static.wixstatic.com/media/0840ea_9930cba7eb9e4e079608849a93a3170c~mv2.png"
  }
 ]

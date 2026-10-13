@@ -1,521 +1,615 @@
 [
-  {
-    "section": "hero",
-    "order": 1,
-    "key": "hero-eyebrow",
-    "label": "Solutions / Quick E-commerce Fulfillment"
-  },
-  {
-    "section": "hero",
-    "order": 2,
-    "key": "hero-title",
-    "title": "Dark-store-ready micro-fulfillment for 10–30 minute delivery promises."
-  },
-  {
-    "section": "hero",
-    "order": 3,
-    "key": "hero-description",
-    "description": "Ultra-fast picking, automated micro-hub replenishment, and hyper-local dispatch operations engineered to power rapid commerce growth."
-  },
-  {
-    "section": "hero",
-    "order": 4,
-    "key": "hero-cta-primary",
-    "linkLabel": "Get a Quote"
-  },
-  {
-    "section": "hero",
-    "order": 5,
-    "key": "hero-cta-secondary",
-    "linkLabel": "Speak to an expert"
-  },
-  {
-    "section": "hero",
-    "order": 6,
-    "key": "hero-image",
-    "image": "/assets/quick-commerce.jpg",
-    "imageAlt": "Quick E-commerce fulfillment illustration"
-  },
-  {
-    "section": "platform-logos",
-    "order": 1,
-    "key": "logo-1",
-    "title": "Blinkit",
-    "image": "/uploads/pasted-1785731892932-0.png",
-    "imageAlt": "Blinkit"
-  },
-  {
-    "section": "platform-logos",
-    "order": 2,
-    "key": "logo-2",
-    "title": "Zepto",
-    "image": "/uploads/pasted-1785732016871-0.png",
-    "imageAlt": "Zepto"
-  },
-  {
-    "section": "platform-logos",
-    "order": 3,
-    "key": "logo-3",
-    "title": "Flipkart Minutes",
-    "image": "/uploads/pasted-1785731537374-0.png",
-    "imageAlt": "Flipkart Minutes"
-  },
-  {
-    "section": "platform-logos",
-    "order": 4,
-    "key": "logo-4",
-    "title": "Swiggy Instamart",
-    "image": "/uploads/pasted-1785731732420-0.png",
-    "imageAlt": "Swiggy Instamart"
-  },
-  {
-    "section": "platform-logos",
-    "order": 5,
-    "key": "logo-5",
-    "title": "Amazon Now",
-    "image": "/uploads/pasted-1785731347143-0.png",
-    "imageAlt": "Amazon Now"
-  },
-  {
-    "section": "platform-logos",
-    "order": 6,
-    "key": "logo-6",
-    "title": "BigBasket Now",
-    "image": "/uploads/pasted-1785731671522-0.png",
-    "imageAlt": "BigBasket Now"
-  },
-  {
-    "section": "intro",
-    "order": 1,
-    "key": "intro-title",
-    "title": "Power hyper-local 10 to 30 minute delivery networks with high-density dark store fulfillment."
-  },
-  {
-    "section": "micro-fulfillment",
-    "order": 1,
-    "key": "image",
-    "image": "/uploads/Quick_commerce.jpg",
-    "imageAlt": "Quick commerce micro-fulfillment dark store"
-  },
-  {
-    "section": "micro-fulfillment",
-    "order": 2,
-    "key": "title",
-    "title": "Hyper-Local Micro-Fulfillment"
-  },
-  {
-    "section": "micro-fulfillment",
-    "order": 3,
-    "key": "highlight",
-    "description": "Under 3-minute pick-and-pack times with barcode-guided handheld routing."
-  },
-  {
-    "section": "micro-fulfillment",
-    "order": 4,
-    "key": "paragraph-1",
-    "description": "Quick commerce demands microsecond responsiveness and near-zero error margins. Warevolt deploys high-density micro-fulfillment centers (dark stores) within key urban delivery radiuses, enabling brands to fulfill on-demand grocery, D2C impulse purchases, consumer electronics, and daily essentials in 10 to 30 minutes."
-  },
-  {
-    "section": "micro-fulfillment",
-    "order": 5,
-    "key": "paragraph-2",
-    "description": "Each micro-facility is mapped for maximum picking speed. Fast-moving SKUs are slotted in ergonomic forward-pick zones, and incoming orders trigger instant RF scanner audio-visual cues so staff locate, scan, and stage bags in under 180 seconds."
-  },
-  {
-    "section": "micro-fulfillment",
-    "order": 6,
-    "key": "paragraph-3",
-    "description": "Centralized inventory feeds automatically replenish dark store inventory from regional mother hubs, ensuring consistent high availability across rapid delivery channels without overstocking micro-footprints."
-  },
-  {
-    "section": "micro-fulfillment",
-    "order": 7,
-    "key": "point-1",
-    "title": "Sub-3 min pick SLA"
-  },
-  {
-    "section": "micro-fulfillment",
-    "order": 8,
-    "key": "point-2",
-    "title": "Hyper-local inventory"
-  },
-  {
-    "section": "micro-fulfillment",
-    "order": 9,
-    "key": "point-3",
-    "title": "Dark store automation"
-  },
-  {
-    "section": "services-heading",
-    "order": 1,
-    "key": "title",
-    "title": "Quick Commerce Fulfillment Capabilities"
-  },
-  {
-    "section": "services",
-    "order": 1,
-    "key": "service-1",
-    "title": "Micro-Fulfillment Dark Store Setup"
-  },
-  {
-    "section": "services",
-    "order": 2,
-    "key": "service-2",
-    "title": "Sub-3 Minute Picking & Staging"
-  },
-  {
-    "section": "services",
-    "order": 3,
-    "key": "service-3",
-    "title": "Mother Hub to Dark Store Auto-Replenishment"
-  },
-  {
-    "section": "services",
-    "order": 4,
-    "key": "service-4",
-    "title": "Real-Time Rider Staging & Handoff"
-  },
-  {
-    "section": "services",
-    "order": 5,
-    "key": "service-5",
-    "title": "Temperature-Controlled Cold Storage Bins"
-  },
-  {
-    "section": "services",
-    "order": 6,
-    "key": "service-6",
-    "title": "High-Velocity SKU Density Planning"
-  },
-  {
-    "section": "services",
-    "order": 7,
-    "key": "service-7",
-    "title": "Live Available-to-Promise Inventory Sync"
-  },
-  {
-    "section": "services",
-    "order": 8,
-    "key": "service-8",
-    "title": "Real-Time Stockout Prevention Alerts"
-  },
-  {
-    "section": "services",
-    "order": 9,
-    "key": "service-9",
-    "title": "FIFO & Strict Expiry Management"
-  },
-  {
-    "section": "services",
-    "order": 10,
-    "key": "service-10",
-    "title": "Flash Sale & Surge Demand Buffers"
-  },
-  {
-    "section": "services",
-    "order": 11,
-    "key": "service-11",
-    "title": "Rapid Inbound Dockside QC Audits"
-  },
-  {
-    "section": "services",
-    "order": 12,
-    "key": "service-12",
-    "title": "Hyper-Local Geofenced Inventory Visibility"
-  },
-  {
-    "section": "services",
-    "order": 13,
-    "key": "service-13",
-    "title": "Multi-Platform API Integrations"
-  },
-  {
-    "section": "services",
-    "order": 14,
-    "key": "service-14",
-    "title": "Shift-Level Productivity & SLA Analytics"
-  },
-  {
-    "section": "dark-store-network",
-    "order": 1,
-    "key": "background",
-    "image": "/uploads/pasted-1784525640761-0.png"
-  },
-  {
-    "section": "dark-store-network",
-    "order": 2,
-    "key": "title",
-    "title": "Platform Integration & Dark Store Network"
-  },
-  {
-    "section": "dark-store-network",
-    "order": 3,
-    "key": "highlight",
-    "description": "Fulfill orders across Blinkit, Zepto, Swiggy Instamart, and brand quick-commerce apps simultaneously."
-  },
-  {
-    "section": "dark-store-network",
-    "order": 4,
-    "key": "paragraph-1",
-    "description": "Warevolt centralizes rapid commerce operations. Products are cataloged and allocated dynamically so your brand can participate in multiple rapid delivery networks from shared or dedicated micro-fulfillment dark stores without inventory fragmentation."
-  },
-  {
-    "section": "dark-store-network",
-    "order": 5,
-    "key": "paragraph-2",
-    "description": "Real-time API handshakes update stock levels across all storefronts instantly upon item pick, while staging bays allow delivery riders to pick up sealed packages seamlessly within seconds of arrival."
-  },
-  {
-    "section": "dark-store-tiles",
-    "order": 1,
-    "key": "tile-1",
-    "title": "Blinkit · Zepto · Instamart · BB Now · ONDC"
-  },
-  {
-    "section": "dark-store-tiles",
-    "order": 2,
-    "key": "tile-2",
-    "title": "Sub-3 Min Assembly",
-    "description": "High-speed pick and pack with digital validation"
-  },
-  {
-    "section": "dark-store-tiles",
-    "order": 3,
-    "key": "tile-3",
-    "title": "Auto-Replenishment",
-    "description": "Mother hub to dark store continuous transfer"
-  },
-  {
-    "section": "dark-store-tiles",
-    "order": 4,
-    "key": "tile-4",
-    "title": "Multi-Temp Storage",
-    "description": "Ambient, chilled & frozen temperature control"
-  },
-  {
-    "section": "standards-heading",
-    "order": 1,
-    "key": "title",
-    "title": "Quick Commerce Operational Standards & SLAs",
-    "description": "Strict operational metrics engineered to satisfy instant delivery promises:"
-  },
-  {
-    "section": "standards",
-    "order": 1,
-    "key": "point-1",
-    "title": "Sub-3 minute order receipt-to-rider handover"
-  },
-  {
-    "section": "standards",
-    "order": 2,
-    "key": "point-2",
-    "title": "99.9% inventory picking accuracy via scan validation"
-  },
-  {
-    "section": "standards",
-    "order": 3,
-    "key": "point-3",
-    "title": "Strict FIFO rotation and daily expiry audits"
-  },
-  {
-    "section": "standards",
-    "order": 4,
-    "key": "point-4",
-    "title": "Continuous temperature logging for cold chain bins"
-  },
-  {
-    "section": "standards",
-    "order": 5,
-    "key": "point-5",
-    "title": "100% rider handoff tracking with digital signoff"
-  },
-  {
-    "section": "standards",
-    "order": 6,
-    "key": "point-6",
-    "title": "Automated minimum reorder point triggers"
-  },
-  {
-    "section": "standards",
-    "order": 7,
-    "key": "point-7",
-    "title": "Real-time dark store stock reconciliation"
-  },
-  {
-    "section": "standards",
-    "order": 8,
-    "key": "point-8",
-    "title": "Spill, leak, and damage mitigation protocols"
-  },
-  {
-    "section": "excellence-heading",
-    "order": 1,
-    "key": "title",
-    "title": "Operational Excellence",
-    "description": "Ultra-responsive micro-fulfillment processes designed for lightning-fast execution and zero cancellations."
-  },
-  {
-    "section": "excellence",
-    "order": 1,
-    "key": "card-1",
-    "title": "Sub-3 Min SLA Picking",
-    "description": "Rapid picking, bag assembly, and staging in under 180 seconds from order receipt."
-  },
-  {
-    "section": "excellence",
-    "order": 2,
-    "key": "card-2",
-    "title": "Rapid Handheld SOPs",
-    "description": "Guided scanner navigation minimizes footwork and accelerates bin retrieval."
-  },
-  {
-    "section": "excellence",
-    "order": 3,
-    "key": "card-3",
-    "title": "Barcode Staging Checkpoints",
-    "description": "Scan checks at the staging bin ensure exact matching before rider handoff."
-  },
-  {
-    "section": "excellence",
-    "order": 4,
-    "key": "card-4",
-    "title": "Real-Time Stock Sync",
-    "description": "Sub-second catalog deduction prevents overselling and out-of-stock cancellations."
-  },
-  {
-    "section": "excellence",
-    "order": 5,
-    "key": "card-5",
-    "title": "FIFO & Expiry Control",
-    "description": "Continuous shelf-life tracking guards against near-expiry dispatch to customers."
-  },
-  {
-    "section": "excellence",
-    "order": 6,
-    "key": "card-6",
-    "title": "Mother Hub Inbound",
-    "description": "Scheduled intra-city replenishment keeps micro-store stock levels optimal."
-  },
-  {
-    "section": "excellence",
-    "order": 7,
-    "key": "card-7",
-    "title": "Rider Handoff Metrics",
-    "description": "Granular metrics on pickup wait times and dark store throughput speed."
-  },
-  {
-    "section": "faq-heading",
-    "order": 1,
-    "key": "title",
-    "title": "Frequently\nAsked Questions"
-  },
-  {
-    "section": "faq-contact",
-    "order": 1,
-    "key": "contact",
-    "title": "Still have questions?",
-    "description": "Can't find the answer you're looking for? Send us an email and we'll get back to you.",
-    "linkLabel": "Send email",
-    "linkUrl": "mailto:hello@warevolt.in"
-  },
-  {
-    "section": "faqs",
-    "order": 1,
-    "key": "faq-1",
-    "title": "What is Quick Commerce fulfillment and how does it work?",
-    "description": "Quick Commerce fulfillment utilizes hyper-local micro-fulfillment centers (dark stores) strategically positioned near high-density residential and commercial clusters. When an order is placed on Blinkit, Zepto, Swiggy Instamart, or your brand app, pickers receive instant handheld alerts to pick and pack items in under 3 minutes for immediate rider pickup."
-  },
-  {
-    "section": "faqs",
-    "order": 2,
-    "key": "faq-2",
-    "title": "How does Warevolt achieve sub-3 minute order fulfillment?",
-    "description": "We organize dark stores with high-density, ergonomic fast-pick zones. SKUs are slotted based on real-time buying frequency, while pickers use wireless RF scanners with optimal route navigation to locate and scan items in seconds without bottlenecks."
-  },
-  {
-    "section": "faqs",
-    "order": 3,
-    "key": "faq-3",
-    "title": "Can Warevolt manage dark store replenishment from a central mother hub?",
-    "description": "Yes. Our integrated fulfillment network links regional mother warehouses to distributed micro-fulfillment dark stores. Automated replenishment triggers monitor daily consumption velocity and initiate transfer dispatches to ensure dark stores never run out of top-selling SKUs."
-  },
-  {
-    "section": "faqs",
-    "order": 4,
-    "key": "faq-4",
-    "title": "Does Warevolt support perishable, chilled, and frozen products?",
-    "description": "Yes. Our facilities and dark stores include multi-temperature storage zones—ambient, chilled (2°C to 8°C), and frozen (-18°C). We maintain continuous IoT digital temperature logs and strict FEFO (First Expired, First Out) inventory rotation."
-  },
-  {
-    "section": "faqs",
-    "order": 5,
-    "key": "faq-5",
-    "title": "How does Warevolt handle integration with quick commerce platforms?",
-    "description": "Warevolt Scale™ integrates via real-time webhooks and APIs with quick commerce platforms including Blinkit, Zepto, Swiggy Instamart, BigBasket Now, and custom brand storefronts. Inventory availability and order statuses synchronize instantly across all channels."
-  },
-  {
-    "section": "faqs",
-    "order": 6,
-    "key": "faq-6",
-    "title": "How do rider handovers work at the dark store dispatch bay?",
-    "description": "Packed orders are staged in color-coded, labeled dispatch bins matching the order ID. Delivery riders scan the parcel barcode upon arrival for digital handoff verification, completing the transfer in under 20 seconds."
-  },
-  {
-    "section": "faqs",
-    "order": 7,
-    "key": "faq-7",
-    "title": "How do you handle stockouts and inventory discrepancy in quick commerce?",
-    "description": "Real-time perpetual cycle counting, double-scan picking, and intelligent buffer safety margins ensure that catalog inventory matches physical shelf stock with 99.9% accuracy, virtually eliminating cancellations due to out-of-stock items."
-  },
-  {
-    "section": "faqs",
-    "order": 8,
-    "key": "faq-8",
-    "title": "Can brands run flash sales and promotional spikes in quick commerce?",
-    "description": "Yes. We configure dynamic safety stock buffers and deploy flexible shift staffing during festival seasons, IPL matches, and flash promotional campaigns to effortlessly handle 5x to 10x order volume surges without breaching SLAs."
-  },
-  {
-    "section": "faqs",
-    "order": 9,
-    "key": "faq-9",
-    "title": "What reporting and operational analytics are provided for dark stores?",
-    "description": "Brands gain real-time visibility into pick-to-pack durations, rider wait times, SKU sales velocity, hourly order volume curves, inventory age, and dark store throughput via centralized live dashboards."
-  },
-  {
-    "section": "faqs",
-    "order": 10,
-    "key": "faq-10",
-    "title": "Can Warevolt help a brand launch in new cities with quick commerce?",
-    "description": "Yes. With a ready-to-scale fulfillment network spanning major metros (Mumbai, Delhi NCR, Bangalore, Hyderabad, Kochi, Chennai, Pune), Warevolt enables brands to plug into established micro-fulfillment infrastructure without massive capital expenditure."
-  },
-  {
-    "section": "cta",
-    "order": 1,
-    "key": "badge",
-    "extra": "Now onboarding rapid commerce brands"
-  },
-  {
-    "section": "cta",
-    "order": 2,
-    "key": "title",
-    "title": "Ready to scale your quick commerce operations?"
-  },
-  {
-    "section": "cta",
-    "order": 3,
-    "key": "description",
-    "description": "Connect with our quick-commerce specialists and start delivering 10–30 minute fulfillment nationwide."
-  },
-  {
-    "section": "cta",
-    "order": 4,
-    "key": "cta-primary",
-    "linkLabel": "Get started now"
-  },
-  {
-    "section": "cta",
-    "order": 5,
-    "key": "cta-secondary",
-    "linkLabel": "Speak to an expert"
-  }
+ {
+  "page": "quick-ecommerce",
+  "section": "hero",
+  "key": "hero-eyebrow",
+  "order": 1,
+  "label": "Solutions / Quick Commerce Fulfilment"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "hero",
+  "key": "hero-title",
+  "order": 2,
+  "title": "Keep Inventory Closer. Replenish Dark Stores Faster."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "hero",
+  "key": "hero-description",
+  "order": 3,
+  "description": "Warevolt helps brands position inventory closer to quick-commerce networks through organised warehousing, inventory management and coordinated mother hub dispatch."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "hero",
+  "key": "hero-cta-primary",
+  "order": 4,
+  "linkLabel": "Get a Quote"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "hero",
+  "key": "hero-cta-secondary",
+  "order": 5,
+  "linkLabel": "Speak to an expert"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "hero",
+  "key": "hero-image",
+  "order": 6,
+  "image": "https://static.wixstatic.com/media/48a00e_0ed24cc72cbd4137a93cf9e5bfad669c~mv2.png",
+  "imageAlt": "Quick Commerce fulfillment illustration"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "key": "logo-1",
+  "order": 1,
+  "title": "Blinkit",
+  "image": "https://static.wixstatic.com/media/db6928_f2d16c807a8447f8a859f34d825ee954~mv2.png",
+  "imageAlt": "Blinkit"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "key": "logo-2",
+  "order": 2,
+  "title": "Zepto",
+  "image": "https://static.wixstatic.com/media/db6928_e7cefd1b13aa46649faf0ba0a8587aa9~mv2.png",
+  "imageAlt": "Zepto"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "key": "logo-3",
+  "order": 3,
+  "title": "Flipkart Minutes",
+  "image": "https://static.wixstatic.com/media/db6928_4eaa53c6984840ffb918e889f5d0d6e1~mv2.png",
+  "imageAlt": "Flipkart Minutes"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "key": "logo-4",
+  "order": 4,
+  "title": "Swiggy Instamart",
+  "image": "https://static.wixstatic.com/media/48a00e_9828ab6f170745729d368b6e464e616c~mv2.png",
+  "imageAlt": "Swiggy Instamart"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "key": "logo-5",
+  "order": 5,
+  "title": "Amazon Now",
+  "image": "https://static.wixstatic.com/media/db6928_7c82791c7f6c4297a84e842f41f2a555~mv2.png",
+  "imageAlt": "Amazon Now"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "platform-logos",
+  "key": "logo-6",
+  "order": 6,
+  "title": "BigBasket Now",
+  "image": "https://static.wixstatic.com/media/48a00e_0ac3e108b0bf47f3ae6a4adccd8852ec~mv2.png",
+  "imageAlt": "BigBasket Now"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "intro",
+  "key": "intro-title",
+  "order": 1,
+  "title": "Power Faster Quick-Commerce Replenishment with Strategic Inventory Positioning"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "key": "image",
+  "order": 1,
+  "image": "https://static.wixstatic.com/media/48a00e_ff3a7899ae4b471fa9440293d42b4438~mv2.jpg",
+  "imageAlt": "Quick commerce micro-fulfillment dark store"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "key": "title",
+  "order": 2,
+  "title": "Inventory Positioning for Faster Replenishment"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "key": "highlight",
+  "order": 3,
+  "description": "Reliable inventory handling and coordinated dispatch to designated mother hubs."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "key": "paragraph-1",
+  "order": 4,
+  "description": "Quick commerce demands responsive inventory management and reliable replenishment. Warevolt provides organised warehousing and distribution support, helping brands supply quick-commerce networks, including Blinkit, Zepto and Swiggy Instamart, through designated mother hubs."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "key": "paragraph-2",
+  "order": 5,
+  "description": "Warevolt organises inventory by SKU and replenishment requirements to support efficient picking and stock handling. Structured warehouse processes help teams verify quantities, prepare orders and coordinate dispatch according to agreed schedules."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "key": "paragraph-3",
+  "order": 6,
+  "description": "Warevolt helps brands coordinate inventory movement to designated mother hubs, supporting onward replenishment to dark stores. Structured stock management and dispatch planning help improve inventory visibility and product availability across quick-commerce networks."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "key": "point-1",
+  "order": 7,
+  "title": "Reliable Inventory Handling"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "key": "point-2",
+  "order": 8,
+  "title": "Strategic Inventory Positioning"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "micro-fulfillment",
+  "key": "point-3",
+  "order": 9,
+  "title": "Mother Hub Replenishment"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services-heading",
+  "key": "title",
+  "order": 1,
+  "title": "Quick Commerce Fulfillment Capabilities"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-1",
+  "order": 1,
+  "title": "Quick Commerce Inventory Management"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-2",
+  "order": 2,
+  "title": "Inventory Picking & Order Preparation"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-3",
+  "order": 3,
+  "title": "Mother Hub Replenishment Coordination"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-4",
+  "order": 4,
+  "title": "Scheduled Dispatch & Delivery Coordination"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-5",
+  "order": 5,
+  "title": "Product Storage & Handling"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-6",
+  "order": 6,
+  "title": "Organised SKU & Inventory Management"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-7",
+  "order": 7,
+  "title": "Inventory Visibility & Stock Tracking"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-8",
+  "order": 8,
+  "title": "Stock Monitoring & Replenishment Planning"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-9",
+  "order": 9,
+  "title": "FIFO, FEFO & Expiry Management"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-10",
+  "order": 10,
+  "title": "Flexible Inventory & Demand Planning"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-11",
+  "order": 11,
+  "title": "Inbound Receiving & Quality Checks"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-12",
+  "order": 12,
+  "title": "Inventory Visibility & Stock Tracking"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-13",
+  "order": 13,
+  "title": "Multi-Channel Replenishment Support"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "services",
+  "key": "service-14",
+  "order": 14,
+  "title": "Warehouse Performance & SLA Monitoring"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-network",
+  "key": "background",
+  "order": 1,
+  "image": "https://static.wixstatic.com/media/db6928_b4c631fe71f949d9abbbaa2f437d5bb4~mv2.png"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-network",
+  "key": "title",
+  "order": 2,
+  "title": "Quick Commerce Distribution Network"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-network",
+  "key": "highlight",
+  "order": 3,
+  "description": "Support inventory replenishment for brands supplying Blinkit, Zepto, Swiggy Instamart and other quick-commerce networks."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-network",
+  "key": "paragraph-1",
+  "order": 4,
+  "description": "Warevolt helps brands manage inventory storage, stock allocation and replenishment dispatch for quick-commerce distribution networks. Our warehousing and fulfilment processes support the movement of products to designated mother hubs for onward distribution to dark stores."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-network",
+  "key": "paragraph-2",
+  "order": 5,
+  "description": "Structured inventory records and coordinated dispatch processes help brands track stock, prepare replenishment orders and deliver inventory to designated receiving locations according to agreed schedules."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-tiles",
+  "key": "tile-1",
+  "order": 1,
+  "title": "Quick-Commerce Network Support"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-tiles",
+  "key": "tile-2",
+  "order": 2,
+  "title": "Inventory Preparation & Dispatch",
+  "description": "Order preparation and scheduled dispatch of inventory to designated mother hubs."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-tiles",
+  "key": "tile-3",
+  "order": 3,
+  "title": "Mother Hub Replenishment",
+  "description": "Coordinated inventory replenishment to designated mother hubs for onward distribution to dark stores."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "dark-store-tiles",
+  "key": "tile-4",
+  "order": 4,
+  "title": "Organised Inventory Storage",
+  "description": "Organised inventory storage with stock handling and replenishment support."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards-heading",
+  "key": "title",
+  "order": 1,
+  "title": "Quick Commerce Operational Standards & SLAs",
+  "description": "Strict operational metrics engineered to satisfy instant delivery promises:"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "key": "point-1",
+  "order": 1,
+  "title": "Efficient Order Preparation & Dispatch"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "key": "point-2",
+  "order": 2,
+  "title": "99.9% inventory picking accuracy via scan validation"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "key": "point-3",
+  "order": 3,
+  "title": "Strict FIFO rotation and daily expiry audits"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "key": "point-4",
+  "order": 4,
+  "title": "Continuous temperature logging for cold chain bins"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "key": "point-5",
+  "order": 5,
+  "title": "100% rider handoff tracking with digital signoff"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "key": "point-6",
+  "order": 6,
+  "title": "Automated minimum reorder point triggers"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "key": "point-7",
+  "order": 7,
+  "title": "Real-time dark store stock reconciliation"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "standards",
+  "key": "point-8",
+  "order": 8,
+  "title": "Spill, leak, and damage mitigation protocols"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence-heading",
+  "key": "title",
+  "order": 1,
+  "title": "Operational Excellence",
+  "description": "Ultra-responsive fulfillment processes designed for lightning-fast execution"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "key": "card-1",
+  "order": 1,
+  "title": "Efficient Order Picking",
+  "description": "Rapid picking, bag assembly, and staging"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "key": "card-2",
+  "order": 2,
+  "title": "Rapid Handheld SOPs",
+  "description": "Guided scanner navigation minimizes footwork and accelerates bin retrieval"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "key": "card-3",
+  "order": 3,
+  "title": "Barcode Staging Checkpoints",
+  "description": "Scan checks at the staging bin ensure exact matching before dispatch"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "key": "card-4",
+  "order": 4,
+  "title": "Real-Time Stock Sync",
+  "description": "Sub-second catalog deduction prevents overselling and out-of-stock cancellations"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "key": "card-5",
+  "order": 5,
+  "title": "FIFO & Expiry Control",
+  "description": "Continuous shelf-life tracking guards against near-expiry dispatch to customers"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "key": "card-6",
+  "order": 6,
+  "title": "Mother Hub Replenishment Support",
+  "description": "Dispatch & Delivery Coordination"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "excellence",
+  "key": "card-7",
+  "order": 7,
+  "title": "Coordinated dispatch to designated mother hubs supports onward replenishment to dark stores and helps maintain product availability",
+  "description": "Dispatch planning and shipment tracking help coordinate inventory movement and provide visibility across replenishment operations"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faq-heading",
+  "key": "title",
+  "order": 1,
+  "title": "Frequently\nAsked Questions"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faq-contact",
+  "key": "contact",
+  "order": 1,
+  "title": "Still have questions?",
+  "description": "Can't find the answer you're looking for? Send us an email and we'll get back to you.",
+  "linkLabel": "Send email",
+  "linkUrl": "mailto:hello@warevolt.com"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faqs",
+  "key": "faq-1",
+  "order": 1,
+  "title": "What is Quick Commerce fulfillment and how does it work?",
+  "description": "Quick Commerce fulfillment utilizes hyper-local micro-fulfillment centers (dark stores) strategically positioned near high-density residential and commercial clusters. When an order is placed on Blinkit, Zepto, Swiggy Instamart, or your brand app, pickers receive instant handheld alerts to pick and pack items in under 3 minutes for immediate rider pickup."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faqs",
+  "key": "faq-2",
+  "order": 2,
+  "title": "How does Warevolt achieve sub-3 minute order fulfillment?",
+  "description": "We organize dark stores with high-density, ergonomic fast-pick zones. SKUs are slotted based on real-time buying frequency, while pickers use wireless RF scanners with optimal route navigation to locate and scan items in seconds without bottlenecks."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faqs",
+  "key": "faq-3",
+  "order": 3,
+  "title": "Can Warevolt manage dark store replenishment from a central mother hub?",
+  "description": "Yes. Our integrated fulfillment network links regional mother warehouses to distributed micro-fulfillment dark stores. Automated replenishment triggers monitor daily consumption velocity and initiate transfer dispatches to ensure dark stores never run out of top-selling SKUs."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faqs",
+  "key": "faq-4",
+  "order": 4,
+  "title": "Does Warevolt support perishable, chilled, and frozen products?",
+  "description": "Yes. Our facilities and dark stores include multi-temperature storage zones—ambient, chilled (2°C to 8°C), and frozen (-18°C). We maintain continuous IoT digital temperature logs and strict FEFO (First Expired, First Out) inventory rotation."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faqs",
+  "key": "faq-5",
+  "order": 5,
+  "title": "How does Warevolt handle integration with quick commerce platforms?",
+  "description": "Warevolt Scale™ integrates via real-time webhooks and APIs with quick commerce platforms including Blinkit, Zepto, Swiggy Instamart, BigBasket Now, and custom brand storefronts. Inventory availability and order statuses synchronize instantly across all channels."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faqs",
+  "key": "faq-6",
+  "order": 6,
+  "title": "How do rider handovers work at the dark store dispatch bay?",
+  "description": "Packed orders are staged in color-coded, labeled dispatch bins matching the order ID. Delivery riders scan the parcel barcode upon arrival for digital handoff verification, completing the transfer in under 20 seconds."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faqs",
+  "key": "faq-7",
+  "order": 7,
+  "title": "How do you handle stockouts and inventory discrepancy in quick commerce?",
+  "description": "Real-time perpetual cycle counting, double-scan picking, and intelligent buffer safety margins ensure that catalog inventory matches physical shelf stock with 99.9% accuracy, virtually eliminating cancellations due to out-of-stock items."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faqs",
+  "key": "faq-8",
+  "order": 8,
+  "title": "Can brands run flash sales and promotional spikes in quick commerce?",
+  "description": "Yes. We configure dynamic safety stock buffers and deploy flexible shift staffing during festival seasons, IPL matches, and flash promotional campaigns to effortlessly handle 5x to 10x order volume surges without breaching SLAs."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faqs",
+  "key": "faq-9",
+  "order": 9,
+  "title": "What reporting and operational analytics are provided for dark stores?",
+  "description": "Brands gain real-time visibility into pick-to-pack durations, rider wait times, SKU sales velocity, hourly order volume curves, inventory age, and dark store throughput via centralized live dashboards."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "faqs",
+  "key": "faq-10",
+  "order": 10,
+  "title": "Can Warevolt help a brand launch in new cities with quick commerce?",
+  "description": "Yes. With a ready-to-scale fulfillment network spanning major metros (Mumbai, Delhi NCR, Bangalore, Hyderabad, Kochi, Chennai, Pune), Warevolt enables brands to plug into established micro-fulfillment infrastructure without massive capital expenditure."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "cta",
+  "key": "badge",
+  "order": 1,
+  "extra": "Now onboarding rapid commerce brands"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "cta",
+  "key": "title",
+  "order": 2,
+  "title": "Ready to scale your Quick Commerce operations?"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "cta",
+  "key": "description",
+  "order": 3,
+  "description": "Connect with our Quick-Commerce specialist for more information."
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "cta",
+  "key": "cta-primary",
+  "order": 4,
+  "linkLabel": "Get started now"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "cta",
+  "key": "cta-secondary",
+  "order": 5,
+  "linkLabel": "Speak to an expert"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "seo",
+  "key": "meta-title",
+  "order": 900,
+  "title": "Q-Commerce Fulfillment & Dark Store Replenishment | Warevolt"
+ },
+ {
+  "page": "quick-ecommerce",
+  "section": "seo",
+  "key": "meta-description",
+  "order": 901,
+  "description": "Warevolt provides quick commerce logistics, 3PL warehousing and inventory replenishment for brands supplying Blinkit, Zepto and Swiggy Instamart."
+ }
 ]

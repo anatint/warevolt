@@ -1,5 +1,6 @@
 [
  {
+  "page": "contact",
   "section": "hero",
   "key": "hero",
   "order": 1,
@@ -9,29 +10,33 @@
   "description": "From fulfillment and warehousing to shipping, we help you streamline operations and scale across India — faster, smarter and more efficiently."
  },
  {
+  "page": "contact",
   "section": "strip",
   "key": "phone",
   "order": 1,
   "label": "Talk to our team",
-  "title": "+91 98765 43210",
-  "linkUrl": "tel:+919876543210"
+  "title": "+91 9995450330",
+  "linkUrl": "tel:+919995450330"
  },
  {
+  "page": "contact",
   "section": "strip",
   "key": "email",
   "order": 2,
   "label": "Email us",
-  "title": "hello@warevolt.in",
-  "linkUrl": "mailto:hello@warevolt.in"
+  "title": "hello@warevolt.com",
+  "linkUrl": "mailto:hello@warevolt.com"
  },
  {
+  "page": "contact",
   "section": "strip",
   "key": "address",
   "order": 3,
   "label": "Visit us",
-  "title": "123 Industrial Zone, Navi Mumbai, Maharashtra 400708"
+  "title": "Building No: 384&385 Airapuram, Kochi 683556"
  },
  {
+  "page": "contact",
   "section": "strip",
   "key": "response",
   "order": 4,
@@ -39,6 +44,7 @@
   "title": "Within 24 hours"
  },
  {
+  "page": "contact",
   "section": "intro",
   "key": "intro",
   "order": 1,
@@ -47,24 +53,28 @@
   "description": "Whether you’re launching a new brand or scaling an existing one, we’re here to help. Share your goals and our team will get back to you with the right solution for your fulfillment needs."
  },
  {
+  "page": "contact",
   "section": "intro-points",
   "key": "p1",
   "order": 1,
   "title": "Expert guidance from fulfillment specialists"
  },
  {
+  "page": "contact",
   "section": "intro-points",
   "key": "p2",
   "order": 2,
   "title": "Flexible and scalable solutions"
  },
  {
+  "page": "contact",
   "section": "intro-points",
   "key": "p3",
   "order": 3,
   "title": "Fast response and dedicated support"
  },
  {
+  "page": "contact",
   "section": "form-fields",
   "key": "fullName",
   "order": 1,
@@ -72,6 +82,7 @@
   "description": "Your full name"
  },
  {
+  "page": "contact",
   "section": "form-fields",
   "key": "workEmail",
   "order": 2,
@@ -79,6 +90,7 @@
   "description": "you@company.com"
  },
  {
+  "page": "contact",
   "section": "form-fields",
   "key": "phone",
   "order": 3,
@@ -86,6 +98,7 @@
   "description": "+91 98765 43210"
  },
  {
+  "page": "contact",
   "section": "form-fields",
   "key": "company",
   "order": 4,
@@ -93,6 +106,7 @@
   "description": "Your company name"
  },
  {
+  "page": "contact",
   "section": "form-fields",
   "key": "service",
   "order": 5,
@@ -100,6 +114,7 @@
   "description": "Select a service"
  },
  {
+  "page": "contact",
   "section": "form-fields",
   "key": "volume",
   "order": 6,
@@ -107,6 +122,7 @@
   "description": "Select volume"
  },
  {
+  "page": "contact",
   "section": "form-fields",
   "key": "message",
   "order": 7,
@@ -114,60 +130,63 @@
   "description": "Tell us more about your requirements..."
  },
  {
+  "page": "contact",
   "section": "service-options",
   "key": "p1",
   "order": 1,
   "title": "D2C & Marketplace Fulfillment"
  },
  {
+  "page": "contact",
   "section": "service-options",
   "key": "p2",
   "order": 2,
-  "title": "Order & Warehouse Management"
+  "title": "B2B Fulfillment"
  },
  {
+  "page": "contact",
   "section": "service-options",
   "key": "p3",
   "order": 3,
-  "title": "Inventory & Returns Management"
+  "title": "Quick Commerce Replenishment"
  },
  {
+  "page": "contact",
   "section": "service-options",
   "key": "p4",
   "order": 4,
-  "title": "Technology & Analytics"
+  "title": "Distribution"
  },
  {
-  "section": "service-options",
-  "key": "p5",
-  "order": 5,
-  "title": "Cold Storage & Custom Logistics"
- },
- {
+  "page": "contact",
   "section": "volume-options",
   "key": "p1",
   "order": 1,
   "title": "Less than 1,000 orders"
  },
  {
+  "page": "contact",
   "section": "volume-options",
   "key": "p2",
   "order": 2,
   "title": "1,000 - 5,000 orders"
  },
  {
+  "page": "contact",
   "section": "volume-options",
   "key": "p3",
   "order": 3,
   "title": "5,000 - 20,000 orders"
  },
  {
+  "page": "contact",
   "section": "volume-options",
   "key": "p4",
   "order": 4,
   "title": "20,000+ orders"
  },
  {
+  "page": "contact",
   "section": "form",
   "key": "submit",
   "order": 1,
@@ -176,6 +195,7 @@
   "description": "Your information is safe with us. We respect your privacy."
  },
  {
+  "page": "contact",
   "section": "form",
   "key": "success",
   "order": 2,
@@ -184,12 +204,14 @@
   "linkLabel": "Send Another Message"
  },
  {
+  "page": "contact",
   "section": "services-heading",
   "key": "heading",
   "order": 1,
   "title": "How can we help?"
  },
  {
+  "page": "contact",
   "section": "services",
   "key": "s1",
   "order": 1,
@@ -198,6 +220,7 @@
   "linkUrl": "/d2c-marketplace-fulfillment"
  },
  {
+  "page": "contact",
   "section": "services",
   "key": "s2",
   "order": 2,
@@ -206,6 +229,7 @@
   "linkUrl": "/order-and-warehouse-management"
  },
  {
+  "page": "contact",
   "section": "services",
   "key": "s3",
   "order": 3,
@@ -214,6 +238,7 @@
   "linkUrl": "/d2c-marketplace-fulfillment"
  },
  {
+  "page": "contact",
   "section": "services",
   "key": "s4",
   "order": 4,
@@ -222,6 +247,7 @@
   "linkUrl": "/analytics-and-reporting"
  },
  {
+  "page": "contact",
   "section": "india",
   "key": "main",
   "order": 1,
@@ -230,36 +256,42 @@
   "description": "Connected operations. Local expertise. Nationwide reach."
  },
  {
+  "page": "contact",
   "section": "india-points",
   "key": "p1",
   "order": 1,
   "title": "Multiple fulfillment centers"
  },
  {
+  "page": "contact",
   "section": "india-points",
   "key": "p2",
   "order": 2,
   "title": "Faster last-mile delivery"
  },
  {
+  "page": "contact",
   "section": "india-points",
   "key": "p3",
   "order": 3,
   "title": "Stronger regional presence"
  },
  {
+  "page": "contact",
   "section": "india-points",
   "key": "p4",
   "order": 4,
   "title": "Seamless operations"
  },
  {
+  "page": "contact",
   "section": "faq-heading",
   "key": "heading",
   "order": 1,
   "title": "Frequently Asked Questions"
  },
  {
+  "page": "contact",
   "section": "faqs",
   "key": "f1",
   "order": 1,
@@ -267,6 +299,7 @@
   "description": "Most brands go live in under 7 to 14 days. Our onboarding team manages catalog syncing, ERP/channel integrations, inventory receiving protocols, and packaging standardization seamlessly."
  },
  {
+  "page": "contact",
   "section": "faqs",
   "key": "f2",
   "order": 2,
@@ -274,6 +307,7 @@
   "description": "Yes, WareVolt Scale™ natively integrates with Shopify, WooCommerce, Amazon, Flipkart, Myntra, Unicommerce, custom ERPs, and all leading Indian carrier aggregators."
  },
  {
+  "page": "contact",
   "section": "faqs",
   "key": "f3",
   "order": 3,
@@ -281,10 +315,25 @@
   "description": "We work with high-growth brands starting from 500 orders per month up to established enterprise brands processing over 100,000 monthly shipments."
  },
  {
+  "page": "contact",
   "section": "faqs",
   "key": "f4",
   "order": 4,
   "title": "How do I get a quote for my business?",
   "description": "Simply fill out our contact form or click \"Get a Quote\". Our fulfillment specialists will analyze your SKU profile, volume, and storage requirements to deliver a customized proposal within 24 hours."
+ },
+ {
+  "page": "contact",
+  "section": "seo",
+  "key": "meta-title",
+  "order": 900,
+  "title": "Contact Warevolt | Talk to Our Fulfillment Experts"
+ },
+ {
+  "page": "contact",
+  "section": "seo",
+  "key": "meta-description",
+  "order": 901,
+  "description": "Contact Warevolt to plan fulfillment, warehousing and shipping across India. Share your goals and our team will get back to you within 24 hours."
  }
 ]
