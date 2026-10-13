@@ -2,7 +2,11 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { seoMetadata, SITE_URL, SITE_NAME, OG_IMAGE } from '@/lib/seo';
 
-export const metadata: Metadata = { metadataBase: new URL(SITE_URL), ...seoMetadata('home') };
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  verification: { google: 'eXpe54MadpB3RzYxo2JOewE0qx0TrMhuRBwaoYE5Uqk' },
+  ...seoMetadata('home'),
+};
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -34,6 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "if(location.protocol==='http:'&&location.hostname.endsWith('warevolt.com'))location.replace('https://'+location.host+location.pathname+location.search+location.hash)",
+          }}
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {children}
       </body>
