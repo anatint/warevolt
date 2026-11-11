@@ -1,4 +1,5 @@
 import { wixClient } from '@/lib/wixClient';
+import { trackMeta } from '@/lib/metaPixel';
 
 /** Wix CMS collection that stores every form submission as its own item (see "Form Submissions" in the Wix dashboard). */
 const COLLECTION = 'FormSubmissions';
@@ -25,4 +26,6 @@ export async function saveSubmission(data: SubmissionData): Promise<void> {
     if (value !== undefined && value !== '') item[key] = String(value).trim();
   }
   await wixClient.items.insert(COLLECTION, item);
+  // Only counted as a Lead once Wix has actually stored the enquiry.
+  trackMeta('Lead', { content_name: data.formSource });
 }

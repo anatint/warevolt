@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { seoMetadata, SITE_URL, SITE_NAME, OG_IMAGE } from '@/lib/seo';
+import { META_PIXEL_ID, metaPixelScript } from '@/lib/metaPixel';
+import MetaPixelPageViews from '@/components/MetaPixelPageViews';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  verification: { google: 'eXpe54MadpB3RzYxo2JOewE0qx0TrMhuRBwaoYE5Uqk' },
+  verification: {
+    google: 'eXpe54MadpB3RzYxo2JOewE0qx0TrMhuRBwaoYE5Uqk',
+    other: { 'facebook-domain-verification': '4cpkhflm9tvi01lxvl0m983zlcwgyx' },
+  },
   ...seoMetadata('home'),
 };
 
@@ -52,6 +57,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <script dangerouslySetInnerHTML={{ __html: gtmScript }} />
+        <script dangerouslySetInnerHTML={{ __html: metaPixelScript }} />
       </head>
       <body>
         <noscript>
@@ -62,6 +68,16 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            alt=""
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
+        <MetaPixelPageViews />
         <script
           dangerouslySetInnerHTML={{
             __html: "if(location.protocol==='http:'&&location.hostname.endsWith('warevolt.com'))location.replace('https://'+location.host+location.pathname+location.search+location.hash)",
