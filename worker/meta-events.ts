@@ -1,16 +1,16 @@
 /**
- * Cloudflare Pages Function: POST /api/meta-events
+ * POST /api/meta-events (routed here by worker/index.ts)
  *
  * Relays browser pixel events to the Meta Conversions API so they are also
  * recorded server-side (survives ad blockers / iOS tracking limits). Meta
  * de-duplicates them with the browser pixel using the shared event_id.
  *
  * The access token is never shipped to the browser. Set it as an encrypted
- * secret in Cloudflare: Pages project > Settings > Variables and Secrets >
+ * secret in Cloudflare: Workers & Pages > warevolt (Worker) > Settings > Variables and Secrets >
  * META_CAPI_TOKEN. For local testing put it in .dev.vars (gitignored).
  */
 
-interface Env {
+export interface Env {
   META_CAPI_TOKEN?: string;
   META_PIXEL_ID?: string;
   META_GRAPH_VERSION?: string;
@@ -18,7 +18,6 @@ interface Env {
   META_TEST_EVENT_CODE?: string;
 }
 
-type Ctx = { request: Request; env: Env };
 
 const DEFAULT_PIXEL_ID = '1017674128034912';
 const ALLOWED_EVENTS = new Set(['PageView', 'ViewContent', 'AddToCart', 'InitiateCheckout', 'Search', 'Lead', 'Contact']);
@@ -66,7 +65,7 @@ function cleanCustomData(data: Record<string, unknown> | undefined) {
   return Object.keys(out).length ? out : undefined;
 }
 
-export async function onRequestPost({ request, env }: Ctx): Promise<Response> {
+export async function handleMetaEvent(request: Request, env: Env): Promise<Response> {
   const token = env.META_CAPI_TOKEN;
   if (!token) return json(503, { error: 'Conversions API is not configured' });
 
