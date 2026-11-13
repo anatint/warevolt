@@ -56,6 +56,13 @@
   "linkUrl": "/contact"
  },
  {
+  "section": "quick-links",
+  "key": "quick-6",
+  "order": 6,
+  "linkLabel": "Privacy Policy",
+  "linkUrl": "/privacy-policy/"
+ },
+ {
   "section": "solution-links",
   "key": "heading",
   "order": 0,
@@ -131,7 +138,7 @@
   "key": "privacy",
   "order": 2,
   "linkLabel": "Privacy Policy",
-  "linkUrl": "#"
+  "linkUrl": "/privacy-policy/"
  },
  {
   "section": "legal",

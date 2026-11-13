@@ -1,0 +1,177 @@
+[
+ {
+  "page": "privacy-policy",
+  "section": "seo",
+  "key": "meta-title",
+  "order": 900,
+  "title": "Privacy Policy | Warevolt"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "seo",
+  "key": "meta-description",
+  "order": 901,
+  "description": "How Warevolt Private Limited collects, uses, shares and protects personal information from our website, enquiry forms and Meta lead forms."
+ },
+ {
+  "page": "privacy-policy",
+  "section": "hero",
+  "key": "hero",
+  "order": 1,
+  "label": "Legal",
+  "title": "Privacy Policy",
+  "description": "Warevolt Private Limited",
+  "extra": "13 November 2026"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "hero",
+  "key": "updated-label",
+  "order": 2,
+  "label": "Last Updated"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s1",
+  "order": 1,
+  "title": "Introduction",
+  "description": "Warevolt Private Limited (“Warevolt”, “we”, “our”, or “us”) respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, store, and protect your personal information when you visit our website, submit enquiries through our Contact Us forms, or interact with our advertisements and lead generation forms on platforms such as Facebook and Instagram."
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s2",
+  "order": 2,
+  "title": "Information We Collect",
+  "description": "We may collect the following information when you interact with our website or advertisements:\n\n• Full Name\n• Company Name\n• Email Address\n• Phone Number\n• Business Name and Business Type\n• Location or Business Address\n• Information about your warehousing, fulfilment, logistics, or distribution requirements\n• Any other information voluntarily provided through enquiry forms\n• Technical information such as IP address, browser type, device information, website activity, and cookie information"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s3",
+  "order": 3,
+  "title": "How We Collect Information",
+  "description": "We collect information through:\n\n• Contact Us and enquiry forms on our website\n• Facebook and Instagram Lead Generation Forms\n• Meta advertisements and associated lead forms\n• Direct email, telephone, or other business communications\n• Cookies, analytics tools, and website technologies"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s4",
+  "order": 4,
+  "title": "How We Use Your Information",
+  "description": "We use your personal information for the following purposes:\n\n• Responding to business enquiries and requests\n• Understanding your business and logistics requirements\n• Providing information about Warevolt’s services\n• Preparing quotations, proposals, and commercial offers\n• Scheduling meetings and consultations\n• Following up on potential business opportunities\n• Managing customer relationships and business communications\n• Improving our website, advertisements, and services\n• Conducting marketing and promotional activities where permitted\n• Complying with applicable legal and regulatory requirements"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s5",
+  "order": 5,
+  "title": "Sharing of Personal Information",
+  "description": "Warevolt does not sell your personal information. We may share your information with trusted third-party service providers who support our business operations, including CRM platforms, website hosting and technical service providers, business communication and email services, marketing and advertising platforms, and analytics and website performance providers. These service providers may process your information only as necessary to provide their services to us and subject to appropriate safeguards. We may also disclose information where required by applicable law or legal proceedings."
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s6",
+  "order": 6,
+  "title": "Meta Platforms and Advertising",
+  "description": "Warevolt may use Facebook, Instagram, and other Meta advertising services to generate business enquiries and leads. When you interact with our advertisements or submit a Meta Lead Form, Meta may collect and process information in accordance with its own privacy policy. Information submitted through Meta Lead Forms may be shared with Warevolt so that we can respond to your enquiry and communicate regarding our services. For more information about Meta’s privacy practices, please visit Meta’s Privacy Policy.",
+  "linkLabel": "Meta’s Privacy Policy",
+  "linkUrl": "https://www.facebook.com/privacy/policy/"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s7",
+  "order": 7,
+  "title": "Cookies and Analytics",
+  "description": "Our website may use cookies and similar technologies to improve website functionality, understand visitor behaviour, analyse website traffic, improve marketing and advertising performance, and provide a better user experience. You may manage cookies through your browser settings or any cookie preference controls available on our website."
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s8",
+  "order": 8,
+  "title": "Data Security",
+  "description": "We take reasonable technical and organisational measures to protect personal information against unauthorised access, disclosure, alteration, loss, or misuse. However, no electronic transmission or storage system can be guaranteed to be completely secure."
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s9",
+  "order": 9,
+  "title": "Data Retention",
+  "description": "We retain personal information for as long as reasonably necessary to respond to enquiries, manage business relationships, maintain business and operational records, fulfil contractual and legal obligations, and resolve disputes or enforce agreements. When personal information is no longer required, we take reasonable steps to delete or securely dispose of it."
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s10",
+  "order": 10,
+  "title": "Your Privacy Rights",
+  "description": "Subject to applicable laws, you may request access to your personal information, correction of inaccurate or incomplete information, deletion of personal information where applicable, withdrawal of consent where processing is based on consent, information regarding the processing of your personal information, and assistance with privacy-related concerns or grievances. You may exercise these rights by contacting us using the details provided below."
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s11",
+  "order": 11,
+  "title": "Third-Party Websites",
+  "description": "Our website may contain links to third-party websites or services. Warevolt is not responsible for the privacy practices or content of external websites. We encourage visitors to review the privacy policies of third-party platforms before sharing personal information."
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s12",
+  "order": 12,
+  "title": "Changes to This Privacy Policy",
+  "description": "Warevolt may update this Privacy Policy periodically to reflect changes in our business practices, website functionality, or applicable legal requirements. Any updates will be published on this page with the revised date."
+ },
+ {
+  "page": "privacy-policy",
+  "section": "policy",
+  "key": "s13",
+  "order": 13,
+  "title": "Contact Information",
+  "description": "For questions, requests, or concerns regarding this Privacy Policy or your personal information, please contact:"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "contact",
+  "key": "company",
+  "order": 1,
+  "title": "Warevolt Private Limited"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "contact",
+  "key": "email",
+  "order": 2,
+  "label": "Email",
+  "title": "hello@warevolt.com"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "contact",
+  "key": "phone",
+  "order": 3,
+  "label": "Phone",
+  "title": "+91 99954 50770"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "contact",
+  "key": "website",
+  "order": 4,
+  "label": "Website",
+  "title": "https://www.warevolt.com"
+ },
+ {
+  "page": "privacy-policy",
+  "section": "contact",
+  "key": "closing",
+  "order": 5,
+  "description": "We will make reasonable efforts to address privacy-related enquiries and grievances in accordance with applicable laws."
+ }
+]

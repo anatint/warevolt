@@ -21,6 +21,7 @@ const FILES = {
   contact: 'contact.json',
   'b2b-isometric': 'b2b-isometric.json',
   'shipping-distribution': 'shipping-distribution.json',
+  'privacy-policy': 'privacy-policy.json',
 };
 
 const has = (v) => v !== undefined && v !== null && String(v).trim() !== '';

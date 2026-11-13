@@ -78,5 +78,13 @@
     "keyword": "contact Warevolt fulfillment",
     "title": "Contact Warevolt | Talk to Our Fulfillment Experts",
     "description": "Contact Warevolt to plan fulfillment, warehousing and shipping across India. Share your goals and our team will get back to you within 24 hours."
+  },
+  "privacy-policy": {
+    "path": "/privacy-policy/",
+    "name": "Privacy Policy",
+    "collection": "PrivacyPolicyPage",
+    "keyword": "Warevolt privacy policy",
+    "title": "Privacy Policy | Warevolt",
+    "description": "How Warevolt Private Limited collects, uses, shares and protects personal information from our website, enquiry forms and Meta lead forms."
   }
 }
