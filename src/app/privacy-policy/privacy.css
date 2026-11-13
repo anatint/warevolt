@@ -1,5 +1,6 @@
 /* ══ PRIVACY POLICY ══ */
-.pp-root { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1C1030; background: #F7F6FB; overflow-x: hidden; }
+/* overflow-x: clip (not hidden) so the wrapper doesn't become a scroll container, which would stop the contents list from sticking */
+.pp-root { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1C1030; background: #F7F6FB; overflow-x: hidden; overflow-x: clip; }
 .pp-hero { position: relative; overflow: hidden; background: linear-gradient(135deg, #0B0619 0%, #1c0b40 45%, #10062a 100%); }
 .pp-glow { position: absolute; border-radius: 50%; pointer-events: none; }
 .pp-glow-a { top: -140px; left: -6%; width: 480px; height: 480px; background: radial-gradient(circle, rgba(124,58,237,.32) 0%, transparent 65%); }
@@ -39,6 +40,8 @@
 @media (max-width: 960px) {
   .pp-main { grid-template-columns: minmax(0,1fr); gap: 24px; padding-top: 32px; }
   .pp-toc { position: static; }
+  .pp-toc ol { display: block; columns: 2; column-gap: 36px; }
+  .pp-toc li { break-inside: avoid; margin-bottom: 8px; }
 }
 @media (max-width: 600px) {
   .pp-toc { display: none; }
